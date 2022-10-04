@@ -1,12 +1,15 @@
 package com.example.demo.dto;
 
+import lombok.Data;
+
+@Data
 public class EntrepreneurDTO {
 
-	int idEntrepreneur;
+	Integer idEntrepreneur;
 	String firstName;
 	String lastName;
 	String email;
 	String idProfile;
 	String linkedinProfile;
-	
+
 }
