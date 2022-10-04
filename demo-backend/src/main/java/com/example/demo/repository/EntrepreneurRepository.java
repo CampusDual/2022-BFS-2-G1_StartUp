@@ -1,10 +1,9 @@
 package com.example.demo.repository;
 
+import com.example.demo.entity.Entrepreneur;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
-import com.example.demo.entity.Contact;
-
-public interface EntrepreneurRepository extends JpaRepository<Contact, Integer>, JpaSpecificationExecutor<Contact> {
+public interface EntrepreneurRepository extends JpaRepository<Entrepreneur, Integer>, JpaSpecificationExecutor<Entrepreneur> {
 
 }
