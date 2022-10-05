@@ -1,10 +1,11 @@
-package com.example.demo.service;
+package com.example.demo.service.impl;
 
 import java.util.Collections;
 import java.util.EnumSet;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import com.example.demo.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
