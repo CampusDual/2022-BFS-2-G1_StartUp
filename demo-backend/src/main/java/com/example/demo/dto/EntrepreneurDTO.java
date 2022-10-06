@@ -25,7 +25,7 @@ public class EntrepreneurDTO implements Serializable {
 	private final String email;
 	@Size(max = 50)
 	@NotNull
-	private final String idProfessionalProfile;
+	private final String idProfessionalProfileTypeProfessionalProfile;
 	@Size(max = 100)
 	@NotNull
 	private final String linkedinProfile;
