@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import com.example.demo.service.impl.ContactServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -25,9 +26,7 @@ import org.springframework.data.domain.Pageable;
 import com.borjaglez.springify.repository.filter.impl.AnyPageFilter;
 import com.borjaglez.springify.repository.specification.SpecificationImpl;
 import com.example.demo.entity.Contact;
-import com.example.demo.exception.DemoException;
 import com.example.demo.repository.ContactRepository;
-import com.example.demo.service.ContactServiceImpl;
 
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
