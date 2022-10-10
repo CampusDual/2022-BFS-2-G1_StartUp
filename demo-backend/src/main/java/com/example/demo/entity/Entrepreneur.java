@@ -1,11 +1,6 @@
 package com.example.demo.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -35,10 +30,10 @@ public class Entrepreneur {
 	@Column(name = "email", nullable = false, length = 50)
 	private String email;
 
-	@Size(max = 50)
 	@NotNull
-	@Column(name = "id_professional_profile", nullable = false, length = 50)
-	private String idProfessionalProfile;
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@JoinColumn(name = "id_professional_profile", nullable = false)
+	private ProfessionalProfile idProfessionalProfile;
 
 	@Size(max = 100)
 	@NotNull

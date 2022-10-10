@@ -32,7 +32,7 @@ import com.example.demo.repository.ContactRepository;
 @ExtendWith(MockitoExtension.class)
 class ContactServiceTest {
 
-	@InjectMocks
+	/*@InjectMocks
 	ContactServiceImpl contactService;
 
 	@Mock
@@ -121,6 +121,6 @@ class ContactServiceTest {
 		Integer result = contactService.deleteContact(1);
 
 		assertNotNull(result);
-	}
+	}*/
 
 }

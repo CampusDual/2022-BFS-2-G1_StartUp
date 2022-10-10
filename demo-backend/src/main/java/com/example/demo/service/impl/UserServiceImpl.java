@@ -28,7 +28,7 @@ public class UserServiceImpl implements IUserService {
 	private UserRepository userRepository;
 
 
-	@Override
+
 	@Transactional(readOnly = true)
 	public Boolean canLogin(String user) {
 		Optional<User> optUser = userRepository.findByLogin(user);
