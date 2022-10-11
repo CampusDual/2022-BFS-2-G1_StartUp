@@ -3,8 +3,7 @@ package com.example.demo.mapper;
 
 import com.example.demo.dto.EntrepreneurDTO;
 import com.example.demo.entity.Entrepreneur;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
+import org.mapstruct.*;
 
 @Mapper(componentModel = "spring", uses = ReferenceMapper.class)
 public interface EntrepreneurMapper extends GenericMapper<Entrepreneur, EntrepreneurDTO> {
