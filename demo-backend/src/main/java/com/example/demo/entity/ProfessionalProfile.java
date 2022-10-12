@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -7,6 +9,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Entity
+@Data
 @Table(name = "professional_profile")
 public class ProfessionalProfile {
     @Id
@@ -21,29 +24,5 @@ public class ProfessionalProfile {
 
     @OneToMany(mappedBy = "idProfessionalProfile")
     private Set<Entrepreneur> entrepreneurs = new LinkedHashSet<>();
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getTypeProfessionalProfile() {
-        return typeProfessionalProfile;
-    }
-
-    public void setTypeProfessionalProfile(String typeProfessionalProfile) {
-        this.typeProfessionalProfile = typeProfessionalProfile;
-    }
-
-    public Set<Entrepreneur> getEntrepreneurs() {
-        return entrepreneurs;
-    }
-
-    public void setEntrepreneurs(Set<Entrepreneur> entrepreneurs) {
-        this.entrepreneurs = entrepreneurs;
-    }
 
 }

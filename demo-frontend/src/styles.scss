@@ -2,35 +2,49 @@
 @import "themes/main.theme";
 @import '~@angular/material/theming';
 @import url('//fonts.googleapis.com/icon?family=Material+Icons');
+@import url(https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800);
 
 @import "globals";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+  font-family: 'Manrope', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+}
 
 $primary: mat-palette($mat-grey, 900);
-$accent:  mat-palette($mat-grey, 600);
-$warn:    mat-palette($mat-red, 500);
+$accent: mat-palette($mat-grey, 600);
+$warn: mat-palette($mat-red, 500);
 $theme: mat-light-theme($primary, $accent, $warn);
 @include angular-material-theme($theme);
 
 .yellow-snackbar {
   color: rgb(248, 219, 87);
   font-weight: bold;
+
   .mat-simple-snackbar-action {
     color: white !important;
   }
 }
+
 .blue-snackbar {
   color: rgb(129, 188, 255);
   font-weight: bold;
+
   .mat-simple-snackbar-action {
     color: white !important;
   }
 }
+
 .red-snackbar {
   color: rgb(248, 134, 155);
   font-weight: bold;
+
   .mat-simple-snackbar-action {
     color: white !important;
   }
@@ -58,4 +72,8 @@ $theme: mat-light-theme($primary, $accent, $warn);
 
 .menu-title:active {
   color: #ff3d00;
+}
+
+.table{
+  font-family: 'Manrope', sans-serif;
 }
