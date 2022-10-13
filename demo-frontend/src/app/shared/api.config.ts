@@ -16,4 +16,7 @@ export const API_CONFIG = {
   editContact: environment.contactsBaseUrl + '/editContact',
   deleteContact: environment.contactsBaseUrl + '/deleteContact',
 
+  // Entrepreneur API
+  getEntrepreneurs: environment.adminBaseUrl + '/entrepreneur'
+
 };

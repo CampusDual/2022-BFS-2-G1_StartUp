@@ -39,5 +39,4 @@ public class Entrepreneur {
 	@NotNull
 	@Column(name = "linkedin_profile", nullable = false, length = 100)
 	private String linkedinProfile;
-
 }
