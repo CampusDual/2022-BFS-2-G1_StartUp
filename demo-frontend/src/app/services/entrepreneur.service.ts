@@ -4,7 +4,6 @@ import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Entrepreneur } from '../model/entrepreneur';
 
-
 @Injectable({
   providedIn: 'root',
 })
@@ -15,10 +14,23 @@ export class EntrepreneureService {
     return this.http.get<Entrepreneur[]>(`${this.apiServerUrl}/entrepreneur`);
   }
   public addEntrepreneurs(
-    entrepreneur: Entrepreneur  ): Observable<Entrepreneur> {
+    entrepreneur: Entrepreneur
+  ): Observable<Entrepreneur> {
     return this.http.post<any>(
       `${this.apiServerUrl}/entrepreneur`,
-      entrepreneur    );
+      entrepreneur
+    );
   }
-
+  getData() {
+    return this.http.get('https://picsum.photos/v2/list').pipe(
+      map((list: Array<any>) => {
+        return list.map((listItem) => {
+          return {
+            ...listItem,
+            shown: false,
+          };
+        });
+      })
+    );
+  }
 }
