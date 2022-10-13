@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { MainHomeComponent } from './main-home/main-home.component';
 import { AuthGuard } from '../auth/auth.guard';
 import { ContactsComponent } from './contacts/contacts.component';
+import { EntrepreneurComponent } from './entrepreneurs/entrepreneur/entrepreneur.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,14 @@ const routes: Routes = [
   {
     path: 'contacts',
     component: ContactsComponent,
+    canActivate: [AuthGuard],
+    data: {
+      allowedRoles: ['CONTACTS'],
+    },
+  },
+  {
+    path: 'entrepreneur',
+    component: EntrepreneurComponent,
     canActivate: [AuthGuard],
     data: {
       allowedRoles: ['CONTACTS'],

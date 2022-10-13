@@ -1,0 +1,21 @@
+<h5>Listado de emprendedores</h5>
+
+<table cdk-table>
+    <thead>
+        <th>Nome</th>
+        <th>Surname</th>
+        <th>Email</th>
+        <th>Professional Profile</th>
+        <th>Link</th>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let entrepreneur of entrepreneurs">
+            <td>{{entrepreneur.firstName}}</td>
+            <td>{{entrepreneur.lastName}}</td>
+            <td>{{entrepreneur.email}}</td>
+            <td>{{entrepreneur.idProfessionalProfile.typeProfessionalProfile}}</td>
+            <td>{{entrepreneur.linkedinProfile}}</td>
+        </tr>
+    </tbody>
+</table>
