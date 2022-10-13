@@ -39,7 +39,7 @@ export class NavComponent implements OnInit, OnDestroy {
     {
       icon: 'engineering',
       route: 'entrepreneur',
-      title: 'Entrepreneur',
+      title: 'menu.entrepreneur',
       allowedRoles: ['CONTACTS']
     }
   ];

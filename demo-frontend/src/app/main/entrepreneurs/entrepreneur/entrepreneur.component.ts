@@ -12,6 +12,11 @@ export class EntrepreneurComponent implements OnInit {
 
   constructor(private entrepreneurService: EntrepreneureService) {}
 
+  miramdom():any{
+
+    return "https://picsum.photos/id/200/300";
+
+  }
   ngOnInit(): void {
     this.entrepreneurService
       .getEntrepreneurs()
