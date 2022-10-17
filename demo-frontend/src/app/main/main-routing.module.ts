@@ -3,7 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { MainHomeComponent } from './main-home/main-home.component';
 import { AuthGuard } from '../auth/auth.guard';
 import { ContactsComponent } from './contacts/contacts.component';
-import { EntrepreneurComponent } from './entrepreneurs/entrepreneur/entrepreneur.component';
+import { EntrepreneurListComponent } from './entrepreneurs/entrepreneurList/entrepreneurList.component';
+import { EntrepreneurDetailComponent } from './entrepreneurs/entrepreneur-detail/entrepreneur-detail.component';
+
 
 const routes: Routes = [
   {
@@ -24,12 +26,21 @@ const routes: Routes = [
   },
   {
     path: 'entrepreneur',
-    component: EntrepreneurComponent,
+    component: EntrepreneurListComponent,
     canActivate: [AuthGuard],
     data: {
       allowedRoles: ['CONTACTS'],
     },
   },
+  {
+    path: 'entrepreneur-detail',
+    component: EntrepreneurDetailComponent,
+    canActivate: [AuthGuard],
+    data: {
+      allowedRoles: ['CONTACTS'],
+    },
+  },
+
 ];
 
 @NgModule({

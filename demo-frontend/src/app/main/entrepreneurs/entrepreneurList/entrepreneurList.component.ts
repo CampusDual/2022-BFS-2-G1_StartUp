@@ -8,10 +8,10 @@ import { ConfirmationDialogComponent } from 'src/app/shared/confirmation-dialog/
 
 @Component({
   selector: 'app-entrepreneur',
-  templateUrl: './entrepreneur.component.html',
-  styleUrls: ['./entrepreneur.component.scss'],
+  templateUrl: './entrepreneurList.component.html',
+  styleUrls: ['./entrepreneurList.component.scss'],
 })
-export class EntrepreneurComponent implements OnInit {
+export class EntrepreneurListComponent implements OnInit {
   entrepreneurs: Entrepreneur[];
   list;
   subscriptions: any = {};
