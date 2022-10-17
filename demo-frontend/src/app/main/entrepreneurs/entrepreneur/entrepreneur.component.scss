@@ -77,7 +77,41 @@ ul {
     display: inline-block;
 }
 
-.our-webcoderskull {}
+
+/*BUTTON MATCH*/
+
+.icon-button {
+    background-color: #fff;
+    border: none;
+    outline: none;
+}
+
+.icon-button__badge:hover {
+    cursor: pointer;
+    color: rgb(50, 205, 50);
+}
+
+.icon-button__badge:active {
+    color: black;
+}
+
+.icon-button__badge:visited {
+    color: brown;
+}
+
+.icon-button__badge {
+    position: absolute;
+    font-size: 35px;
+    margin-left: -35px;
+    margin-top: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: grey;
+}
+
+
+/*END button mactch*/
 
 .our-webcoderskull .cnt-block {
     float: left;

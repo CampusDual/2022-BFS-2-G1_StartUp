@@ -15,6 +15,7 @@ export class EntrepreneurComponent implements OnInit {
   entrepreneurs: Entrepreneur[];
   list;
   subscriptions: any = {};
+  public color: number; // declaro variable para darle un valor al evento cilck de html;
 
   constructor(
     private entrepreneurService: EntrepreneureService,
@@ -35,4 +36,14 @@ export class EntrepreneurComponent implements OnInit {
         this.list = list;
       });
   }
+
+  // Declaro método para recoger el evento click de la parte de html
+  public clickEvent() {
+  this.color = 1;
+  console.log('Evento click', this.color);
+
+  }
+
+
+
 }
