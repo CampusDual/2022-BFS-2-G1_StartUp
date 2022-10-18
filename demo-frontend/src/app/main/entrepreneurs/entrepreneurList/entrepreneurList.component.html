@@ -7,7 +7,27 @@
         <ul class="row">
             <li class="col-12 col-md-6 col-lg-3" *ngFor="let entrepreneur of entrepreneurs">
 
-                <app-entrepreneur-card></app-entrepreneur-card>
+
+
+                <div class="cnt-block equal-hight" style="height: 349px;">
+
+                    <button type="button" class="icon-button" (click)="clickEvent()">
+
+                  <img src="https://picsum.photos/200/300" alt="avatar" >
+                  <span ngClass="{correcto}" class="material-icons icon-button__badge">task_alt</span>
+
+                </button>
+
+                    <h3 class=" first-name-last-name "><a routerLink="/entrepreneur-detail">{{entrepreneur.firstName}} {{entrepreneur.lastName}}</a></h3>
+
+                    <p>{{entrepreneur.idProfessionalProfile.typeProfessionalProfile}}</p>
+
+                    <ul class="follow-us clearfix ">
+
+                        <li><a href="{{entrepreneur.linkedinProfile}} "><i class="bi bi-linkedin " aria-hidden="true "></i></a></li>
+
+                    </ul>
+                </div>
             </li>
         </ul>
 

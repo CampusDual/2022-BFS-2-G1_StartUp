@@ -24,12 +24,14 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { CustomMatPaginatorIntl } from './model/custom-mat-paginator';
 import { CoreModule } from './core/core.module';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConfirmationDialogComponent,
-    MatSnackBarComponent
+    MatSnackBarComponent,
+    LandingPageComponent
   ],
   imports: [
     TranslateModule.forRoot({

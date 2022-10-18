@@ -4,11 +4,11 @@ import {  EntrepreneurListComponent } from './entrepreneurList/entrepreneurList.
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
 import { EntrepreneurDetailComponent } from './entrepreneur-detail/entrepreneur-detail.component';
-import { EntrepreneurCardComponent } from './entrepreneur-card/entrepreneur-card.component';
+
 
 
 @NgModule({
-  declarations: [EntrepreneurListComponent, EntrepreneurDetailComponent, EntrepreneurCardComponent ],
+  declarations: [EntrepreneurListComponent, EntrepreneurDetailComponent ],
   imports: [CommonModule, TranslateModule,  RouterModule],
 })
 export class EntrepreneursModule {}
