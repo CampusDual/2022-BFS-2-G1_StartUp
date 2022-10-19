@@ -21,4 +21,11 @@ export const API_CONFIG = {
   //invester API
   urlBaseInvester: environment.adminBaseUrl + '/invester/',
   getInvesters: environment.adminBaseUrl + '/invester/',
+
+  //RangeInvester API
+  urlBaseRange: environment.adminBaseUrl + '/rangeInvester/',
+
+  //ProfessionalProfile API
+  urlProfessionalProfile: environment.adminBaseUrl + '/professionalProfile/',
+
 };

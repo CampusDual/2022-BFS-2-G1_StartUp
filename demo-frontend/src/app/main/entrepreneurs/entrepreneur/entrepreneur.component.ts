@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { TranslateService } from '@ngx-translate/core';
-import { Observable, Observer } from 'rxjs';
 import { Entrepreneur } from 'src/app/model/entrepreneur';
 import { EntrepreneureService } from 'src/app/services/entrepreneur.service';
-import { ConfirmationDialogComponent } from 'src/app/shared/confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-entrepreneur',
