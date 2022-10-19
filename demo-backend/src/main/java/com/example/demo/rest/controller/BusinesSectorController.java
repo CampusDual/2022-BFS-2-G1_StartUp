@@ -22,15 +22,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dto.BusinessSectorDTO;
 import com.example.demo.entity.BusinessSector;
-import com.example.demo.mapper.BusinessSectorMapper;
+import com.example.demo.dto.mapper.BusinessSectorMapper;
 
 import lombok.extern.java.Log;
 
 @Log
 @CrossOrigin(origins = {"http://localhost:4201"})
 @RestController
-@RequestMapping(BusinesSectorContoller.REQUEST_MAPPING)
-public class BusinesSectorContoller {
+@RequestMapping(BusinesSectorController.REQUEST_MAPPING)
+public class BusinesSectorController {
 
     public static final String REQUEST_MAPPING = "businessSector";
 

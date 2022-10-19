@@ -30,7 +30,6 @@ public class InvesterDTO implements Serializable{
 	private RangeInvester idInvesterRange;
 	
 	@NotNull
-	@Column(name = "id_bussines_sector", nullable = false)
 	private BusinessSector idBussinesSector;
 	
 	@NotNull
