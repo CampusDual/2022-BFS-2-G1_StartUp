@@ -1,15 +1,20 @@
 package com.example.demo.dto;
 
-import javax.validation.constraints.NotNull;
-
 import lombok.Data;
 
+import javax.validation.constraints.NotNull;
+import java.io.Serial;
+import java.io.Serializable;
+
 @Data
-public class StartupStateDTO {
+public class StartupStateDTO implements Serializable {
 
-	private Integer id;
+    @Serial
+    private static final long serialVersionUID = -3584451206597739951L;
 
-	@NotNull
-	private String type;
+    private Integer id;
+
+    @NotNull
+    private String type;
 
 }
