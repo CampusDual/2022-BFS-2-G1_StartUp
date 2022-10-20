@@ -3,12 +3,7 @@ package com.example.demo.dto;
 import java.io.Serial;
 import java.io.Serializable;
 
-import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
-import com.example.demo.entity.BusinessSector;
-import com.example.demo.entity.RangeInvester;
 
 import lombok.Data;
 
@@ -27,10 +22,10 @@ public class InvesterDTO implements Serializable{
 	private String email;
 	
 	@NotNull
-	private RangeInvester idInvesterRange;
+	private RangeInvesterDTO idInvesterRange;
 	
 	@NotNull
-	private BusinessSector idBussinesSector;
+	private BusinessSectorDTO idBussinesSector;
 	
 	@NotNull
 	private Integer idStartUpState;

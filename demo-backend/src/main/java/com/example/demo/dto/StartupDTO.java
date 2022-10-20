@@ -4,10 +4,6 @@ import java.util.Date;
 
 import javax.validation.constraints.NotNull;
 
-import com.example.demo.entity.BusinessSector;
-import com.example.demo.entity.Entrepreneur;
-import com.example.demo.entity.StartupState;
-
 import lombok.Data;
 
 @Data
@@ -25,10 +21,10 @@ public class StartupDTO {
 	private String description;
 
 	@NotNull
-	private BusinessSector idBussinesSector;
+	private BusinessSectorDTO idBussinesSector;
 
 	@NotNull
-	private StartupState idStartupState;
+	private StartupStateDTO idStartupState;
 
 	@NotNull
 	private Integer anualInvoicing;
@@ -37,6 +33,6 @@ public class StartupDTO {
 	private Date fundationYear;
 
 	@NotNull
-	private Entrepreneur idEntrepreneur;
+	private EntrepreneurDTO idEntrepreneur;
 
 }

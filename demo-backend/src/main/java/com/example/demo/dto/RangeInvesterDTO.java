@@ -1,12 +1,8 @@
 package com.example.demo.dto;
 
 import java.io.Serializable;
-import java.util.LinkedHashSet;
-import java.util.Set;
 
 import javax.validation.constraints.NotNull;
-
-import com.example.demo.entity.Invester;
 
 import lombok.Data;
 
@@ -19,7 +15,5 @@ public class RangeInvesterDTO implements Serializable{
 	
 	@NotNull
 	private String value;
-	
-	private Set<Invester> investers= new LinkedHashSet<>();
-	
+		
 }

@@ -10,8 +10,10 @@ import lombok.Data;
 
 @Data
 public class ProfessionalProfileDTO implements Serializable {
-    @Serial
+ 
+	@Serial
     private static final long serialVersionUID = 6658827202281092863L;
+   
     @Size(max = 50)
     @NotNull
     private String typeProfessionalProfile;
