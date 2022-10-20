@@ -25,6 +25,7 @@ import { MatPaginatorIntl } from '@angular/material/paginator';
 import { CustomMatPaginatorIntl } from './model/custom-mat-paginator';
 import { CoreModule } from './core/core.module';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     }),
     BrowserModule,
     BrowserAnimationsModule,
+
     AppRoutingModule,
     FormsModule,
     HttpClientModule,

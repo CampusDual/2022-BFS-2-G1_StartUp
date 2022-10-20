@@ -19,10 +19,16 @@
         <nav>
             <h2 class="logo">Start<span>Up</span>!</h2>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#service">Services</a></li>
-                <li><a href="#social">Contact Us</a></li>
+                <li><a href="#about">Home</a></li>
+                <li>
+                    <a (click)="onClick('about')">About Us</a>
+                </li>
+                <li>
+                    <a (click)="onClick('services')">Services</a>
+                </li>
+                <li>
+                    <a (click)="onClick('social')">Contact Us</a>
+                </li>
             </ul>
             <a href="/login" class="btn">Login</a>
         </nav>
@@ -37,8 +43,8 @@
 
     <!----About section start---->
     <section class="about">
-        <div class="main">
-            <img src="img/main-img copy.png">
+        <div class="main" id="about">
+            <img src="/src/app/landing-page/img/main-img.jpg">
             <div class="about-text">
                 <h2>About Us</h2>
                 <h5>The Tinder <span>StartUp!</span></h5>
@@ -49,7 +55,7 @@
     </section>
 
     <!-----service section start----------->
-    <div class="service">
+    <div id="services" class="service">
         <div class="title">
             <h2>Our Services</h2>
         </div>
@@ -103,7 +109,7 @@
     <footer>
         <p>StartUp!</p>
         <p>For more info, contact us...</p>
-        <div class="social">
+        <div class="social" id="social">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-dribbble"></i></a>

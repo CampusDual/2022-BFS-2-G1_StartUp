@@ -14,7 +14,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  //Importo anchorScrolling xa q me funcionen los enlaces en el landingpage.html (no va)
+  imports: [RouterModule.forRoot(routes,{ anchorScrolling: 'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
