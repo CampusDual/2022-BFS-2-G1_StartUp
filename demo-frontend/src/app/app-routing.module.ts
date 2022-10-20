@@ -5,12 +5,15 @@ import { EntrepreneurDetailComponent } from './main/entrepreneurs/entrepreneur-d
 import { LandingPageComponent } from './landing-page/landing-page.component';
 
 const routes: Routes = [
+
   { path: 'login', component: LoginComponent,  pathMatch: 'full'},
+
   { path: '', redirectTo: 'landing-page', pathMatch: 'full' },
   { path: 'contacts', loadChildren: () => import('./main/contacts/contacts.module').then(x => x.ContactsModule) },
   { path: 'entrepreurs', loadChildren: () => import('./main/entrepreneurs/entrepreneurs.module').then(x => x.EntrepreneursModule) },
   { path: 'entrepreneur-detail', component:EntrepreneurDetailComponent },
-  { path: 'landing-page', component:LandingPageComponent }
+  { path: 'landing-page', component:LandingPageComponent },
+
 ];
 
 @NgModule({
