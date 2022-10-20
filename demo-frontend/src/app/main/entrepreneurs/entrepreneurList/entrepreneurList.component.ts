@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { TranslateService } from '@ngx-translate/core';
-import { Observable, Observer } from 'rxjs';
 import { Entrepreneur } from 'src/app/model/entrepreneur';
+import { Invester } from 'src/app/model/invester';
+import { RangeInvester } from 'src/app/model/rangeInvester';
+import { Startup } from 'src/app/model/startup';
 import { EntrepreneureService } from 'src/app/services/entrepreneur.service';
-import { ConfirmationDialogComponent } from 'src/app/shared/confirmation-dialog/confirmation-dialog.component';
+import { InvesterService } from 'src/app/services/invester.service';
+import { RangeInvesterService } from 'src/app/services/range-invester.service';
+import { StartupService } from 'src/app/services/startup.service';
 
 @Component({
   selector: 'app-entrepreneur',
@@ -13,12 +16,18 @@ import { ConfirmationDialogComponent } from 'src/app/shared/confirmation-dialog/
 })
 export class EntrepreneurListComponent implements OnInit {
   entrepreneurs: Entrepreneur[];
+  investers: Invester[];
+  startups: Startup[];
+  rangeInvesterList: RangeInvester[];
   list;
   subscriptions: any = {};
-  public color: number; // declaro variable para darle un valor al evento cilck de html;
+  entrepreneur: any;
 
   constructor(
     private entrepreneurService: EntrepreneureService,
+    private investerService: InvesterService,
+    private startupService: StartupService,
+    private rangeInvesterService: RangeInvesterService,
     private translate: TranslateService
   ) {}
 
@@ -26,15 +35,56 @@ export class EntrepreneurListComponent implements OnInit {
     return 'https://picsum.photos/id/200/300';
   }
   ngOnInit(): void {
-    this.entrepreneurService
-      .getEntrepreneurs()
-      .subscribe((entrepreneur) => (this.entrepreneurs = entrepreneur));
+    this.getAll();
+  }
 
-    this.subscriptions.entrepreneurService = this.entrepreneurService
-      .getData()
-      .subscribe((list) => {
-        this.list = list;
-      });
+  getAll() {
+    this.getEntrepreneurs();
+    this.getAllInvesters();
+    this.getAllStartUps();
+    this.getAllRangeInvester();
+  }
+
+  getEntrepreneurs() {
+    this.entrepreneurService.getEntrepreneurs().subscribe((entrepreneur) => {
+      this.entrepreneurs = entrepreneur;
+      console.log(this.entrepreneurs);
+    });
+  }
+
+  getAllInvesters() {
+    this.investerService.getInvesters().subscribe((invester) => {
+      this.investers = invester;
+      console.log(this.investers);
+    });
+  }
+
+  getAllStartUps() {
+    this.startupService.getStartups().subscribe((startup) => {
+      this.startups = startup;
+      console.log(this.startups);
+    });
+  }
+
+  getAllRangeInvester() {
+    this.rangeInvesterService.getRangeInvester().subscribe((ri) => {
+      this.rangeInvesterList = ri;
+      console.log(this.rangeInvesterList);
+    });
+  }
+
+  deleteEntrepreneur(id: number) {
+    this.entrepreneurService.delete(id).subscribe(
+      (data) => {
+        this.entrepreneurs = this.entrepreneurs.filter(
+          (item) => item.id !== id
+        );
+        console.log('Borrado!');
+      },
+      (error) => {
+        console.log('Erro ó borrar');
+      }
+    );
   }
 
   // Declaro método para recoger el evento click de la parte de html

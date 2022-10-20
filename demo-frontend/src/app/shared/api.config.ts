@@ -7,8 +7,6 @@ export const API_CONFIG = {
   getAllProfiles: environment.adminBaseUrl + '/getAllProfiles',
   getAllSections: environment.adminBaseUrl + '/getAllSections',
 
-
-
   // Contacts API
   getContacts: environment.contactsBaseUrl + '/getContacts',
   getContact: environment.contactsBaseUrl + '/getContact',
@@ -17,6 +15,26 @@ export const API_CONFIG = {
   deleteContact: environment.contactsBaseUrl + '/deleteContact',
 
   // Entrepreneur API
-  getEntrepreneurs: environment.adminBaseUrl + '/entrepreneur'
+  urlBaseEntrepreneurs: environment.adminBaseUrl + '/entrepreneur/',
+  getEntrepreneurs: environment.adminBaseUrl + '/entrepreneur/',
+
+  //invester API
+  urlBaseInvester: environment.adminBaseUrl + '/invester/',
+  getInvesters: environment.adminBaseUrl + '/invester/',
+
+  //RangeInvester API
+  urlBaseRange: environment.adminBaseUrl + '/rangeInvester/',
+
+  //ProfessionalProfile API
+  urlProfessionalProfile: environment.adminBaseUrl + '/professionalProfile/',
+
+  //Startup API
+  urlBaseStartUp: environment.adminBaseUrl + '/startup/',
+
+  //BusinessSector API
+  urlBaseBusinessSector: environment.adminBaseUrl + '/businessSector/',
+
+  //StartupState API
+  urlBaseStartUpState: environment.adminBaseUrl + '/startupState/',
 
 };
