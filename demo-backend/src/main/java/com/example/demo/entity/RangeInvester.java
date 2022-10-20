@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import java.io.Serializable;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -17,10 +18,13 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name="investment_range")
-public class RangeInvester {
+public class RangeInvester implements Serializable{
+
+	private static final long serialVersionUID = -8791975826149815740L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name= "id_inversion_range",nullable= false)
 	private Integer id;
 	
 	@Column(name="value", nullable = false)

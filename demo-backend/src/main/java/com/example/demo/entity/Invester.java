@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,13 +13,14 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-
 import lombok.Data;
 
 @Data
 @Entity
 @Table(name = "invester")
-public class Invester {
+public class Invester implements Serializable{
+
+	private static final long serialVersionUID = -216002265132757796L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

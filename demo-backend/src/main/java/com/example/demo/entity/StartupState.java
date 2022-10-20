@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import java.io.Serializable;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -17,8 +18,10 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name="startup_state")
-public class StartupState {
-	
+public class StartupState implements Serializable{
+
+	private static final long serialVersionUID = -6086539931419312468L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id_startup_state")

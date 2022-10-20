@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -18,7 +19,9 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name="startup")
-public class Startup {
+public class Startup implements Serializable{
+
+	private static final long serialVersionUID = -2109100350354791063L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
