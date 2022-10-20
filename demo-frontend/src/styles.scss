@@ -6,6 +6,9 @@
 
 @import "globals";
 
+@import "~bootstrap/dist/css/bootstrap.css";
+@import '../node_modules/bootstrap-icons/font/bootstrap-icons';
+
 html,
 body {
   height: 100%;
@@ -74,6 +77,6 @@ $theme: mat-light-theme($primary, $accent, $warn);
   color: #ff3d00;
 }
 
-.table{
+.table {
   font-family: 'Manrope', sans-serif;
 }

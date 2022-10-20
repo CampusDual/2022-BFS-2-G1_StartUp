@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>StartUp!</title>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
+</head>
+
+<body>
+    <!----hero Section start---->
+
+    <div class="hero">
+        <nav>
+            <h2 class="logo">Start<span>Up</span>!</h2>
+            <ul>
+
+                <li>
+                    <a (click)="onClick('about')">About Us</a>
+                </li>
+                <li>
+                    <a (click)="onClick('services')">Services</a>
+                </li>
+                <li>
+                    <a (click)="onClick('social')">Contact Us</a>
+                </li>
+            </ul>
+            <a href="/login" class="btn">Login</a>
+        </nav>
+
+        <div class="content">
+            <h4>Hello, we are the Tinder StartUp!</h4>
+            <h1>Coming <span>soon...</span></h1>
+            <h3>We bring you analyzed and qualified opportunities, you decide how, when and with whom.</h3>
+
+        </div>
+    </div>
+
+    <!----About section start---->
+    <section class="about">
+        <div class="main" id="about">
+            <img src="../../assets/images/landing-page1.jpg">
+            <div class="about-text">
+                <h2>About Us</h2>
+                <h5>The Tinder <span>StartUp!</span></h5>
+                <p>We are a company that seeks to change the way of relating between entrepreneurs, investors and startups. Applying the philosophy of agile methodologies in the relationships between the members of the entrepreneurial ecosystem.</p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-----service section start----------->
+    <div id="services" class="service">
+        <div class="title">
+            <h2>Our Services</h2>
+        </div>
+
+        <div class="box">
+            <div class="card">
+                <i class="bi bi-airplane-fill"></i>
+                <h5>Startup</h5>
+                <div class="pra">
+                    <p>
+                        Business structure aimed at achieving a scalable and repeatable business based on technology and innovation.</p>
+
+                    <p style="text-align: center;">
+                        <a class="button" href="/login">Let's Match!</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <i class="bi bi-gem"></i>
+                <h5>Investor</h5>
+                <div class="pra">
+                    <p>Commitment, resilience, flexibility, execution and vision are the most important values ​​that a startup must have according to an investor.</p>
+
+                    <p style="text-align: center;">
+                        <a class="button" href="/login">Let's Match!</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <i class="bi bi-universal-access"></i>
+                <h5>Entrpreneur</h5>
+                <div class="pra">
+                    <p>Entrepreneur is someone who, based on an innovative idea, carries out by their own means a project in which they passionately believe.</p>
+
+                    <p style="text-align: center;">
+                        <a class="button" href="/login">Let's Match!</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!------Contact Me------>
+    <div class="contact-me">
+        <p>Probably the best Tinder in the world</p>
+    </div>
+
+    <!------footer start--------->
+    <footer>
+        <p>StartUp!</p>
+        <p>For more info, contact us...</p>
+        <div class="social" id="social">
+            <a href="https://www.linkedin.com"><i class="bi bi-linkedin " aria-hidden="true "></i></a>
+            <a href="https://www.google.com/gmail/"><i class="bi bi-envelope"></i></a>
+            <a href="https://www.whatsapp.com/"><i class="bi bi-chat-left-text"></i></a>
+        </div>
+        <p class="end">CopyRight By StartUp!</p>
+    </footer>
+</body>
+
+</html>

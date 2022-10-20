@@ -11,10 +11,10 @@ import { StartupService } from 'src/app/services/startup.service';
 
 @Component({
   selector: 'app-entrepreneur',
-  templateUrl: './entrepreneur.component.html',
-  styleUrls: ['./entrepreneur.component.scss'],
+  templateUrl: './entrepreneurList.component.html',
+  styleUrls: ['./entrepreneurList.component.scss'],
 })
-export class EntrepreneurComponent implements OnInit {
+export class EntrepreneurListComponent implements OnInit {
   entrepreneurs: Entrepreneur[];
   investers: Invester[];
   startups: Startup[];
@@ -86,4 +86,9 @@ export class EntrepreneurComponent implements OnInit {
       }
     );
   }
+
+ 
+
+
+
 }
