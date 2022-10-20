@@ -42,8 +42,8 @@ public class Invester implements Serializable{
 
 	@NotNull
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumn(name="id_bussines_sector",nullable=false)
-	private BusinessSector idBussinesSector;
+	@JoinColumn(name="id_business_sector",nullable=false)
+	private BusinessSector idBusinessSector;
 	
 	@NotNull
 	@Column(name = "id_startup_state", nullable = false)

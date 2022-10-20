@@ -21,7 +21,7 @@ public class StartupDTO {
 	private String description;
 
 	@NotNull
-	private BusinessSectorDTO idBussinesSector;
+	private BusinessSectorDTO idBusinessSector;
 
 	@NotNull
 	private StartupStateDTO idStartupState;

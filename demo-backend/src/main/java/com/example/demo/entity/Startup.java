@@ -42,8 +42,8 @@ public class Startup implements Serializable{
 
 	@NotNull
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumn(name="id_bussines_sector",nullable=false)
-	private BusinessSector idBussinesSector;
+	@JoinColumn(name="id_business_sector",nullable=false)
+	private BusinessSector idBusinessSector;
 	
 	@NotNull
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)

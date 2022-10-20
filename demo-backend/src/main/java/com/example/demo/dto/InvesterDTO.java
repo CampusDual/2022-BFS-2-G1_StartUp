@@ -25,7 +25,7 @@ public class InvesterDTO implements Serializable{
 	private RangeInvesterDTO idInvesterRange;
 	
 	@NotNull
-	private BusinessSectorDTO idBussinesSector;
+	private BusinessSectorDTO idBusinessSector;
 	
 	@NotNull
 	private Integer idStartUpState;

@@ -31,10 +31,10 @@ public class BusinessSector implements Serializable{
 	@NotNull
 	private String type;
 	
-	@OneToMany(mappedBy = "idBussinesSector")
+	@OneToMany(mappedBy = "idBusinessSector")
 	private Set<Invester> investers= new LinkedHashSet<>();
 	
-	@OneToMany(mappedBy = "idBussinesSector")
+	@OneToMany(mappedBy = "idBusinessSector")
 	private Set<Startup> bussinesSectors= new LinkedHashSet<>();
 	
 }
