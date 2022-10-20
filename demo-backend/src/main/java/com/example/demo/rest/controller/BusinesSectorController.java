@@ -3,7 +3,6 @@ package com.example.demo.rest.controller;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.example.demo.service.impl.IBusinessSectorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -21,16 +20,17 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dto.BusinessSectorDTO;
+import com.example.demo.dto.mapper.BusinessSectorMapper;
 import com.example.demo.entity.BusinessSector;
-import com.example.demo.mapper.BusinessSectorMapper;
+import com.example.demo.service.IBusinessSectorService;
 
 import lombok.extern.java.Log;
 
 @Log
 @CrossOrigin(origins = {"http://localhost:4201"})
 @RestController
-@RequestMapping(BusinesSectorContoller.REQUEST_MAPPING)
-public class BusinesSectorContoller {
+@RequestMapping(BusinesSectorController.REQUEST_MAPPING)
+public class BusinesSectorController {
 
     public static final String REQUEST_MAPPING = "businessSector";
 

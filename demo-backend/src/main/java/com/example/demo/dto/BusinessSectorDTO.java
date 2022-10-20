@@ -7,6 +7,7 @@ import java.util.Set;
 import javax.validation.constraints.NotNull;
 
 import com.example.demo.entity.Invester;
+import com.example.demo.entity.Startup;
 
 import lombok.Data;
 
@@ -21,5 +22,7 @@ public class BusinessSectorDTO implements Serializable{
 	private String type;
 	
 	private Set<Invester> investers= new LinkedHashSet<>();
+	
+	private Set<Startup> bussinesSectors = new LinkedHashSet<>();
 
 }

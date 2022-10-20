@@ -1,9 +1,8 @@
-package com.example.demo.service;
+package com.example.demo.service.impl;
 
 import java.util.List;
 import java.util.Optional;
 
-import com.example.demo.service.impl.IInvesterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -12,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.Invester;
 import com.example.demo.repository.InvesterRepository;
+import com.example.demo.service.IInvesterService;
 
 
 @Service

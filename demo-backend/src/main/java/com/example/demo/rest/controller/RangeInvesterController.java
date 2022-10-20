@@ -20,22 +20,22 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dto.RangeInvesterDTO;
+import com.example.demo.dto.mapper.RangeInvesterMapper;
 import com.example.demo.entity.RangeInvester;
-import com.example.demo.mapper.RangeInvesterMapper;
-import com.example.demo.service.impl.IRangeInvesterService;
+import com.example.demo.service.IRangeInvesterServiceImpl;
 
 import lombok.extern.java.Log;
 
 @Log
 @CrossOrigin(origins = {"http://localhost:4201"})
 @RestController
-@RequestMapping(RangeInvesterContoller.REQUEST_MAPPING)
-public class RangeInvesterContoller {
+@RequestMapping(RangeInvesterController.REQUEST_MAPPING)
+public class RangeInvesterController {
 
     public static final String REQUEST_MAPPING = "rangeInvester";
 
     @Autowired
-    private IRangeInvesterService rangeInvesterService;
+    private IRangeInvesterServiceImpl rangeInvesterService;
     
     @Autowired
     private RangeInvesterMapper rangeInvesterMapper;

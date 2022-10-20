@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.demo.service.impl;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,10 +11,10 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.RangeInvester;
 import com.example.demo.repository.RangeInvesterRepository;
-import com.example.demo.service.impl.IRangeInvesterService;
+import com.example.demo.service.IRangeInvesterServiceImpl;
 
 @Service
-public class RangeInvesterServiceImpl implements IRangeInvesterService {
+public class RangeInvesterServiceImpl implements IRangeInvesterServiceImpl {
 
     @Autowired
     private RangeInvesterRepository repository;

@@ -20,17 +20,17 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dto.InvesterDTO;
+import com.example.demo.dto.mapper.InvesterMapper;
 import com.example.demo.entity.Invester;
-import com.example.demo.mapper.InvesterMapper;
-import com.example.demo.service.impl.IInvesterService;
+import com.example.demo.service.IInvesterService;
 
 import lombok.extern.java.Log;
 
 @Log
 @CrossOrigin(origins = {"http://localhost:4201"})
 @RestController
-@RequestMapping(InvesterContoller.REQUEST_MAPPING)
-public class InvesterContoller {
+@RequestMapping(InvesterController.REQUEST_MAPPING)
+public class InvesterController {
 
     public static final String REQUEST_MAPPING = "invester";
 

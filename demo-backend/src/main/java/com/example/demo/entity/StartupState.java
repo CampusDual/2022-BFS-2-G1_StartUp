@@ -16,22 +16,19 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="business_sector")
-public class BusinessSector {
-
+@Table(name="startup_state")
+public class StartupState {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id_business_sector")
+	@Column(name="id_startup_state")
 	private Integer id;
 	
-	@Column(name="type_business_sector", nullable = false)
+	@Column(name="type_startup", nullable = false)
 	@NotNull
 	private String type;
 	
-	@OneToMany(mappedBy = "idBussinesSector")
-	private Set<Invester> investers= new LinkedHashSet<>();
-	
-	@OneToMany(mappedBy = "idBussinesSector")
-	private Set<Startup> bussinesSectors= new LinkedHashSet<>();
-	
+	@OneToMany(mappedBy = "idStartupState")
+	private Set<Startup> startups= new LinkedHashSet<>();
+
 }

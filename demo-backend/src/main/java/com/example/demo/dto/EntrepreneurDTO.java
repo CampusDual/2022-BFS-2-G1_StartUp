@@ -4,8 +4,13 @@ import lombok.Data;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import com.example.demo.entity.Startup;
+
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Data
 public class EntrepreneurDTO implements Serializable {
@@ -13,21 +18,22 @@ public class EntrepreneurDTO implements Serializable {
 	@Serial
 	private static final long serialVersionUID = 7666094310092518378L;
 
-	private final Integer id;
+	private Integer id;
 	@Size(max = 50)
 	@NotNull
-	private final String firstName;
+	private String firstName;
 	@Size(max = 50)
 	@NotNull
-	private final String lastName;
+	private String lastName;
 	@Size(max = 50)
 	@NotNull
-	private final String email;
+	private String email;
 	@Size(max = 50)
 	@NotNull
-	private final ProfessionalProfileDTO idProfessionalProfile;
+	private ProfessionalProfileDTO idProfessionalProfile;
 	@Size(max = 100)
 	@NotNull
-	private final String linkedinProfile;
+	private String linkedinProfile;
 
+	private Set<Startup> entrepreneurs = new LinkedHashSet<>();
 }

@@ -1,5 +1,8 @@
 package com.example.demo.entity;
 
+import java.util.LinkedHashSet;
+import java.util.Set;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -39,4 +42,7 @@ public class Entrepreneur {
 	@NotNull
 	@Column(name = "linkedin_profile", nullable = false, length = 100)
 	private String linkedinProfile;
+	
+	@OneToMany(mappedBy = "idEntrepreneur")
+	private Set<Startup> entrepreneurs= new LinkedHashSet<>();
 }
