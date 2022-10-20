@@ -22,7 +22,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.dto.InvesterDTO;
 import com.example.demo.dto.mapper.InvesterMapper;
 import com.example.demo.entity.Invester;
-import com.example.demo.service.IInvesterService;
+import com.example.demo.dto.mapper.InvesterMapper;
+import com.example.demo.service.impl.IInvesterService;
 
 import lombok.extern.java.Log;
 

@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { TranslateService } from '@ngx-translate/core';
-import { Observable, Observer } from 'rxjs';
 import { Entrepreneur } from 'src/app/model/entrepreneur';
 import { EntrepreneureService } from 'src/app/services/entrepreneur.service';
-import { ConfirmationDialogComponent } from 'src/app/shared/confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-entrepreneur',
@@ -15,6 +12,7 @@ export class EntrepreneurComponent implements OnInit {
   entrepreneurs: Entrepreneur[];
   list;
   subscriptions: any = {};
+  entrepreneur: any;
 
   constructor(
     private entrepreneurService: EntrepreneureService,
@@ -25,14 +23,34 @@ export class EntrepreneurComponent implements OnInit {
     return 'https://picsum.photos/id/200/300';
   }
   ngOnInit(): void {
+    this.getAll();
+
+    // probas dos métodos do service
+    //this.deleteEntrepreneur(209);
+
+    // this.entrepreneurService.find(210).subscribe((response) => {
+    //   this.entrepreneur = response;
+    //   console.log(this.entrepreneur)
+    // });
+  }
+
+  getAll() {
     this.entrepreneurService
       .getEntrepreneurs()
       .subscribe((entrepreneur) => (this.entrepreneurs = entrepreneur));
+  }
 
-    this.subscriptions.entrepreneurService = this.entrepreneurService
-      .getData()
-      .subscribe((list) => {
-        this.list = list;
-      });
+  deleteEntrepreneur(id: number) {
+    this.entrepreneurService.delete(id).subscribe(
+      (data) => {
+        this.entrepreneurs = this.entrepreneurs.filter(
+          (item) => item.id !== id
+        );
+        console.log('Borrado!');
+      },
+      (error) => {
+        console.log('Erro ó borrar');
+      }
+    );
   }
 }
