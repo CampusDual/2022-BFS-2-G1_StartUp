@@ -87,12 +87,7 @@ export class EntrepreneurListComponent implements OnInit {
     );
   }
 
-  // Declaro método para recoger el evento click de la parte de html
-  public clickEvent() {
-  this.color = 1;
-  console.log('Evento click', this.color);
-
-  }
+ 
 
 
 
