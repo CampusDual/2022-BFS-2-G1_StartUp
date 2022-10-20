@@ -1,30 +1,19 @@
 package com.example.demo.rest.controller;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
+import com.example.demo.dto.RangeInvesterDTO;
+import com.example.demo.dto.mapper.RangeInvesterMapper;
+import com.example.demo.entity.RangeInvester;
+import com.example.demo.service.IRangeInvesterServiceImpl;
+import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import com.example.demo.dto.RangeInvesterDTO;
-import com.example.demo.dto.mapper.RangeInvesterMapper;
-import com.example.demo.entity.RangeInvester;
-import com.example.demo.service.IRangeInvesterServiceImpl;
-
-import lombok.extern.java.Log;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Log
 @CrossOrigin(origins = {"http://localhost:4201"})
@@ -36,7 +25,7 @@ public class RangeInvesterController {
 
     @Autowired
     private IRangeInvesterServiceImpl rangeInvesterService;
-    
+
     @Autowired
     private RangeInvesterMapper rangeInvesterMapper;
 
@@ -44,21 +33,21 @@ public class RangeInvesterController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public RangeInvesterDTO save(@RequestBody RangeInvesterDTO entrepreneurDTO) {
-    	RangeInvester rangeInvester = rangeInvesterMapper.asEntity(entrepreneurDTO);
+        RangeInvester rangeInvester = rangeInvesterMapper.asEntity(entrepreneurDTO);
         return rangeInvesterMapper.asDTO(rangeInvesterService.save(rangeInvester));
     }
 
 
     @GetMapping("/{id}")
     public RangeInvesterDTO findById(@PathVariable("id") Integer id) {
-    	RangeInvester invester = rangeInvesterService.findById(id).orElse(null);
+        RangeInvester invester = rangeInvesterService.findById(id).orElse(null);
         return rangeInvesterMapper.asDTO(invester);
     }
 
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Integer id) {
-    	rangeInvesterService.deleteById(id);
+        rangeInvesterService.deleteById(id);
     }
 
 

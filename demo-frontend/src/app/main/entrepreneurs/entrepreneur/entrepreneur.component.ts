@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Entrepreneur } from 'src/app/model/entrepreneur';
+import { Invester } from 'src/app/model/invester';
+import { RangeInvester } from 'src/app/model/rangeInvester';
+import { Startup } from 'src/app/model/startup';
 import { EntrepreneureService } from 'src/app/services/entrepreneur.service';
+import { InvesterService } from 'src/app/services/invester.service';
+import { RangeInvesterService } from 'src/app/services/range-invester.service';
+import { StartupService } from 'src/app/services/startup.service';
 
 @Component({
   selector: 'app-entrepreneur',
@@ -10,12 +16,18 @@ import { EntrepreneureService } from 'src/app/services/entrepreneur.service';
 })
 export class EntrepreneurComponent implements OnInit {
   entrepreneurs: Entrepreneur[];
+  investers: Invester[];
+  startups: Startup[];
+  rangeInvesterList: RangeInvester[];
   list;
   subscriptions: any = {};
   entrepreneur: any;
 
   constructor(
     private entrepreneurService: EntrepreneureService,
+    private investerService: InvesterService,
+    private startupService: StartupService,
+    private rangeInvesterService: RangeInvesterService,
     private translate: TranslateService
   ) {}
 
@@ -24,20 +36,41 @@ export class EntrepreneurComponent implements OnInit {
   }
   ngOnInit(): void {
     this.getAll();
-
-    // probas dos métodos do service
-    //this.deleteEntrepreneur(209);
-
-    // this.entrepreneurService.find(210).subscribe((response) => {
-    //   this.entrepreneur = response;
-    //   console.log(this.entrepreneur)
-    // });
   }
 
   getAll() {
-    this.entrepreneurService
-      .getEntrepreneurs()
-      .subscribe((entrepreneur) => (this.entrepreneurs = entrepreneur));
+    this.getEntrepreneurs();
+    this.getAllInvesters();
+    this.getAllStartUps();
+    this.getAllRangeInvester();
+  }
+
+  getEntrepreneurs() {
+    this.entrepreneurService.getEntrepreneurs().subscribe((entrepreneur) => {
+      this.entrepreneurs = entrepreneur;
+      console.log(this.entrepreneurs);
+    });
+  }
+
+  getAllInvesters() {
+    this.investerService.getInvesters().subscribe((invester) => {
+      this.investers = invester;
+      console.log(this.investers);
+    });
+  }
+
+  getAllStartUps() {
+    this.startupService.getStartups().subscribe((startup) => {
+      this.startups = startup;
+      console.log(this.startups);
+    });
+  }
+
+  getAllRangeInvester() {
+    this.rangeInvesterService.getRangeInvester().subscribe((ri) => {
+      this.rangeInvesterList = ri;
+      console.log(this.rangeInvesterList);
+    });
   }
 
   deleteEntrepreneur(id: number) {

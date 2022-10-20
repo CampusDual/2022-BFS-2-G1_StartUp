@@ -28,4 +28,13 @@ export const API_CONFIG = {
   //ProfessionalProfile API
   urlProfessionalProfile: environment.adminBaseUrl + '/professionalProfile/',
 
+  //Startup API
+  urlBaseStartUp: environment.adminBaseUrl + '/startup/',
+
+  //BusinessSector API
+  urlBaseBusinessSector: environment.adminBaseUrl + '/businessSector/',
+
+  //StartupState API
+  urlBaseStartUpState: environment.adminBaseUrl + '/startupState/',
+
 };
