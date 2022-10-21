@@ -24,7 +24,7 @@ public class RangeInvester implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_inversion_range", nullable = false)
+	@Column(name = "id_investment_range", nullable = false)
 	private Integer id;
 	
 	@Column(name="value", nullable = false)

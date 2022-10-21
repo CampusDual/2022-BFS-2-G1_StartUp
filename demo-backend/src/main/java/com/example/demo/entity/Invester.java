@@ -37,7 +37,7 @@ public class Invester implements Serializable{
 
 	@NotNull
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumn(name="id_inversion_range",nullable=false)
+	@JoinColumn(name="id_investment_range",nullable=false)
 	private RangeInvester idInvesterRange;
 
 	@NotNull
