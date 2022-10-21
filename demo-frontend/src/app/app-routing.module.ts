@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { EntrepreneurDetailComponent } from './main/entrepreneurs/entrepreneur-detail/entrepreneur-detail.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import {StadisticslineComponent} from './main/stadisticsline/stadisticsline.component';
+import {StadisticsbarComponent} from './main/stadisticsbar/stadisticsbar.component';
 
 const routes: Routes = [
 
@@ -13,6 +15,11 @@ const routes: Routes = [
   { path: 'entrepreurs', loadChildren: () => import('./main/entrepreneurs/entrepreneurs.module').then(x => x.EntrepreneursModule) },
   { path: 'entrepreneur-detail', component:EntrepreneurDetailComponent },
   { path: 'landing-page', component:LandingPageComponent },
+  { path: 'stadisticsline', component:StadisticslineComponent },
+  { path: 'stadisticsbar', component:StadisticsbarComponent }
+  
+
+  
 
 ];
 

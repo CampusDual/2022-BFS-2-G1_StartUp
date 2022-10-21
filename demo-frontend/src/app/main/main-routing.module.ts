@@ -5,6 +5,8 @@ import { AuthGuard } from '../auth/auth.guard';
 import { ContactsComponent } from './contacts/contacts.component';
 import { EntrepreneurListComponent } from './entrepreneurs/entrepreneurList/entrepreneurList.component';
 import { EntrepreneurDetailComponent } from './entrepreneurs/entrepreneur-detail/entrepreneur-detail.component';
+import { StadisticsComponent } from './stadistics/stadistics.component';
+import{ StadisticslineComponent } from'./stadisticsline/stadisticsline.component';
 
 
 const routes: Routes = [
@@ -35,6 +37,22 @@ const routes: Routes = [
   {
     path: 'entrepreneur-detail',
     component: EntrepreneurDetailComponent,
+    canActivate: [AuthGuard],
+    data: {
+      allowedRoles: ['CONTACTS'],
+    },
+  },
+  {
+    path: 'stadistics',
+    component:StadisticsComponent,
+    canActivate: [AuthGuard],
+    data: {
+      allowedRoles: ['CONTACTS'],
+    },
+  },
+  {
+    path: 'stadisticsline',
+    component:StadisticslineComponent,
     canActivate: [AuthGuard],
     data: {
       allowedRoles: ['CONTACTS'],

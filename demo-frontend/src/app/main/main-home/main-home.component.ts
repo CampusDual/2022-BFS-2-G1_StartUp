@@ -18,13 +18,18 @@ export class MainHomeComponent {
 
   // Example array to be used by chart. This array should be returned by a backend method, with the necessary information
   saleData = [
-    { name: "Enero", value: 105000 },
+    { name: "Enero", value: this.calcular() },
     { name: "Febrero", value: 55000 },
     { name: "Marzo", value: 15000 },
     { name: "Abril", value: 150000 },
     { name: "Mayo", value: 20000 }
   ];
+  //MG prueba
+  calcular():any{
+  //cuantos X hay en un peridodo de tiempo
 
+return 45550;
+  }
   constructor(private idle: Idle, private keepalive: Keepalive, private authService: AuthService) {
 
     // sets an idle timeout of X seconds, for testing purposes.
