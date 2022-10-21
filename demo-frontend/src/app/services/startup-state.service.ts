@@ -13,4 +13,9 @@ export class StartupStateService {
   public getRangeInvester(): Observable<StartupState[]> {
     return this.http.get<StartupState[]>(`${API_CONFIG.urlBaseStartUpState}`);
   }
+
+  getPage(request): Observable<any> {
+    const params = request;
+    return this.http.get(`${API_CONFIG.getStartUpStatePage}`, { params });
+  }
 }

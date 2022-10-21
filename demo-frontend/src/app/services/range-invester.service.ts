@@ -13,4 +13,9 @@ export class RangeInvesterService {
   public getRangeInvester(): Observable<RangeInvester[]> {
     return this.http.get<RangeInvester[]>(`${API_CONFIG.urlBaseRange}`);
   }
+
+  getPage(request): Observable<any> {
+    const params = request;
+    return this.http.get(`${API_CONFIG.getRangePage}`, { params });
+  }
 }
