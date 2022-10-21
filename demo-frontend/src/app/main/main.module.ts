@@ -37,11 +37,17 @@ import { CoreModule } from '../core/core.module';
 import { FilterItemDirective } from './directives/filter-item.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxChartsModule }from '@swimlane/ngx-charts';
+import { StadisticsComponent } from './stadistics/stadistics.component';
+import { StadisticslineComponent } from './stadisticsline/stadisticsline.component';
+import { StadisticsbarComponent } from './stadisticsbar/stadisticsbar.component';
 
 @NgModule({
   declarations: [
     MainHomeComponent,
     FilterItemDirective,
+    StadisticsComponent,
+    StadisticslineComponent,
+    StadisticsbarComponent,
   ],
   imports: [
     TranslateModule,
