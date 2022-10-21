@@ -32,8 +32,8 @@ public class RangeInvesterController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public RangeInvesterDTO save(@RequestBody RangeInvesterDTO entrepreneurDTO) {
-        RangeInvester rangeInvester = rangeInvesterMapper.asEntity(entrepreneurDTO);
+    public RangeInvesterDTO save(@RequestBody RangeInvesterDTO rangeInvesterDTO) {
+        RangeInvester rangeInvester = rangeInvesterMapper.asEntity(rangeInvesterDTO);
         return rangeInvesterMapper.asDTO(rangeInvesterService.save(rangeInvester));
     }
 
