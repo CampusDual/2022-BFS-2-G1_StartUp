@@ -1,4 +1,58 @@
 {
+    "landing": {
+        "sp": "Sp",
+        "gl": "Ga",
+        "en": "En",
+
+        "aboutus": "About Us",
+        "services": "Services",
+        "contact": "Contact Us",
+        "loger": "Login",
+        "content": {
+            "h4": "Hello, we are the Tinder StartUp!",
+            "h1": "Coming",
+            "span": "soon...",
+            "h3": "We bring you analyzed and qualified opportunities, you decide how, when and with whom."
+        },
+        "about": {
+            "h2": "About Us",
+            "h5": "The Tinder",
+            "span": "StartUp!",
+            "p": "We are a company that seeks to change the way of relating between entrepreneurs, investors and startups. Applying the philosophy of agile methodologies in the relationships between the members of the entrepreneurial ecosystem."
+        },
+        "service": {
+            "h2": "Our Services",
+
+            "startup": {
+                "h5": "Startup",
+                "p": "Business structure aimed at achieving a scalable and repeatable business based on technology and innovation.",
+                "a": "Let's Match!"
+            },
+
+            "investor": {
+                "h5": "Investor",
+                "p": "Commitment, resilience, flexibility, execution and vision are the most important values ​​that a startup must have according to an investor.",
+                "a": "Let's Match!"
+            },
+            "entrepreneur": {
+                "h5": "Entrepreneur",
+                "p": "Entrepreneur is someone who, based on an innovative idea, carries out by their own means a project in which they passionately believe.",
+                "a": "Let's Match!"
+            }
+
+        },
+        "slogan": "Probably the best Tinder in the world!",
+
+        "footer": {
+            "title": "StartUp!",
+            "p": "For more info, contact us...",
+            "end": "CopyRight By StartUp!"
+        }
+
+
+    },
+
+
     "login": {
         "user": "User",
         "password": "Password",
