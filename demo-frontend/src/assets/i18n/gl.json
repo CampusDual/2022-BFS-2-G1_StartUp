@@ -1,4 +1,58 @@
 {
+    "landing": {
+
+        "sp": "Es",
+        "gl": "Ga",
+        "en": "In",
+
+        "aboutus": "Sobre nos",
+        "services": "Servizos",
+        "contact": "Contato",
+        "loger": "Acceso",
+        "content": {
+            "h4": "Ola, Benvidos o Tinder StartUp!",
+            "h1": "Chegando",
+            "span": "axiña...",
+            "h3": "Achegámosche oportunidades analizadas e cualificadas, ti decides como, cando e con quen."
+        },
+        "about": {
+
+            "h2": "Sobre nos",
+            "h5": "A rede social das",
+            "span": "StartUp!",
+            "p": "Somos unha empresa que busca cambiala maneira de relacionarse entre os emprendedores, inversores e startups. Aplicando a filosofía das metodoloxías áxiles nas relacións entre os membros do ecosistema emprendedor."
+
+        },
+        "service": {
+            "h2": "Os nosos Servizos",
+
+            "startup": {
+                "h5": "Startup",
+                "p": "Estrutura empresarial orientada a conseguir un negocio escalable e repetible baseado na tecnoloxía e a innovación.",
+                "a": "Imos coincidir!"
+            },
+
+            "investor": {
+                "h5": "Inversor",
+                "p": "Compromiso, resiliencia, flexibilidade, execución e visión son o máis importante que debe ter unha startup segundo un investidor.",
+                "a": "Imos coincidir!"
+            },
+            "entrepreneur": {
+                "h5": "Emprendedor",
+                "p": "Emprendedor é aquel que, cunha idea innovadora, leva a cabo polos seus propios medios un proxecto no que cre con paixón.",
+                "a": "Imos coincidir!"
+            }
+
+
+        },
+        "slogan": "Probablemente a mellor rede social do mundo!",
+        "footer": {
+            "title": "StartUp!",
+            "p": "Para máis información, contacte connosco...",
+            "end": "Dereitos de autor de StartUp!"
+        }
+
+    },
     "login": {
         "user": "Usuario",
         "password": "Contrasinal",

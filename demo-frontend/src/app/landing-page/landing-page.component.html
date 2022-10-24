@@ -13,6 +13,7 @@
 </head>
 
 <body>
+
     <!----hero Section start---->
 
     <div class="hero">
@@ -21,22 +22,36 @@
             <ul>
 
                 <li>
-                    <a (click)="onClick('about')">About Us</a>
+                    <a (click)="onClick('about')">{{ 'landing.aboutus' | translate}}</a>
                 </li>
                 <li>
-                    <a (click)="onClick('services')">Services</a>
+                    <a (click)="onClick('services')">{{ 'landing.services' | translate}}</a>
                 </li>
                 <li>
-                    <a (click)="onClick('social')">Contact Us</a>
+                    <a (click)="onClick('social')">{{ 'landing.contact' | translate }}</a>
                 </li>
             </ul>
-            <a href="/login" class="btn">Login</a>
+
+
+            <li>
+                <a id="btn-language" mat-menu-item (click)="toogleLanguage('es')">
+                    <span>{{ 'landing.sp' | translate }}</span>
+                </a>
+                <a id="btn-language" mat-menu-item (click)="toogleLanguage('gl')">
+                    <span>{{ 'landing.gl' | translate }}</span>
+                </a>
+                <a id="btn-language" mat-menu-item (click)="toogleLanguage('en')">
+                    <span>{{ 'landing.en' | translate }}</span>
+                </a>
+
+            </li>
+            <a href="/login" class="btn">{{ 'landing.loger' | translate }}</a>
         </nav>
 
         <div class="content">
-            <h4>Hello, we are the Tinder StartUp!</h4>
-            <h1>Coming <span>soon...</span></h1>
-            <h3>We bring you analyzed and qualified opportunities, you decide how, when and with whom.</h3>
+            <h4>{{'landing.content.h4' | translate}}</h4>
+            <h1>{{'landing.content.h1' | translate }} <span>{{'landing.content.span' | translate }}</span></h1>
+            <h3>{{'landing.content.h3' | translate}}</h3>
 
         </div>
     </div>
@@ -46,9 +61,9 @@
         <div class="main" id="about">
             <img src="../../assets/images/landing-page1.jpg">
             <div class="about-text">
-                <h2>About Us</h2>
-                <h5>The Tinder <span>StartUp!</span></h5>
-                <p>We are a company that seeks to change the way of relating between entrepreneurs, investors and startups. Applying the philosophy of agile methodologies in the relationships between the members of the entrepreneurial ecosystem.</p>
+                <h2>{{'landing.about.h2' | translate}}</h2>
+                <h5>{{'landing.about.h5' | translate}} <span>{{'landing.about.span' | translate}}</span></h5>
+                <p>{{'landing.about.p' | translate}}</p>
 
             </div>
         </div>
@@ -57,43 +72,42 @@
     <!-----service section start----------->
     <div id="services" class="service">
         <div class="title">
-            <h2>Our Services</h2>
+            <h2>{{'landing.service.h2' | translate}}</h2>
         </div>
 
         <div class="box">
             <div class="card">
-                <i class="bi bi-airplane-fill"></i>
-                <h5>Startup</h5>
+                <i class="fas fa-rocket"></i>
+                <h5>{{'landing.service.startup.h5' | translate}}</h5>
                 <div class="pra">
-                    <p>
-                        Business structure aimed at achieving a scalable and repeatable business based on technology and innovation.</p>
+                    <p>{{'landing.service.startup.p' | translate}}</p>
 
                     <p style="text-align: center;">
-                        <a class="button" href="/login">Let's Match!</a>
+                        <a class="button" href="/login">{{'landing.service.startup.a' | translate}}</a>
                     </p>
                 </div>
             </div>
 
             <div class="card">
-                <i class="bi bi-gem"></i>
-                <h5>Investor</h5>
+                <i class="fas fa-hand-holding-usd"></i>
+                <h5>{{'landing.service.investor.h5' | translate}}</h5>
                 <div class="pra">
-                    <p>Commitment, resilience, flexibility, execution and vision are the most important values ​​that a startup must have according to an investor.</p>
+                    <p>{{'landing.service.investor.p' | translate}}</p>
 
                     <p style="text-align: center;">
-                        <a class="button" href="/login">Let's Match!</a>
+                        <a class="button" href="/login">{{'landing.service.investor.a' | translate}}</a>
                     </p>
                 </div>
             </div>
 
             <div class="card">
-                <i class="bi bi-universal-access"></i>
-                <h5>Entrpreneur</h5>
+                <i class="fas fa-users"></i>
+                <h5>{{'landing.service.entrepreneur.h5' | translate}}</h5>
                 <div class="pra">
-                    <p>Entrepreneur is someone who, based on an innovative idea, carries out by their own means a project in which they passionately believe.</p>
+                    <p>{{'landing.service.entrepreneur.p' | translate}}</p>
 
                     <p style="text-align: center;">
-                        <a class="button" href="/login">Let's Match!</a>
+                        <a class="button" href="/login">{{'landing.service.entrepreneur.a' | translate}}</a>
                     </p>
                 </div>
             </div>
@@ -102,19 +116,19 @@
 
     <!------Contact Me------>
     <div class="contact-me">
-        <p>Probably the best Tinder in the world</p>
+        <p>{{'landing.slogan' | translate}}</p>
     </div>
 
     <!------footer start--------->
     <footer>
-        <p>StartUp!</p>
-        <p>For more info, contact us...</p>
+        <p>{{'landing.footer.title' | translate}}</p>
+        <p>{{'landing.footer.p' | translate}}</p>
         <div class="social" id="social">
             <a href="https://www.linkedin.com"><i class="bi bi-linkedin " aria-hidden="true "></i></a>
             <a href="https://www.google.com/gmail/"><i class="bi bi-envelope"></i></a>
             <a href="https://www.whatsapp.com/"><i class="bi bi-chat-left-text"></i></a>
         </div>
-        <p class="end">CopyRight By StartUp!</p>
+        <p class="end">{{'landing.footer.end' | translate}}</p>
     </footer>
 </body>
 
