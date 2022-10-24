@@ -35,7 +35,15 @@ export class EntrepreneurListComponent implements OnInit {
     return 'https://picsum.photos/id/200/300';
   }
   ngOnInit(): void {
-    this.getAll();
+    /**
+     * Probas de métodos do service
+     */
+  // this.getAll();
+  /**
+   * Probas da paginación
+   */
+   // this.getEntreprenuerPage({page:"0", size: "4"})
+   // this.getStartUpPage({page:"0", size: "4"})
   }
 
   getAll() {
@@ -87,7 +95,21 @@ export class EntrepreneurListComponent implements OnInit {
     );
   }
 
- 
+  private getEntreprenuerPage(request) {
+    this.entrepreneurService.getPage(request)
+    .subscribe((p) => {
+      this.entrepreneur = p;
+      console.log(this.entrepreneur)
+    });
+}
+
+private getStartUpPage(request) {
+  this.startupService.getPage(request)
+  .subscribe((p) => {
+    this.startups = p;
+    console.log(this.startups)
+  });
+}
 
 
 

@@ -27,6 +27,7 @@ import { CoreModule } from './core/core.module';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

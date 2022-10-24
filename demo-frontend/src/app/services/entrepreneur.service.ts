@@ -37,4 +37,9 @@ export class EntrepreneureService {
   delete(id: number) {
     return this.http.delete(`${API_CONFIG.urlBaseEntrepreneurs}` + id);
   }
+
+  getPage(request): Observable<any> {
+    const params = request;
+    return this.http.get(`${API_CONFIG.getEntrepreneurPage}`, { params });
+  }
 }

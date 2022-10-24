@@ -15,4 +15,9 @@ export class ProfessionalProfileService {
       `${API_CONFIG.urlProfessionalProfile}`
     );
   }
+
+  getPage(request): Observable<any> {
+    const params = request;
+    return this.http.get(`${API_CONFIG.getPPage}`, { params });
+  }
 }
