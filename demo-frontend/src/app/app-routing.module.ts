@@ -5,6 +5,7 @@ import { EntrepreneurDetailComponent } from './main/entrepreneurs/entrepreneur-d
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import {StadisticslineComponent} from './main/stadisticsline/stadisticsline.component';
 import {StadisticsbarComponent} from './main/stadisticsbar/stadisticsbar.component';
+import { InvestersComponent } from './main/investers/investers.component';
 
 const routes: Routes = [
 
@@ -12,14 +13,15 @@ const routes: Routes = [
 
   { path: '', redirectTo: 'landing-page', pathMatch: 'full' },
   { path: 'contacts', loadChildren: () => import('./main/contacts/contacts.module').then(x => x.ContactsModule) },
+  { path: 'investers', component:InvestersComponent},
   { path: 'entrepreurs', loadChildren: () => import('./main/entrepreneurs/entrepreneurs.module').then(x => x.EntrepreneursModule) },
   { path: 'entrepreneur-detail', component:EntrepreneurDetailComponent },
   { path: 'landing-page', component:LandingPageComponent },
   { path: 'stadisticsline', component:StadisticslineComponent },
   { path: 'stadisticsbar', component:StadisticsbarComponent }
-  
 
-  
+
+
 
 ];
 

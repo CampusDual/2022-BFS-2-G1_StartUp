@@ -40,6 +40,7 @@ import { NgxChartsModule }from '@swimlane/ngx-charts';
 import { StadisticsComponent } from './stadistics/stadistics.component';
 import { StadisticslineComponent } from './stadisticsline/stadisticsline.component';
 import { StadisticsbarComponent } from './stadisticsbar/stadisticsbar.component';
+import { InvestersComponent } from './investers/investers.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { StadisticsbarComponent } from './stadisticsbar/stadisticsbar.component'
     StadisticsComponent,
     StadisticslineComponent,
     StadisticsbarComponent,
+    InvestersComponent,
   ],
   imports: [
     TranslateModule,

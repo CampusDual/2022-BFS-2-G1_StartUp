@@ -67,6 +67,7 @@
     "menu": {
         "home": "Home",
         "contacts": "Contacts",
+        "investers": "Investors",
         "entrepreneur": "Entrepreneurs",
         "stadistics": "Stadistics",
         "logout": "Logout"
@@ -150,26 +151,26 @@
     "emailpattern": "The email format is not correct",
     "stadisticsline": {
         "invoicing": "Invoicing",
-        "year":"Year",
-        "legend":"Legend",
-        "return":"Return"
+        "year": "Year",
+        "legend": "Legend",
+        "return": "Return"
     },
     "stadisticsbar": {
-       "months": "Months",
-       "inscriptions":"Inscriptions",
-       "legend":"Legend",
-       "return":"Return",
-       "junuary":"Junuary",
-       "february":"February",
-       "march":"March",
-       "april":"April",
-       "may":"May",
-       "june":"June",
-       "july":"July",
-       "august":"August",
-       "september":"September",
-       "octuber":"Octuber",
-       "november":"November",
-       "december":"December"
-   }
+        "months": "Months",
+        "inscriptions": "Inscriptions",
+        "legend": "Legend",
+        "return": "Return",
+        "junuary": "Junuary",
+        "february": "February",
+        "march": "March",
+        "april": "April",
+        "may": "May",
+        "june": "June",
+        "july": "July",
+        "august": "August",
+        "september": "September",
+        "octuber": "Octuber",
+        "november": "November",
+        "december": "December"
+    }
 }
