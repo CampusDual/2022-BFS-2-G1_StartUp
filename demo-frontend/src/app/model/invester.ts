@@ -4,5 +4,5 @@ export class Invester {
   email: string;
   idInvesterRange: any;
   idBussinesSector: any;
-  idStartUpState: number;
+  idStartUpState: any;
 }
