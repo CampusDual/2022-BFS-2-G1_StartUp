@@ -33,5 +33,9 @@ public class StartupState implements Serializable{
 	
 	@OneToMany(mappedBy = "idStartupState")
 	private Set<Startup> startups= new LinkedHashSet<>();
+	
+	@OneToMany(mappedBy = "idStartUpState")
+	private Set<Invester> investers= new LinkedHashSet<>();
+
 
 }

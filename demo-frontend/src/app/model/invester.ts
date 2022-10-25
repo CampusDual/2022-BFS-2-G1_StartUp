@@ -3,6 +3,6 @@ export class Invester {
   name?: string;
   email?: string;
   idInvesterRange?: any;
-  idBussinesSector?: any;
-  idStartUpState?: number;
+  idBusinessSector?: any;
+  idStartUpState?: any;
 }
