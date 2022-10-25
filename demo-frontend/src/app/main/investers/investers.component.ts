@@ -36,11 +36,36 @@ export class InvestersComponent implements OnInit {
 
     });
   }
-
   setActiveInvester(invester: Invester, index: number): void {
     this.currentInvester = invester;
     this.currentIndex = index;
   }
+
+  refreshInvesters(): void {
+    this.retrieveInvesters();
+    this.currentInvester = {};
+    this.currentIndex = -1;
+  }
+
+  removeInvester(id: any): void {
+
+    console.log(id);
+
+    this.investerService.delete(id).subscribe({
+
+next:(res) => {
+  console.log(res);
+  this.refreshInvesters();
+},
+error: (e) => console.error(e)
+    });
+
+
+
+
+}
+
+
 
 
 
