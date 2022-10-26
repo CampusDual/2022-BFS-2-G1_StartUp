@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { InvesterService } from 'src/app/services/invester.service';
 import { Invester } from '../../model/invester';
+import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
+import { DeleteModalComponent } from './delete-modal/delete-modal.component';
+
+
 
 @Component({
   selector: 'app-investers',
@@ -9,6 +13,8 @@ import { Invester } from '../../model/invester';
 })
 export class InvestersComponent implements OnInit {
 
+  modalRef: MdbModalRef<DeleteModalComponent> | null = null;
+
   investers?: Invester[];
   currentInvester: Invester = {};
   currentIndex = 1;
@@ -16,9 +22,24 @@ export class InvestersComponent implements OnInit {
 
 
 
-  constructor(private investerService: InvesterService) { }
+  constructor(private investerService: InvesterService, private modalService: MdbModalService) { }
 
+  openModal(id: any) {
 
+    this.modalRef = this.modalService.open(DeleteModalComponent, {
+
+      data: { title: 'Eliminar',
+      deleteId: id
+
+    },
+
+    });
+
+  }
+  close():void{
+    const closeMessage='Modal closed';
+    this.modalRef.close(closeMessage);
+  }
 
   ngOnInit(): void {
     this.retrieveInvesters();

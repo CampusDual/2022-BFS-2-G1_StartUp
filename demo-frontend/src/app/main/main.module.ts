@@ -41,6 +41,7 @@ import { StadisticsComponent } from './stadistics/stadistics.component';
 import { StadisticslineComponent } from './stadisticsline/stadisticsline.component';
 import { StadisticsbarComponent } from './stadisticsbar/stadisticsbar.component';
 import { InvestersComponent } from './investers/investers.component';
+import { DeleteModalComponent } from './investers/delete-modal/delete-modal.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { InvestersComponent } from './investers/investers.component';
     StadisticslineComponent,
     StadisticsbarComponent,
     InvestersComponent,
+    DeleteModalComponent,
   ],
   imports: [
     TranslateModule,
