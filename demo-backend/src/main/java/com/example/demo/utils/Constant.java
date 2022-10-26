@@ -55,6 +55,10 @@ public class Constant {
 	public static final String RESPONSE_CODE = "responseCode";
 	public static final String ERROR = "errors";
 	public static final String PHONE_ERROR = "contacts_phone_key";
+	
+	// pagination error
+	public static final String INVESTER_ID_ERROR = "INVESTER_ID_ERROR";
+	public static final String INVESTER_EMAIL_ERROR = "INVESTER_EMAIL_ERROR";
 
 	// Invester error
 	public static final String INVESTER_ID_REQUIRED = "INVESTER_ID_REQUIRED";
@@ -63,7 +67,10 @@ public class Constant {
 	public static final String INVESTER_RANGE_REQUIRED = "INVESTER_RANGE_REQUIRED";
 	public static final String INVESTER_BUSINESS_SECTOR_REQUIRED = "INVESTER_BUSINESS_SECTOR_REQUIRED";
 	public static final String INVESTER_STARTUP_STATE_REQUIRED = "INVESTER_STARTUP_STATE_REQUIRED";
-
+	public static final String INVESTER_NOT_EXISTS = "CONTACT_NOT_EXISTS";
+	public static final String INVESTER_ALREADY_EXISTS = "INVESTER_ALREADY_EXISTS";
+	public static final String INVESTER_EMAIL_INVALID = "EMAIL_INVALID";
+	
 	// Invester message
 	public static final String INVESTER_CREATE_SUCCESS = "INVESTER_CREATE_SUCCESS";
 	public static final String INVESTER_NOT_CREATED = "INVESTER_NOT_CREATED";
