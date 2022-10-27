@@ -1,26 +1,19 @@
 package com.example.demo.entity;
 
+import lombok.Data;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-
-import lombok.Data;
-
 @Data
 @Entity
-@Table(name="startup_state")
-public class StartupState implements Serializable{
+@Table(name = "startup_state")
+public class StartupState implements Serializable {
 
-	private static final long serialVersionUID = -6086539931419312468L;
+    private static final long serialVersionUID = -6086539931419312468L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,6 +29,5 @@ public class StartupState implements Serializable{
 	
 	@OneToMany(mappedBy = "idStartUpState")
 	private Set<Invester> investers= new LinkedHashSet<>();
-
 
 }

@@ -3,7 +3,11 @@ package com.example.demo.dto;
 import java.io.Serial;
 import java.io.Serializable;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+
+import com.example.demo.utils.Constant;
 
 import lombok.Data;
 
@@ -15,19 +19,20 @@ public class InvesterDTO implements Serializable{
 
 	private Integer id;
 
-	@NotNull
+	@NotEmpty(message = Constant.INVESTER_NAME_REQUIRED)
 	private String name;
 
-	@NotNull
+	@Email(message= Constant.INVESTER_EMAIL_INVALID)
+	@NotEmpty(message = Constant.INVESTER_EMAIL_REQUIRED)
 	private String email;
 	
-	@NotNull
+	@NotNull(message = Constant.INVESTER_RANGE_REQUIRED)
 	private RangeInvesterDTO idInvesterRange;
 	
-	@NotNull
+	@NotNull(message = Constant.INVESTER_BUSINESS_SECTOR_REQUIRED)
 	private BusinessSectorDTO idBusinessSector;
 	
-	@NotNull
+	@NotNull(message = Constant.INVESTER_STARTUP_STATE_REQUIRED)
 	private StartupStateDTO idStartUpState;
 
 }

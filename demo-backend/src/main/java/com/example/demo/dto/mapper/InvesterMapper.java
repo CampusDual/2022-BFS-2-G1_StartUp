@@ -1,15 +1,23 @@
 package com.example.demo.dto.mapper;
 
 
+import java.util.List;
+
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
+import org.mapstruct.factory.Mappers;
 
 import com.example.demo.dto.InvesterDTO;
 import com.example.demo.entity.Invester;
 
-@Mapper(componentModel = "spring", uses = ReferenceMapper.class)
-public interface InvesterMapper extends GenericMapper<Invester, InvesterDTO> {
-    @Override
-    @Mapping(target = "id")
-    Invester asEntity(InvesterDTO dto);
+@Mapper
+public interface InvesterMapper {
+
+	InvesterMapper INSTANCE = Mappers.getMapper(InvesterMapper.class);
+
+    InvesterDTO investerToInvesterDto(Invester investor);
+
+    List<InvesterDTO> investerToInvesterDtoList(List<Invester> investors);
+
+    Invester investerDTOtoInvester(InvesterDTO investerDTO);
+
 }

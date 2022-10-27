@@ -1,65 +1,73 @@
 package com.example.demo.service.impl;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.borjaglez.springify.repository.filter.impl.AnyPageFilter;
+import com.borjaglez.springify.repository.specification.SpecificationBuilder;
+import com.example.demo.dto.InvesterDTO;
+import com.example.demo.dto.mapper.InvesterMapper;
 import com.example.demo.entity.Invester;
 import com.example.demo.repository.InvesterRepository;
+import com.example.demo.rest.response.DataSourceRESTResponse;
+import com.example.demo.service.AbstractDemoService;
 import com.example.demo.service.IInvesterService;
 
-
 @Service
-public class InvesterServiceImpl implements IInvesterService {
+public class InvesterServiceImpl extends AbstractDemoService implements IInvesterService {
 
-    @Autowired
-    private InvesterRepository repository;
+	@Autowired
+	private InvesterRepository investerRepository;
 
-    @Override
-    public Invester save(Invester entity) {
-        return repository.save(entity);
-    }
+	@Override
+	public InvesterDTO getInvester(Integer id) {
+		Invester invester = investerRepository.findById(id).orElse(null);
+		return InvesterMapper.INSTANCE.investerToInvesterDto(invester);
+	}
 
-    @Override
-    public List<Invester> save(List<Invester> entities) {
-        return (List<Invester>) repository.saveAll(entities);
-    }
+	@Override
+	@Transactional(readOnly = true)
+	public DataSourceRESTResponse<List<InvesterDTO>> getInvesters(AnyPageFilter pageFilter) {
+		checkInputParams(pageFilter);
+		Page<Invester> investers = SpecificationBuilder.selectDistinctFrom(investerRepository).where(pageFilter)
+				.findAll(pageFilter);
+		DataSourceRESTResponse<List<InvesterDTO>> datares = new DataSourceRESTResponse<>();
+		List<InvesterDTO> contactsDTO = InvesterMapper.INSTANCE.investerToInvesterDtoList(investers.getContent());
+		datares.setTotalElements((int) investers.getTotalElements());
+		datares.setData(contactsDTO);
+		return datares;
+	}
 
-    @Override
-    public void deleteById(Integer id) {
-        repository.deleteById(id);
-    }
+	@Override
+	@Transactional
+	public InvesterDTO createInvester(InvesterDTO createInvesterRequest) {
+		Invester invester = InvesterMapper.INSTANCE.investerDTOtoInvester(createInvesterRequest);
+		Invester newInvester = investerRepository.save(invester);
+		return InvesterMapper.INSTANCE.investerToInvesterDto(newInvester);
+	}
 
-    @Override
-    public Optional<Invester> findById(Integer id) {
-        return repository.findById(id);
-    }
+	@Override
+	@Transactional
+	public Integer deleteInvester(Integer id) {
+		investerRepository.deleteById(id);
+		return id;
 
-    @Override
-    public List<Invester> findAll() {
-        return (List<Invester>) repository.findAll();
-    }
+	}
 
-    @Override
-    public Page<Invester> findAll(Pageable pageable) {
-        Page<Invester> entityPage = repository.findAll(pageable);
-        List<Invester> entities = entityPage.getContent();
-        return new PageImpl<>(entities, pageable, entityPage.getTotalElements());
-    }
+	@Override
+	public List<InvesterDTO> findAll() {
+		List<Invester> investerList = (List<Invester>) investerRepository.findAll();
+		return InvesterMapper.INSTANCE.investerToInvesterDtoList(investerList);
+	}
 
-    @Override
-    public Invester update(Invester entity, Integer id) {
-        Optional<Invester> optional = findById(id);
-        if (optional.isPresent()) {
-            return save(entity);
-        }
-        return null;
-    }
-
-
+	@Override
+	public Integer editInvester(InvesterDTO editInvesterRequest) {
+		Invester mappedInvester = InvesterMapper.INSTANCE.investerDTOtoInvester(editInvesterRequest);
+		Invester editInvester = investerRepository.save(fromEditInvesterRequest(mappedInvester));
+		return editInvester.getId();
+	}
 }
