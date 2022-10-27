@@ -64,10 +64,12 @@ export class EditInversorComponent implements OnInit {
 
   save() {
     const newInversor: Inversor = Object.assign({}, this.inversorForm.value);
+    //para saber se os IDs se pasanse como int
+    console.log( this.inversorForm.value)
     if (newInversor.id) {
       this.inversorService.editInversor(newInversor).subscribe((response) => {
         this.redirectList(response);
-      });
+             });
     } else {
       this.inversorService.createInversor(newInversor).subscribe((response) => {
         this.redirectList(response);

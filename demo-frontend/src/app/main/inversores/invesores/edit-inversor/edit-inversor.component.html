@@ -1,38 +1,33 @@
 <form [formGroup]="inversorForm" (ngSubmit)="save()" class="row g-3">
-  <div class="col-auto">
+  <div class="col-6">
     <label for="inputEmail4" class="form-label">Email</label>
-    <input formControlName="email" type="email" class="form-control" id="inputEmail4">
+    <input formControlName="email" type="email" placeholder="{{ 'table.contacts.email' | translate }}"
+      class="form-control" id="inputEmail4">
   </div>
-  <div class="col-auto">
+  <div class="col-6">
     <label for="inputPassword4" class="form-label">Name</label>
     <input type="text" class="form-control" placeholder="{{ 'table.contacts.name' | translate }}" formControlName="name"
-      name="contact-name" required>
+      name="invester-name" required>
   </div>
-  <div class="col-auto">
+  <div class="col-3">
     <label for="inputIR" class="form-label">Investor Range</label>
-    <select id="inputIR" class="form-select">
-      <option selected>Choose...</option>
-      <option>...</option>
-      <option>1</option>
+    <select id="inputIR" class="form-select" formControlName="idInvesterRange">
+      <option [ngValue]="1">1</option>
     </select>
   </div>
-  <div class="col-auto">
+  <div class="col-3">
     <label for="inputBS" class="form-label">Business Sector</label>
-    <select id="inputBS" class="form-select">
-      <option selected>Choose...</option>
-      <option>...</option>
-      <option>1</option>
+    <select id="inputBS" class="form-select" formControlName="idBusinessSector">
+      <option [ngValue]="1">1</option>
     </select>
   </div>
-  <div class="col-auto">
+  <div class="col-3">
     <label for="inputState" class="form-label">State</label>
-    <select id="inputState" class="form-select">
-      <option selected>Choose...</option>
-      <option>...</option>
-      <option>1</option>
+    <select id="inputState" class="form-select" formControlName="idInvesterRange">
+      <option [ngValue]="1">1</option>
     </select>
   </div>
-  <div class="d-grid gap-2 col-6 mx-auto">
+  <div class="mb-3">
     <button type="submit" class="btn btn-primary" [disabled]="!inversorForm.valid">{{ 'button.save' | translate
       }}</button>
   </div>
