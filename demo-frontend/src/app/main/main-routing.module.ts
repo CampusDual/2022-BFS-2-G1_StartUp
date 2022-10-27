@@ -7,9 +7,8 @@ import { EntrepreneurListComponent } from './entrepreneurs/entrepreneurList/entr
 import { EntrepreneurDetailComponent } from './entrepreneurs/entrepreneur-detail/entrepreneur-detail.component';
 import { StadisticsComponent } from './stadistics/stadistics.component';
 import { InvestersComponent } from './investers/investers.component';
-import{ StadisticslineComponent } from'./stadisticsline/stadisticsline.component';
+import { StadisticslineComponent } from './stadisticsline/stadisticsline.component';
 import { InvesoresComponent } from './inversores/invesores/invesores.component';
-
 
 const routes: Routes = [
   {
@@ -54,7 +53,7 @@ const routes: Routes = [
   },
   {
     path: 'stadistics',
-    component:StadisticsComponent,
+    component: StadisticsComponent,
     canActivate: [AuthGuard],
     data: {
       allowedRoles: ['CONTACTS'],
@@ -62,21 +61,20 @@ const routes: Routes = [
   },
   {
     path: 'stadisticsline',
-    component:StadisticslineComponent,
+    component: StadisticslineComponent,
     canActivate: [AuthGuard],
     data: {
       allowedRoles: ['CONTACTS'],
     },
   },
-   {
+  {
     path: 'inversores',
-    component:InvesoresComponent,
+    component: InvesoresComponent,
     canActivate: [AuthGuard],
     data: {
       allowedRoles: ['CONTACTS'],
     },
   },
-
 ];
 
 @NgModule({
