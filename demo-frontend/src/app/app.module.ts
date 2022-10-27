@@ -34,7 +34,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     AppComponent,
     ConfirmationDialogComponent,
     MatSnackBarComponent,
-    LandingPageComponent
+    LandingPageComponent,
+ 
   ],
   imports: [
     TranslateModule.forRoot({

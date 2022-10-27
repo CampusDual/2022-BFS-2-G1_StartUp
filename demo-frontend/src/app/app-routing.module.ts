@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'stadisticsline', component:StadisticslineComponent },
   { path: 'stadisticsbar', component:StadisticsbarComponent },
   { path: 'app-delete-modal',component:DeleteModalComponent},
-  {path:'app-inversores', component:InvesoresComponent}
+  {path:'app-inversores', component:InvesoresComponent }
 
 
 

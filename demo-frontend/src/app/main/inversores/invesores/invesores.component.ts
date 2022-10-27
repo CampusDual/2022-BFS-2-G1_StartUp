@@ -171,12 +171,12 @@ loadInversoresPage() {
   }
 
   onAdd() {
-    this.router.navigate(['/contacts/add']);
+    this.router.navigate(['/inversores/add']);
   }
 
   onEdit(row: Inversor) {
     this.highlightedRow = row;
-    this.router.navigate(['/contacts/edit/' + row.id]);
+    this.router.navigate(['/inversores/edit/' + row.id]);
   }
 
 }
