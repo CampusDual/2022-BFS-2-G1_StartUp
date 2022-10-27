@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.validation.constraints.NotNull;
 
+import com.example.demo.utils.Constant;
+
 import lombok.Data;
 
 @Data
@@ -11,28 +13,28 @@ public class StartupDTO {
 
 	private Integer id;
 
-	@NotNull
+	@NotNull(message = Constant.STARTUP_NAME_REQUIRED)
 	private String name;
 
-	@NotNull
+	@NotNull(message = Constant.STARTUP_EMAIL_REQUIRED)
 	private String email;
 
-	@NotNull
+	@NotNull(message = Constant.STARTUP_DESCRIPTION_REQUIRED)
 	private String description;
 
-	@NotNull
+	@NotNull(message = Constant.STARTUP_BUSINESS_SECTOR_REQUIRED)
 	private BusinessSectorDTO idBusinessSector;
 
-	@NotNull
+	@NotNull(message = Constant.STARTUP_STATE_REQUIRED)
 	private StartupStateDTO idStartupState;
 
-	@NotNull
+	@NotNull(message = Constant.STARTUP_ANUAL_INVOICING_REQUIRED)
 	private Integer anualInvoicing;
 
-	@NotNull
+	@NotNull(message = Constant.STARTUP_FUNDATION_YEAR_REQUIRED)
 	private Date fundationYear;
 
-	@NotNull
+	@NotNull(message = Constant.STARTUP_ENTREPRENEUR_REQUIRED)
 	private EntrepreneurDTO idEntrepreneur;
 
 }

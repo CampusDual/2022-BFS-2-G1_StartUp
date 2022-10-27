@@ -13,15 +13,17 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
 @Entity
 @Table(name = "invester")
 public class Invester implements Serializable{
 
 	private static final long serialVersionUID = -216002265132757796L;
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_invester", nullable = false)
@@ -49,5 +51,18 @@ public class Invester implements Serializable{
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name = "id_startup_state", nullable = false)
 	private StartupState idStartUpState;
+
+	public Invester(@NotNull String name, @NotNull String email, @NotNull RangeInvester idInvesterRange,
+			@NotNull BusinessSector idBusinessSector, @NotNull StartupState idStartUpState) {
+		super();
+		this.name = name;
+		this.email = email;
+		this.idInvesterRange = idInvesterRange;
+		this.idBusinessSector = idBusinessSector;
+		this.idStartUpState = idStartUpState;
+	}
+	
+	public Invester() {
+	}
 	
 }

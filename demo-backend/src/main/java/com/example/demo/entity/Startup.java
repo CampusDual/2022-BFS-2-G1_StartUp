@@ -14,9 +14,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
 @Entity
 @Table(name="startup")
 public class Startup implements Serializable{
@@ -62,5 +64,24 @@ public class Startup implements Serializable{
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name="id_entrepreneur",nullable=false)
 	private Entrepreneur idEntrepreneur;
+
+	public Startup(@NotNull String name, @NotNull String email, @NotNull String description,
+			@NotNull BusinessSector idBusinessSector, @NotNull StartupState idStartupState,
+			@NotNull Integer anualInvoicing, @NotNull Date fundationYear, @NotNull Entrepreneur idEntrepreneur) {
+		super();
+		this.name = name;
+		this.email = email;
+		this.description = description;
+		this.idBusinessSector = idBusinessSector;
+		this.idStartupState = idStartupState;
+		this.anualInvoicing = anualInvoicing;
+		this.fundationYear = fundationYear;
+		this.idEntrepreneur = idEntrepreneur;
+	}
+
+	public Startup() {
+		
+	}
 	
+
 }

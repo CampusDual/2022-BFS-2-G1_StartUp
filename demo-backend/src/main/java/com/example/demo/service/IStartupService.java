@@ -1,8 +1,23 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.Startup;
+import java.util.List;
 
-public interface IStartupService extends GenericService<Startup, Integer> {
+import com.borjaglez.springify.repository.filter.impl.AnyPageFilter;
+import com.example.demo.dto.StartupDTO;
+import com.example.demo.rest.response.DataSourceRESTResponse;
 
+public interface IStartupService {
+
+	StartupDTO getStartup(Integer id);
+
+	DataSourceRESTResponse<List<StartupDTO>> getStartups(AnyPageFilter pageFilter);
+
+	StartupDTO createStartup(StartupDTO createStartupRequest);
+
+	Integer deleteStartup(Integer id);
+
+	List<StartupDTO> findAll();
+
+	Integer editStartup(StartupDTO editStartupRequest);
 
 }

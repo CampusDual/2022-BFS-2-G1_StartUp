@@ -1,8 +1,19 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.Invester;
+import java.util.List;
 
-public interface IInvesterService extends GenericService<Invester, Integer> {
+import com.borjaglez.springify.repository.filter.impl.AnyPageFilter;
+import com.example.demo.dto.InvesterDTO;
+import com.example.demo.rest.response.DataSourceRESTResponse;
 
+public interface IInvesterService {
 
+	InvesterDTO getInvester(Integer id);
+	DataSourceRESTResponse<List<InvesterDTO>> getInvesters(AnyPageFilter pageFilter);
+	InvesterDTO createInvester(InvesterDTO createInvesterRequest);
+	Integer deleteInvester(Integer id);
+	List<InvesterDTO> findAll();
+	Integer editInvester(InvesterDTO editInvesterRequest);
+	
+	  
 }

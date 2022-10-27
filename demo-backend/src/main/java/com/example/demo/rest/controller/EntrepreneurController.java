@@ -67,7 +67,7 @@ public class EntrepreneurController {
 
 
     @GetMapping("/page-query")
-    public Page<EntrepreneurDTO> pageQuery(Pageable pageable) {
+    public Page<EntrepreneurDTO> pageQuery(@RequestBody Pageable pageable) {
         Page<Entrepreneur> entrepreneurPage = entrepreneurService.findAll(pageable);
         List<EntrepreneurDTO> dtoList = entrepreneurPage
                 .stream()

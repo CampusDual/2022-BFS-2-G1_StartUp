@@ -15,18 +15,19 @@ public class StartupState implements Serializable {
 
     private static final long serialVersionUID = -6086539931419312468L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_startup_state")
-    private Integer id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="id_startup_state")
+	private Integer id;
+	
+	@Column(name="type_startup", nullable = false)
+	@NotNull
+	private String type;
+	
+	@OneToMany(mappedBy = "idStartupState")
+	private Set<Startup> startups= new LinkedHashSet<>();
+	
+	@OneToMany(mappedBy = "idStartUpState")
+	private Set<Invester> investers= new LinkedHashSet<>();
 
-    @Column(name = "type_startup", nullable = false)
-    @NotNull
-    private String type;
-
-    @OneToMany(mappedBy = "idStartupState")
-    private Set<Startup> startups = new LinkedHashSet<>();
-
-    @OneToMany(mappedBy = "idStartUpState")
-    private Set<Invester> investers = new LinkedHashSet<>();
 }
