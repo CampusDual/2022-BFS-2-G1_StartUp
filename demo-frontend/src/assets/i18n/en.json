@@ -103,7 +103,9 @@
 
     },
     "form": {
-        "contact": "Contact"
+        "contact": "Contact",
+        "inversor": "Inversor"
+      
     },
     "button": {
         "cancel": "Cancel",

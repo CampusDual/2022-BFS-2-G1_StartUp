@@ -101,7 +101,8 @@
 
     },
     "form": {
-        "contact": "Contacto"
+        "contact": "Contacto",
+        "inversor": "Inversor"
     },
     "button": {
         "cancel": "Cancelar",
