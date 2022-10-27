@@ -8,6 +8,7 @@ import { EntrepreneurDetailComponent } from './entrepreneurs/entrepreneur-detail
 import { StadisticsComponent } from './stadistics/stadistics.component';
 import { InvestersComponent } from './investers/investers.component';
 import{ StadisticslineComponent } from'./stadisticsline/stadisticsline.component';
+import { InvesoresComponent } from './inversores/invesores/invesores.component';
 
 
 const routes: Routes = [
@@ -62,6 +63,14 @@ const routes: Routes = [
   {
     path: 'stadisticsline',
     component:StadisticslineComponent,
+    canActivate: [AuthGuard],
+    data: {
+      allowedRoles: ['CONTACTS'],
+    },
+  },
+   {
+    path: 'inversores',
+    component:InvesoresComponent,
     canActivate: [AuthGuard],
     data: {
       allowedRoles: ['CONTACTS'],

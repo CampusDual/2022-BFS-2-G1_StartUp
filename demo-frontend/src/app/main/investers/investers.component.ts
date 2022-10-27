@@ -3,7 +3,7 @@ import { InvesterService } from 'src/app/services/invester.service';
 import { Invester } from '../../model/invester';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { DeleteModalComponent } from './delete-modal/delete-modal.component';
-
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -22,9 +22,9 @@ export class InvestersComponent implements OnInit {
 
 
 
-  constructor(private investerService: InvesterService, private modalService: MdbModalService) { }
+  constructor(private investerService: InvesterService, private modalService: MdbModalService,private route:ActivatedRoute, private router:Router) { }
 
-  openModal(id: any) {
+  openModal(id: number) {
 
     this.modalRef = this.modalService.open(DeleteModalComponent, {
 
@@ -68,15 +68,17 @@ export class InvestersComponent implements OnInit {
     this.currentIndex = -1;
   }
 
-  removeInvester(id: any): void {
+  removeInvester(id: number): void {
 
-    console.log(id);
+    console.log("ESTE ES EL ID A BORRAR=",id);
 
     this.investerService.delete(id).subscribe({
 
 next:(res) => {
-  console.log(res);
-  this.refreshInvesters();
+  console.log("ESTE ES LA RES BORRAR=",res);
+  //this.refreshInvesters();
+ 
+  this.router.navigate(['/investers'])
 },
 error: (e) => console.error(e)
     });

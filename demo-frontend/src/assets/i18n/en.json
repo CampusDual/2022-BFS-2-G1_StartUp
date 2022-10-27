@@ -90,7 +90,17 @@
             "name": "Name",
             "lastname": "Surname",
             "professionalProfile": "Professional Profile"
+        },
+        "inversores": {
+            "id": "id",
+            "name": "Name",
+            "email": "E-Mail",
+            "idInvesterRange":"Invester Range",
+            "idBusinessSector":"Business Sector",
+            "idStartUpState":"Startup State"
+
         }
+
     },
     "form": {
         "contact": "Contact"

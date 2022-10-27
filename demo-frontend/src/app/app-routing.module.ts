@@ -6,6 +6,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import {StadisticslineComponent} from './main/stadisticsline/stadisticsline.component';
 import {StadisticsbarComponent} from './main/stadisticsbar/stadisticsbar.component';
 import { InvestersComponent } from './main/investers/investers.component';
+import { DeleteModalComponent } from './main/investers/delete-modal/delete-modal.component';
+import { InvesoresComponent } from './main/inversores/invesores/invesores.component';
 
 const routes: Routes = [
 
@@ -18,7 +20,9 @@ const routes: Routes = [
   { path: 'entrepreneur-detail', component:EntrepreneurDetailComponent },
   { path: 'landing-page', component:LandingPageComponent },
   { path: 'stadisticsline', component:StadisticslineComponent },
-  { path: 'stadisticsbar', component:StadisticsbarComponent }
+  { path: 'stadisticsbar', component:StadisticsbarComponent },
+  { path: 'app-delete-modal',component:DeleteModalComponent},
+  {path:'app-inversores', component:InvesoresComponent}
 
 
 

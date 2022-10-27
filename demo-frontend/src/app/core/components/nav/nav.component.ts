@@ -53,6 +53,12 @@ export class NavComponent implements OnInit, OnDestroy {
       route: 'stadistics',
       title: 'menu.stadistics',
       allowedRoles: ['CONTACTS']
+    },
+    {
+      icon: 'trending_up',
+      route: 'inversores',
+      title: 'menu.inversores',
+      allowedRoles: ['CONTACTS']
     }
   ];
 

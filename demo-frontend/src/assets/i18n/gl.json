@@ -90,6 +90,15 @@
             "name": "Nome",
             "lastname": "Apelidos",
             "professionalProfile": "Perfil Profesional"
+        },
+        "inversores": {
+            "id": "id",
+            "name": "Nome",
+            "email": "E-Mail",
+            "idInvesterRange":"Rango Inversión",
+            "idBusinessSector":"Sector Empresarial",
+            "idStartUpState":"Startup State"
+
         }
     },
     "form": {

@@ -1,4 +1,6 @@
+import { _ViewRepeaterOperation } from '@angular/cdk/collections';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
 import { Invester } from 'src/app/model/invester';
 import { InvesterService } from 'src/app/services/invester.service'
@@ -19,10 +21,13 @@ export class DeleteModalComponent implements OnInit {
   currentInvester: Invester = {};
   currentIndex = 1;
   title: '';
+modal:any | null = null;
+router:Router;
 
 
+  constructor(public modalRef: MdbModalRef<DeleteModalComponent>, private investerService: InvesterService) {
 
-  constructor(public modalRef: MdbModalRef<DeleteModalComponent>, private investerService: InvesterService) { }
+   }
 
   ngOnInit(): void {
      console.log('>>>>oninit delete',this.deleteId);
@@ -52,15 +57,21 @@ export class DeleteModalComponent implements OnInit {
     this.currentIndex = index;
   }
 
-  removeInvester(deleteId): void {
+  removeInvester(deleteId,modal:any): void {
+    this.router.navigate(['/investers']);
+    console.log('>>>>>deleteID=',deleteId);
+    console.log('>>>>>Any=',modal);
+modal.close();
 
-    console.log('>>>>>deleteID',deleteId);
+
 
     this.investerService.delete(deleteId).subscribe({
-
+      
 next:(res) => {
-  console.log('>>>>>response',res);
-  this.refreshInvesters();
+ console.log('>>>>>response',res);
+ 
+
+  //this.refreshInvesters();
 },
 error: (e) => console.error(e)
     });

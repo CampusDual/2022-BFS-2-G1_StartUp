@@ -32,8 +32,9 @@ export class InvesterService {
     );
   }
 
-  delete(id: number) {
+  delete(id: number):Observable<any> {
     return this.http.delete(`${API_CONFIG.urlBaseInvester}` + id);
+    
   }
 
   getPage(request): Observable<any> {
