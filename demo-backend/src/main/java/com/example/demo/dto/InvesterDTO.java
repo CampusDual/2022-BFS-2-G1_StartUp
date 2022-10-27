@@ -32,11 +32,7 @@ public class InvesterDTO implements Serializable{
 	@NotNull(message = Constant.INVESTER_BUSINESS_SECTOR_REQUIRED)
 	private BusinessSectorDTO idBusinessSector;
 	
-<<<<<<< HEAD
-	@NotNull
-=======
 	@NotNull(message = Constant.INVESTER_STARTUP_STATE_REQUIRED)
->>>>>>> FSG1-46-add-crud-from-backend
 	private StartupStateDTO idStartUpState;
 
 }
