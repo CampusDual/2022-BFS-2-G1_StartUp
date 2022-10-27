@@ -18,7 +18,7 @@
         >
           <mat-icon>delete</mat-icon> {{ "delete" | translate }}
         </button>
-        <button mat-raised-button (click)="loadContactsPage()">
+        <button mat-raised-button (click)="loadInversoresPage()">
           <mat-icon>refresh</mat-icon> {{ "refresh" | translate }}
         </button>
       </div>
@@ -28,8 +28,8 @@
             matInput
             placeholder="{{ 'filter' | translate }}"
             #input
-            id="contacts-filter"
-            name="contacts-filter"
+            id="inversores-filter"
+            name="inversores-filter"
           />
         </mat-form-field>
       </div>
@@ -65,51 +65,60 @@
           </td>
         </ng-container>
   
-        <ng-container matColumnDef="name">
+        <ng-container matColumnDef="id">
           <mat-header-cell *matHeaderCellDef mat-sort-header>
             {{ "table.inversores.id" | translate }}
           </mat-header-cell>
-          <mat-cell *matCellDef="let row" data-label="name">
+          <mat-cell *matCellDef="let row" data-label="id">
             {{ row.id }}
           </mat-cell>
         </ng-container>
   
-        <ng-container matColumnDef="surname1">
+        <ng-container matColumnDef="name">
           <mat-header-cell *matHeaderCellDef mat-sort-header>
             {{ "table.inversores.name" | translate }}
           </mat-header-cell>
-          <mat-cell *matCellDef="let row" data-label="surname1">
+          <mat-cell *matCellDef="let row" data-label="name">
             {{ row.name }}
-          </mat-cell>
-        </ng-container>
-  
-        <ng-container matColumnDef="surname2">
-          <mat-header-cell *matHeaderCellDef mat-sort-header>
-            {{ "table.inversores.email" | translate }}
-          </mat-header-cell>
-          <mat-cell *matCellDef="let row" data-label="surname2">
-            {{ row.email }}
-          </mat-cell>
-        </ng-container>
-  
-        <ng-container matColumnDef="phone">
-          <mat-header-cell *matHeaderCellDef mat-sort-header>
-            {{ "table.inversores.idInvesterRange" | translate }}
-          </mat-header-cell>
-          <mat-cell *matCellDef="let row" data-label="phone">
-            {{ row.idInvesterRange }}
           </mat-cell>
         </ng-container>
   
         <ng-container matColumnDef="email">
           <mat-header-cell *matHeaderCellDef mat-sort-header>
-            {{ "table.contacts.email" | translate }}
+            {{ "table.inversores.email" | translate }}
           </mat-header-cell>
           <mat-cell *matCellDef="let row" data-label="email">
             {{ row.email }}
           </mat-cell>
         </ng-container>
   
+        <ng-container matColumnDef="idInvesterRange">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>
+            {{ "table.inversores.idInvesterRange" | translate }}
+          </mat-header-cell>
+          <mat-cell *matCellDef="let row" data-label="idInvesterRange">
+            {{ row.idInvesterRange.value }}
+          </mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="idBusinessSector">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>
+            idBusinessSector
+          </mat-header-cell>
+          <mat-cell *matCellDef="let row" data-label="idBusinessSector">
+            {{ row.idBusinessSector.type }}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="idStartUpState">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>
+            idStartUpState
+          </mat-header-cell>
+          <mat-cell *matCellDef="let row" data-label="idStartUpState">
+            {{ row.idStartUpState.type }}
+          </mat-cell>
+        </ng-container>
+        
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-row
           *matRowDef="let row; columns: displayedColumns"

@@ -7,34 +7,34 @@ import { Inversor } from '../inversor';
 import { AnyPageFilter } from '../rest/filter';
 
 export class InversoresDataSource extends DataSource<Inversor> {
-  contactsSubject = new BehaviorSubject<Inversor[]>([]);
+  inversorsSubject = new BehaviorSubject<Inversor[]>([]);
   loadingSubject = new BehaviorSubject<boolean>(false);
   public loading$ = this.loadingSubject.asObservable();
   public totalElements: number;
 
-  constructor(private contactService: InversorService) {
+  constructor(private inversorService: InversorService) {
     super();
   }
 
-  getContacts(pageFilter: AnyPageFilter) {
-    this.contactsSubject.next([]);
+  getInversores(pageFilter: AnyPageFilter) {
+    this.inversorsSubject.next([]);
     this.loadingSubject.next(true);
-    this.contactService.getInversores(pageFilter).pipe(
+    this.inversorService.getInversores(pageFilter).pipe(
       finalize(() => this.loadingSubject.next(false))
     ).subscribe(
       response => {
         this.totalElements = response.totalElements;
-        this.contactsSubject.next(response.data);
+        this.inversorsSubject.next(response.data);
       }
     );
   }
 
   connect(): BehaviorSubject<Inversor[]> {
-    return this.contactsSubject;
+    return this.inversorsSubject;
   }
 
   disconnect(): void {
-    this.contactsSubject.complete();
+    this.inversorsSubject.complete();
     this.loadingSubject.complete();
   }
 }

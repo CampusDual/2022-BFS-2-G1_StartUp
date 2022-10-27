@@ -5,7 +5,7 @@ import { API_CONFIG } from '../shared/api.config';
 import { environment } from 'src/environments/environment';
 import { AnyPageFilter } from '../model/rest/filter';
 import { DataSourceRESTResponse } from '../model/rest/response';
-import { CreateContactRequest, EditContactRequest } from '../model/rest/requestInversor';
+import { CreateInversorRequest, EditInversorRequest } from '../model/rest/requestInversor';
 import { Buffer } from 'buffer';
 import { Inversor } from '../model/inversor';
 
@@ -19,20 +19,20 @@ export class InversorService {
   
 
   public getInversores(pageFilter: AnyPageFilter): Observable<DataSourceRESTResponse<Inversor[]>> {
-    const url = API_CONFIG.getContacts;
+    const url = API_CONFIG.getInvestorsPage;
     const headers = new HttpHeaders({
       'Content-type': 'application/json; charset=utf-8',
       // Authorization: 'Basic ' + btoa(`${environment.clientName}:${environment.clientSecret}`),
       Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),
     });
     
-    console.log("ESTOY EN GETCONTACTS=",this.http.post<DataSourceRESTResponse<Inversor[]>>(url, pageFilter, { headers }));
+    console.log("ESTOY EN GETINVERSORES=",this.http.post<DataSourceRESTResponse<Inversor[]>>(url, pageFilter, { headers }));
     
     return this.http.post<DataSourceRESTResponse<Inversor[]>>(url, pageFilter, { headers });
   }
 
-  public getContact(id: number): Observable<Inversor> {
-    const url = API_CONFIG.getContact;
+  public getInversor(id: number): Observable<Inversor> {
+    const url = API_CONFIG.getInvestor;
     const headers = new HttpHeaders({
       'Content-type': 'charset=utf-8',
       Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),
@@ -41,9 +41,9 @@ export class InversorService {
     return this.http.get<Inversor>(url, { params, headers });
   }
 
-  public createContact(contact: Inversor): Observable<any> {
-    const url = API_CONFIG.createContact;
-    const body: CreateContactRequest = new CreateContactRequest(contact);
+  public createInversor(inversor: Inversor): Observable<any> {
+    const url = API_CONFIG.createInvestor;
+    const body: CreateInversorRequest = new CreateInversorRequest(inversor);
     const headers = new HttpHeaders({
       'Content-type': 'application/json; charset=utf-8',
       Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),
@@ -55,9 +55,9 @@ export class InversorService {
     );
   }
 
-  public editContact(contact: Inversor): Observable<any> {
-    const url = API_CONFIG.editContact;
-    const body: EditContactRequest = new EditContactRequest(contact);
+  public editInversor(inversor: Inversor): Observable<any> {
+    const url = API_CONFIG.editInvestor;
+    const body: EditInversorRequest = new EditInversorRequest(inversor);
     const headers = new HttpHeaders({
       'Content-type': 'application/json; charset=utf-8',
       Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),
@@ -69,8 +69,8 @@ export class InversorService {
     );
   }
 
-  public deleteContact(id: number): Observable<any> {
-    const url = API_CONFIG.deleteContact;
+  public deleteInversor(id: number): Observable<any> {
+    const url = API_CONFIG.deleteInvestor;
     const headers = new HttpHeaders({
       'Content-type': 'charset=utf-8',
       Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),

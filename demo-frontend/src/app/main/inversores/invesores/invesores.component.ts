@@ -29,13 +29,14 @@ export class InvesoresComponent implements OnInit, AfterViewInit {
   dataSource: InversoresDataSource;
   displayedColumns = [
     'select',
+    'id',
     'name',
-    'surname1',
-    'surname2',
-    'phone',
     'email',
+    'idInvesterRange',
+    'idBusinessSector',
+    'idStartUpState'
   ];
-  fields = ['id', 'name', 'email', 'IdIvesterRange', 'email'];
+  fields = ['id', 'name', 'email', 'idInvesterRange', 'idBusinessSector', 'idStartUpState'];
 
   selection = new SelectionModel<Inversor>(true, []);
   error = false;
@@ -48,14 +49,14 @@ export class InvesoresComponent implements OnInit, AfterViewInit {
   @ViewChild('input') input: ElementRef;
 
   constructor(
-    private contactService: InversorService,
+    private investorService: InversorService,
     private translate: TranslateService,
     private router: Router,
     private dialog: MatDialog
   ) { }
 
   ngOnInit() {
-    this.dataSource = new InversoresDataSource(this.contactService);
+    this.dataSource = new InversoresDataSource(this.investorService);
     const pageFilter = new AnyPageFilter(
       '',
       this.fields.map((field) => new AnyField(field)),
@@ -63,7 +64,7 @@ export class InvesoresComponent implements OnInit, AfterViewInit {
       20,
       'name'
     );
-    this.dataSource.getContacts(pageFilter);
+    this.dataSource.getInversores(pageFilter);
   }
 
   ngAfterViewInit(): void {
@@ -74,7 +75,7 @@ export class InvesoresComponent implements OnInit, AfterViewInit {
         distinctUntilChanged(),
         tap(() => {
           this.paginator.pageIndex = 0;
-          this.loadContactsPage();
+          this.loadInversoresPage();
         })
       )
       .subscribe();
@@ -89,13 +90,13 @@ export class InvesoresComponent implements OnInit, AfterViewInit {
     merge(this.sort.sortChange, this.paginator.page)
       .pipe(
         tap(() => {
-          this.loadContactsPage();
+          this.loadInversoresPage();
         })
       )
       .subscribe();
   }
 
-  loadContactsPage() {
+loadInversoresPage() {
     this.selection.clear();
     this.error = false;
     const pageFilter = new AnyPageFilter(
@@ -108,13 +109,13 @@ export class InvesoresComponent implements OnInit, AfterViewInit {
     pageFilter.order.push(
       new SortFilter(this.sort.active, this.sort.direction.toString())
     );
-    this.dataSource.getContacts(pageFilter);
+    this.dataSource.getInversores(pageFilter);
   }
 
   /** Whether the number of selected elements matches the total number of rows. */
   isAllSelected() {
     const numSelected = this.selection.selected.length;
-    const numRows = this.dataSource.contactsSubject.value.length;
+    const numRows = this.dataSource.inversorsSubject.value.length;
     return numSelected === numRows;
   }
 
@@ -122,7 +123,7 @@ export class InvesoresComponent implements OnInit, AfterViewInit {
   masterToggle() {
     this.isAllSelected()
       ? this.selection.clear()
-      : this.dataSource.contactsSubject.value.forEach((row) =>
+      : this.dataSource.inversorsSubject.value.forEach((row) =>
         this.selection.select(row)
       );
   }
@@ -147,19 +148,19 @@ export class InvesoresComponent implements OnInit, AfterViewInit {
   }
 
   delete() {
-    const contact = this.selection.selected[0];
-    this.selection.deselect(contact);
+    const inversor = this.selection.selected[0];
+    this.selection.deselect(inversor);
     if (this.selection.selected && this.selection.selected.length === 0) {
-      this.contactService.deleteContact(contact.id).subscribe((response) => {
+      this.investorService.deleteInversor(inversor.id).subscribe((response) => {
         console.log(response)
         if (response.responseCode !== 'OK') {
           this.error = true;
         } else {
-          this.loadContactsPage();
+          this.loadInversoresPage();
         }
       });
     } else {
-      this.contactService.deleteContact(contact.id).subscribe((response) => {
+      this.investorService.deleteInversor(inversor.id).subscribe((response) => {
         console.log(response);
         if (response.responseCode !== 'OK') {
           this.error = true;

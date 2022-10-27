@@ -20,9 +20,11 @@ export const API_CONFIG = {
   getEntrepreneurPage: environment.adminBaseUrl + '/entrepreneur/page-query/',
 
   //invester API
-  urlBaseInvester: environment.adminBaseUrl + '/invester/',
-  getInvesters: environment.adminBaseUrl + '/invester/',
-  getInvestersPage: environment.adminBaseUrl + '/invester/page-query/',
+  getInvestorsPage: environment.investorBaseUrl + '/getInvestors/',
+  getInvestor: environment.investorBaseUrl +'/getInvestor/',
+  createInvestor:environment.investorBaseUrl +'/createInvestor/',
+  editInvestor:environment.investorBaseUrl +'/editInvestor/',
+  deleteInvestor:environment.investorBaseUrl +'/deleteInvestor/',
 
   //RangeInvester API
   urlBaseRange: environment.adminBaseUrl + '/rangeInvester/',

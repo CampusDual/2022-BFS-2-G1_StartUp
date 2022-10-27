@@ -1,4 +1,4 @@
-import { Contact } from '../contact';
+
 import { Inversor } from '../inversor';
 
 export class QuerySortPaginationRequest {
@@ -17,7 +17,7 @@ export class QuerySortPaginationRequest {
   }
 }
 
-export class CreateContactRequest {
+export class CreateInversorRequest {
   id:number;
   name:string;
   email:string;
@@ -25,21 +25,21 @@ export class CreateContactRequest {
   idBusinessSector?: any;
   idStartUpState?: any;
 
-  constructor(contact: Inversor) {
-    this.id = contact.id;
-    this.name = contact.name;
-    this.email = contact.email;
-    this.idInvesterRange = contact.idInvesterRange;
-    this.idBusinessSector = contact.idBusinessSector;
-    this.idStartUpState = contact.idStartUpState;
+  constructor(inversor: Inversor) {
+    this.id = inversor.id;
+    this.name = inversor.name;
+    this.email = inversor.email;
+    this.idInvesterRange = inversor.idInvesterRange;
+    this.idBusinessSector = inversor.idBusinessSector;
+    this.idStartUpState = inversor.idStartUpState;
   }
 }
 
-export class EditContactRequest extends CreateContactRequest {
+export class EditInversorRequest extends CreateInversorRequest {
   override id: number;
 
-  constructor(contact: Inversor) {
-    super(contact);
-    this.id = contact.id;
+  constructor(inversor: Inversor) {
+    super(inversor);
+    this.id = inversor.id;
   }
 }

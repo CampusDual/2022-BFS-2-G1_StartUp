@@ -38,7 +38,7 @@ export class NavComponent implements OnInit, OnDestroy {
     },
     {
       icon: 'people',
-      route: 'investers',
+      route: 'inversores',
       title: 'menu.investers',
       allowedRoles: ['CONTACTS']
     },
@@ -52,12 +52,6 @@ export class NavComponent implements OnInit, OnDestroy {
       icon: 'trending_up',
       route: 'stadistics',
       title: 'menu.stadistics',
-      allowedRoles: ['CONTACTS']
-    },
-    {
-      icon: 'trending_up',
-      route: 'inversores',
-      title: 'menu.inversores',
       allowedRoles: ['CONTACTS']
     }
   ];
