@@ -1,12 +1,9 @@
 package com.example.demo.service.impl;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,10 +11,7 @@ import com.borjaglez.springify.repository.filter.impl.AnyPageFilter;
 import com.borjaglez.springify.repository.specification.SpecificationBuilder;
 import com.example.demo.dto.InvesterDTO;
 import com.example.demo.dto.mapper.InvesterMapper;
-import com.example.demo.dto.mapper.InvesterMapper;
 import com.example.demo.entity.Invester;
-import com.example.demo.entity.Invester;
-import com.example.demo.repository.ContactRepository;
 import com.example.demo.repository.InvesterRepository;
 import com.example.demo.rest.response.DataSourceRESTResponse;
 import com.example.demo.service.AbstractDemoService;
@@ -66,8 +60,8 @@ public class InvesterServiceImpl extends AbstractDemoService implements IInveste
 
 	@Override
 	public List<InvesterDTO> findAll() {
-		List<Invester> contactList = (List<Invester>) investerRepository.findAll();
-		return InvesterMapper.INSTANCE.investerToInvesterDtoList(contactList);
+		List<Invester> investerList = (List<Invester>) investerRepository.findAll();
+		return InvesterMapper.INSTANCE.investerToInvesterDtoList(investerList);
 	}
 
 	@Override

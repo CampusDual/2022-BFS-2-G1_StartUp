@@ -14,7 +14,7 @@ public interface InvesterMapper {
 
 	InvesterMapper INSTANCE = Mappers.getMapper(InvesterMapper.class);
 
-    InvesterDTO investerToInvesterDto(Invester investors);
+    InvesterDTO investerToInvesterDto(Invester investor);
 
     List<InvesterDTO> investerToInvesterDtoList(List<Invester> investors);
 

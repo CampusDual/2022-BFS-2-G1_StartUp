@@ -67,7 +67,7 @@ public class Constant {
 	public static final String INVESTER_RANGE_REQUIRED = "INVESTER_RANGE_REQUIRED";
 	public static final String INVESTER_BUSINESS_SECTOR_REQUIRED = "INVESTER_BUSINESS_SECTOR_REQUIRED";
 	public static final String INVESTER_STARTUP_STATE_REQUIRED = "INVESTER_STARTUP_STATE_REQUIRED";
-	public static final String INVESTER_NOT_EXISTS = "CONTACT_NOT_EXISTS";
+	public static final String INVESTER_NOT_EXISTS = "INVESTER_NOT_EXISTS";
 	public static final String INVESTER_ALREADY_EXISTS = "INVESTER_ALREADY_EXISTS";
 	public static final String INVESTER_EMAIL_INVALID = "EMAIL_INVALID";
 	
@@ -78,5 +78,30 @@ public class Constant {
 	public static final String INVESTER_NOT_EDIT = "INVESTER_NOT_EDIT";
 	public static final String INVESTER_DELETE_SUCCESS = "INVESTER_DELETE_SUCCESS";
 	public static final String INVESTER_NOT_DELETE = "INVESTER_NOT_DELETE";
+	
+	// Startup error
+	public static final String STARTUP_ID_REQUIRED = "STARTUP_ID_REQUIRED";
+	public static final String STARTUP_NAME_REQUIRED = "STARTUP_NAME_REQUIRED";
+	public static final String STARTUP_EMAIL_REQUIRED = "STARTUP_EMAIL_REQUIRED";
+	public static final String STARTUP_DESCRIPTION_REQUIRED = "STARTUP_DESCRIPTION_REQUIRED";
+	public static final String STARTUP_BUSINESS_SECTOR_REQUIRED = "STARTUP_BUSINESS_SECTOR_REQUIRED";
+	public static final String STARTUP_STATE_REQUIRED = "STARTUP_STATE_REQUIRED";
+	public static final String STARTUP_ENTREPRENEUR_REQUIRED = "STARTUP_ENTREPRENEUR_REQUIRED";
+	public static final String STARTUP_ANUAL_INVOICING_REQUIRED = "STARTUP_ANUAL_INVOICING_REQUIRED";
+	public static final String STARTUP_FUNDATION_YEAR_REQUIRED= "STARTUP_FUNDATION_YEAR_REQUIRED";
+	public static final String STARTUP_NOT_EXISTS = "STARTUP_NOT_EXISTS";
+	public static final String STARTUP_ALREADY_EXISTS = "STARTUP_ALREADY_EXISTS";
+	public static final String STARTUP_EMAIL_INVALID = "STARTUP_EMAIL_INVALID";
+	
+	// Startup message
+	public static final String STARTUP_CREATE_SUCCESS = "STARTUP_CREATE_SUCCESS";
+	public static final String STARTUP_NOT_CREATED = "STARTUP_NOT_CREATED";
+	public static final String STARTUP_EDIT_SUCCESS = "STARTUP_EDIT_SUCCESS";
+	public static final String STARTUP_NOT_EDIT = "STARTUP_NOT_EDIT";
+	public static final String STARTUP_DELETE_SUCCESS = "STARTUP_DELETE_SUCCESS";
+	public static final String STARTUP_NOT_DELETE = "STARTUP_NOT_DELETE";
 
+	// pagination error
+	public static final String STARTUP_ID_ERROR = "STARTUP_ID_ERROR";
+	public static final String STARTUP_EMAIL_ERROR = "STARTUP_EMAIL_ERROR";
 }
