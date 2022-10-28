@@ -1,0 +1,98 @@
+<!-- <form [formGroup]="inversorForm" (ngSubmit)="save()" class="row g-3">
+  <div class="col-6">
+    <label for="inputEmail4" class="form-label">Email</label>
+    <input formControlName="email" type="email" placeholder="{{ 'table.contacts.email' | translate }}"
+      class="form-control" id="inputEmail4">
+  </div>
+  <div class="col-6">
+    <label for="inputPassword4" class="form-label">Name</label>
+    <input type="text" class="form-control" placeholder="{{ 'table.contacts.name' | translate }}" formControlName="name"
+      name="invester-name" required>
+  </div>
+  <div class="col-3">
+    <label for="inputIR" class="form-label">Investor Range</label>
+    <select id="inputIR" class="form-select" formControlName="idInvesterRange">
+      <option [ngValue]="1">1</option>
+    </select>
+  </div>
+  <div class="col-3">
+    <label for="inputBS" class="form-label">Business Sector</label>
+    <select id="inputBS" class="form-select" formControlName="idBusinessSector">
+      <option [ngValue]="1">1</option>
+    </select>
+  </div>
+  <div class="col-3">
+    <label for="inputState" class="form-label">State</label>
+    <select id="inputState" class="form-select" formControlName="idInvesterRange">
+      <option [ngValue]="1">1</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <button type="submit" class="btn btn-primary" [disabled]="!inversorForm.valid">{{ 'button.save' | translate
+      }}</button>
+  </div>
+</form> -->
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Edit Investor Profile</h4>
+                        <p class="card-category">Complete your profile</p>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Investor Name">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-3">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Username">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Email address" type="email">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Investor Range" type="text">
+                                    </mat-form-field>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Business Sector" type="text">
+                                    </mat-form-field>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Startup State" type="text">
+                                    </mat-form-field>
+                                </div>
+
+                            </div>
+
+
+                            <button mat-raised-button type="submit" class="btn btn-danger pull-right">Update Profile</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

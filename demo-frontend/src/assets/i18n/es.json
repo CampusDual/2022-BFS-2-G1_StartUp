@@ -65,6 +65,7 @@
     "menu": {
         "home": "Home",
         "contacts": "Contactos",
+        "investers": "Inversores",
         "entrepreneur": "Emprendedores",
         "stadistics": "Estadísticas",
         "logout": "Cerrar sesión"
@@ -87,11 +88,21 @@
             "name": "Nombre",
             "lastname": "apellidos",
             "professionalProfile": "Perfil Profesional"
+        },
+        "inversores": {
+            "id": "id",
+            "name": "Nombre",
+            "email": "E-Mail",
+            "idInvesterRange":"Rango Inversión",
+            "idBusinessSector":"Sector Empresarial",
+            "idStartUpState":"Estado Startup"
+
         }
 
     },
     "form": {
-        "contact": "Contacto"
+        "contact": "Contacto",
+        "inversor": "Inversor"
     },
     "button": {
         "cancel": "Cancelar",
@@ -149,27 +160,27 @@
     "emailpattern": "El formato del email no es correcto",
     "stadisticsline": {
         "invoicing": "Facturación",
-        "year":"Año",
-        "legend":"Leyenda",
-        "return":"Volver"
+        "year": "Año",
+        "legend": "Leyenda",
+        "return": "Volver"
     },
-     "stadisticsbar": {
+    "stadisticsbar": {
         "months": "Meses",
-        "inscriptions":"Incripciones",
-        "legend":"Leyenda",
-        "return":"Volver",
-        "junuary":"Enero",
-        "february":"Febrero",
-        "march":"Marzo",
-        "april":"Abril",
-        "may":"Mayo",
-        "june":"Junio",
-        "july":"Julio",
-        "august":"Agosto",
-        "september":"Septiembre",
-        "octuber":"Octubre",
-        "november":"Noviembre",
-        "december":"Diciembre"
+        "inscriptions": "Incripciones",
+        "legend": "Leyenda",
+        "return": "Volver",
+        "junuary": "Enero",
+        "february": "Febrero",
+        "march": "Marzo",
+        "april": "Abril",
+        "may": "Mayo",
+        "june": "Junio",
+        "july": "Julio",
+        "august": "Agosto",
+        "september": "Septiembre",
+        "octuber": "Octubre",
+        "november": "Noviembre",
+        "december": "Diciembre"
     }
-    
+
 }

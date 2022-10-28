@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -34,7 +34,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     AppComponent,
     ConfirmationDialogComponent,
     MatSnackBarComponent,
-    LandingPageComponent
+    LandingPageComponent,
+ 
   ],
   imports: [
     TranslateModule.forRoot({
@@ -46,7 +47,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     }),
     BrowserModule,
     BrowserAnimationsModule,
-
+    MdbModalModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
