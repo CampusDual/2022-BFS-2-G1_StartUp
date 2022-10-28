@@ -6,4 +6,3 @@ export class Inversor {
     idBusinessSector?: any;
     idStartUpState?: any;
   }
-  

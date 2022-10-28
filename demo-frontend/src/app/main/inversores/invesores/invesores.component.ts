@@ -29,7 +29,7 @@ export class InvesoresComponent implements OnInit, AfterViewInit {
   dataSource: InversoresDataSource;
   displayedColumns = [
     'select',
-    'id',
+    //'id',
     'name',
     'email',
     'idInvesterRange',

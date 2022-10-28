@@ -30,12 +30,12 @@ export class NavComponent implements OnInit, OnDestroy {
       title: 'menu.home',
       allowedRoles: ['CONTACTS']
     },
-    {
-      icon: 'people',
-      route: 'contacts',
-      title: 'menu.contacts',
-      allowedRoles: ['CONTACTS']
-    },
+    // {
+    //   icon: 'people',
+    //   route: 'contacts',
+    //   title: 'menu.contacts',
+    //   allowedRoles: ['CONTACTS']
+    // },
     {
       icon: 'people',
       route: 'inversores',
