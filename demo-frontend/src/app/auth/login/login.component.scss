@@ -1,16 +1,11 @@
 .login-outer-container {
-    margin: 8px;
-    min-height: 640px;
-    background-color: #bdbdbd;
-    background-image: url(../../../assets/images/code_background.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     .login-inner-container {
         box-sizing: content-box;
         position: absolute;
         left: 50%;
         top: 5em;
+        border-radius: 10%;
+        box-shadow: 0 0 50px rgba(238, 143, 238, 0.8);
         transform: translate(-50%, 0);
         -moz-transform: translate(-50%, 0);
         -webkit-transform: translate(-50%, 0);
@@ -31,10 +26,10 @@
             left: 50%;
             -webkit-transform: translate(-50%, 0%);
             img {
-                max-height: 125px;
-                max-width: 125px;
-                margin-left: 12px;
-                margin-top: 46px;
+                max-height: 100px;
+                max-width: 100px;
+                margin-left: 26px;
+                margin-top: 30px;
             }
         }
         .form {
