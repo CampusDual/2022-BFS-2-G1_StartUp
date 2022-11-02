@@ -1,11 +1,18 @@
 .login-outer-container {
+    margin: 8px;
+    min-height: 950px;
+    background-color: #bdbdbd;
+    background-image: url(../../../assets/images/landing-page.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     .login-inner-container {
         box-sizing: content-box;
         position: absolute;
         left: 50%;
         top: 5em;
         border-radius: 10%;
-        box-shadow: 0 0 50px rgba(238, 143, 238, 0.8);
+        box-shadow: 0 0 50px rgba(100, 61, 100, 0.8);
         transform: translate(-50%, 0);
         -moz-transform: translate(-50%, 0);
         -webkit-transform: translate(-50%, 0);
