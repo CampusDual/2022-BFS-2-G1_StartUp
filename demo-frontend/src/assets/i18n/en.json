@@ -95,9 +95,9 @@
             "id": "id",
             "name": "Name",
             "email": "E-Mail",
-            "idInvesterRange":"Invester Range",
-            "idBusinessSector":"Business Sector",
-            "idStartUpState":"Startup State"
+            "idInvesterRange": "Invester Range",
+            "idBusinessSector": "Business Sector",
+            "idStartUpState": "Startup State"
 
         }
 
@@ -105,7 +105,7 @@
     "form": {
         "contact": "Contact",
         "inversor": "Inversor"
-      
+
     },
     "button": {
         "cancel": "Cancel",
