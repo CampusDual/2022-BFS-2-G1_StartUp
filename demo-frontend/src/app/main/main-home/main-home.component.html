@@ -2,52 +2,68 @@
 <html>
 
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap" rel="stylesheet">
+
+
 </head>
+
 
 <!--<h2 style="text-align: center"> {{ 'demo.title' | translate }} </h2>-->
 
-<div class="options">
-    <div class="option active" style='--optionBackground:url(C:\Users\paula\OneDrive\Escritorio\G1-Project\BFS-2022-2-G1\demo-frontend\src\assets\images\landing-page.jpg);'>
-        <div class="shadow"></div>
-        <div class="label">
-            <div class="icon">
-                <i class="fas fa-hand-holding-usd"></i>
-            </div>
-            <div class="info">
-                <div class="main">Investors</div>
-                <div class="sub">Lorem ipsum dolor </div>
-            </div>
-        </div>
-    </div>
-    <div class="option" style='--optionBackground:url(../../../assets/images/landing-main-img.jpg);'>
-        <div class="shadow"></div>
-        <div class="label">
-            <div class="icon">
-                <i class="fas fa-rocket"></i>
-            </div>
-            <div class="info">
-                <div class="main">Startups</div>
-                <div class="sub">Lorem ipsum dolor </div>
-            </div>
-        </div>
-    </div>
-    <div class="option" style='--optionBackground:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGhcY_seVg0FhXAUBye2TzDEqpVQlwkZbQRQ&usqp=CAU);'>
-        <div class="shadow"></div>
-        <div class="label">
-            <div class="icon">
-                <i class="fas fa-users"></i>
-            </div>
-            <div class="info">
-                <div class="main">Entrepreneurs</div>
-                <div class="sub">Lorem ipsum dolor </div>
-            </div>
-        </div>
-    </div>
 
+
+<div id="services-home" class="service">
+    <!-- <div class="title">
+        <h2>{{'landing.service.h2' | translate}}</h2>
+    </div> -->
+
+    <div class="box">
+        <div class="card">
+            <i class="fas fa-rocket"></i>
+            <h5>{{'landing.service.startup.h5' | translate}}</h5>
+            <div class="pra">
+                <p>{{'landing.service.startup.p' | translate}}</p>
+
+                <p style="text-align: center;">
+                    <a class="button" href="/inversores">{{'landing.service.startup.a' | translate}}</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-hand-holding-usd"></i>
+            <h5>{{'landing.service.investor.h5' | translate}}</h5>
+            <div class="pra">
+                <p>{{'landing.service.investor.p' | translate}}</p>
+
+                <p style="text-align: center;">
+                    <a class="button" href="/inversores">{{'landing.service.investor.a' | translate}}</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-users"></i>
+            <h5>{{'landing.service.entrepreneur.h5' | translate}}</h5>
+            <div class="pra">
+                <p>{{'landing.service.entrepreneur.p' | translate}}</p>
+
+                <p style="text-align: center;">
+                    <a class="button" href="/entrepreneur">{{'landing.service.entrepreneur.a' | translate}}</a>
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
+
+
+
+
+
+
 
 </html>
