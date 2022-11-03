@@ -93,9 +93,9 @@
             "id": "id",
             "name": "Nombre",
             "email": "E-Mail",
-            "idInvesterRange":"Rango Inversión",
-            "idBusinessSector":"Sector Empresarial",
-            "idStartUpState":"Estado Startup"
+            "idInvesterRange": "Rango Inversión",
+            "idBusinessSector": "Sector Empresarial",
+            "idStartUpState": "Estado Startup"
 
         }
 

@@ -1,8 +1,8 @@
 // https://material.angular.io/guide/theming-your-components
 .mat-sidenav-container {
     height: 100%;
-    background-image: url(../../../../assets/images/landing-page.jpg);
-    background-size: cover;
+    background: none;
+    //background-image: url(../../../../assets/images/landing-page.jpg);
 }
 
 // https://github.com/angular/material2/blob/master/src/lib/core/style/_variables.scss
