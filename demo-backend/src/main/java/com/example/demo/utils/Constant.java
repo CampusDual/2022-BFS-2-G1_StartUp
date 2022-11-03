@@ -32,11 +32,13 @@ public class Constant {
 	// User error
 	public static final String LOGIN_REQUIRED = "LOGIN_REQUIRED";
 	public static final String NIF_REQUIRED = "NIF_REQUIRED";
+	public static final String PASSWORD_REQUIRED = "PASSWORD_REQUIRED";
 	public static final String LOGIN_EXISTS = "LOGIN_EXISTS";
 	public static final String NIF_MALFORMED = "NIF_MALFORMED";
 	public static final String USER_NOT_EXISTS = "USER_NOT_EXISTS";
 	public static final String NO_SECTIONS_ACCESS = "NO_SECTIONS_ACCESS";
 	public static final String USER_CONSTRAINT_VIOLATION = "USER_CONSTRAINT_VIOLATION";
+	public static final String USER_NOT_CREATED = "USER_NOT_CREATED";
 
 	// Profile error
 	public static final String PROFILE_CONSTRAINT_VIOLATION = "PROFILE_CONSTRAINT_VIOLATION";
@@ -104,4 +106,6 @@ public class Constant {
 	// pagination error
 	public static final String STARTUP_ID_ERROR = "STARTUP_ID_ERROR";
 	public static final String STARTUP_EMAIL_ERROR = "STARTUP_EMAIL_ERROR";
+	
+	
 }
