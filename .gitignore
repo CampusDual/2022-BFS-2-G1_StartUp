@@ -33,6 +33,8 @@ build/
 ### VS Code ###
 .vscode/
 
+.class
+
 demo-frontend/node_modules
 demo-frontend/.vscode
 demo-frontend/.angular

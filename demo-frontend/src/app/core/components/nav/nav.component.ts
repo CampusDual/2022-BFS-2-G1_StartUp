@@ -41,6 +41,12 @@ export class NavComponent implements OnInit, OnDestroy {
       route: 'entrepreneur',
       title: 'menu.entrepreneur',
       allowedRoles: ['CONTACTS']
+    },
+    {
+      icon: 'trending_up',
+      route: 'stadistics',
+      title: 'menu.stadistics',
+      allowedRoles: ['CONTACTS']
     }
   ];
 
@@ -55,7 +61,7 @@ export class NavComponent implements OnInit, OnDestroy {
   }
 
   public isAuthenticated() {
-    if (!this.authService.isLoggedIn() && !(this.router.url === '/login' || this.router.url === '/')) {
+    if (!this.authService.isLoggedIn() && !(this.router.url === '/login' || this.router.url === '/' || this.router.url === '/landing-page')) {
       this.authService.redirectLoginSessionExpiration();
     }
     return this.authService.isLoggedIn();

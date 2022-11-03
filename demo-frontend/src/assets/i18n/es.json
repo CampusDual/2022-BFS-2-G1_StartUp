@@ -14,6 +14,7 @@
         "home": "Home",
         "contacts": "Contactos",
         "entrepreneur": "Emprendedores",
+        "stadistics": "Estadísticas",
         "logout": "Cerrar sesión"
     },
     "language": {
@@ -93,5 +94,30 @@
     "surname1required": "El apellido es un campo obligatorio",
     "phonerequired": "El teléfono es un campo obligatorio",
     "phonepattern": "El formato del teléfono no es correcto",
-    "emailpattern": "El formato del email no es correcto"
+    "emailpattern": "El formato del email no es correcto",
+    "stadisticsline": {
+        "invoicing": "Facturación",
+        "year":"Año",
+        "legend":"Leyenda",
+        "return":"Volver"
+    },
+     "stadisticsbar": {
+        "months": "Meses",
+        "inscriptions":"Incripciones",
+        "legend":"Leyenda",
+        "return":"Volver",
+        "junuary":"Enero",
+        "february":"Febrero",
+        "march":"Marzo",
+        "april":"Abril",
+        "may":"Mayo",
+        "june":"Junio",
+        "july":"Julio",
+        "august":"Agosto",
+        "september":"Septiembre",
+        "octuber":"Octubre",
+        "november":"Noviembre",
+        "december":"Diciembre"
+    }
+    
 }

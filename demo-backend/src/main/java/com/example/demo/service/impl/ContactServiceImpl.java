@@ -2,8 +2,6 @@ package com.example.demo.service.impl;
 
 import java.util.List;
 
-import com.example.demo.service.AbstractDemoService;
-import com.example.demo.service.IContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
@@ -16,6 +14,8 @@ import com.example.demo.dto.mapper.ContactMapper;
 import com.example.demo.entity.Contact;
 import com.example.demo.repository.ContactRepository;
 import com.example.demo.rest.response.DataSourceRESTResponse;
+import com.example.demo.service.AbstractDemoService;
+import com.example.demo.service.IContactService;
 
 @Service
 public class ContactServiceImpl extends AbstractDemoService implements IContactService {

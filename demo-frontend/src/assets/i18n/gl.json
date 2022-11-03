@@ -14,6 +14,7 @@
         "home": "Home",
         "contacts": "Contactos",
         "entrepreneur": "Emprendedores",
+        "stadistics": "Estadísticas",
         "logout": "Pechar sesión"
     },
     "language": {
@@ -92,5 +93,29 @@
     "surname1required": "O apelido é un campo obrigatorio",
     "phonerequired": "O teléfono é un campo requirido",
     "phonepattern": "O formato do teléfono non é correcto",
-    "emailpattern": "O formato do email non é correcto"
+    "emailpattern": "O formato do email non é correcto",
+    "stadisticsline": {
+        "invoicing": "Facturación",
+        "year":"Ano",
+        "legend":"Lenda",
+        "return":"Voltar"
+    },
+    "stadisticsbar": {
+       "months": "Meses",
+       "inscriptions":"Incripcions",
+       "legend":"Lenda",
+       "return":"Voltar",
+        "junuary":"Xaneiro",
+       "february":"Febreiro",
+       "march":"Marzal",
+       "april":"Abril",
+       "may":"Maio",
+       "june":"Xuño",
+       "july":"Xullo",
+       "august":"Agosto",
+       "september":"Setembro",
+       "octuber":"Outubro",
+       "november":"Novembro",
+       "december":"Decembro"
+   }
 }

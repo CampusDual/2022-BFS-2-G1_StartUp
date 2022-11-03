@@ -1,36 +1,45 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
 import { Entrepreneur } from '../model/entrepreneur';
+import { API_CONFIG } from '../shared/api.config';
 
 @Injectable({
   providedIn: 'root',
 })
 export class EntrepreneureService {
-  private apiServerUrl = environment.apiBaseUrl;
   constructor(private http: HttpClient) {}
+
   public getEntrepreneurs(): Observable<Entrepreneur[]> {
-    return this.http.get<Entrepreneur[]>(`${this.apiServerUrl}/entrepreneur`);
+    return this.http.get<Entrepreneur[]>(`${API_CONFIG.getEntrepreneurs}`);
   }
-  public addEntrepreneurs(
-    entrepreneur: Entrepreneur
-  ): Observable<Entrepreneur> {
-    return this.http.post<any>(
-      `${this.apiServerUrl}/entrepreneur`,
-      entrepreneur
+
+  public create(entrepreneur: any): Observable<any> {
+    return this.http.post(
+      `${API_CONFIG.urlBaseEntrepreneurs}`,
+      JSON.stringify(entrepreneur)
     );
   }
-  getData() {
-    return this.http.get('https://picsum.photos/v2/list').pipe(
-      map((list: Array<any>) => {
-        return list.map((listItem) => {
-          return {
-            ...listItem,
-            shown: false,
-          };
-        });
-      })
+
+  public find(id: number): Observable<any> {
+    return this.http.get<Entrepreneur>(
+      `${API_CONFIG.urlBaseEntrepreneurs}` + id
     );
+  }
+
+  update(id: number, entrepreneur: Entrepreneur): Observable<any> {
+    return this.http.put(
+      `${API_CONFIG.urlBaseEntrepreneurs}` + id,
+      JSON.stringify(entrepreneur)
+    );
+  }
+
+  delete(id: number) {
+    return this.http.delete(`${API_CONFIG.urlBaseEntrepreneurs}` + id);
+  }
+
+  getPage(request): Observable<any> {
+    const params = request;
+    return this.http.get(`${API_CONFIG.getEntrepreneurPage}`, { params });
   }
 }

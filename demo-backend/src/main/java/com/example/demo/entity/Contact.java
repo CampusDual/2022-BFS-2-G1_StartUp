@@ -18,7 +18,6 @@ import com.example.demo.utils.Constant;
 @Table(name = "contacts")
 public class Contact implements Serializable{
 
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
