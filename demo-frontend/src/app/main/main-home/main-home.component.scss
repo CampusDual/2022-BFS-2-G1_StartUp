@@ -64,25 +64,26 @@ input {
 
 .card .image img {
     border-radius: 8px;
-    box-shadow: 15px 15px 40px rgba(209, 126, 24, 0.788);
+    box-shadow: 5px 5px 20px rgb(255, 87, 51);
     margin-top: 23px;
     width: 86%;
     height: 220px;
     object-fit: cover;
 }
 
-.card .image .fas {
+.card .image .dots {
     text-align: center;
 }
 
-.dots i {
-    position: relative;
-    width: 5rem;
+.dots div {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
     color: rgb(255, 87, 51);
     margin-bottom: 10px;
 }
 
-.dots i:nth-child(1) {
+.dots div:nth-child(1) {
     background-color: var(--current-color1);
 }
 
@@ -103,18 +104,21 @@ input {
 }
 
 .infos .name {
-    font-size: 30px;
+    font-size: 35px;
     font-weight: bold;
+    font-variant: small-caps;
     color: var(--current-color1);
     letter-spacing: 4px;
     margin-bottom: 20px;
+    text-align: center;
     transition: all .6s ease;
 }
 
 .infos .lorem {
     font-size: 15.5px;
-    color: #fcfc;
+    color: #ECEAED;
     letter-spacing: 3px;
+    text-align: center;
 }
 
 .card .btn-contact {
@@ -141,7 +145,7 @@ input {
 }
 
 .socials i {
-    font-size: 25px;
+    font-size: 20px;
     transition: all .7s ease;
     color: var(--current-color2);
 }
