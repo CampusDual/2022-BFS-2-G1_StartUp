@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -10,13 +10,22 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class LandingPageComponent implements OnInit {
 
+  @Output() toggleSidenav = new EventEmitter<void>();
+
+
+  selectedLanguage = this.translateService.currentLang;
+
+
   constructor(
     public router: Router,
-
     private translateService: TranslateService,
 
   ) { }
 
+  toogleLanguage(lang: string) {
+    this.selectedLanguage = lang;
+    this.translateService.use(lang);
+  }
   // metodo para que funcionen los enlaces dentro de la misma landing page
   public onClick(elementId: string): void {
 
@@ -30,5 +39,7 @@ export class LandingPageComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+
 
 }

@@ -1,4 +1,56 @@
 {
+
+    "landing": {
+        "sp": "Es",
+        "gl": "Ga",
+        "en": "In",
+
+        "aboutus": "Sobre nosotros",
+        "services": "Servicios",
+        "contact": "Contacto",
+        "loger": "Acceso",
+        "content": {
+            "h4": "¡Hola, somos Tinder StartUp!",
+            "h1": "Próximamente",
+            "span": "...",
+            "h3": "Te damos oportunidades analizadas y cualificadas, tú decides cómo, cuándo y con quién"
+
+        },
+        "about": {
+            "h2": "Sobre nosotros",
+            "h5": "La red social de las",
+            "span": "¡StartUp!",
+            "p": "Somos una empresa que busca cambiar la forma de relacionarse entre emprendedores, inversores y startups. Aplicar la filosofía de las metodologías ágiles en las relaciones entre los miembros del ecosistema emprendedor."
+        },
+        "service": {
+            "h2": "Nuestros Servicios",
+            "startup": {
+
+                "h5": "Startup",
+                "p": "Estructura empresarial orientada a lograr un negocio escalable y repetible basado en tecnología e innovación.",
+                "a": "¡Haz Match!"
+            },
+            "investor": {
+                "h5": "Inversores",
+                "p": "Compromiso, resiliencia, flexibilidad, ejecución y visión son los valores más importantes que debe tener una startup según un inversor.",
+                "a": "¡Haz Match!"
+            },
+            "entrepreneur": {
+                "h5": "Emprendedores",
+                "p": "Emprendedor es quién con una idea innovadora, lleva a cabo por sus propios medios un proyecto en el que cree apasionadamente.",
+                "a": "¡Haz Match!"
+            }
+        },
+        "slogan": "¡Probablemente el mejor Tinder de todo mundo!",
+
+        "footer": {
+            "title": "StartUp!",
+            "p": "Para más información, contacte con nosotros...",
+            "end": "Derechos de autor: StartUp!"
+        }
+
+    },
+
     "login": {
         "user": "Usuario",
         "password": "Contraseña",
@@ -13,6 +65,7 @@
     "menu": {
         "home": "Home",
         "contacts": "Contactos",
+        "investers": "Inversores",
         "entrepreneur": "Emprendedores",
         "stadistics": "Estadísticas",
         "logout": "Cerrar sesión"
@@ -35,11 +88,21 @@
             "name": "Nombre",
             "lastname": "apellidos",
             "professionalProfile": "Perfil Profesional"
+        },
+        "inversores": {
+            "id": "id",
+            "name": "Nombre",
+            "email": "E-Mail",
+            "idInvesterRange": "Rango Inversión",
+            "idBusinessSector": "Sector Empresarial",
+            "idStartUpState": "Estado Startup"
+
         }
 
     },
     "form": {
-        "contact": "Contacto"
+        "contact": "Contacto",
+        "inversor": "Inversor"
     },
     "button": {
         "cancel": "Cancelar",
@@ -97,27 +160,27 @@
     "emailpattern": "El formato del email no es correcto",
     "stadisticsline": {
         "invoicing": "Facturación",
-        "year":"Año",
-        "legend":"Leyenda",
-        "return":"Volver"
+        "year": "Año",
+        "legend": "Leyenda",
+        "return": "Volver"
     },
-     "stadisticsbar": {
+    "stadisticsbar": {
         "months": "Meses",
-        "inscriptions":"Incripciones",
-        "legend":"Leyenda",
-        "return":"Volver",
-        "junuary":"Enero",
-        "february":"Febrero",
-        "march":"Marzo",
-        "april":"Abril",
-        "may":"Mayo",
-        "june":"Junio",
-        "july":"Julio",
-        "august":"Agosto",
-        "september":"Septiembre",
-        "octuber":"Octubre",
-        "november":"Noviembre",
-        "december":"Diciembre"
+        "inscriptions": "Incripciones",
+        "legend": "Leyenda",
+        "return": "Volver",
+        "junuary": "Enero",
+        "february": "Febrero",
+        "march": "Marzo",
+        "april": "Abril",
+        "may": "Mayo",
+        "june": "Junio",
+        "july": "Julio",
+        "august": "Agosto",
+        "september": "Septiembre",
+        "octuber": "Octubre",
+        "november": "Noviembre",
+        "december": "Diciembre"
     }
-    
+
 }

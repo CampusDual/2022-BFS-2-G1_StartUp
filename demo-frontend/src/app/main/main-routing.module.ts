@@ -6,8 +6,9 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { EntrepreneurListComponent } from './entrepreneurs/entrepreneurList/entrepreneurList.component';
 import { EntrepreneurDetailComponent } from './entrepreneurs/entrepreneur-detail/entrepreneur-detail.component';
 import { StadisticsComponent } from './stadistics/stadistics.component';
-import{ StadisticslineComponent } from'./stadisticsline/stadisticsline.component';
-
+import { InvestersComponent } from './investers/investers.component';
+import { StadisticslineComponent } from './stadisticsline/stadisticsline.component';
+import { InvesoresComponent } from './inversores/invesores/invesores.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,14 @@ const routes: Routes = [
   {
     path: 'contacts',
     component: ContactsComponent,
+    canActivate: [AuthGuard],
+    data: {
+      allowedRoles: ['CONTACTS'],
+    },
+  },
+  {
+    path: 'investers',
+    component: InvestersComponent,
     canActivate: [AuthGuard],
     data: {
       allowedRoles: ['CONTACTS'],
@@ -44,7 +53,7 @@ const routes: Routes = [
   },
   {
     path: 'stadistics',
-    component:StadisticsComponent,
+    component: StadisticsComponent,
     canActivate: [AuthGuard],
     data: {
       allowedRoles: ['CONTACTS'],
@@ -52,13 +61,20 @@ const routes: Routes = [
   },
   {
     path: 'stadisticsline',
-    component:StadisticslineComponent,
+    component: StadisticslineComponent,
     canActivate: [AuthGuard],
     data: {
       allowedRoles: ['CONTACTS'],
     },
   },
-
+  {
+    path: 'inversores',
+    component: InvesoresComponent,
+    canActivate: [AuthGuard],
+    data: {
+      allowedRoles: ['CONTACTS'],
+    },
+  },
 ];
 
 @NgModule({

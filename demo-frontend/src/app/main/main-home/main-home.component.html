@@ -1,14 +1,69 @@
-<h2 style="text-align: center"> {{ 'demo.title' | translate }} </h2>
-<ngx-charts-bar-vertical
-    [view]="[1000,400]"
-    [results]="saleData"
-    [xAxisLabel]="'Meses'"
-    [legendTitle]="'Ingresos por meses'"
-    [yAxisLabel]="'Ingresos (€)'"
-    [legend]="true"
-    [showXAxisLabel]="true"
-    [showYAxisLabel]="true"
-    [xAxis]="true"
-    [yAxis]="true"
-    [gradient]="true">
-</ngx-charts-bar-vertical>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap" rel="stylesheet">
+
+
+</head>
+
+
+<!--<h2 style="text-align: center"> {{ 'demo.title' | translate }} </h2>-->
+
+
+
+<div id="services-home" class="service">
+    <!-- <div class="title">
+        <h2>{{'landing.service.h2' | translate}}</h2>
+    </div> -->
+
+    <div class="box">
+        <div class="card">
+            <i class="fas fa-rocket"></i>
+            <h5>{{'landing.service.startup.h5' | translate}}</h5>
+            <div class="pra">
+                <p>{{'landing.service.startup.p' | translate}}</p>
+
+                <p style="text-align: center;">
+                    <a class="button" href="/inversores">{{'landing.service.startup.a' | translate}}</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-hand-holding-usd"></i>
+            <h5>{{'landing.service.investor.h5' | translate}}</h5>
+            <div class="pra">
+                <p>{{'landing.service.investor.p' | translate}}</p>
+
+                <p style="text-align: center;">
+                    <a class="button" href="/inversores">{{'landing.service.investor.a' | translate}}</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-users"></i>
+            <h5>{{'landing.service.entrepreneur.h5' | translate}}</h5>
+            <div class="pra">
+                <p>{{'landing.service.entrepreneur.p' | translate}}</p>
+
+                <p style="text-align: center;">
+                    <a class="button" href="/entrepreneur">{{'landing.service.entrepreneur.a' | translate}}</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+</html>

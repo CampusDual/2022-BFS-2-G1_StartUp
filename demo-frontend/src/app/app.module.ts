@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,7 +25,8 @@ import { MatPaginatorIntl } from '@angular/material/paginator';
 import { CustomMatPaginatorIntl } from './model/custom-mat-paginator';
 import { CoreModule } from './core/core.module';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { RouterModule } from '@angular/router';
+
+
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { RouterModule } from '@angular/router';
     AppComponent,
     ConfirmationDialogComponent,
     MatSnackBarComponent,
-    LandingPageComponent
+    LandingPageComponent,
+ 
   ],
   imports: [
     TranslateModule.forRoot({
@@ -45,7 +47,7 @@ import { RouterModule } from '@angular/router';
     }),
     BrowserModule,
     BrowserAnimationsModule,
-
+    MdbModalModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
