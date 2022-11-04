@@ -12,6 +12,13 @@ mat-toolbar {
   background: #1e1e1e;
   color: white;
 }
+.mat-divider {
+  display: block;
+  margin: 0;
+  border-top-width: 1em;
+  border-style: 1em solid;
+  border-color: rgb(255, 87, 51);
+}
 
 mat-sidenav {
   font-family: "Josefin Sans", sans-serif;
@@ -118,4 +125,15 @@ a:active {
 strong {
   text-align: center;
   margin-left: 1rem;
+}
+
+mat-icon {
+  margin-left: 0.5em;
+  margin-top: auto;
+}
+
+.title-bar {
+  margin: 0 12px 0 12px;
+  font-family: "Rubik", sans-serif;
+  font-size: xx-large;
 }
