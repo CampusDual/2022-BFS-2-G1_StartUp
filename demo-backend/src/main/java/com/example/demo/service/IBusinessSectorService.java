@@ -1,8 +1,10 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.BusinessSector;
+import java.util.List;
 
-public interface IBusinessSectorService extends GenericService<BusinessSector, Integer> {
+import com.example.demo.dto.BusinessSectorDTO;
 
+public interface IBusinessSectorService{
 
+	List<BusinessSectorDTO> findAll();
 }

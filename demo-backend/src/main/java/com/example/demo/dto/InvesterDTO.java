@@ -4,7 +4,6 @@ import java.io.Serial;
 import java.io.Serializable;
 
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import com.example.demo.utils.Constant;
@@ -19,11 +18,11 @@ public class InvesterDTO implements Serializable{
 
 	private Integer id;
 
-	@NotEmpty(message = Constant.INVESTER_NAME_REQUIRED)
+	@NotNull(message = Constant.INVESTER_NAME_REQUIRED)
 	private String name;
 
 	@Email(message= Constant.INVESTER_EMAIL_INVALID)
-	@NotEmpty(message = Constant.INVESTER_EMAIL_REQUIRED)
+	@NotNull(message = Constant.INVESTER_EMAIL_REQUIRED)
 	private String email;
 	
 	@NotNull(message = Constant.INVESTER_RANGE_REQUIRED)

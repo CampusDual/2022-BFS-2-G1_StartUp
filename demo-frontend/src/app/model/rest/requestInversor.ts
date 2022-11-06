@@ -1,5 +1,8 @@
 
+import { BusinessSector } from '../businessSector';
 import { Inversor } from '../inversor';
+import { RangeInvester } from '../rangeInvester';
+import { StartupState } from '../startupState';
 
 export class QuerySortPaginationRequest {
   query: string;
@@ -21,9 +24,9 @@ export class CreateInversorRequest {
   id:number;
   name:string;
   email:string;
-  idInvesterRange?: any;
-  idBusinessSector?: any;
-  idStartUpState?: any;
+  idInvesterRange?: RangeInvester;
+  idBusinessSector?: BusinessSector;
+  idStartUpState?: StartupState;
 
   constructor(inversor: Inversor) {
     this.id = inversor.id;

@@ -1,8 +1,10 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.StartupState;
+import java.util.List;
 
-public interface IStartupStateService extends GenericService<StartupState, Integer> {
+import com.example.demo.dto.StartupStateDTO;
 
+public interface IStartupStateService{
 
+	List<StartupStateDTO> findAll();
 }
