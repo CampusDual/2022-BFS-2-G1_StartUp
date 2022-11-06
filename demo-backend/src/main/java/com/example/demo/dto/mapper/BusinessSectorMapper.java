@@ -1,15 +1,18 @@
 package com.example.demo.dto.mapper;
 
 
+import java.util.List;
+
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
+import org.mapstruct.factory.Mappers;
 
 import com.example.demo.dto.BusinessSectorDTO;
 import com.example.demo.entity.BusinessSector;
 
-@Mapper(componentModel = "spring", uses = ReferenceMapper.class)
-public interface BusinessSectorMapper extends GenericMapper<BusinessSector, BusinessSectorDTO> {
-    @Override
-    @Mapping(target = "id")
-    BusinessSector asEntity(BusinessSectorDTO dto);
+@Mapper
+public interface BusinessSectorMapper {
+
+	BusinessSectorMapper INSTANCE = Mappers.getMapper(BusinessSectorMapper.class);
+
+	List<BusinessSectorDTO> businessSectorToBusinessSectorDtoList(List<BusinessSector> businessSectors);
 }

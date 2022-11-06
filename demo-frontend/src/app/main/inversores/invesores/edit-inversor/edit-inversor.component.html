@@ -1,4 +1,4 @@
-<!-- <form [formGroup]="inversorForm" (ngSubmit)="save()" class="row g-3">
+<form [formGroup]="inversorForm" (ngSubmit)="save()" class="row g-3">
   <div class="col-6">
     <label for="inputEmail4" class="form-label">Email</label>
     <input formControlName="email" type="email" placeholder="{{ 'table.contacts.email' | translate }}"
@@ -12,27 +12,27 @@
   <div class="col-3">
     <label for="inputIR" class="form-label">Investor Range</label>
     <select id="inputIR" class="form-select" formControlName="idInvesterRange">
-      <option [ngValue]="1">1</option>
+      <option *ngFor="let rangeInvester of rangeInvesters" [ngValue]="{id:rangeInvester.id,value:rangeInvester.value}">{{rangeInvester.value}}</option>
     </select>
   </div>
   <div class="col-3">
     <label for="inputBS" class="form-label">Business Sector</label>
     <select id="inputBS" class="form-select" formControlName="idBusinessSector">
-      <option [ngValue]="1">1</option>
+        <option *ngFor="let businessSector of businessSectors" [ngValue]="{id:businessSector.id,value:businessSector.type}">{{businessSector.type}}</option>
     </select>
   </div>
   <div class="col-3">
     <label for="inputState" class="form-label">State</label>
-    <select id="inputState" class="form-select" formControlName="idInvesterRange">
-      <option [ngValue]="1">1</option>
+    <select id="inputState" class="form-select" formControlName="idStartUpState">
+        <option *ngFor="let startupState of startupStates" [ngValue]="{id:startupState.id,value:startupState.type}">{{startupState.type}}</option>
     </select>
   </div>
   <div class="mb-3">
     <button type="submit" class="btn btn-primary" [disabled]="!inversorForm.valid">{{ 'button.save' | translate
       }}</button>
   </div>
-</form> -->
-<div class="main-content">
+</form> 
+<!-- <div class="main-content">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8">
@@ -95,4 +95,4 @@
 
         </div>
     </div>
-</div>
+</div>-->
