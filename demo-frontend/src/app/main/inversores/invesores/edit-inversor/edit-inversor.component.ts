@@ -2,9 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { ActivatedRoute, Router } from '@angular/router';
+import { BusinessSector } from 'src/app/model/businessSector';
 import { Inversor } from 'src/app/model/inversor';
+import { RangeInvester } from 'src/app/model/rangeInvester';
+import { StartupState } from 'src/app/model/startupState';
+import { BusinessSectorService } from 'src/app/services/business-sector.service';
 import { InversorService } from 'src/app/services/inversor.service';
 import { LoggerService } from 'src/app/services/logger.service';
+import { RangeInvesterService } from 'src/app/services/range-invester.service';
+import { StartupStateService } from 'src/app/services/startup-state.service';
 
 @Component({
   selector: 'app-edit-inversor',
@@ -17,8 +23,13 @@ export class EditInversorComponent implements OnInit {
   inversorForm: FormGroup;
   inversor: Inversor;
   errores: string[];
-
+rangeInvesters: RangeInvester[];
+businessSectors: BusinessSector[];
+startupStates:StartupState[];
   constructor(
+    private rangeInvesterService: RangeInvesterService,
+    private businessSectorService: BusinessSectorService,
+    private startupStateService:StartupStateService,
     private fb: FormBuilder,
     private inversorService: InversorService,
     private router: Router,
@@ -29,6 +40,9 @@ export class EditInversorComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getRangeInvesters();
+    this.getBusinesSectors();
+    this.getStartupState();
     this.createFormGroup();
     this.idInversor = this.route.snapshot.params['id'];
     if (this.idInversor) {
@@ -44,6 +58,19 @@ export class EditInversorComponent implements OnInit {
         });
     }
   }
+
+  getRangeInvesters(){
+this.rangeInvesterService.getRangeInvesters().subscribe(response=>this.rangeInvesters=response)
+  }
+
+  getBusinesSectors(){
+    this.businessSectorService.getBusinessSectors().subscribe(response=>this.businessSectors=response)
+      }
+
+  getStartupState(){
+    this.startupStateService.getStartupState().subscribe(response=>this.startupStates=response)
+      }
+
   onFormChanges() {
     this.inversorForm.valueChanges.subscribe((val) => {});
   }

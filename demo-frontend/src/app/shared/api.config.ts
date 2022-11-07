@@ -27,9 +27,8 @@ export const API_CONFIG = {
   deleteInvestor:environment.investorBaseUrl +'/deleteInvestor/',
 
   //RangeInvester API
-  urlBaseRange: environment.adminBaseUrl + '/rangeInvester/',
-  getRangePage: environment.adminBaseUrl + '/rangeInvester/page-query/',
-
+  urlBaseRange: environment.adminBaseUrl + '/rangeInvester/getRangeInvestors',
+  
   //ProfessionalProfile API
   urlProfessionalProfile: environment.adminBaseUrl + '/professionalProfile/',
   getPPage: environment.adminBaseUrl + '/professionalProfile/page-query/',
@@ -39,10 +38,9 @@ export const API_CONFIG = {
   getStartupPage: environment.adminBaseUrl + '/startup/page-query/',
 
   //BusinessSector API
-  urlBaseBusinessSector: environment.adminBaseUrl + '/businessSector/',
-  getBSPage: environment.adminBaseUrl + '/businessSector/page-query/',
+  urlBaseBusinessSector: environment.adminBaseUrl + '/businessSector/getBusinessSectors',
+
 
   //StartupState API
-  urlBaseStartUpState: environment.adminBaseUrl + '/startupState/',
-  getStartUpStatePage: environment.adminBaseUrl + '/startupState/page-query/',
+  urlBaseStartUpState: environment.adminBaseUrl + '/startupState/getStartupStates',
 };

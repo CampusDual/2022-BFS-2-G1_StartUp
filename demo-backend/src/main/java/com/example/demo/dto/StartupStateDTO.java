@@ -7,10 +7,7 @@ import java.io.Serial;
 import java.io.Serializable;
 
 @Data
-public class StartupStateDTO implements Serializable {
-
-    @Serial
-    private static final long serialVersionUID = -3584451206597739951L;
+public class StartupStateDTO {
 
     private Integer id;
 

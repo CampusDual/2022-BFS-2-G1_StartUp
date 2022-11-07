@@ -1,8 +1,12 @@
+import { BusinessSector } from "./businessSector";
+import { RangeInvester } from "./rangeInvester";
+import { StartupState } from "./startupState";
+
 export class Inversor {
     id?: number;
     name?: string;
     email?: string;
-    idInvesterRange?: any;
-    idBusinessSector?: any;
-    idStartUpState?: any;
+    idInvesterRange?: RangeInvester;
+    idBusinessSector?: BusinessSector;
+    idStartUpState?: StartupState;
   }

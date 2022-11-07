@@ -75,7 +75,7 @@ export class EntrepreneurListComponent implements OnInit {
   }
 
   getAllRangeInvester() {
-    this.rangeInvesterService.getRangeInvester().subscribe((ri) => {
+    this.rangeInvesterService.getRangeInvesters().subscribe((ri) => {
       this.rangeInvesterList = ri;
       console.log(this.rangeInvesterList);
     });
