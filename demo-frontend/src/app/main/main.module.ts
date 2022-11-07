@@ -42,6 +42,7 @@ import { StadisticsComponent } from './stadistics/stadistics.component';
 import { StadisticsbarComponent } from './stadisticsbar/stadisticsbar.component';
 import { StadisticslineComponent } from './stadisticsline/stadisticsline.component';
 
+
 @NgModule({
   declarations: [
     MainHomeComponent,
@@ -50,6 +51,7 @@ import { StadisticslineComponent } from './stadisticsline/stadisticsline.compone
     StadisticslineComponent,
     StadisticsbarComponent,
     DeleteModalComponent,
+
 
 
   ],

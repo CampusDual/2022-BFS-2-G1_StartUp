@@ -9,6 +9,7 @@ import { StadisticsComponent } from './stadistics/stadistics.component';
 import { InvestersComponent } from './investers/investers.component';
 import { StadisticslineComponent } from './stadisticsline/stadisticsline.component';
 import { InvesoresComponent } from './inversores/invesores/invesores.component';
+import { StartupComponent } from './startup/startup.component';
 
 const routes: Routes = [
   {
@@ -70,6 +71,14 @@ const routes: Routes = [
   {
     path: 'inversores',
     component: InvesoresComponent,
+    canActivate: [AuthGuard],
+    data: {
+      allowedRoles: ['CONTACTS'],
+    },
+  },
+  {
+    path: 'startup',
+    component: StartupComponent,
     canActivate: [AuthGuard],
     data: {
       allowedRoles: ['CONTACTS'],
