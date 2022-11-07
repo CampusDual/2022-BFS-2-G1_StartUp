@@ -1,23 +1,20 @@
+import { SelectionModel } from '@angular/cdk/collections';
 import {
-  Component,
-   OnInit,
-  AfterViewInit,
-  ViewChild,
-  ElementRef,
+  AfterViewInit, Component, ElementRef, OnInit, ViewChild
 } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { merge, fromEvent, Observable, Observer } from 'rxjs';
-import { tap, debounceTime, distinctUntilChanged } from 'rxjs/operators';
-import { SelectionModel } from '@angular/cdk/collections';
-import { AnyPageFilter, AnyField, SortFilter } from 'src/app/model/rest/filter';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { fromEvent, merge, Observable, Observer } from 'rxjs';
+import { debounceTime, distinctUntilChanged, tap } from 'rxjs/operators';
 import { InversoresDataSource } from 'src/app/model/datasource/inversores.datasource';
 import { Inversor } from 'src/app/model/inversor';
+import { AnyField, AnyPageFilter, SortFilter } from 'src/app/model/rest/filter';
 import { InversorService } from 'src/app/services/inversor.service';
-import { Router } from '@angular/router';
 import { ConfirmationDialogComponent } from 'src/app/shared/confirmation-dialog/confirmation-dialog.component';
-import { MatDialog } from '@angular/material/dialog';
+import { EditInversorComponent } from './edit-inversor/edit-inversor.component';
 
 @Component({
   selector: 'app-invesores',
@@ -171,12 +168,19 @@ loadInversoresPage() {
   }
 
   onAdd() {
-    this.router.navigate(['/inversores/add']);
+    const dialogConfig = new MatDialogConfig();
+   // dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "50%";
+    this.dialog.open(EditInversorComponent, dialogConfig);
   }
 
   onEdit(row: Inversor) {
     this.highlightedRow = row;
     this.router.navigate(['/inversores/edit/' + row.id]);
+  }
+
+    onClear() {
   }
 
 }

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { ActivatedRoute, Route, Router } from '@angular/router';
-import { LoggerService } from 'src/app/services/logger.service';
-import { InversorService } from 'src/app/services/inversor.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Inversor } from 'src/app/model/inversor';
+import { InversorService } from 'src/app/services/inversor.service';
+import { LoggerService } from 'src/app/services/logger.service';
 
 @Component({
   selector: 'app-edit-inversor',
