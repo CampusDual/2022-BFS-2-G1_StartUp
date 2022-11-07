@@ -4,6 +4,8 @@ import { AuthService } from 'src/app/auth/auth.service';
 import { environment } from 'src/environments/environment';
 import {Idle, DEFAULT_INTERRUPTSOURCES} from '@ng-idle/core';
 import { Keepalive } from '@ng-idle/keepalive';
+import { InversoresDataSource } from '../../model/datasource/inversores.datasource';
+import { InversorService } from '../../services/inversor.service';
 
 @Component({
   selector: 'app-main-home',
@@ -15,6 +17,8 @@ export class MainHomeComponent {
   idleState = 'Not started.';
   timedOut = false;
   lastPing?: Date = null;
+  counter?: number;
+  dataSource: InversoresDataSource;
 
   // Example array to be used by chart. This array should be returned by a backend method, with the necessary information
   saleData = [
@@ -29,8 +33,16 @@ export class MainHomeComponent {
   //cuantos X hay en un peridodo de tiempo
 
 return 45550;
+
+
   }
-  constructor(private idle: Idle, private keepalive: Keepalive, private authService: AuthService) {
+  constructor(private idle: Idle, private keepalive: Keepalive, private authService: AuthService, private investorService: InversorService) {
+
+   //console.log('Counter:  ',this.counter = inversoresDataSource.totalElements);
+   this.dataSource = new InversoresDataSource(this.investorService);
+this.counter = this.dataSource.totalElements;
+
+   console.log(this.dataSource.totalElements);
 
     // sets an idle timeout of X seconds, for testing purposes.
     idle.setIdle(environment.idle);
@@ -57,11 +69,13 @@ return 45550;
     keepalive.onPing.subscribe(() => this.lastPing = new Date());
 
     this.reset();
+
   }
 
   reset() {
     this.idle.watch();
     this.idleState = 'Started.';
     this.timedOut = false;
+
   }
  }
