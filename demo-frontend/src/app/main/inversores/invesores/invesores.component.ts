@@ -45,7 +45,6 @@ export class InvesoresComponent implements OnInit, AfterViewInit {
     'idStartUpState',
   ];
 
-  progresValue: number;
   selection = new SelectionModel<Inversor>(true, []);
   error = false;
 

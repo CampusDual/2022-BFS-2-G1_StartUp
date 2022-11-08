@@ -30,26 +30,26 @@
                 </button>
                 <mat-menu #language="matMenu">
                     <button mat-menu-item (click)="toogleLanguage('es')">
-                        <span>{{ "language.spanish" | translate }}</span>
+                        <span class="language-menu">{{ "language.spanish" | translate }}</span>
                     </button>
                     <button mat-menu-item (click)="toogleLanguage('gl')">
-                        <span>{{ "language.galician" | translate }}</span>
+                        <span class="language-menu">{{ "language.galician" | translate }}</span>
                     </button>
                     <button mat-menu-item (click)="toogleLanguage('en')">
-                        <span>{{ "language.english" | translate }}</span>
+                        <span class="language-menu">{{ "language.english" | translate }}</span>
                     </button>
                 </mat-menu>
             </li>
 
-            <li>
+            <li class="logout-menu">
                 <button mat-icon-button [matMenuTriggerFor]="auth">
                     <mat-icon>person_outline</mat-icon>
                 </button>
                 <mat-menu #auth="matMenu">
-                    <strong matSubheader>{{ userName }}</strong>
-                    <button mat-menu-item (click)="logout()">
+                    <strong class="logout-menu" matSubheader>{{ userName }}</strong>
+                    <button class="logout-menu" mat-menu-item (click)="logout()">
                         <mat-icon>exit_to_app</mat-icon>
-                        <span>{{ "menu.logout" | translate }}</span>
+                        <span class="logout-menu span-logout">{{ "menu.logout" | translate }}</span>
                     </button>
                 </mat-menu>
             </li>

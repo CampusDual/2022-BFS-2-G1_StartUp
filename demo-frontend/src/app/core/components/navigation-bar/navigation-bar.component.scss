@@ -21,7 +21,7 @@ mat-toolbar {
 }
 
 mat-sidenav {
-    font-family: "Josefin Sans", sans-serif;
+    font-family: "Inter", sans-serif;
     margin: 16px;
     width: 200px;
     height: fit-content;
@@ -35,7 +35,7 @@ mat-sidenav {
 }
 
 .content {
-    font-family: "Rubik", sans-serif;
+    font-family: "Inter", sans-serif;
     height: fit-content;
     border-radius: 10px;
     margin: 16px;
@@ -98,7 +98,7 @@ span,
 h2,
 .up,
 strong {
-    font-family: "Josefin Sans", sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 h2 {
@@ -129,10 +129,13 @@ mat-icon {
     margin-left: 0.5em;
     margin-top: auto;
     margin-right: 0.5em;
+
 }
 
 .title-bar {
     margin: 0 12px 0 12px;
-    font-family: "Rubik", sans-serif;
-    font-size: xx-large;
+    font-size: 1rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    letter-spacing: 4px;
 }
