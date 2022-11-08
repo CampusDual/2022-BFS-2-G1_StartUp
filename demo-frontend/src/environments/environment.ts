@@ -9,6 +9,7 @@ export const environment = {
   adminBaseUrl: 'http://localhost:9999',
   contactsBaseUrl: 'http://localhost:9999/contacts',
   investorBaseUrl: 'http://localhost:9999/investor',
+  startupBaseUrl: 'http://localhost:9999/startup',
   loginBaseUrl: 'http://localhost:9999/login',
   clientName: 'demo',
   clientSecret: '8Fjkk59bXKws8bmMNFZB',

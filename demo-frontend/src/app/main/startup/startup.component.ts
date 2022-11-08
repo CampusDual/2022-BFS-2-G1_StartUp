@@ -9,51 +9,54 @@ import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { fromEvent, merge, Observable, Observer } from 'rxjs';
 import { debounceTime, distinctUntilChanged, tap } from 'rxjs/operators';
-import { InversoresDataSource } from 'src/app/model/datasource/inversores.datasource';
-import { Inversor } from 'src/app/model/inversor';
+import { StartupsDataSource } from 'src/app/model/datasource/startup.datasource';
+import { Startup } from 'src/app/model/startup';
 import { AnyField, AnyPageFilter, SortFilter } from 'src/app/model/rest/filter';
-import { InversorService } from 'src/app/services/inversor.service';
+import { StartupService } from 'src/app/services/startup.service';
 import { ConfirmationDialogComponent } from 'src/app/shared/confirmation-dialog/confirmation-dialog.component';
-import { EditInversorComponent } from './edit-inversor/edit-inversor.component';
+import { EditStartupComponent } from './edit-startup/edit-startup.component';
 
 @Component({
-  selector: 'app-invesores',
-  templateUrl: './invesores.component.html',
-  styleUrls: ['./invesores.component.scss']
+  selector: 'app-startup',
+  templateUrl: './startup.component.html',
+  styleUrls: ['./startup.component.scss']
 })
-export class InvesoresComponent implements OnInit, AfterViewInit {
+export class StartupComponent implements OnInit, AfterViewInit {
 
-  dataSource: InversoresDataSource;
+  dataSource: StartupsDataSource;
   displayedColumns = [
     'select',
     //'id',
     'name',
     'email',
-    'idInvesterRange',
+    //'description',
     'idBusinessSector',
-    'idStartUpState'
+    'idStartUpState',
+    'anualInvoicing',
+    'fundationYear',
+    //'idEntrepreneur'
   ];
-  fields = ['id', 'name', 'email', 'idInvesterRange', 'idBusinessSector', 'idStartUpState'];
+  fields = ['name', 'email', 'description', 'idBusinessSector', 'idStartUpState','anualInvoicing','fundationYear','idEntrepreneur'];
 
-  selection = new SelectionModel<Inversor>(true, []);
+  selection = new SelectionModel<Startup>(true, []);
   error = false;
 
   @ViewChild('edit') editTemplate: any;
-  highlightedRow: Inversor;
+  highlightedRow: Startup;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild('input') input: ElementRef;
 
   constructor(
-    private investorService: InversorService,
+    private startupService: StartupService,
     private translate: TranslateService,
     private router: Router,
     private dialog: MatDialog
   ) { }
 
   ngOnInit() {
-    this.dataSource = new InversoresDataSource(this.investorService);
+    this.dataSource = new StartupsDataSource(this.startupService);
     const pageFilter = new AnyPageFilter(
       '',
       this.fields.map((field) => new AnyField(field)),
@@ -61,7 +64,7 @@ export class InvesoresComponent implements OnInit, AfterViewInit {
       20,
       'name'
     );
-    this.dataSource.getInversores(pageFilter);
+    this.dataSource.getStartups(pageFilter);
   }
 
   ngAfterViewInit(): void {
@@ -72,7 +75,7 @@ export class InvesoresComponent implements OnInit, AfterViewInit {
         distinctUntilChanged(),
         tap(() => {
           this.paginator.pageIndex = 0;
-          this.loadInversoresPage();
+          this.loadStartupsPage();
         })
       )
       .subscribe();
@@ -87,13 +90,13 @@ export class InvesoresComponent implements OnInit, AfterViewInit {
     merge(this.sort.sortChange, this.paginator.page)
       .pipe(
         tap(() => {
-          this.loadInversoresPage();
+          this.loadStartupsPage();
         })
       )
       .subscribe();
   }
 
-loadInversoresPage() {
+  loadStartupsPage() {
     this.selection.clear();
     this.error = false;
     const pageFilter = new AnyPageFilter(
@@ -106,13 +109,13 @@ loadInversoresPage() {
     pageFilter.order.push(
       new SortFilter(this.sort.active, this.sort.direction.toString())
     );
-    this.dataSource.getInversores(pageFilter);
+    this.dataSource.getStartups(pageFilter);
   }
 
   /** Whether the number of selected elements matches the total number of rows. */
   isAllSelected() {
     const numSelected = this.selection.selected.length;
-    const numRows = this.dataSource.inversorsSubject.value.length;
+    const numRows = this.dataSource.startupsSubject.value.length;
     return numSelected === numRows;
   }
 
@@ -120,7 +123,7 @@ loadInversoresPage() {
   masterToggle() {
     this.isAllSelected()
       ? this.selection.clear()
-      : this.dataSource.inversorsSubject.value.forEach((row) =>
+      : this.dataSource.startupsSubject.value.forEach((row) =>
         this.selection.select(row)
       );
   }
@@ -145,19 +148,19 @@ loadInversoresPage() {
   }
 
   delete() {
-    const inversor = this.selection.selected[0];
-    this.selection.deselect(inversor);
+    const startup = this.selection.selected[0];
+    this.selection.deselect(startup);
     if (this.selection.selected && this.selection.selected.length === 0) {
-      this.investorService.deleteInversor(inversor.id).subscribe((response) => {
+      this.startupService.deleteStartup(startup.id).subscribe((response) => {
         console.log(response)
         if (response.responseCode !== 'OK') {
           this.error = true;
         } else {
-          this.loadInversoresPage();
+          this.loadStartupsPage();
         }
       });
     } else {
-      this.investorService.deleteInversor(inversor.id).subscribe((response) => {
+      this.startupService.deleteStartup(startup.id).subscribe((response) => {
         console.log(response);
         if (response.responseCode !== 'OK') {
           this.error = true;
@@ -169,15 +172,15 @@ loadInversoresPage() {
 
   onAdd() {
     const dialogConfig = new MatDialogConfig();
-    //dialogConfig.disableClose = true;
+   // dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = "50%";
-    this.dialog.open(EditInversorComponent, dialogConfig);
+    this.dialog.open(EditStartupComponent, dialogConfig);
   }
 
-  onEdit(row: Inversor) {
+  onEdit(row: Startup) {
     this.highlightedRow = row;
-    this.router.navigate(['/inversores/edit/' + row.id]);
+    this.router.navigate(['/startup/edit/' + row.id]);
   }
 
     onClear() {

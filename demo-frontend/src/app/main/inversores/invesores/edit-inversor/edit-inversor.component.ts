@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { ActivatedRoute, Route, Router } from '@angular/router';
-import { LoggerService } from 'src/app/services/logger.service';
-import { InversorService } from 'src/app/services/inversor.service';
-import { Inversor } from 'src/app/model/inversor';
-import { Invester } from 'src/app/model/invester';
-import { RangeInvesterService } from 'src/app/services/range-invester.service';
-import { RangeInvester } from 'src/app/model/rangeInvester';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BusinessSector } from 'src/app/model/businessSector';
-import { BusinessSectorService } from 'src/app/services/business-sector.service';
-import { StartupStateService } from 'src/app/services/startup-state.service';
+import { Inversor } from 'src/app/model/inversor';
+import { RangeInvester } from 'src/app/model/rangeInvester';
 import { StartupState } from 'src/app/model/startupState';
+import { BusinessSectorService } from 'src/app/services/business-sector.service';
+import { InversorService } from 'src/app/services/inversor.service';
+import { LoggerService } from 'src/app/services/logger.service';
+import { RangeInvesterService } from 'src/app/services/range-invester.service';
+import { StartupStateService } from 'src/app/services/startup-state.service';
 
 @Component({
   selector: 'app-edit-inversor',
@@ -67,7 +66,7 @@ this.rangeInvesterService.getRangeInvesters().subscribe(response=>this.rangeInve
   getBusinesSectors(){
     this.businessSectorService.getBusinessSectors().subscribe(response=>this.businessSectors=response)
       }
-  
+
   getStartupState(){
     this.startupStateService.getStartupState().subscribe(response=>this.startupStates=response)
       }

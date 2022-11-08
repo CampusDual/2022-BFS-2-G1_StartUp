@@ -1,5 +1,9 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { EditStartupComponent } from './edit-startup/edit-startup.component';
+import { StartupLayoutComponent } from './startup-layout/startup-layout.component';
+import { StartupComponent } from './startup.component';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -16,16 +20,16 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { TranslateModule } from '@ngx-translate/core';
-import { EditInversorComponent } from './edit-inversor/edit-inversor.component';
-import { InversorLayoutComponent } from './inversor-layout/inversor-layout.component';
-import { InversorRoutingModule } from './inversores-routing.module';
-import { InvesoresComponent } from './invesores.component';
+import { StartupRoutingModule } from './startup-routing.module';
+
+
+
 
 @NgModule({
   declarations: [
-    EditInversorComponent,
-    InvesoresComponent,
-    InversorLayoutComponent,
+    EditStartupComponent,
+    StartupComponent,
+    StartupLayoutComponent
   ],
   imports: [
     MatDatepickerModule,
@@ -35,7 +39,7 @@ import { InvesoresComponent } from './invesores.component';
     MatCardModule,
     MatGridListModule,
     CommonModule,
-    InversorRoutingModule,
+    StartupRoutingModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
@@ -48,6 +52,7 @@ import { InvesoresComponent } from './invesores.component';
     MatCardModule,
     MatCheckboxModule,
     TranslateModule,
-  ],
+
+  ]
 })
-export class InversoresModule {}
+export class StartupModule { }

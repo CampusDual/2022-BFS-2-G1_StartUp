@@ -1,8 +1,12 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.Entrepreneur;
+import java.util.List;
 
-public interface IEntrepreneurService extends GenericService<Entrepreneur, Integer> {
+import com.example.demo.dto.EntrepreneurDTO;
+
+public interface IEntrepreneurService{
+
+	List<EntrepreneurDTO> findAll();
 
 
 }

@@ -25,6 +25,8 @@ import { MatPaginatorIntl } from '@angular/material/paginator';
 import { CustomMatPaginatorIntl } from './model/custom-mat-paginator';
 import { CoreModule } from './core/core.module';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { EditInversorComponent } from './main/inversores/invesores/edit-inversor/edit-inversor.component';
+
 
 
 
@@ -35,7 +37,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     ConfirmationDialogComponent,
     MatSnackBarComponent,
     LandingPageComponent,
- 
+
+
   ],
   imports: [
     TranslateModule.forRoot({
@@ -62,7 +65,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     NgIdleKeepaliveModule.forRoot()
   ],
   entryComponents: [
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    EditInversorComponent
   ],
   exports: [
     TranslateModule
