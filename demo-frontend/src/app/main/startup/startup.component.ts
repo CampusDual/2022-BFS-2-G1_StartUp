@@ -31,12 +31,12 @@ export class StartupComponent implements OnInit, AfterViewInit {
     'email',
     'description',
     'idBusinessSector',
-    'idStartupState',
+    'idStartUpState',
     'anualInvoicing',
     'fundationYear',
     //'idEntrepreneur'
   ];
-  fields = ['id', 'name', 'email', 'description', 'idBusinessSector', 'idStartUpState','anualInvoicing','fundationYear','idEntrepreneur'];
+  fields = ['name', 'email', 'description', 'idBusinessSector', 'idStartUpState','anualInvoicing','fundationYear','idEntrepreneur'];
 
   selection = new SelectionModel<Startup>(true, []);
   error = false;
