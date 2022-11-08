@@ -97,7 +97,7 @@
                     {{ "table.startup.fundationYear" | translate }}
                 </mat-header-cell>
                 <mat-cell *matCellDef="let row" data-label="fundationYear">
-                    {{ row.fundationYear }}
+                    {{ row.fundationYear | date:"dd/MM/yy"}}
                 </mat-cell>
             </ng-container>
 

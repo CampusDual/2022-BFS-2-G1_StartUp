@@ -100,16 +100,15 @@
         },       
         "startup": {
             "id": "id",
-            "name": "Name",
+            "name": "Nombre",
             "email": "E-Mail",
-            "description": "Description",
-            "idInvesterRange": "Invester Range",
-            "idBusinessSector": "Business Sector",
-            "idStartUpState": " Startup State",
-            "anualInvoicing":" Anual Invoicing",
-            "fundationYear":" Fundation year",
-            "idEntrepreneur":" Entrepreneur"
-
+            "description": "Descripción",
+            "idInvesterRange": "Rango del inversor",
+            "idBusinessSector": "Sector Empresarial",
+            "idStartUpState": " Estado",
+            "anualInvoicing":" Facturación anual",
+            "fundationYear":" Año de fundación",
+            "idEntrepreneur":" Emprendedor"
         }
 
     },

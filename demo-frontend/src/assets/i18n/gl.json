@@ -102,15 +102,15 @@
         },       
         "startup": {
             "id": "id",
-            "name": "Name",
+            "name": "Nome",
             "email": "E-Mail",
-            "description": "Description",
-            "idInvesterRange": "Invester Range",
-            "idBusinessSector": "Business Sector",
-            "idStartUpState": " Startup State",
-            "anualInvoicing":" Anual Invoicing",
-            "fundationYear":" Fundation year",
-            "idEntrepreneur":" Entrepreneur"
+            "description": "Descrición",
+            "idInvesterRange": "Rango de inversor",
+            "idBusinessSector": "Sector Empresarial",
+            "idStartUpState": " Estado",
+            "anualInvoicing":" Facturación anual",
+            "fundationYear":" Ano de fundación",
+            "idEntrepreneur":" Emprendedor"
         }
     },
     "form": {
