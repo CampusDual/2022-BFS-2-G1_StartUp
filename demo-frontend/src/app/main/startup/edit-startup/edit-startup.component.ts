@@ -83,9 +83,12 @@ export class EditStartupComponent implements OnInit {
         this.startup.email,
         Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$'),
       ],
-      idBusinessSector: [this.startup.idBussinesSector],
-      idStartUpState: [this.startup.idStartupState],
-      idInvesterRange: [this.startup.idEntrepreneur],
+      description:[this.startup.description],
+      idBusinessSector: [this.startup.idBusinessSector],
+      idStartupState: [this.startup.idStartupState],
+      anualInvoicing:[this.startup.anualInvoicing],
+      fundationYear:[this.startup.fundationYear],
+      idEntrepreneur: [this.startup.idEntrepreneur],
     });
   }
 

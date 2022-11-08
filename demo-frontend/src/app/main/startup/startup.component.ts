@@ -29,7 +29,7 @@ export class StartupComponent implements OnInit, AfterViewInit {
     //'id',
     'name',
     'email',
-    'description',
+    //'description',
     'idBusinessSector',
     'idStartUpState',
     'anualInvoicing',

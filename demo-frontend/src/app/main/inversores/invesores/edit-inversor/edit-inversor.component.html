@@ -12,19 +12,19 @@
   <div class="col-3">
     <label for="inputIR" class="form-label">Investor Range</label>
     <select id="inputIR" class="form-select" formControlName="idInvesterRange">
-      <option *ngFor="let rangeInvester of rangeInvesters" [ngValue]="{id:rangeInvester.id,value:rangeInvester.value}">{{rangeInvester.value}}</option>
+      <option *ngFor="let rangeInvester of rangeInvesters" [value]="rangeInvester">{{rangeInvester.value}}</option>
     </select>
   </div>
   <div class="col-3">
     <label for="inputBS" class="form-label">Business Sector</label>
     <select id="inputBS" class="form-select" formControlName="idBusinessSector">
-        <option *ngFor="let businessSector of businessSectors" [ngValue]="{id:businessSector.id,value:businessSector.type}">{{businessSector.type}}</option>
+        <option *ngFor="let businessSector of businessSectors" [value]="businessSector">{{businessSector.type}}</option>
     </select>
   </div>
   <div class="col-3">
-    <label for="inputState" class="form-label">State</label>
-    <select id="inputState" class="form-select" formControlName="idStartUpState">
-        <option *ngFor="let startupState of startupStates" [ngValue]="{id:startupState.id,value:startupState.type}">{{startupState.type}}</option>
+    <label for="idStartUpState" class="form-label">State</label>
+    <select name="idStartUpState" id="idStartUpState" class="form-select" formControlName="idStartUpState">
+        <option *ngFor="let startupState of startupStates" [value]="startupState" >{{startupState.type}}</option>
     </select>
   </div>
   <div class="mb-3">

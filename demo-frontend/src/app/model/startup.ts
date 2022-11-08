@@ -7,9 +7,9 @@ export class Startup {
   name?: string;
   email?: string;
   description?: string;
-  idBussinesSector?: BusinessSector;
+  idBusinessSector?: BusinessSector;
   idStartupState?:StartupState;
   anualInvoicing?: number;
-  fundationYear?: string;
+  fundationYear?: Date;
   idEntrepreneur?: Entrepreneur;
 }

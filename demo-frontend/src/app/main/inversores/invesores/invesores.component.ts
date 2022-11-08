@@ -169,7 +169,7 @@ loadInversoresPage() {
 
   onAdd() {
     const dialogConfig = new MatDialogConfig();
-   // dialogConfig.disableClose = true;
+    //dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = "50%";
     this.dialog.open(EditInversorComponent, dialogConfig);

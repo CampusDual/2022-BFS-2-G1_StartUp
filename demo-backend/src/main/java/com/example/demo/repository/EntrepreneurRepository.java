@@ -5,9 +5,8 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.entity.Entrepreneur;
-import com.example.demo.entity.Invester;
 
 @Repository
-public interface EntrepreneurRepository extends JpaRepository<Entrepreneur, Integer> ,JpaSpecificationExecutor<Invester> {
+public interface EntrepreneurRepository extends JpaRepository<Entrepreneur, Integer> ,JpaSpecificationExecutor<Entrepreneur> {
 
 }
