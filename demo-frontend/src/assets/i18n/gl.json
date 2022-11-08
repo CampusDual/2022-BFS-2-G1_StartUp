@@ -99,6 +99,18 @@
             "idBusinessSector": "Sector Empresarial",
             "idStartUpState": "Startup State"
 
+        },       
+        "startup": {
+            "id": "id",
+            "name": "Name",
+            "email": "E-Mail",
+            "description": "Description",
+            "idInvesterRange": "Invester Range",
+            "idBusinessSector": "Business Sector",
+            "idStartUpState": " Startup State",
+            "anualInvoicing":" Anual Invoicing",
+            "fundationYear":" Fundation year",
+            "idEntrepreneur":" Entrepreneur"
         }
     },
     "form": {

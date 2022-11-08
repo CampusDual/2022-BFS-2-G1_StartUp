@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.borjaglez.springify.repository.filter.IPageFilter;
 import com.example.demo.entity.Contact;
+import com.example.demo.entity.Entrepreneur;
 import com.example.demo.entity.Invester;
 import com.example.demo.entity.Startup;
 import com.example.demo.entity.User;
@@ -72,5 +73,16 @@ public class AbstractDemoService {
 	public User fromEditUserRequest(User userRequest) {
 		return new User(userRequest.getId(),userRequest.getName(), userRequest.getSurname1(), userRequest.getSurname2(),
 				userRequest.getLogin(), userRequest.getPassword());
+	}
+	
+	//Se usa.
+	public Entrepreneur fromCreateEntrepreneurRequest(Entrepreneur entrepreneurRequest) {
+		return new Entrepreneur(entrepreneurRequest.getFirstName(), entrepreneurRequest.getLastName(), entrepreneurRequest.getEmail(),
+				entrepreneurRequest.getIdProfessionalProfile(), entrepreneurRequest.getLinkedinProfile(),entrepreneurRequest.getEntrepreneurs());
+	}
+	//Por ahora el edit no se usa.
+	public Entrepreneur fromEditEntrepreneurRequest(Entrepreneur entrepreneurRequest) {
+		return new Entrepreneur(entrepreneurRequest.getId(),entrepreneurRequest.getFirstName(), entrepreneurRequest.getLastName(), entrepreneurRequest.getEmail(),
+				entrepreneurRequest.getIdProfessionalProfile(), entrepreneurRequest.getLinkedinProfile(),entrepreneurRequest.getEntrepreneurs());
 	}
 }

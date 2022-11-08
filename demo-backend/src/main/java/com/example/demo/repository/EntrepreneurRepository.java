@@ -1,12 +1,13 @@
 package com.example.demo.repository;
 
-import com.example.demo.entity.Entrepreneur;
-import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
+import com.example.demo.entity.Entrepreneur;
+import com.example.demo.entity.Invester;
+
 @Repository
-public interface EntrepreneurRepository extends PagingAndSortingRepository<Entrepreneur, Integer> {
-/*
-    Extensión de CrudRepository para proporcionar métodos adicionais para recuperar entidades mediante a abstracción de paxinación e clasificación.
-*/
+public interface EntrepreneurRepository extends JpaRepository<Entrepreneur, Integer> ,JpaSpecificationExecutor<Invester> {
+
 }
