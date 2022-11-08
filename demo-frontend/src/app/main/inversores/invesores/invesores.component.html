@@ -13,7 +13,7 @@
         </div>
         <div fxflex>
             <mat-form-field>
-                <input matInput placeholder="{{ 'filter' | translate }}" #input id="inversores-filter" name="inversores-filter" />
+                <input matInput placeholder="{{ 'filter' | translate }}" #input id="invesores-filter" name="inversores-filter" />
             </mat-form-field>
         </div>
     </div>
@@ -83,7 +83,10 @@
                     {{ 'table.inversores.idStartUpState'| translate}}
                 </mat-header-cell>
                 <mat-cell *matCellDef="let row" data-label="idStartUpState">
-                    {{ row.idStartUpState.type }}
+                    <span [ngClass]="{'green-class': row.idStartUpState.type === 'Scaleup'
+                    , 'orange-class': row.idStartUpState.type === 'Early Stage'
+                    , 'red-class': row.idStartUpState.type=== 'Seed' }">{{ row.idStartUpState.type }}</span>
+                    <mat-progress-bar  [value]="changeProgresValue(row.idStartUpState.type)" ></mat-progress-bar>
                 </mat-cell>
             </ng-container>
 

@@ -20,6 +20,8 @@ import { EditInversorComponent } from './edit-inversor/edit-inversor.component';
 import { InversorLayoutComponent } from './inversor-layout/inversor-layout.component';
 import { InversorRoutingModule } from './inversores-routing.module';
 import { InvesoresComponent } from './invesores.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { InvesoresComponent } from './invesores.component';
     InversorLayoutComponent,
   ],
   imports: [
+    MatProgressSpinnerModule,
+    MatProgressBarModule,
     MatDatepickerModule,
     MatSelectModule,
     FormsModule,

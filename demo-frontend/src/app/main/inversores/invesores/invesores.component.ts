@@ -1,6 +1,10 @@
 import { SelectionModel } from '@angular/cdk/collections';
 import {
-  AfterViewInit, Component, ElementRef, OnInit, ViewChild
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
 } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
@@ -19,10 +23,9 @@ import { EditInversorComponent } from './edit-inversor/edit-inversor.component';
 @Component({
   selector: 'app-invesores',
   templateUrl: './invesores.component.html',
-  styleUrls: ['./invesores.component.scss']
+  styleUrls: ['./invesores.component.scss'],
 })
 export class InvesoresComponent implements OnInit, AfterViewInit {
-
   dataSource: InversoresDataSource;
   displayedColumns = [
     'select',
@@ -31,10 +34,18 @@ export class InvesoresComponent implements OnInit, AfterViewInit {
     'email',
     'idInvesterRange',
     'idBusinessSector',
-    'idStartUpState'
+    'idStartUpState',
   ];
-  fields = ['id', 'name', 'email', 'idInvesterRange', 'idBusinessSector', 'idStartUpState'];
+  fields = [
+    'id',
+    'name',
+    'email',
+    'idInvesterRange',
+    'idBusinessSector',
+    'idStartUpState',
+  ];
 
+  progresValue: number;
   selection = new SelectionModel<Inversor>(true, []);
   error = false;
 
@@ -50,7 +61,7 @@ export class InvesoresComponent implements OnInit, AfterViewInit {
     private translate: TranslateService,
     private router: Router,
     private dialog: MatDialog
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.dataSource = new InversoresDataSource(this.investorService);
@@ -73,6 +84,7 @@ export class InvesoresComponent implements OnInit, AfterViewInit {
         tap(() => {
           this.paginator.pageIndex = 0;
           this.loadInversoresPage();
+          console.log('Resultado do input:' + this.input.nativeElement.value);
         })
       )
       .subscribe();
@@ -93,7 +105,7 @@ export class InvesoresComponent implements OnInit, AfterViewInit {
       .subscribe();
   }
 
-loadInversoresPage() {
+  loadInversoresPage() {
     this.selection.clear();
     this.error = false;
     const pageFilter = new AnyPageFilter(
@@ -121,8 +133,8 @@ loadInversoresPage() {
     this.isAllSelected()
       ? this.selection.clear()
       : this.dataSource.inversorsSubject.value.forEach((row) =>
-        this.selection.select(row)
-      );
+          this.selection.select(row)
+        );
   }
 
   onDelete() {
@@ -149,7 +161,7 @@ loadInversoresPage() {
     this.selection.deselect(inversor);
     if (this.selection.selected && this.selection.selected.length === 0) {
       this.investorService.deleteInversor(inversor.id).subscribe((response) => {
-        console.log(response)
+        console.log(response);
         if (response.responseCode !== 'OK') {
           this.error = true;
         } else {
@@ -169,9 +181,9 @@ loadInversoresPage() {
 
   onAdd() {
     const dialogConfig = new MatDialogConfig();
-   // dialogConfig.disableClose = true;
+    // dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    dialogConfig.width = "50%";
+    dialogConfig.width = '50%';
     this.dialog.open(EditInversorComponent, dialogConfig);
   }
 
@@ -180,7 +192,21 @@ loadInversoresPage() {
     this.router.navigate(['/inversores/edit/' + row.id]);
   }
 
-    onClear() {
-  }
+  onClear() {}
 
+  changeProgresValue(row: string) {
+    if (row == 'Pre-Seed') {
+      return 20;
+    } else if (row == 'Seed') {
+      return 40;
+    } else if (row == 'Early Stage') {
+      return 60;
+    } else if (row == 'Growth Stage') {
+      return 80;
+    } else if (row == 'Scaleup') {
+      return 90;
+    } else {
+      return 100;
+    }
+  }
 }
