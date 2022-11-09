@@ -21,6 +21,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { TranslateModule } from '@ngx-translate/core';
 import { StartupRoutingModule } from './startup-routing.module';
+import { CreateStartupComponent } from './create-startup/create-startup.component';
 
 
 
@@ -29,7 +30,8 @@ import { StartupRoutingModule } from './startup-routing.module';
   declarations: [
     EditStartupComponent,
     StartupComponent,
-    StartupLayoutComponent
+    StartupLayoutComponent,
+    CreateStartupComponent
   ],
   imports: [
     MatDatepickerModule,
