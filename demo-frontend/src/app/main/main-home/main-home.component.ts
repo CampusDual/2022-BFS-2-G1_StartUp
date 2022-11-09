@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
 import { environment } from 'src/environments/environment';
@@ -6,6 +5,9 @@ import {Idle, DEFAULT_INTERRUPTSOURCES} from '@ng-idle/core';
 import { Keepalive } from '@ng-idle/keepalive';
 import { InversoresDataSource } from '../../model/datasource/inversores.datasource';
 import { InversorService } from '../../services/inversor.service';
+import { AnyField, AnyPageFilter, SortFilter } from 'src/app/model/rest/filter';
+import { StartupsDataSource } from 'src/app/model/datasource/startup.datasource';
+import { StartupService } from 'src/app/services/startup.service';
 
 @Component({
   selector: 'app-main-home',
@@ -19,30 +21,39 @@ export class MainHomeComponent {
   lastPing?: Date = null;
   counter?: number;
   dataSource: InversoresDataSource;
-
-  // Example array to be used by chart. This array should be returned by a backend method, with the necessary information
-  saleData = [
-    { name: "Enero", value: this.calcular() },
-    { name: "Febrero", value: 55000 },
-    { name: "Marzo", value: 15000 },
-    { name: "Abril", value: 150000 },
-    { name: "Mayo", value: 20000 }
+  displayedColumns = [
+    'select',
+    //'id',
+    'name',
+    'email',
+    'idInvesterRange',
+    'idBusinessSector',
+    'idStartUpState'
   ];
-  //MG prueba
-  calcular():any{
-  //cuantos X hay en un peridodo de tiempo
+  fields = ['id', 'name', 'email', 'idInvesterRange', 'idBusinessSector', 'idStartUpState'];
 
-return 45550;
+  dataSourceStartup: StartupsDataSource;
+  displayedColumnsStartup = [
+    'select',
+    //'id',
+    'name',
+    'email',
+    'description',
+    'idBusinessSector',
+    'idStartUpState',
+    'anualInvoicing',
+    'fundationYear',
+    //'idEntrepreneur'
+  ];
+  fieldsStartup = ['name', 'email', 'description', 'idBusinessSector', 'idStartUpState','anualInvoicing','fundationYear','idEntrepreneur'];
 
 
-  }
-  constructor(private idle: Idle, private keepalive: Keepalive, private authService: AuthService, private investorService: InversorService) {
+
+
+  constructor(private idle: Idle, private keepalive: Keepalive, private authService: AuthService, private investorService: InversorService, private startupService:StartupService) {
 
    //console.log('Counter:  ',this.counter = inversoresDataSource.totalElements);
-   this.dataSource = new InversoresDataSource(this.investorService);
-this.counter = this.dataSource.totalElements;
 
-   console.log(this.dataSource.totalElements);
 
     // sets an idle timeout of X seconds, for testing purposes.
     idle.setIdle(environment.idle);
@@ -77,5 +88,28 @@ this.counter = this.dataSource.totalElements;
     this.idleState = 'Started.';
     this.timedOut = false;
 
+  }
+
+  ngOnInit() {
+    this.dataSource = new InversoresDataSource(this.investorService);
+    const pageFilter = new AnyPageFilter(
+      '',
+      this.fields.map((field) => new AnyField(field)),
+      0,
+      20,
+      'name'
+    );
+    this.dataSource.getInversores(pageFilter);
+
+
+    this.dataSourceStartup = new StartupsDataSource(this.startupService);
+    const pageFilterStartup = new AnyPageFilter(
+      '',
+      this.fields.map((field) => new AnyField(field)),
+      0,
+      20,
+      'name'
+    );
+    this.dataSourceStartup.getStartups(pageFilterStartup);
   }
  }

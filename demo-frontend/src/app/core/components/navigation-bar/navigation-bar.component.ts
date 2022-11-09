@@ -43,8 +43,10 @@ export class NavigationBarComponent {
         } else if (this.returnUrl == '/stadistics') {
           this.pageIcon = 'trending_up';
           this.pageTitle = 'menu.stadistics';
-        }
-      }
+        } else if (this.returnUrl == '/startup') {
+          this.pageIcon = 'trending_up';
+          this.pageTitle = 'menu.startup';
+      } }
     });
   }
 }

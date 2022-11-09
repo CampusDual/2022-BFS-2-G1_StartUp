@@ -70,7 +70,8 @@
         "investers": "Inversores",
         "entrepreneur": "Emprendedores",
         "stadistics": "Estadísticas",
-        "logout": "Pechar sesión"
+        "logout": "Pechar sesión",
+        "startup": "Startup"
     },
     "language": {
         "spanish": "Castelán",
@@ -99,7 +100,7 @@
             "idBusinessSector": "Sector Empresarial",
             "idStartUpState": "Startup State"
 
-        },       
+        },
         "startup": {
             "id": "id",
             "name": "Nome",
@@ -108,9 +109,9 @@
             "idInvesterRange": "Rango de inversor",
             "idBusinessSector": "Sector Empresarial",
             "idStartUpState": " Estado",
-            "anualInvoicing":" Facturación anual",
-            "fundationYear":" Data de fundación",
-            "idEntrepreneur":" Emprendedor"
+            "anualInvoicing": " Facturación anual",
+            "fundationYear": " Data de fundación",
+            "idEntrepreneur": " Emprendedor"
         }
     },
     "form": {
