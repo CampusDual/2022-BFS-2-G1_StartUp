@@ -118,11 +118,11 @@
           <span
             [ngClass]="{
               'green-class': row.idStartUpState.type === 'Scaleup',
-              'orange-class': row.idStartUpState.type === 'Early Stage',
-              'red-class': row.idStartUpState.type === 'Seed',
-              'preSeed-class': row.idStartUpState.type === 'Pre-Seed',
-              'exit-class': row.idStartUpState.type === 'Exit',
-              'growth-class': row.idStartUpState.type === 'Growth Stage'
+              'orange-class': row.idStartUpState.type === 'Seed',
+              'red-class': row.idStartUpState.type === 'Pre-Seed',
+              'coral-class': row.idStartUpState.type === 'Early Stage',
+              'darkgreen-class': row.idStartUpState.type === 'Exit',
+              'blue-class': row.idStartUpState.type === 'Growth Stage'
             }"
             >{{ row.idStartUpState.type }}
             <mat-progress-bar

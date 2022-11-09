@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { EditStartupComponent } from './edit-startup/edit-startup.component';
 import { StartupLayoutComponent } from './startup-layout/startup-layout.component';
 import { StartupComponent } from './startup.component';
@@ -14,14 +14,15 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { TranslateModule } from '@ngx-translate/core';
-import { StartupRoutingModule } from './startup-routing.module';
 import { CreateStartupComponent } from './create-startup/create-startup.component';
+import { StartupRoutingModule } from './startup-routing.module';
 
 
 
@@ -34,6 +35,8 @@ import { CreateStartupComponent } from './create-startup/create-startup.componen
     CreateStartupComponent
   ],
   imports: [
+    MatProgressSpinnerModule,
+    MatProgressBarModule,
     MatDatepickerModule,
     MatSelectModule,
     FormsModule,

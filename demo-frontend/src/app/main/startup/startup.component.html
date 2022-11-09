@@ -79,7 +79,17 @@
                     {{ 'table.startup.idStartUpState'| translate}}
                 </mat-header-cell>
                 <mat-cell *matCellDef="let row" data-label="idStartUpState">
-                    {{ row.idStartupState.type }}
+                    <span [ngClass]="{
+                        'green-class': row.idStartupState === 'Scaleup',
+                        'orange-class': row.idStartupState.type === 'Seed',
+                        'red-class': row.idStartupState.type === 'Pre-Seed',
+                        'coral-class': row.idStartupState.type === 'Early Stage',
+                        'darkgreen-class': row.idStartupState.type === 'Exit',
+                        'blue-class': row.idStartupState.type === 'Growth Stage'
+                    }">{{ row.idStartupState.type }}
+                        <mat-progress-bar color="accent" [value]="changeProgresValue(row.idStartupState.type)">
+                        </mat-progress-bar>
+                    </span>
                 </mat-cell>
             </ng-container>
 
