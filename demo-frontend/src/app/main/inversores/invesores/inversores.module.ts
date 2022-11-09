@@ -20,12 +20,14 @@ import { EditInversorComponent } from './edit-inversor/edit-inversor.component';
 import { InversorLayoutComponent } from './inversor-layout/inversor-layout.component';
 import { InversorRoutingModule } from './inversores-routing.module';
 import { InvesoresComponent } from './invesores.component';
+import { CreateInversorComponent } from './create-inversor/create-inversor.component';
 
 @NgModule({
   declarations: [
     EditInversorComponent,
     InvesoresComponent,
     InversorLayoutComponent,
+    CreateInversorComponent,
   ],
   imports: [
     MatDatepickerModule,

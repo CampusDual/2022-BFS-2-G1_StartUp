@@ -14,6 +14,7 @@ import { Inversor } from 'src/app/model/inversor';
 import { AnyField, AnyPageFilter, SortFilter } from 'src/app/model/rest/filter';
 import { InversorService } from 'src/app/services/inversor.service';
 import { ConfirmationDialogComponent } from 'src/app/shared/confirmation-dialog/confirmation-dialog.component';
+import { CreateInversorComponent } from './create-inversor/create-inversor.component';
 import { EditInversorComponent } from './edit-inversor/edit-inversor.component';
 
 @Component({
@@ -172,7 +173,7 @@ loadInversoresPage() {
     //dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = "50%";
-    this.dialog.open(EditInversorComponent, dialogConfig);
+    this.dialog.open(CreateInversorComponent, dialogConfig);
   }
 
   onEdit(row: Inversor) {

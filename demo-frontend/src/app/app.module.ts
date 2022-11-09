@@ -26,6 +26,8 @@ import { CustomMatPaginatorIntl } from './model/custom-mat-paginator';
 import { CoreModule } from './core/core.module';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { EditInversorComponent } from './main/inversores/invesores/edit-inversor/edit-inversor.component';
+import { CreateInversorComponent } from './main/inversores/invesores/create-inversor/create-inversor.component';
+import { CreateStartupComponent } from './main/startup/create-startup/create-startup.component';
 
 
 
@@ -66,7 +68,9 @@ import { EditInversorComponent } from './main/inversores/invesores/edit-inversor
   ],
   entryComponents: [
     ConfirmationDialogComponent,
-    EditInversorComponent
+    EditInversorComponent,
+    CreateInversorComponent,
+    CreateStartupComponent
   ],
   exports: [
     TranslateModule

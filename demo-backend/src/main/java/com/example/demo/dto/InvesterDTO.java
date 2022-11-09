@@ -1,6 +1,5 @@
 package com.example.demo.dto;
 
-import java.io.Serial;
 import java.io.Serializable;
 
 import javax.validation.constraints.Email;
@@ -11,10 +10,7 @@ import com.example.demo.utils.Constant;
 import lombok.Data;
 
 @Data
-public class InvesterDTO implements Serializable{
-
-	@Serial
-	private static final long serialVersionUID = 7916122193771477568L;
+public class InvesterDTO {
 
 	private Integer id;
 
