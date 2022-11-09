@@ -15,6 +15,8 @@ import { AuthService } from 'src/app/auth/auth.service';
 import { LoggerService } from 'src/app/services/logger.service';
 import { SidenavService } from 'src/app/services/sidenav.service';
 
+
+
 interface ROUTE {
   icon?: string;
   route?: string;
@@ -30,6 +32,8 @@ interface ROUTE {
 export class NavComponent implements OnInit, OnDestroy {
   @ViewChild('commandbarSidenav') public sidenav: MatSidenav;
   @Output() toggleSidenav = new EventEmitter<void>();
+
+
 
   sidenavRoutes: ROUTE[] = [
     {
@@ -56,14 +60,14 @@ export class NavComponent implements OnInit, OnDestroy {
     //   title: 'menu.entrepreneur',
     //   allowedRoles: ['CONTACTS']
     // },
+    // {
+    //   icon: 'trending_up',
+    //   route: 'stadistics',
+    //   title: 'menu.stadistics',
+    //   allowedRoles: ['CONTACTS'],
+    // },
     {
-      icon: 'trending_up',
-      route: 'stadistics',
-      title: 'menu.stadistics',
-      allowedRoles: ['CONTACTS'],
-    },
-    {
-      icon: 'trending_up',
+      icon: 'engineering',
       route: 'startup',
       title: 'menu.startup',
       allowedRoles: ['CONTACTS'],

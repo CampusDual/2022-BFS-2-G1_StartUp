@@ -70,7 +70,9 @@
         "investers": "Investors",
         "entrepreneur": "Entrepreneurs",
         "stadistics": "Stadistics",
-        "logout": "Logout"
+        "logout": "Logout",
+        "startup": "Startup"
+
     },
     "language": {
         "spanish": "Spanish",
@@ -108,9 +110,9 @@
             "idInvesterRange": "Invester Range",
             "idBusinessSector": "Business Sector",
             "idStartUpState": " Startup State",
-            "anualInvoicing":" Anual Invoicing",
-            "fundationYear":" Foundation date",
-            "idEntrepreneur":" Entrepreneur"
+            "anualInvoicing": " Anual Invoicing",
+            "fundationYear": " Foundation date",
+            "idEntrepreneur": " Entrepreneur"
 
         }
 
