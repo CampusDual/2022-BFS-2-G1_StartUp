@@ -17,8 +17,12 @@
 <!--<h2 style="text-align: center"> {{ 'demo.title' | translate }} </h2>-->
 
 
+<div class="title">
+    <h2>{{'landing.service.h2' | translate}}</h2>
+</div>
 
 <body>
+
     <div class="card">
         <div class="face front">
             <img src="../../../assets/images/startup-home.jpg" alt="startup">
@@ -27,10 +31,11 @@
         </div>
         <div class="face back">
             <h3>{{'landing.service.startup.h5' | translate}}</h3>
+            <i class="fas fa-rocket"></i>
             <p>{{'landing.service.startup.p' | translate}}</p>
             <div class="link">
-                <a href="/startup" class="btn-contact"> <i class="fas fa-rocket"></i></a>
-                <i class="fas fa-plus">{{dataSourceStartup.totalElements}}</i>
+                <a href="/startup" class="btn-contact"> <i class="fas fa-plus">{{dataSourceStartup.totalElements}}</i> </a>
+
             </div>
 
         </div>
@@ -44,11 +49,14 @@
 
         </div>
         <div class="face back">
-            <h3>{{'landing.service.investor.h5' | translate}}</h3>
+
+
+            <h3>{{'landing.service.investor.h5' | translate}} </h3>
+            <i class="fas fa-hand-holding-usd"></i>
             <p>{{'landing.service.investor.p' | translate}}</p>
             <div class="link">
-                <a href="/inversores" class="btn-contact"><i class="fas fa-hand-holding-usd"></i></a>
-                <i class="fas fa-plus">{{dataSource.totalElements}}</i>
+                <a href="/inversores" class="btn-contact"><i class="fas fa-plus">{{dataSource.totalElements}}</i></a>
+
             </div>
 
         </div>
@@ -63,10 +71,11 @@
         </div>
         <div class="face back">
             <h3>{{'landing.service.entrepreneur.h5' | translate}}</h3>
+            <i class="fas fa-users"></i>
             <p>{{'landing.service.entrepreneur.p' | translate}}</p>
             <div class="link">
 
-                <a href="/entrepreneurs" class="btn-contact"><i class="fas fa-users"></i></a>
+                <a href="/entrepreneurs" class="btn-contact"></a>
             </div>
 
         </div>
