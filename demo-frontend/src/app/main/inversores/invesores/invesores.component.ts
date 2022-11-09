@@ -18,6 +18,7 @@ import { Inversor } from 'src/app/model/inversor';
 import { AnyField, AnyPageFilter, SortFilter } from 'src/app/model/rest/filter';
 import { InversorService } from 'src/app/services/inversor.service';
 import { ConfirmationDialogComponent } from 'src/app/shared/confirmation-dialog/confirmation-dialog.component';
+import { CreateInversorComponent } from './create-inversor/create-inversor.component';
 import { EditInversorComponent } from './edit-inversor/edit-inversor.component';
 
 @Component({
@@ -180,10 +181,10 @@ export class InvesoresComponent implements OnInit, AfterViewInit {
 
   onAdd() {
     const dialogConfig = new MatDialogConfig();
-    // dialogConfig.disableClose = true;
+    //dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    dialogConfig.width = '50%';
-    this.dialog.open(EditInversorComponent, dialogConfig);
+    dialogConfig.width = "50%";
+    this.dialog.open(CreateInversorComponent, dialogConfig);
   }
 
   onEdit(row: Inversor) {

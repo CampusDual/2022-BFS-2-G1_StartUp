@@ -15,6 +15,7 @@ import { AnyField, AnyPageFilter, SortFilter } from 'src/app/model/rest/filter';
 import { StartupService } from 'src/app/services/startup.service';
 import { ConfirmationDialogComponent } from 'src/app/shared/confirmation-dialog/confirmation-dialog.component';
 import { EditStartupComponent } from './edit-startup/edit-startup.component';
+import { CreateStartupComponent } from './create-startup/create-startup.component';
 
 @Component({
   selector: 'app-startup',
@@ -29,7 +30,7 @@ export class StartupComponent implements OnInit, AfterViewInit {
     //'id',
     'name',
     'email',
-    'description',
+    //'description',
     'idBusinessSector',
     'idStartUpState',
     'anualInvoicing',
@@ -175,7 +176,7 @@ export class StartupComponent implements OnInit, AfterViewInit {
    // dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = "50%";
-    this.dialog.open(EditStartupComponent, dialogConfig);
+    this.dialog.open(CreateStartupComponent, dialogConfig);
   }
 
   onEdit(row: Startup) {

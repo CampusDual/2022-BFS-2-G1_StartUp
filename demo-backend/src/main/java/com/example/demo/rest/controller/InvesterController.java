@@ -48,7 +48,6 @@ import com.example.demo.utils.Constant;
 
 import lombok.extern.java.Log;
 
-@Log
 @CrossOrigin(origins = { "http://localhost:4201" })
 @RestController
 @RequestMapping(InvesterController.REQUEST_MAPPING)

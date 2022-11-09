@@ -13,11 +13,12 @@ import { LoggerService } from 'src/app/services/logger.service';
 import { StartupStateService } from 'src/app/services/startup-state.service';
 
 @Component({
-  selector: 'app-edit-startup',
-  templateUrl: './edit-startup.component.html',
-  styleUrls: ['./edit-startup.component.scss'],
+  selector: 'app-create-startup',
+  templateUrl: './create-startup.component.html',
+  styleUrls: ['./create-startup.component.scss']
 })
-export class EditStartupComponent implements OnInit {
+export class CreateStartupComponent implements OnInit {
+
   idStartup: number;
 
   startupForm: FormGroup;

@@ -13,9 +13,7 @@ import com.example.demo.entity.Entrepreneur;
 public interface EntrepreneurMapper {
 	EntrepreneurMapper INSTANCE = Mappers.getMapper(EntrepreneurMapper.class);
 
-    EntrepreneurDTO entrepreneurToEntrepreneurDto(Entrepreneur entrepreneur);
-
     List<EntrepreneurDTO> entrepreneurToEntrepreneurDtoList(List<Entrepreneur> entrepreneurs);
 
-    Entrepreneur entrepreneurDTOtoEntrepreneur(EntrepreneurDTO entrepreneurDTO);
+
 }

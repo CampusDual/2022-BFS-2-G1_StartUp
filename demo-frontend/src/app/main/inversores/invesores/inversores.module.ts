@@ -22,12 +22,14 @@ import { InversorRoutingModule } from './inversores-routing.module';
 import { InvesoresComponent } from './invesores.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 
+import { CreateInversorComponent } from './create-inversor/create-inversor.component';
 
 @NgModule({
   declarations: [
     EditInversorComponent,
     InvesoresComponent,
     InversorLayoutComponent,
+    CreateInversorComponent,
   ],
   imports: [
     MatProgressSpinnerModule,

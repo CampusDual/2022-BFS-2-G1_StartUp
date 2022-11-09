@@ -28,7 +28,7 @@ export class CreateStartupRequest {
   idBusinessSector?: BusinessSector;
   idStartupState?:StartupState;
   anualInvoicing?: number;
-  fundationYear?: string;
+  fundationYear?: Date;
   idEntrepreneur?: Entrepreneur;
 
   constructor(startup: Startup) {
@@ -36,7 +36,7 @@ export class CreateStartupRequest {
     this.name = startup.name;
     this.email = startup.email;
     this.description = startup.description;
-    this.idBusinessSector = startup.idBussinesSector;
+    this.idBusinessSector = startup.idBusinessSector;
     this.idStartupState = startup.idStartupState;
     this.anualInvoicing = startup.anualInvoicing;
     this.fundationYear = startup.fundationYear;
