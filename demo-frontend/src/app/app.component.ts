@@ -5,8 +5,8 @@ import {
   AfterContentChecked,
 } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Entrepreneur } from './model/entrepreneur';
-import { EntrepreneureService } from './services/entrepreneur.service';
+//import { Entrepreneur } from './model/entrepreneur';
+//import { EntrepreneureService } from './services/entrepreneur.service';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +20,7 @@ export class AppComponent implements AfterContentChecked {
   constructor(
     private translateService: TranslateService,
     private cd: ChangeDetectorRef,
-    private entrepreneurService: EntrepreneureService
+    //private entrepreneurService: EntrepreneureService
   ) {
     this.translateService.setDefaultLang(this.selectedLanguage);
     this.translateService.use(this.selectedLanguage);

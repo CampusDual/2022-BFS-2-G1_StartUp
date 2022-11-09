@@ -15,9 +15,7 @@ export const API_CONFIG = {
   deleteContact: environment.contactsBaseUrl + '/deleteContact',
 
   // Entrepreneur API
-  urlBaseEntrepreneurs: environment.adminBaseUrl + '/entrepreneur/',
-  getEntrepreneurs: environment.adminBaseUrl + '/entrepreneur/',
-  getEntrepreneurPage: environment.adminBaseUrl + '/entrepreneur/page-query/',
+  urlBaseEntrepreneur: environment.adminBaseUrl + '/entrepreneur/getEntrepreneurs',
 
   //invester API
   getInvestorsPage: environment.investorBaseUrl + '/getInvestors/',
@@ -34,12 +32,14 @@ export const API_CONFIG = {
   getPPage: environment.adminBaseUrl + '/professionalProfile/page-query/',
 
   //Startup API
-  urlBaseStartUp: environment.adminBaseUrl + '/startup/',
-  getStartupPage: environment.adminBaseUrl + '/startup/page-query/',
+  getStartupsPage: environment.startupBaseUrl + '/getStartups/',
+  getStartup: environment.startupBaseUrl +'/getStartup/',
+  createStartup:environment.startupBaseUrl +'/createStartup/',
+  editStartup:environment.startupBaseUrl +'/editStartup/',
+  deleteStartup:environment.startupBaseUrl +'/deleteStartup/',
 
   //BusinessSector API
   urlBaseBusinessSector: environment.adminBaseUrl + '/businessSector/getBusinessSectors',
-
 
   //StartupState API
   urlBaseStartUpState: environment.adminBaseUrl + '/startupState/getStartupStates',

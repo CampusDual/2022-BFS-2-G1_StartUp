@@ -23,6 +23,7 @@ const routes: Routes = [
   { path: 'stadisticsbar', component:StadisticsbarComponent },
   { path: 'app-delete-modal',component:DeleteModalComponent},
   { path: 'inversores', loadChildren: () => import('./main/inversores/invesores/inversores.module').then(x => x.InversoresModule) },
+  { path: 'startup', loadChildren: () => import('./main/startup/startup.module').then(x => x.StartupModule) }
 
 
 

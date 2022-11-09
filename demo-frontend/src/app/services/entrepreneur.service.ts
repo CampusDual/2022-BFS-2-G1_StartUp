@@ -1,8 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Entrepreneur } from '../model/entrepreneur';
 import { API_CONFIG } from '../shared/api.config';
+import { environment } from 'src/environments/environment';
+import { Buffer } from 'buffer';
 
 @Injectable({
   providedIn: 'root',
@@ -11,35 +13,12 @@ export class EntrepreneureService {
   constructor(private http: HttpClient) {}
 
   public getEntrepreneurs(): Observable<Entrepreneur[]> {
-    return this.http.get<Entrepreneur[]>(`${API_CONFIG.getEntrepreneurs}`);
-  }
-
-  public create(entrepreneur: any): Observable<any> {
-    return this.http.post(
-      `${API_CONFIG.urlBaseEntrepreneurs}`,
-      JSON.stringify(entrepreneur)
-    );
-  }
-
-  public find(id: number): Observable<any> {
-    return this.http.get<Entrepreneur>(
-      `${API_CONFIG.urlBaseEntrepreneurs}` + id
-    );
-  }
-
-  update(id: number, entrepreneur: Entrepreneur): Observable<any> {
-    return this.http.put(
-      `${API_CONFIG.urlBaseEntrepreneurs}` + id,
-      JSON.stringify(entrepreneur)
-    );
-  }
-
-  delete(id: number) {
-    return this.http.delete(`${API_CONFIG.urlBaseEntrepreneurs}` + id);
-  }
-
-  getPage(request): Observable<any> {
-    const params = request;
-    return this.http.get(`${API_CONFIG.getEntrepreneurPage}`, { params });
+    const url = API_CONFIG.urlBaseEntrepreneur;
+    const headers = new HttpHeaders({
+      'Content-type': 'application/json; charset=utf-8',
+      // Authorization: 'Basic ' + btoa(`${environment.clientName}:${environment.clientSecret}`),
+      Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),
+    });
+    return this.http.get<Entrepreneur[]>(url, { headers });
   }
 }

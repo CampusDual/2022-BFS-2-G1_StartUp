@@ -30,12 +30,14 @@ import { EditInversorComponent } from './main/inversores/invesores/edit-inversor
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     ConfirmationDialogComponent,
     MatSnackBarComponent,
     LandingPageComponent,
+
 
   ],
   imports: [
