@@ -8,6 +8,7 @@
         "services": "Services",
         "contact": "Contact Us",
         "loger": "Login",
+        "register": "Register",
         "content": {
             "h4": "Hello, we are the Tinder StartUp!",
             "h1": "Coming",
