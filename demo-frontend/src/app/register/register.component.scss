@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+.register-title {
+    text-align: center;
+    margin-top: 1rem;
+}
+
 .register-container {
     display: flex;
     align-items: center;
@@ -14,15 +19,7 @@
     /* el background no queda bien de otro color x el fondo predefinido del arquetipo!!!!*/
 }
 
-.title h2 {
-    color: rgb(255, 87, 51);
-    font-size: 40px;
-    font-weight: bold;
-    text-align: center;
-    flex-wrap: wrap;
-}
-
-.card {
+.register-card {
     position: relative;
     width: 350px;
     height: 400px;
@@ -30,30 +27,29 @@
     border: none;
 }
 
-.card .face {
+.register-card .face {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
+    // backface-visibility: hidden;
     border-radius: 10px;
     overflow: hidden;
-    transition: 0.5s;
 }
 
-.card .front {
-    transform: perspective(600px) rotateY('0deg');
+.register-card .front {
+    // transform: perspective(600px) rotateY('0deg');
     // box-shadow: 0 5px 10px #000;
     box-shadow: 0px 2px 6px rgb(255, 87, 51);
 }
 
-.card .front img {
+.register-face img {
     position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.card .front h3 {
+.register-card .front h3 {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -62,53 +58,4 @@
     color: azure;
     background: rgb(0, 0, 0, .4);
     text-align: center;
-}
-
-.card .back {
-    transform: perspective(600px) rotateY(180deg);
-    background: #002a52;
-    padding: 15px;
-    color: azure;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    box-shadow: 0px 5px 10px rgb(255, 87, 51);
-}
-
-.card .back .link {
-    border-top: solid 1px azure;
-    height: 50px;
-    line-height: 50px;
-}
-
-.card .back .link i {
-    font-size: 25px;
-    text-align: center;
-    margin: 25px 0px;
-    letter-spacing: 5px;
-    color: rgb(255, 87, 51);
-}
-
-.card .back h3 {
-    font-size: 30px;
-    margin-top: 20px;
-    letter-spacing: 2px;
-}
-
-.back i {
-    color: rgb(255, 87, 51);
-    font-size: 40px;
-}
-
-.card .back p {
-    letter-spacing: 1px;
-}
-
-.card:hover .front {
-    transform: perspective(600px) rotateY(180deg);
-}
-
-.card:hover .back {
-    transform: perspective(600px) rotateY(360deg);
 }

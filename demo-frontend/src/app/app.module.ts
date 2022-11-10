@@ -30,6 +30,9 @@ import { CreateInversorComponent } from './main/inversores/invesores/create-inve
 import { CreateStartupComponent } from './main/startup/create-startup/create-startup.component';
 import { RegisterComponent } from './register/register.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { PopUpStartupComponent } from './register/pop-up-startup/pop-up-startup.component';
+import { PopUpInversorComponent } from './register/pop-up-inversor/pop-up-inversor.component';
+import { PopUpEntrepreneurComponent } from './register/pop-up-entrepreneur/pop-up-entrepreneur.component';
 
 
 
@@ -42,6 +45,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatSnackBarComponent,
     LandingPageComponent,
     RegisterComponent,
+    PopUpStartupComponent,
+    PopUpInversorComponent,
+    PopUpEntrepreneurComponent,
 
 
   ],
