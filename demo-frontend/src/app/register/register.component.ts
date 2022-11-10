@@ -17,6 +17,8 @@ export class RegisterComponent implements OnInit {
 
   @Output() toggleSidenav = new EventEmitter<void>();
 
+  selectedLanguage = this.translateService.currentLang;
+
   constructor(
     public router: Router,
     private translateService: TranslateService,
@@ -24,6 +26,12 @@ export class RegisterComponent implements OnInit {
     private dialogRefInversor: MatDialog,
     private dialogRefEntrepreneur: MatDialog,
     ) { }
+
+
+  toogleLanguage(lang: string) {
+    this.selectedLanguage = lang;
+    this.translateService.use(lang);
+  }
 
     openDialogStartup() {
       this.dialogRefStartup.open(PopUpStartupComponent, {
