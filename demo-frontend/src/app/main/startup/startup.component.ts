@@ -187,4 +187,20 @@ export class StartupComponent implements OnInit, AfterViewInit {
     onClear() {
   }
 
+  changeProgresValue(row: string) {
+    if (row == 'Pre-Seed') {
+      return 20;
+    } else if (row == 'Seed') {
+      return 40;
+    } else if (row == 'Early Stage') {
+      return 60;
+    } else if (row == 'Growth Stage') {
+      return 80;
+    } else if (row == 'Scaleup') {
+      return 90;
+    } else {
+      return 100;
+    }
+  }
+
 }

@@ -183,7 +183,7 @@ export class InvesoresComponent implements OnInit, AfterViewInit {
     const dialogConfig = new MatDialogConfig();
     //dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    dialogConfig.width = "50%";
+    dialogConfig.width = "60%";
     this.dialog.open(CreateInversorComponent, dialogConfig);
   }
 
@@ -192,21 +192,22 @@ export class InvesoresComponent implements OnInit, AfterViewInit {
     this.router.navigate(['/inversores/edit/' + row.id]);
   }
 
-  onClear() {}
+  onClear() {
+  }
 
   changeProgresValue(row: string) {
     if (row == 'Pre-Seed') {
-      return 20;
+      return "20";
     } else if (row == 'Seed') {
-      return 40;
+      return "40";
     } else if (row == 'Early Stage') {
-      return 60;
+      return "60";
     } else if (row == 'Growth Stage') {
-      return 80;
+      return "80";
     } else if (row == 'Scaleup') {
-      return 90;
+      return "90";
     } else {
-      return 100;
+      return "100";
     }
   }
 }
