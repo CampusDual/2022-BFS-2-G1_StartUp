@@ -11,6 +11,7 @@ export const environment = {
   investorBaseUrl: 'http://localhost:9999/investor',
   startupBaseUrl: 'http://localhost:9999/startup',
   loginBaseUrl: 'http://localhost:9999/login',
+  userBaseUrl: 'http://localhost:9999/user',
   clientName: 'demo',
   clientSecret: '8Fjkk59bXKws8bmMNFZB',
   isDebugMode: false,
