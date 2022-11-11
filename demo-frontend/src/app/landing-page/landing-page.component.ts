@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { PopUpUserComponent } from '../register/user/pop-up-user/pop-up-user.component';
 
 
 @Component({
@@ -19,8 +21,19 @@ export class LandingPageComponent implements OnInit {
   constructor(
     public router: Router,
     private translateService: TranslateService,
+    private dialogRefUser: MatDialog,
 
   ) { }
+
+  openDialogUser() {
+    this.dialogRefUser.open(PopUpUserComponent)
+    const dialogConfig = new MatDialogConfig();
+    //dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    //dialogConfig.width = '60%';
+    this.dialogRefUser.open(PopUpUserComponent, dialogConfig);
+
+  }
 
   toogleLanguage(lang: string) {
     this.selectedLanguage = lang;
