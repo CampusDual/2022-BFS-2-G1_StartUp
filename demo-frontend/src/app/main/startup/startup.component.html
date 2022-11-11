@@ -116,7 +116,15 @@
                     {{ "table.startup.idEntrepreneur" | translate }}
                 </mat-header-cell>
                 <mat-cell *matCellDef="let row" data-label="idEntrepreneur">
-                    $ &nbsp; {{ row.idEntrepreneur.firstName }}
+                    <span class="is-image-cell">
+                        <div class="image">
+                            <img src="https://avatars.dicebear.com/api/initials/{{ row.idEntrepreneur.firstName }}
+                            {{ row.idEntrepreneur.lastName }}.svg" class="is-rounded">
+                        </div>
+                    </span>
+                    <span>
+                        {{ row.idEntrepreneur.firstName }} {{ row.idEntrepreneur.lastName }}
+                    </span>
                 </mat-cell>
             </ng-container>
 
