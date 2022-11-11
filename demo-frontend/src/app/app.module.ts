@@ -34,6 +34,8 @@ import { PopUpStartupComponent } from './register/pop-up-startup/pop-up-startup.
 import { PopUpInversorComponent } from './register/pop-up-inversor/pop-up-inversor.component';
 import { PopUpEntrepreneurComponent } from './register/pop-up-entrepreneur/pop-up-entrepreneur.component';
 import { UserComponent } from './register/user/user.component';
+import { PopUpUserComponent } from './register/user/pop-up-user/pop-up-user.component';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -50,6 +52,7 @@ import { UserComponent } from './register/user/user.component';
     PopUpInversorComponent,
     PopUpEntrepreneurComponent,
     UserComponent,
+    PopUpUserComponent,
 
 
   ],
@@ -76,13 +79,15 @@ import { UserComponent } from './register/user/user.component';
     MatSnackBarModule,
     NgxSpinnerModule,
     MatFormFieldModule,
+    MatIconModule,
     NgIdleKeepaliveModule.forRoot()
   ],
   entryComponents: [
     ConfirmationDialogComponent,
     EditInversorComponent,
     CreateInversorComponent,
-    CreateStartupComponent
+    CreateStartupComponent,
+    PopUpUserComponent
   ],
   exports: [
     TranslateModule

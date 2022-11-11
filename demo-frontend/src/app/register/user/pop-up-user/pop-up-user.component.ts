@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { PopUpUserComponent } from './pop-up-user/pop-up-user.component';
 
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.scss']
+  selector: 'app-pop-up-user',
+  templateUrl: './pop-up-user.component.html',
+  styleUrls: ['./pop-up-user.component.scss']
 })
-export class UserComponent implements OnInit {
+export class PopUpUserComponent implements OnInit {
+
+
 
   constructor( private translate: TranslateService,
     private router: Router, private dialogRefUser: MatDialog) { }
@@ -21,6 +22,10 @@ export class UserComponent implements OnInit {
     //   this.dialog.open(, dialogConfig);
     // }
 
+    openDialogUser() {
+      this.dialogRefUser.open(PopUpUserComponent)
+
+    }
 
   ngOnInit(): void {
   }
