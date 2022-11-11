@@ -12,6 +12,7 @@ export const environment = {
   startupBaseUrl: 'http://localhost:9999/startup',
   loginBaseUrl: 'http://localhost:9999/login',
   userBaseUrl: 'http://localhost:9999/user',
+  registerBaseUrl: 'http://localhost:9999/register',
   clientName: 'demo',
   clientSecret: '8Fjkk59bXKws8bmMNFZB',
   isDebugMode: false,

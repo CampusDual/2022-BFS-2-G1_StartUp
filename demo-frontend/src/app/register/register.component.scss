@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@200;300;400;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.register-title {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 4rem;
+    font-weight: bolder;
+    color: #1b334f;
+}
+
+.header-a {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+#btn-language {
+    text-decoration: none;
+    color: rgb(33, 37, 105);
+    border: none;
+    margin: 0;
+    padding: 10px;
+    text-align: left;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#btn-language:hover {
+    color: rgba(238, 143, 238, 0.8);
+    transition: .4s;
+}
+
+.register-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    flex-wrap: wrap;
+    /* el background no queda bien de otro color x el fondo predefinido del arquetipo!!!!*/
+}
+
+.register-card {
+    position: relative;
+    width: 500px;
+    height: 400px;
+    //margin: 20px;
+    border: none;
+    //border-radius: 30px;
+}
+
+.startup {
+    background-color: rgb(255, 87, 51) 0px 5px 15px;
+    //box-shadow: rgb(255, 87, 51) 0px 5px 15px;
+}
+
+.inversor {
+    // box-shadow: rgb(82, 97, 167) 0px 5px 15px;
+    background-color: rgb(82, 97, 167) 0px 5px 15px;
+}
+
+.entrepreneur {
+    box-shadow: rgb(82, 145, 76) 0px 5px 15px;
+    background-color: rgb(82, 145, 76) 0px 5px 15px;
+}
+
+.container:hover .overlay {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.overlay {
+    position: absolute;
+    background-color: rgb(255, 87, 51) 0px 5px 15px;
+    width: 500px;
+    height: 400px;
+    top: 0;
+    transform: scale(1.3);
+    opacity: 0;
+    transition: transform .4s ease 0s;
+    border-radius: 30px;
+}
+
+.overlay h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 3em;
+    color: rgb(255, 255, 255);
+    font-family: Sans-serif;
+}
+
+.container img {
+    transition: transform .8s ease;
+    position: relative;
+    width: 500px;
+    height: 400px;
+    margin: auto;
+    border: none;
+    border-radius: 30px;
+}
+
+.container:hover img {
+    transform: scale(1.1);
+}
