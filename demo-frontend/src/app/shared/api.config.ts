@@ -48,4 +48,5 @@ export const API_CONFIG = {
   getUsersPage: environment.userBaseUrl + '/getUsers',
   getUser: environment.userBaseUrl +'/getUser',
   createUser:environment.userBaseUrl +'/createUser',
+  editUser:environment.userBaseUrl +'/editUser'
 };

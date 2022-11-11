@@ -14,7 +14,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
 import { AuthService } from './auth/auth.service';
 import { MainModule } from './main/main.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
@@ -64,6 +64,7 @@ import { MatIconModule } from '@angular/material/icon';
         deps: [HttpClient]
       }
     }),
+    ReactiveFormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     MdbModalModule,
