@@ -183,7 +183,6 @@ export class InvesoresComponent implements OnInit, AfterViewInit {
     const dialogConfig = new MatDialogConfig();
     //dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    dialogConfig.width = "60%";
     this.dialog.open(CreateInversorComponent, dialogConfig);
   }
 
