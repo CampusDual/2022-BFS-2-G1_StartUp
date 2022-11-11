@@ -22,7 +22,7 @@
 
     <div class="mat-elevation-z8 table-responsive startupTable">
         <table mat-table [dataSource]="dataSource" matSort matSortActive="name" matSortDirection="asc"
-            matSortDisableClear class="w-full">
+            matSortDisableClear class="table is-fluid">
             <!-- Checkbox Column -->
             <ng-container matColumnDef="select">
                 <th id="header" mat-header-cell *matHeaderCellDef>
@@ -79,16 +79,16 @@
                     {{ 'table.startup.idStartUpState'| translate}}
                 </mat-header-cell>
                 <mat-cell *matCellDef="let row" data-label="idStartUpState">
-                    <span [ngClass]="{
-                        'green-class': row.idStartupState === 'Scaleup',
-                        'orange-class': row.idStartupState.type === 'Seed',
-                        'red-class': row.idStartupState.type === 'Pre-Seed',
-                        'coral-class': row.idStartupState.type === 'Early Stage',
-                        'darkgreen-class': row.idStartupState.type === 'Exit',
-                        'blue-class': row.idStartupState.type === 'Growth Stage'
-                    }">{{ row.idStartupState.type }}
-                        <mat-progress-bar color="accent" [value]="changeProgresValue(row.idStartupState.type)">
-                        </mat-progress-bar>
+                    <span>{{ row.idStartupState.type }}
+                        <progress [ngClass]="{
+                        'is-success':  row.idStartupState.type === 'Scaleup',
+                        'is-warning': row.idStartupState.type === 'Seed',
+                        'is-danger':  row.idStartupState.type === 'Pre-Seed',
+                        'is-link':  row.idStartupState.type === 'Early Stage',
+                        'is-primary':  row.idStartupState.type === 'Exit',
+                        'is-info':  row.idStartupState.type === 'Growth Stage'
+                      }" class="progress is-small" [value]="changeProgresValue( row.idStartupState.type)"
+                            max="100"></progress>
                     </span>
                 </mat-cell>
             </ng-container>
