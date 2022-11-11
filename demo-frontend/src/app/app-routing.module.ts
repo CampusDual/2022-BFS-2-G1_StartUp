@@ -8,6 +8,8 @@ import {StadisticsbarComponent} from './main/stadisticsbar/stadisticsbar.compone
 import { InvestersComponent } from './main/investers/investers.component';
 import { DeleteModalComponent } from './main/investers/delete-modal/delete-modal.component';
 import { InvesoresComponent } from './main/inversores/invesores/invesores.component';
+import { RegisterComponent } from './register/register.component';
+import { UserComponent } from './register/user/user.component';
 
 const routes: Routes = [
 
@@ -19,6 +21,8 @@ const routes: Routes = [
   { path: 'entrepreurs', loadChildren: () => import('./main/entrepreneurs/entrepreneurs.module').then(x => x.EntrepreneursModule) },
   { path: 'entrepreneur-detail', component:EntrepreneurDetailComponent },
   { path: 'landing-page', component:LandingPageComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'user', component: UserComponent },
   { path: 'stadisticsline', component:StadisticslineComponent },
   { path: 'stadisticsbar', component:StadisticsbarComponent },
   { path: 'app-delete-modal',component:DeleteModalComponent},

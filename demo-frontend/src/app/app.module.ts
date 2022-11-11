@@ -28,6 +28,12 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { EditInversorComponent } from './main/inversores/invesores/edit-inversor/edit-inversor.component';
 import { CreateInversorComponent } from './main/inversores/invesores/create-inversor/create-inversor.component';
 import { CreateStartupComponent } from './main/startup/create-startup/create-startup.component';
+import { RegisterComponent } from './register/register.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { PopUpStartupComponent } from './register/pop-up-startup/pop-up-startup.component';
+import { PopUpInversorComponent } from './register/pop-up-inversor/pop-up-inversor.component';
+import { PopUpEntrepreneurComponent } from './register/pop-up-entrepreneur/pop-up-entrepreneur.component';
+import { UserComponent } from './register/user/user.component';
 
 
 
@@ -39,6 +45,11 @@ import { CreateStartupComponent } from './main/startup/create-startup/create-sta
     ConfirmationDialogComponent,
     MatSnackBarComponent,
     LandingPageComponent,
+    RegisterComponent,
+    PopUpStartupComponent,
+    PopUpInversorComponent,
+    PopUpEntrepreneurComponent,
+    UserComponent,
 
 
   ],
@@ -64,6 +75,7 @@ import { CreateStartupComponent } from './main/startup/create-startup/create-sta
     CoreModule,
     MatSnackBarModule,
     NgxSpinnerModule,
+    MatFormFieldModule,
     NgIdleKeepaliveModule.forRoot()
   ],
   entryComponents: [

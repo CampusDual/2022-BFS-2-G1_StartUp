@@ -1,4 +1,4 @@
-<form [formGroup]="inversorForm" (ngSubmit)="save()" class="row g-3">
+<form [formGroup]="inversorForm" (ngSubmit)="save()" class="box">
   <div class="field">
     <label class="label">{{ 'table.contacts.name' | translate }}</label>
     <div class="control has-icons-left has-icons-right">
@@ -22,7 +22,7 @@
   <div class="field is-grouped  has-icons-left">
     <div class="control has-icons-left">
       <div class="field">
-        <label class="label">Investor Range</label>
+        <label class="label">{{"table.inversores.idInvesterRange" | translate}}</label>
         <div class="control">
           <div class="select">
             <select formControlName="idInvesterRange">
@@ -39,7 +39,7 @@
 
     <div class="control  has-icons-left">
       <div class="field">
-        <label class="label">Business Sector</label>
+        <label class="label">{{"table.inversores.idBusinessSector" | translate}}</label>
         <div class="control">
           <div class="select">
             <select formControlName="idBusinessSector">
@@ -56,7 +56,7 @@
 
     <div class="control  has-icons-left">
       <div class="field">
-        <label class="label">Startup State</label>
+        <label class="label">{{"table.inversores.idStartUpState" | translate}}</label>
         <div class="control">
           <div class="select">
             <select formControlName="idStartUpState">
@@ -72,14 +72,14 @@
     </div>
   </div>
   <mat-dialog-actions>
-    <div class="field is-grouped">
+    <div class="field is-grouped ">
       <div class="control">
         <button type="submit" [disabled]="!inversorForm.valid" class="button is-link">{{ 'button.save' | translate
           }}</button>
       </div>
 
       <div class="control">
-        <button mat-dialog-close class="button is-danger">Cancel</button>
+        <button mat-dialog-close class="button is-danger">{{"button.cancel" | translate}}</button>
       </div>
     </div>
   </mat-dialog-actions>
