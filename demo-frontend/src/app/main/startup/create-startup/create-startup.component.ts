@@ -19,6 +19,7 @@ import { StartupStateService } from 'src/app/services/startup-state.service';
 })
 export class CreateStartupComponent implements OnInit {
 
+
   idStartup: number;
 
   startupForm: FormGroup;
@@ -70,7 +71,7 @@ export class CreateStartupComponent implements OnInit {
 
   getEntrepreneurs(){
     this.entrepreneurService.getEntrepreneurs().subscribe(response=>this.entrepreneurs=response)
-      }    
+      }
 
   onFormChanges() {
     this.startupForm.valueChanges.subscribe((val) => {});
