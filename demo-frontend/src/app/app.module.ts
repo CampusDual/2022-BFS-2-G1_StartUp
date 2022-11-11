@@ -33,6 +33,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { PopUpStartupComponent } from './register/pop-up-startup/pop-up-startup.component';
 import { PopUpInversorComponent } from './register/pop-up-inversor/pop-up-inversor.component';
 import { PopUpEntrepreneurComponent } from './register/pop-up-entrepreneur/pop-up-entrepreneur.component';
+import { UserComponent } from './register/user/user.component';
 
 
 
@@ -48,6 +49,7 @@ import { PopUpEntrepreneurComponent } from './register/pop-up-entrepreneur/pop-u
     PopUpStartupComponent,
     PopUpInversorComponent,
     PopUpEntrepreneurComponent,
+    UserComponent,
 
 
   ],

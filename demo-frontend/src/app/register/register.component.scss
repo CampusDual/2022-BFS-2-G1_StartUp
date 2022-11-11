@@ -45,22 +45,21 @@
 
 .register-card {
     position: relative;
-    width: 350px;
+    width: 500px;
     height: 400px;
-    margin: 20px;
+    //margin: 20px;
     border: none;
-    border-radius: 30px;
+    //border-radius: 30px;
 }
 
 .startup {
     background-color: rgb(255, 87, 51) 0px 5px 15px;
-    box-shadow: rgb(255, 87, 51) 0px 5px 15px;
+    //box-shadow: rgb(255, 87, 51) 0px 5px 15px;
 }
 
 .inversor {
-    box-shadow: rgb(82, 97, 167) 0px 5px 15px;
+    // box-shadow: rgb(82, 97, 167) 0px 5px 15px;
     background-color: rgb(82, 97, 167) 0px 5px 15px;
-    ;
 }
 
 .entrepreneur {
@@ -76,8 +75,8 @@
 .overlay {
     position: absolute;
     background-color: rgb(255, 87, 51) 0px 5px 15px;
-    width: 100%;
-    height: 100%;
+    width: 500px;
+    height: 400px;
     top: 0;
     transform: scale(1.3);
     opacity: 0;
@@ -99,7 +98,7 @@
 .container img {
     transition: transform .8s ease;
     position: relative;
-    width: 350px;
+    width: 500px;
     height: 400px;
     margin: auto;
     border: none;

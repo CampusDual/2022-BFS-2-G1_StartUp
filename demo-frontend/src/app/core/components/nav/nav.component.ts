@@ -102,7 +102,8 @@ export class NavComponent implements OnInit, OnDestroy {
         this.router.url === '/login' ||
         this.router.url === '/' ||
         this.router.url === '/landing-page'||
-        this.router.url === '/register'
+        this.router.url === '/register' ||
+        this.router.url === '/user'
       )
     ) {
       this.authService.redirectLoginSessionExpiration();
