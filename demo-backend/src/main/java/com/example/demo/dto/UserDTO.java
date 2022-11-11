@@ -15,7 +15,6 @@ public class UserDTO implements Serializable {
 
 	private Integer id;
 
-	@NotNull(message = Constant.NIF_REQUIRED)
 	private String nif;
 
 	private String name;

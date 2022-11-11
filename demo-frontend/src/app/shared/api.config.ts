@@ -43,4 +43,9 @@ export const API_CONFIG = {
 
   //StartupState API
   urlBaseStartUpState: environment.adminBaseUrl + '/startupState/getStartupStates',
+
+  //User API
+  getUsersPage: environment.userBaseUrl + '/getUsers',
+  getUser: environment.userBaseUrl +'/getUser',
+  createUser:environment.userBaseUrl +'/createUser',
 };

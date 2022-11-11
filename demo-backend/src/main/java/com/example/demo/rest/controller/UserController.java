@@ -34,9 +34,6 @@ import com.example.demo.rest.response.DataSourceRESTResponse;
 import com.example.demo.service.IUserService;
 import com.example.demo.utils.Constant;
 
-import lombok.extern.java.Log;
-
-@Log
 @CrossOrigin(origins = { "http://localhost:4201" })
 @RestController
 @RequestMapping(UserController.REQUEST_MAPPING)
@@ -48,10 +45,9 @@ public class UserController {
 	@Autowired
 	private IUserService userService;
 
-	//Crear
+	// Crear
 	@PostMapping(path = "/createUser")
-	public ResponseEntity<?> createUser(@Valid @RequestBody UserDTO createUserRequest,
-			BindingResult result) {
+	public ResponseEntity<?> createUser(@Valid @RequestBody UserDTO createUserRequest, BindingResult result) {
 		LOGGER.info("saveUser in progress...");
 		UserDTO userNew = null;
 		Map<String, Object> response = new HashMap<>();
@@ -91,8 +87,8 @@ public class UserController {
 
 		return new ResponseEntity<Map<String, Object>>(response, status);
 	}
-	
-	//Devuelve users pageable
+
+	// Devuelve users pageable
 	@PostMapping(path = "/getUsers", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	@PreAuthorize("hasAnyAuthority('USERS')")
 	public @ResponseBody DataSourceRESTResponse<List<UserDTO>> getUsers(@RequestBody AnyPageFilter pageFilter) {
@@ -103,12 +99,12 @@ public class UserController {
 		} catch (DemoException e) {
 			LOGGER.error(e.getMessage());
 			dres.setResponseMessage(e.getMessage());
-		} 
+		}
 		LOGGER.info("getUsers is finished...");
 		return dres;
 	}
-	
-	//Devuelve los users
+
+	// Devuelve los users
 	@GetMapping(path = "/getUsers")
 	@PreAuthorize("hasAnyAuthority('USERS')")
 	public @ResponseBody List<UserDTO> findAll() {
@@ -116,7 +112,7 @@ public class UserController {
 		return userService.findAll();
 	}
 
-	//Buscar por id
+	// Buscar por id
 	@GetMapping("/getUser")
 	@PreAuthorize("hasAnyAuthority('USERS')")
 	public ResponseEntity<?> getUser(@RequestParam(value = "id") Integer id) {
