@@ -196,7 +196,7 @@
         flex-wrap: wrap;
     }
 
-    .box {
+    .box-landing {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -204,7 +204,7 @@
         flex-wrap: wrap;
     }
 
-    .card {
+    .card-landing {
         height: 365px;
         width: 335px;
         padding: 20px 35px;
@@ -216,7 +216,7 @@
         text-align: center;
     }
 
-    .card i {
+    .card-landing i {
         font-size: 40px;
         display: block;
         text-align: center;
@@ -230,14 +230,14 @@
         margin-bottom: 15px;
     }
 
-    .pra p {
+    .pra-landing p {
         color: #fcfc;
         font-size: 16px;
         line-height: 27px;
         margin-bottom: 25px;
     }
 
-    .card .button {
+    .card-landing .button {
         background-color: rgb(255, 87, 51);
         color: white;
         text-decoration: none;
@@ -248,7 +248,7 @@
         transition: .4s;
     }
 
-    .card .button:hover {
+    .card-landing .button:hover {
         background-color: transparent;
         border: 2px solid rgb(255, 87, 51);
         cursor: pointer;
