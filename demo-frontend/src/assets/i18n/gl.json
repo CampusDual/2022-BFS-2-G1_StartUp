@@ -120,6 +120,14 @@
         "inversor": "Inversor",
         "startup": "Startup"
     },
+    "formUser": {
+        "username": "Usuario",
+        "name": "Nome",
+        "firstSurname": "Primeiro Apelido",
+        "secondSurname": "Segundo Apelido",
+        "password": "Contrasinal",
+        "repeatPassword": "Repetir Contrasinal"
+    },
     "button": {
         "cancel": "Cancelar",
         "save": "Gardar"

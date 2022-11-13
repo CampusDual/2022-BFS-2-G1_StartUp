@@ -115,6 +115,18 @@
         "inversor": "Inversor",
         "startup": "Startup"
     },
+
+    "formUser": {
+        "username": "Username",
+        "name": "Name",
+        "firstSurname": "First Surname",
+        "secondSurname": "Second Surname",
+        "password": "Password",
+        "repeatPassword": "Repeat Password"
+    },
+
+
+
     "button": {
         "cancel": "Cancel",
         "save": "Save"
