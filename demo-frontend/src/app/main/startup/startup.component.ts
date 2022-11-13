@@ -10,11 +10,10 @@ import { TranslateService } from '@ngx-translate/core';
 import { fromEvent, merge, Observable, Observer } from 'rxjs';
 import { debounceTime, distinctUntilChanged, tap } from 'rxjs/operators';
 import { StartupsDataSource } from 'src/app/model/datasource/startup.datasource';
-import { Startup } from 'src/app/model/startup';
 import { AnyField, AnyPageFilter, SortFilter } from 'src/app/model/rest/filter';
+import { Startup } from 'src/app/model/startup';
 import { StartupService } from 'src/app/services/startup.service';
 import { ConfirmationDialogComponent } from 'src/app/shared/confirmation-dialog/confirmation-dialog.component';
-import { EditStartupComponent } from './edit-startup/edit-startup.component';
 import { CreateStartupComponent } from './create-startup/create-startup.component';
 
 @Component({
@@ -173,9 +172,7 @@ export class StartupComponent implements OnInit, AfterViewInit {
 
   onAdd() {
     const dialogConfig = new MatDialogConfig();
-   // dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    dialogConfig.width = "50%";
     this.dialog.open(CreateStartupComponent, dialogConfig);
   }
 

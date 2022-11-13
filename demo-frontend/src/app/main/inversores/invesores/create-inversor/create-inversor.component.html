@@ -1,4 +1,4 @@
-<form [formGroup]="inversorForm" (ngSubmit)="save()" class="box">
+<form [formGroup]="inversorForm" (ngSubmit)="save()">
   <div class="field">
     <label class="label">{{ 'table.contacts.name' | translate }}</label>
     <div class="control has-icons-left has-icons-right">
@@ -72,7 +72,7 @@
     </div>
   </div>
   <mat-dialog-actions>
-    <div class="field is-grouped ">
+    <div class="field is-grouped is-centered">
       <div class="control">
         <button type="submit" [disabled]="!inversorForm.valid" class="button is-link">{{ 'button.save' | translate
           }}</button>

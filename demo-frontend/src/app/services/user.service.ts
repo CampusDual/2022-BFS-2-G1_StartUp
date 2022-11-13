@@ -6,14 +6,14 @@ import { environment } from 'src/environments/environment';
 import { AnyPageFilter } from '../model/rest/filter';
 import { DataSourceRESTResponse } from '../model/rest/response';
 //Añadir en el import EditUserRequest cuando se quiera hacer el uso del método de editar
-import { CreateUserRequest} from '../model/rest/requestUser';
+import { CreateUserRequest,EditUserRequest} from '../model/rest/requestUser';
 import { Buffer } from 'buffer';
 import { User } from '../model/user';
 
 @Injectable({
   providedIn: 'root'
 })
-export class StartupService {
+export class UserService {
 
   constructor(private http: HttpClient) { }
 
@@ -51,6 +51,20 @@ export class StartupService {
     });
     return this.http.post<User>(url, body, { headers }).pipe(
       catchError(e =>{
+        return throwError(()=>e);
+      })
+    );
+  }
+
+  public editUser(user: User): Observable<any> {
+    const url = API_CONFIG.editUser;
+    const body: EditUserRequest = new EditUserRequest(user);
+    const headers = new HttpHeaders({
+      'Content-type': 'application/json; charset=utf-8',
+      Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),
+    });
+    return this.http.post<any>(url, body, { headers }).pipe(
+      catchError((e:HttpErrorResponse) =>{
         return throwError(()=>e);
       })
     );
