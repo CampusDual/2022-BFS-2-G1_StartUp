@@ -1,4 +1,4 @@
-<mat-toolbar class="mat-elevation-z8">
+<mat-toolbar class="mat-elevation-z8 box">
     <mat-toolbar-row>
         <button mat-icon-button (click)="toggleSidenav.emit()">
       <mat-icon>menu</mat-icon>
@@ -6,7 +6,7 @@
         <h2 class="logo"><a href="/main">Start</a><span class="up">Up</span>!</h2>
 
         <div fxFlex fxLayout fxLayoutAlign="flex-end">
-            <mat-divider [vertical]="true"></mat-divider>
+            <mat-divider class="divider" [vertical]="true"></mat-divider>
             <span class="title-bar">{{ pageTitle | translate }}</span>
         </div>
     </mat-toolbar-row>

@@ -10,7 +10,7 @@
 // https://material.angular.io/guide/typography
 
 $custom-typography: mat-typography-config(
-  $font-family: 'Open Sans, sans-serif'
+  $font-family: 'Poppins, sans-serif'
 );
 
 @include mat-core($custom-typography);
@@ -42,11 +42,11 @@ html, body {
 }
 body {
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .page-content {
-  margin-top: $mat-toolbar-height-desktop;
+  margin-top: 1rem;
   @media ($mat-xsmall) {
     margin-top: $mat-toolbar-height-mobile;
   }
