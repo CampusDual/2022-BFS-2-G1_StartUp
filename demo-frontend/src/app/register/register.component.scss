@@ -35,76 +35,96 @@
 }
 
 .register-container {
+    max-width: 100vw;
     display: flex;
-    align-items: center;
     justify-content: center;
-    min-height: 80vh;
     flex-wrap: wrap;
-    /* el background no queda bien de otro color x el fondo predefinido del arquetipo!!!!*/
+    margin: 10px;
+    padding: 40px 0;
+    min-height: 80vh;
 }
 
 .register-card {
+    padding: 3rem;
+}
+
+.hover-img {
+    background-color: #000;
+    color: #fff;
+    margin: 8px;
+    max-width: 500px;
+    min-width: 340px;
+    overflow: hidden;
     position: relative;
-    width: 500px;
-    height: 400px;
-    //margin: 20px;
-    border: none;
-    //border-radius: 30px;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgb(202, 93, 69);
 }
 
-.startup {
-    background-color: rgb(255, 87, 51) 0px 5px 15px;
-    //box-shadow: rgb(255, 87, 51) 0px 5px 15px;
+.hover-img * {
+    box-sizing: border-box;
+    transition: all 0.45s ease;
 }
 
-.inversor {
-    // box-shadow: rgb(82, 97, 167) 0px 5px 15px;
-    background-color: rgb(82, 97, 167) 0px 5px 15px;
-}
-
-.entrepreneur {
-    box-shadow: rgb(82, 145, 76) 0px 5px 15px;
-    background-color: rgb(82, 145, 76) 0px 5px 15px;
-}
-
-.container:hover .overlay {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.overlay {
+.hover-img::before,
+.hover-img::after {
+    background-color: rgb(243, 112, 51);
+    opacity: .70;
+    border-top: 32px solid rgb(243, 112, 51);
+    border-bottom: 32px solid rgb(243, 112, 51);
     position: absolute;
-    background-color: rgb(255, 87, 51) 0px 5px 15px;
-    width: 500px;
-    height: 400px;
     top: 0;
-    transform: scale(1.3);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: '';
+    transition: all 0.3s ease;
+    z-index: 1;
     opacity: 0;
-    transition: transform .4s ease 0s;
-    border-radius: 30px;
+    transform: scaleY(2);
 }
 
-.overlay h3 {
+.hover-img img {
+    vertical-align: top;
+    max-width: 100%;
+    backface-visibility: hidden;
+}
+
+.hover-img figcaption {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.1em;
+    opacity: 0;
+    z-index: 2;
+    transition-delay: 0.1s;
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: bolder;
+    letter-spacing: 1px;
     font-weight: bold;
-    font-size: 3em;
-    color: rgb(255, 255, 255);
-    font-family: Sans-serif;
+    text-transform: uppercase;
 }
 
-.container img {
-    transition: transform .8s ease;
-    position: relative;
-    width: 500px;
-    height: 400px;
-    margin: auto;
-    border: none;
-    border-radius: 30px;
+.hover-img:hover::before,
+.hover-img:hover::after {
+    transform: scale(1);
+    opacity: 1;
 }
 
-.container:hover img {
-    transform: scale(1.1);
+.hover-img:hover>img {
+    opacity: 0.7;
+}
+
+.hover-img:hover figcaption {
+    opacity: 1;
 }

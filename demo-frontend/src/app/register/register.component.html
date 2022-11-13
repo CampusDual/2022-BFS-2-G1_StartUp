@@ -18,38 +18,30 @@
 
 <div class="register-container">
 
-    <!-- REGISTRO STARTUP -->
-
-    <div class="register-card startup container" (click)="openDialogStartup()">
-        <img src="../../../assets/images/startup-home.jpg" alt="startup">
-        <div class="overlay startup">
-            <h3>{{'landing.service.startup.h5' | translate}}</h3>
-        </div>
 
 
-    </div>
+    <div class="register-card" (click)="openDialogStartup()">
+        <figure class="hover-img">
+            <img class="register-img" src="../../../assets/images/startup-home.jpg" alt="startup">
+            <figcaption>
+                <h3>{{'landing.service.startup.h5' | translate}}</h3>
+            </figcaption>
 
-    <!-- REGISTRO INVERSOR -->
-
-    <div class="register-card inversor container" (click)="openDialogInversor()">
-        <img src="../../../assets/images/investor-home.jpg " alt="inversor ">
-
-        <div class="overlay inversor">
-            <h3>{{'landing.service.investor.h5' | translate}}</h3>
-        </div>
-
-
+        </figure>
 
     </div>
 
-    <!-- REGISTRO ENTREPRENEUR -->
-
-    <!-- <div class="register-card entrepreneur container" (click)="openDialogEntrepreneur()">
-        <img src="../../../assets/images/entrepreneur-home.jpg " alt="entrpreneur ">
-        <div class="overlay entrepreneur">
-            <h3>{{'landing.service.entrepreneur.h5' | translate}}</h3>
-        </div>
 
 
+    <div class="register-card" (click)="openDialogInversor()">
+        <figure class="hover-img">
+            <img class="register-img" src="../../../assets/images/investor-home.jpg" alt="inversor">
+            <figcaption>
+                <h3>{{'landing.service.investor.h5' | translate}}</h3>
+            </figcaption>
 
-    </div> -->
+        </figure>
+
+
+    </div>
+</div>
