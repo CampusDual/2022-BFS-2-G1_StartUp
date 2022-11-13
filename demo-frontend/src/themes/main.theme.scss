@@ -366,12 +366,12 @@ $task-list-width: 320px; // 240px;
 
 a:active {
   font-weight: bold;
-  color: mat-color($accent, darker) !important;
+  color: rgba(255, 204, 255, 0.8);
 }
 
 .active {
   font-weight: bold;
-  color: mat-color($accent, darker) !important;
+  color: rgba(255, 204, 255, 0.8);
 }
 
 .anchor {
