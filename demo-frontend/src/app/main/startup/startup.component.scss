@@ -18,26 +18,26 @@ button {
 
 // Cores dos estados das Startups
 .green-class {
-    color: green;
-  }
-  .orange-class {
-    color: orange;
-  }
-  .red-class {
-    color: red;
-  }
+  color: green;
+}
+.orange-class {
+  color: orange;
+}
+.red-class {
+  color: red;
+}
 
-  .coral-class {
-    color: coral;
-  }
+.coral-class {
+  color: coral;
+}
 
-  .blue-class {
-    color: dodgerblue;
-  }
+.blue-class {
+  color: dodgerblue;
+}
 
-  .darkgreen-class {
-    color: darkgreen;
-  }
+.darkgreen-class {
+  color: darkgreen;
+}
 
 .mat-progress-bar {
   margin-top: 0.5em;
@@ -52,4 +52,11 @@ button {
   margin-top: 0.5em;
   margin-bottom: 0.6em;
   width: 10em;
+}
+
+span.is-image-cell .image {
+  margin: 0 auto;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: .5rem;
 }
