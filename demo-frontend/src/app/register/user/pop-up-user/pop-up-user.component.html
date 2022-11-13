@@ -1,11 +1,10 @@
-<form class="is-fluid">
+<form [formGroup]="userForm" (ngSubmit)="save()" class="box" class="is-fluid">
     <div class="field is-grouped ">
-
         <div class="control">
             <div class="field">
                 <label class="label">Username</label>
                 <div class="control has-icons-left has-icons-right">
-                    <input class="input" type="text">
+                    <input formControlName="login" class="input" type="login">
                     <span class="icon is-small is-left">
         <mat-icon>people</mat-icon>
       </span>
@@ -17,9 +16,9 @@
             <div class="field">
                 <label class="label">Name</label>
                 <div class="control has-icons-left has-icons-right">
-                    <input class="input" type="text">
+                    <input formControlName="name" class="input" type="name">
                     <span class="icon is-small is-left">
-        <mat-icon>email</mat-icon>
+        <mat-icon>people</mat-icon>
       </span>
                 </div>
             </div>
@@ -31,7 +30,7 @@
             <div class="field">
                 <label class="label">First Surname</label>
                 <div class="control has-icons-left has-icons-right">
-                    <input class="input" type="text">
+                    <input formControlName="surname1" class="input" type="surname1">
                     <span class="icon is-small is-left">
       <mat-icon>people</mat-icon>
     </span>
@@ -42,7 +41,7 @@
             <div class="field">
                 <label class="label">Second Surname</label>
                 <div class="control has-icons-left has-icons-right">
-                    <input class="input" type="text">
+                    <input formControlName="surname2" class="input" type="surname2">
                     <span class="icon is-small is-left">
     <mat-icon>people</mat-icon>
   </span>
@@ -56,7 +55,7 @@
             <div class="field">
                 <label class="label">Password</label>
                 <div class="control has-icons-left has-icons-right">
-                    <input class="input" type="password">
+                    <input formControlName="password" class="input" type="password">
                     <span class="icon is-small is-left">
     <mat-icon>people</mat-icon>
   </span>
@@ -76,20 +75,15 @@
         </div>
     </div>
 
-
-
-
-
-
     <mat-dialog-actions>
-        <div class="field is-grouped ">
+        <div class="field is-grouped">
             <div class="control">
-                <button type="submit" class="button is-link">{{ 'button.save' | translate
+                <button type="submit" class="button is-link allbutton">{{ 'button.save' | translate
           }}</button>
             </div>
 
             <div class="control">
-                <button mat-dialog-close class="button is-danger">{{"button.cancel" | translate}}</button>
+                <button mat-dialog-close class="button is-danger allbutton">{{"button.cancel" | translate}}</button>
             </div>
         </div>
     </mat-dialog-actions>
