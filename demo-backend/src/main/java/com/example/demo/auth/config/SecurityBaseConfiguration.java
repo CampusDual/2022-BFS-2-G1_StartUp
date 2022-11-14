@@ -40,7 +40,14 @@ public class SecurityBaseConfiguration extends ResourceServerConfigurerAdapter {
 		    		"/demo/**",
 		            "/oauth/check_token",
 		            "/oauth/token",
-		            "/user/createUser")
+		            "/startup/createStartup",
+		            "/investor/createInvestor",
+		            "/investor/createInvestor",
+		            "/rangeInvester/getRangeInvestors",
+		            "/businessSector/getBusinessSectors",
+		            "/startupState/getStartupStates",
+		            "/entrepreneur/getEntrepreneurs"
+		    			)
 				.permitAll()
                 .anyRequest().authenticated();
     }
