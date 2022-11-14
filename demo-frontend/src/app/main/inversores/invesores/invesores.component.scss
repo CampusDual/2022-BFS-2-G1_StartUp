@@ -1,55 +1,62 @@
 .investerTable,
 table {
-  font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 .upper-menu {
-  font-family: "Poppins", sans-serif;
-  flex-direction: row;
-  box-sizing: border-box;
-  display: flex;
-  max-height: 100%;
-  place-content: space-between;
-  align-items: center;
+    font-family: "Poppins", sans-serif;
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    max-height: 100%;
+    place-content: space-between;
+    align-items: center;
+}
+
+#invesores-filter {
+    text-decoration: none;
+    outline-style: none;
 }
 
 button {
-  margin-right: 10px;
-  font-family: "Poppins", sans-serif;
+    margin-right: 10px;
+    font-family: "Poppins", sans-serif;
 }
 
 // Cores dos estados das Startups
 .green-class {
-  color: green;
+    color: green;
 }
+
 .orange-class {
-  color: orange;
+    color: orange;
 }
+
 .red-class {
-  color: red;
+    color: red;
 }
 
 .coral-class {
-  color: coral;
+    color: coral;
 }
 
 .blue-class {
-  color: dodgerblue;
+    color: dodgerblue;
 }
 
 .darkgreen-class {
-  color: darkgreen;
+    color: darkgreen;
 }
 
 .progress {
-  margin-top: 0.5em;
-  margin-bottom: 0.6em;
-  width: 10em;
+    margin-top: 0.5em;
+    margin-bottom: 0.6em;
+    width: 10em;
 }
 
 span.is-image-cell .image {
-  margin: 0 auto;
-  width: 1.5rem;
-  height: 1.5rem;
-  margin-right: .5rem;
+    margin: 0 auto;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: .5rem;
 }
