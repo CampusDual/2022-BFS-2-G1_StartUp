@@ -1,20 +1,13 @@
 package com.example.demo.dto;
 
-import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.validation.constraints.NotNull;
 
-import com.example.demo.entity.Profile;
 import com.example.demo.utils.Constant;
 
 import lombok.Data;
 
 @Data
-public class UserDTO implements Serializable {
-
-	private static final long serialVersionUID = -2605882025118929733L;
+public class UserStartupDTO {
 
 	private Integer id;
 
@@ -31,6 +24,5 @@ public class UserDTO implements Serializable {
 
 	@NotNull(message = Constant.PASSWORD_REQUIRED)
 	private String password;
-
-	private Set<Profile> profiles = new HashSet<>();
+	
 }

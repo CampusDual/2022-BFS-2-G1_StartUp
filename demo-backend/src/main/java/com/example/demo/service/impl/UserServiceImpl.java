@@ -10,7 +10,9 @@ import org.springframework.transaction.annotation.Transactional;
 import com.borjaglez.springify.repository.filter.impl.AnyPageFilter;
 import com.borjaglez.springify.repository.specification.SpecificationBuilder;
 import com.example.demo.dto.UserDTO;
+import com.example.demo.dto.UserStartupDTO;
 import com.example.demo.dto.mapper.UserMapper;
+import com.example.demo.dto.mapper.UserStartupMapper;
 import com.example.demo.entity.User;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.rest.response.DataSourceRESTResponse;
@@ -28,9 +30,9 @@ public class UserServiceImpl extends AbstractDemoService implements IUserService
 	private UserRepository userRepository;
 	
 	@Override
-	public UserDTO getUser(Integer id) {
+	public UserStartupDTO getUser(Integer id) {
 		User user = userRepository.findById(id).orElse(null);
-		return UserMapper.INSTANCE.userToUserDto(user);
+		return UserStartupMapper.INSTANCE.userToUserDto(user);
 	}
 
 	@Override

@@ -28,10 +28,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.borjaglez.springify.repository.filter.impl.AnyPageFilter;
 import com.example.demo.dto.UserDTO;
+import com.example.demo.dto.UserStartupDTO;
 import com.example.demo.entity.enums.ResponseCodeEnum;
 import com.example.demo.exception.DemoException;
 import com.example.demo.rest.response.DataSourceRESTResponse;
 import com.example.demo.service.IUserService;
+import com.example.demo.utils.CipherUtils;
 import com.example.demo.utils.Constant;
 
 @CrossOrigin(origins = { "http://localhost:4201" })
@@ -53,8 +55,11 @@ public class UserController {
 		Map<String, Object> response = new HashMap<>();
 		HttpStatus status = HttpStatus.CREATED;
 		String message = Constant.USER_CREATE_SUCCESS;
+		CipherUtils cipherUtils= new CipherUtils();
 		if (!result.hasErrors()) {
 			try {
+				String passwordEncrypt = cipherUtils.encrypt(createUserRequest.getLogin(), createUserRequest.getPassword());
+				createUserRequest.setPassword(passwordEncrypt);
 				userNew = userService.createUser(createUserRequest);
 				response.put(Constant.RESPONSE_CODE, ResponseCodeEnum.OK.getValue());
 			} catch (DataAccessException e) {
@@ -117,7 +122,7 @@ public class UserController {
 	@PreAuthorize("hasAnyAuthority('USERS')")
 	public ResponseEntity<?> getUser(@RequestParam(value = "id") Integer id) {
 		LOGGER.info("getUser in progress...");
-		UserDTO user = null;
+		UserStartupDTO user = null;
 		Map<String, Object> response = new HashMap<>();
 		ResponseEntity<?> re = null;
 		try {
@@ -128,7 +133,7 @@ public class UserController {
 				re = new ResponseEntity<Map<String, Object>>(response, HttpStatus.BAD_REQUEST);
 			} else {
 				response.put(Constant.RESPONSE_CODE, ResponseCodeEnum.OK.getValue());
-				re = new ResponseEntity<UserDTO>(user, HttpStatus.OK);
+				re = new ResponseEntity<UserStartupDTO>(user, HttpStatus.OK);
 			}
 		} catch (DataAccessException e) {
 			LOGGER.error(e.getMessage());
