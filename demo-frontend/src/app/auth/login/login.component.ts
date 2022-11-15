@@ -3,6 +3,7 @@ import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { MatSnackBarComponent } from 'src/app/components/mat-snack-bar/mat-snack-bar.component';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-login',
@@ -52,6 +53,9 @@ export class LoginComponent implements OnInit, AfterViewInit {
     if (this.authService.isLoggedIn()) {
       // Get the redirect URL from our auth service
       // If no redirect has been set, use the default
+      this.authService.redirectToInvestor();
+      this.authService.redirectToStartup();
+      this.authService.redirectToContacts();
       const redirect = this.authService.redirectUrl ? this.router.parseUrl(this.authService.redirectUrl) : '/main';
 
       // Redirect the user
