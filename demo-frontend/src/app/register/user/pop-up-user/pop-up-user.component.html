@@ -1,90 +1,57 @@
-<form [formGroup]="userForm" (ngSubmit)="save()" class="box" class="is-fluid">
-    <div class="field is-grouped ">
-        <div class="control">
-            <div class="field">
-                <label class="label">{{ 'formUser.username' | translate }}</label>
-                <div class="control has-icons-left has-icons-right">
-                    <input formControlName="login" class="input" type="login">
-                    <span class="icon is-small is-left">
-        <mat-icon>account_circle</mat-icon>
-      </span>
-                </div>
-            </div>
+<div class="form_wrapper">
+    <div class="form_container">
+        <div class="title_container">
+            <h2>Responsive Registration Form</h2>
         </div>
+        <div class="row clearfix">
+            <div class="">
+                <form>
+                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                        <input type="email" name="email" placeholder="Email" required />
+                    </div>
+                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                        <input type="password" name="password" placeholder="Password" required />
+                    </div>
+                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                        <input type="password" name="password" placeholder="Re-type Password" required />
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col_half">
+                            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user-circle"></i></span>
+                                <input type="text" name="name" placeholder="Username" />
+                            </div>
+                        </div>
+                        <div class="col_half">
+                            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-address-card"></i></span>
+                                <input type="text" name="name" placeholder="Name" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col_half">
+                            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-address-card"></i></span>
+                                <input type="text" name="name" placeholder="First surname" />
+                            </div>
+                        </div>
+                        <div class="col_half">
+                            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-address-card"></i></span>
+                                <input type="text" name="name" placeholder="Second surname " required />
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="control">
-            <div class="field">
-                <label class="label">{{ 'formUser.name' | translate }}</label>
-                <div class="control has-icons-left has-icons-right">
-                    <input formControlName="name" class="input" type="name">
-                    <span class="icon is-small is-left">
-        <mat-icon>people</mat-icon>
-      </span>
-                </div>
+                    <div class="input_field select_option">
+                        <select>
+                            <option>Select a type</option>
+                            <option>Option 1</option>
+                            <option>Option 2</option>
+                        </select>
+                        <div class="select_arrow"></div>
+                    </div>
+
+                    <button class="button is-medium is-fullwidth" type="submit">Register</button>
+                </form>
             </div>
         </div>
     </div>
-
-    <div class="field is-grouped ">
-        <div class="control">
-            <div class="field">
-                <label class="label">{{ 'formUser.firstSurname' | translate }}</label>
-                <div class="control has-icons-left has-icons-right">
-                    <input formControlName="surname1" class="input" type="surname1">
-                    <span class="icon is-small is-left">
-      <mat-icon>people</mat-icon>
-    </span>
-                </div>
-            </div>
-        </div>
-        <div class="control">
-            <div class="field">
-                <label class="label">{{ 'formUser.secondSurname' | translate }}</label>
-                <div class="control has-icons-left has-icons-right">
-                    <input formControlName="surname2" class="input" type="surname2">
-                    <span class="icon is-small is-left">
-    <mat-icon>people</mat-icon>
-  </span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="field is-grouped ">
-        <div class="control">
-            <div class="field">
-                <label class="label">{{ 'formUser.password' | translate }}</label>
-                <div class="control has-icons-left has-icons-right">
-                    <input formControlName="password" class="input" type="password">
-                    <span class="icon is-small is-left">
-    <mat-icon>lock</mat-icon>
-  </span>
-                </div>
-            </div>
-        </div>
-        <div class="control">
-            <div class="field">
-                <label class="label">{{ 'formUser.repeatPassword' | translate }}</label>
-                <div class="control has-icons-left has-icons-right">
-                    <input class="input" type="password">
-                    <span class="icon is-small is-left">
-  <mat-icon>lock</mat-icon>
-</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <mat-dialog-actions>
-        <div class="field is-grouped">
-            <div class="control">
-                <button type="submit" class="button is-link allbutton">{{ 'button.save' | translate
-          }}</button>
-            </div>
-
-            <div class="control">
-                <button mat-dialog-close class="button is-danger allbutton">{{"button.cancel" | translate}}</button>
-            </div>
-        </div>
-    </mat-dialog-actions>
-</form>
+</div>
