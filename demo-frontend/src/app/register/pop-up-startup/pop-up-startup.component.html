@@ -1,17 +1,17 @@
 <h1>LISTADO STARTUPS QUE VERÁN LOS INVERSORES</h1>
 <div class="motherfucking">
     <div class="container">
-
-
         <input type="radio" name="slider" class="d-none" id="s1" checked>
-        <input type="radio" name="slider" class="d-none" id="s2">
+        <!-- <input type="radio" name="slider" class="d-none" id="s2">
         <input type="radio" name="slider" class="d-none" id="s3">
         <input type="radio" name="slider" class="d-none" id="s4">
-        <input type="radio" name="slider" class="d-none" id="s5">
+        <input type="radio" name="slider" class="d-none" id="s5"> -->
+
+
 
         <div class="cards">
             <label for="s1" id="slide1">
-      <div class="card">
+      <div *ngFor="let startup of startups"  class="card">
 
         <div class="image">
           <!-- <img src="../../../assets/images/startup-home.jpg" alt="startup-img"> -->
@@ -24,13 +24,13 @@
 
           </div>
         </div>
-        <div class="infos">
-          <span class="name">Name</span>
-          <span class="state">Startup State</span>
-          <span class="email">email@gmail.com</span>
-          <span class="description">Description: Este Lorem Ipsum generado siempre estará libre de repeticiones, humor agregado o palabras no características del lenguaje, etc. </span>
-          <span class="invoicing">Anual Invoicing</span>
-          <span class="year">Fundation Year</span>
+        <div  class="infos" >
+          <span class="name">{{startup.name}}</span>
+          <span class="state"> {{startup.idStartUpState}}</span>
+          <span class="email"> {{startup.email}}</span>
+          <span class="description">{{startup.description}}</span>
+          <span class="invoicing">{{ startup.anualInvoicing}}</span>
+          <span class="year">{{ startup.fundationYear}}</span>
         </div>
         <a href="" class="btn-contact">Match!!!!!</a>
         <div class="socials">
@@ -41,7 +41,7 @@
       </div>
     </label>
 
-            <label for="s2" id="slide2">
+            <!-- <label for="s2" id="slide2">
       <div class="card">
         <div class="image">
           <img src="img/Free run flyknit.jpg" alt="">
@@ -141,7 +141,7 @@
           <i class="fa-solid fa-share-nodes"></i>
         </div>
       </div>
-    </label>
+    </label> -->
         </div>
 
     </div>
