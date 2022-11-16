@@ -61,7 +61,6 @@ public class InvesterController {
 
 	//Crear
 	@PostMapping(path = "/createInvestor")
-	@PreAuthorize("hasAnyAuthority('INVESTORS')")
 	public ResponseEntity<?> createInvestor(@Valid @RequestBody InvesterDTO createInvesterRequest,
 			BindingResult result) {
 		LOGGER.info("saveInvestor in progress...");
@@ -106,7 +105,7 @@ public class InvesterController {
 
 	//modificar
 	@PostMapping(path = "/editInvestor", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	@PreAuthorize("hasAnyAuthority('INVESTORS')")
+//	@PreAuthorize("hasAnyAuthority('INVESTORS')")
 	public ResponseEntity<?> editInvestor(@Valid @RequestBody InvesterDTO editInvestorRequest, BindingResult result) {
 		LOGGER.info("editInvestor in progress...");
 		int id = 0;

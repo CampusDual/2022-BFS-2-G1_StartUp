@@ -1,34 +1,86 @@
-<form [formGroup]="inversorForm" (ngSubmit)="save()" class="row g-3">
-  <div class="col-6">
-    <label for="inputEmail4" class="form-label">Email</label>
-    <input formControlName="email" type="email" placeholder="{{ 'table.contacts.email' | translate }}"
-      class="form-control" id="inputEmail4">
+<form [formGroup]="inversorForm" (ngSubmit)="save()" class="box">
+  <div class="field">
+    <label class="label">{{ 'table.contacts.name' | translate }}</label>
+    <div class="control has-icons-left has-icons-right">
+      <input formControlName="name" class="input" type="text" placeholder="{{ 'table.contacts.name' | translate }}">
+      <span class="icon is-small is-left">
+        <mat-icon>people</mat-icon>
+      </span>
+    </div>
   </div>
-  <div class="col-6">
-    <label for="inputPassword4" class="form-label">Name</label>
-    <input type="text" class="form-control" placeholder="{{ 'table.contacts.name' | translate }}" formControlName="name"
-      name="invester-name" required>
+
+  <div class="field">
+    <label class="label">{{ 'table.contacts.email' | translate }}</label>
+    <div class="control has-icons-left has-icons-right">
+      <input formControlName="email" class="input" type="email" placeholder="{{ 'table.contacts.email' | translate }}">
+      <span class="icon is-small is-left">
+        <mat-icon>email</mat-icon>
+      </span>
+    </div>
   </div>
-  <div class="col-3">
-    <label for="inputIR" class="form-label">Investor Range</label>
-    <select id="inputIR" class="form-select" formControlName="idInvesterRange">
-      <option *ngFor="let rangeInvester of rangeInvesters" [value]="rangeInvester">{{rangeInvester.value}}</option>
-    </select>
+
+  <div class="field is-grouped  has-icons-left">
+    <div class="control has-icons-left">
+      <div class="field">
+        <label class="label">{{"table.inversores.idInvesterRange" | translate}}</label>
+        <div class="control">
+          <div class="select">
+            <select formControlName="idInvesterRange">
+              <option *ngFor="let rangeInvester of rangeInvesters" [ngValue]="rangeInvester">{{rangeInvester.value}}
+              </option>
+            </select>
+            <span class="icon is-small is-left">
+              <mat-icon>list</mat-icon>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="control  has-icons-left">
+      <div class="field">
+        <label class="label">{{"table.inversores.idBusinessSector" | translate}}</label>
+        <div class="control">
+          <div class="select">
+            <select formControlName="idBusinessSector">
+              <option *ngFor="let businessSector of businessSectors" [ngValue]="businessSector">{{businessSector.type}}
+              </option>
+            </select>
+            <span class="icon is-small is-left">
+              <mat-icon>list</mat-icon>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="control  has-icons-left">
+      <div class="field">
+        <label class="label">{{"table.inversores.idStartUpState" | translate}}</label>
+        <div class="control">
+          <div class="select">
+            <select formControlName="idStartUpState">
+              <option *ngFor="let startupState of startupStates" [ngValue]="startupState">{{startupState.type}}</option>
+            </select>
+            <span class="icon is-small is-left">
+              <mat-icon>list</mat-icon>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="col-3">
-    <label for="inputBS" class="form-label">Business Sector</label>
-    <select id="inputBS" class="form-select" formControlName="idBusinessSector">
-        <option *ngFor="let businessSector of businessSectors" [value]="businessSector">{{businessSector.type}}</option>
-    </select>
-  </div>
-  <div class="col-3">
-    <label for="idStartUpState" class="form-label">State</label>
-    <select name="idStartUpState" id="idStartUpState" class="form-select" formControlName="idStartUpState">
-        <option *ngFor="let startupState of startupStates" [value]="startupState" >{{startupState.type}}</option>
-    </select>
-  </div>
-  <div class="mb-3">
-    <button type="submit" class="btn btn-primary" [disabled]="!inversorForm.valid">{{ 'button.save' | translate
-      }}</button>
-  </div>
+  <mat-card-actions>
+    <div class="field is-grouped">
+      <div class="control">
+        <button type="submit" [disabled]="!inversorForm.valid" class="button is-link">{{ 'button.save' | translate
+          }}</button>
+      </div>
+
+      <div class="control">
+        <button (click)="cancel()" [formNoValidate]="true" mat-dialog-close class="button is-danger">{{"button.cancel" |
+          translate}}</button>
+      </div>
+    </div>
+  </mat-card-actions>
 </form>

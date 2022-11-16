@@ -23,6 +23,7 @@ import { MatTableModule } from '@angular/material/table';
 import { TranslateModule } from '@ngx-translate/core';
 import { CreateStartupComponent } from './create-startup/create-startup.component';
 import { StartupRoutingModule } from './startup-routing.module';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -35,6 +36,7 @@ import { StartupRoutingModule } from './startup-routing.module';
     CreateStartupComponent
   ],
   imports: [
+    MatDialogModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
     MatDatepickerModule,

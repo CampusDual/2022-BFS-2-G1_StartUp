@@ -9,6 +9,7 @@
         "services": "Servizos",
         "contact": "Contato",
         "loger": "Acceso",
+        "register": "Rexistrarse",
         "content": {
             "h4": "Ola, Benvidos o Tinder StartUp!",
             "h1": "Chegando",
@@ -118,6 +119,14 @@
         "contact": "Contacto",
         "inversor": "Inversor",
         "startup": "Startup"
+    },
+    "formUser": {
+        "username": "Usuario",
+        "name": "Nome",
+        "firstSurname": "Primeiro Apelido",
+        "secondSurname": "Segundo Apelido",
+        "password": "Contrasinal",
+        "repeatPassword": "Repetir Contrasinal"
     },
     "button": {
         "cancel": "Cancelar",

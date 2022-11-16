@@ -8,6 +8,7 @@
         "services": "Services",
         "contact": "Contact Us",
         "loger": "Login",
+        "register": "Register",
         "content": {
             "h4": "Hello, we are the Tinder StartUp!",
             "h1": "Coming",
@@ -39,7 +40,6 @@
                 "p": "Entrepreneur is someone who, based on an innovative idea, carries out by their own means a project in which they passionately believe.",
                 "a": "Let's Match!"
             }
-
         },
         "slogan": "Probably the best Tinder in the world!",
 
@@ -48,10 +48,7 @@
             "p": "For more info, contact us...",
             "end": "CopyRight By StartUp!"
         }
-
-
     },
-
 
     "login": {
         "user": "User",
@@ -72,7 +69,6 @@
         "stadistics": "Stadistics",
         "logout": "Logout",
         "startup": "Startup"
-
     },
     "language": {
         "spanish": "Spanish",
@@ -100,7 +96,6 @@
             "idInvesterRange": "Invester Range",
             "idBusinessSector": "Business Sector",
             "idStartUpState": "Startup State"
-
         },
         "startup": {
             "id": "id",
@@ -113,16 +108,25 @@
             "anualInvoicing": " Anual Invoicing",
             "fundationYear": " Foundation date",
             "idEntrepreneur": " Entrepreneur"
-
         }
-
     },
     "form": {
         "contact": "Contact",
         "inversor": "Inversor",
         "startup": "Startup"
-
     },
+
+    "formUser": {
+        "username": "Username",
+        "name": "Name",
+        "firstSurname": "First Surname",
+        "secondSurname": "Second Surname",
+        "password": "Password",
+        "repeatPassword": "Repeat Password"
+    },
+
+
+
     "button": {
         "cancel": "Cancel",
         "save": "Save"

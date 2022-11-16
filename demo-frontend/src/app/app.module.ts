@@ -14,7 +14,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
 import { AuthService } from './auth/auth.service';
 import { MainModule } from './main/main.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
@@ -28,6 +28,17 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { EditInversorComponent } from './main/inversores/invesores/edit-inversor/edit-inversor.component';
 import { CreateInversorComponent } from './main/inversores/invesores/create-inversor/create-inversor.component';
 import { CreateStartupComponent } from './main/startup/create-startup/create-startup.component';
+import { RegisterComponent } from './register/register.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { PopUpStartupComponent } from './register/pop-up-startup/pop-up-startup.component';
+import { PopUpInversorComponent } from './register/pop-up-inversor/pop-up-inversor.component';
+import { PopUpEntrepreneurComponent } from './register/pop-up-entrepreneur/pop-up-entrepreneur.component';
+import { UserComponent } from './register/user/user.component';
+import { PopUpUserComponent } from './register/user/pop-up-user/pop-up-user.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDividerModule } from '@angular/material/divider';
+import { RegistrationFormComponent } from './main/registration/registration-form/registration-form.component';
 
 
 
@@ -39,6 +50,12 @@ import { CreateStartupComponent } from './main/startup/create-startup/create-sta
     ConfirmationDialogComponent,
     MatSnackBarComponent,
     LandingPageComponent,
+    RegisterComponent,
+    PopUpStartupComponent,
+    PopUpInversorComponent,
+    PopUpEntrepreneurComponent,
+    UserComponent,
+    PopUpUserComponent,
 
 
   ],
@@ -50,6 +67,9 @@ import { CreateStartupComponent } from './main/startup/create-startup/create-sta
         deps: [HttpClient]
       }
     }),
+    MatDividerModule,
+    MatRadioModule,
+    ReactiveFormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     MdbModalModule,
@@ -64,13 +84,17 @@ import { CreateStartupComponent } from './main/startup/create-startup/create-sta
     CoreModule,
     MatSnackBarModule,
     NgxSpinnerModule,
+    MatFormFieldModule,
+    MatIconModule,
     NgIdleKeepaliveModule.forRoot()
   ],
   entryComponents: [
     ConfirmationDialogComponent,
     EditInversorComponent,
     CreateInversorComponent,
-    CreateStartupComponent
+    CreateStartupComponent,
+    PopUpUserComponent,
+    RegistrationFormComponent
   ],
   exports: [
     TranslateModule

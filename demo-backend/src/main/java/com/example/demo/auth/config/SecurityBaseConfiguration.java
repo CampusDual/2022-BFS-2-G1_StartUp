@@ -25,12 +25,12 @@ import org.springframework.web.context.request.RequestContextListener;
 @PropertySource(ResourceUtils.CLASSPATH_URL_PREFIX + "application-auth.properties")
 @EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)
 public class SecurityBaseConfiguration extends ResourceServerConfigurerAdapter {
-	
+
 	public SecurityBaseConfiguration() {
 		super();
         SecurityContextHolder.setStrategyName(SecurityContextHolder.MODE_INHERITABLETHREADLOCAL);
 	}
-	
+
     @Override
     public void configure(HttpSecurity http) throws Exception {
     	http.headers().frameOptions().disable();
@@ -40,28 +40,35 @@ public class SecurityBaseConfiguration extends ResourceServerConfigurerAdapter {
 		    		"/demo/**",
 		            "/oauth/check_token",
 		            "/oauth/token",
-		            "/user/createUser")
+		            "/user/createUser",
+		            "/startup/createStartup",
+		            "/investor/createInvestor",
+		            "/rangeInvester/getRangeInvestors",
+		            "/businessSector/getBusinessSectors",
+		            "/startupState/getStartupStates",
+		            "/entrepreneur/getEntrepreneurs"
+		    			)
 				.permitAll()
                 .anyRequest().authenticated();
     }
-    
+
     @Override
     public void configure(ResourceServerSecurityConfigurer config) {
         config.tokenServices(tokenServices());
     }
- 
+
     @Bean
     public TokenStore tokenStore() {
         return new JwtTokenStore(accessTokenConverter());
     }
- 
+
     @Bean
     public JwtAccessTokenConverter accessTokenConverter() {
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
         converter.setSigningKey("8Fjkk59bXKws8bmMNFZB");
         return converter;
     }
- 
+
     @Bean
     @Primary
     public DefaultTokenServices tokenServices() {
@@ -69,7 +76,7 @@ public class SecurityBaseConfiguration extends ResourceServerConfigurerAdapter {
         defaultTokenServices.setTokenStore(tokenStore());
         return defaultTokenServices;
     }
-	
+
     @Bean
     @Order(0)
     public RequestContextListener requestContextListener() {

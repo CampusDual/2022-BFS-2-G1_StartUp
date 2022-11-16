@@ -29,7 +29,6 @@ public class RangeInvesterController {
 
 	//Devuelve los rangeInvester
 	@GetMapping(path = "/getRangeInvestors")
-	@PreAuthorize("hasAnyAuthority('CONTACTS')")
 	public @ResponseBody List<RangeInvesterDTO> findAll() {
 		LOGGER.info("findAll in progress...");
 		return rangeInvesterService.findAll();

@@ -52,7 +52,7 @@ export class NavComponent implements OnInit, OnDestroy {
       icon: 'monetization_on',
       route: 'inversores',
       title: 'menu.investers',
-      allowedRoles: ['CONTACTS'],
+      allowedRoles: ['INVESTORS'],
     },
     // {
     //   icon: 'engineering',
@@ -70,7 +70,7 @@ export class NavComponent implements OnInit, OnDestroy {
       icon: 'rocket_launch',
       route: 'startup',
       title: 'menu.startup',
-      allowedRoles: ['CONTACTS'],
+      allowedRoles: ['STARTUPS'],
     },
   ];
 
@@ -94,13 +94,16 @@ export class NavComponent implements OnInit, OnDestroy {
     this.commandBarSidenavService.setSidenav(this.sidenav);
   }
 
+  // routas sin auth:
   public isAuthenticated() {
     if (
       !this.authService.isLoggedIn() &&
       !(
         this.router.url === '/login' ||
         this.router.url === '/' ||
-        this.router.url === '/landing-page'
+        this.router.url === '/landing-page'||
+        this.router.url === '/register' ||
+        this.router.url === '/user'
       )
     ) {
       this.authService.redirectLoginSessionExpiration();
@@ -115,6 +118,9 @@ export class NavComponent implements OnInit, OnDestroy {
   get allowedRoutes() {
     const allowedRoutes: Array<ROUTE> = [];
     if (this.isAuthenticated()) {
+      if (this.router.url === "/") {
+        this.commandBarSidenavService.toggle();
+      }
       this.sidenavRoutes.forEach((route) => {
         if (this.authGuard.isAllowed(route.allowedRoles)) {
           allowedRoutes.push(route);

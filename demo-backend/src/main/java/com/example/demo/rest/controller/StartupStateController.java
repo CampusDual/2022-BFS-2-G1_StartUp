@@ -28,7 +28,6 @@ public class StartupStateController {
 
 	// Devuelve los startupStates
 	@GetMapping(path = "/getStartupStates")
-	@PreAuthorize("hasAnyAuthority('CONTACTS')")
 	public @ResponseBody List<StartupStateDTO> findAll() {
 		LOGGER.info("findAll in progress...");
 		return startupStateService.findAll();
