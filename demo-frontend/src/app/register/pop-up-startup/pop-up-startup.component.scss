@@ -1,66 +1,251 @@
-.gradient-custom {
-    /* fallback for old browsers */
-    background: #f093fb;
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to bottom right, rgb(255, 87, 51), rgba(245, 87, 108, 1));
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to bottom right, rgb(255, 87, 51), rgba(245, 87, 108, 1))
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.card-registration .select-input.form-control[readonly]:not([disabled]) {
-    font-size: 1rem;
-    line-height: 2.15;
-    padding-left: .75em;
-    padding-right: .75em;
-}
-
-.card-registration .select-arrow {
-    top: 13px;
-}
-
-.col-12 {
+.motherfucking {
     display: flex;
-}
-
-.input {
-    border-radius: 50px;
-}
-
-.select-startup {
     align-items: center;
+    justify-content: center;
+    background-color: none;
+    overflow-x: hidden;
+    height: 80vh;
+    font-family: 'Urbanist', sans-serif;
 }
 
-.select {
-    padding: 5px;
-}
-
-#button {
-    background-color: rgb(255, 87, 51);
-    color: white;
+a {
     text-decoration: none;
-    border: 2px solid transparent;
-    font-weight: bold;
-    padding: 8px 30px;
-    border-radius: 30px;
-    transition: .4s;
-    margin-top: 1.5rem;
 }
 
-#button:hover {
-    background-color: transparent;
-    border: 2px solid rgb(255, 87, 51);
+input {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    max-height: 600px;
+    display: flex;
+    transform-style: preserve-3d;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.cards {
+    position: relative;
+    height: 500px;
+    width: 430px;
+    margin-bottom: 20px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.cards label {
+    position: absolute;
+    width: 430px;
+    left: 0;
+    right: 0;
+    margin: auto;
     cursor: pointer;
+    transition: transform 0.55s ease;
 }
 
-.green-border-focus {
+.cards .card {
+    position: relative;
+    height: 100%;
+    background-color: #323444;
+    border-radius: 10px;
+    padding: 30px 35px;
+}
+
+.card .image {
     display: flex;
     justify-content: space-between;
 }
 
-.textarea {
-    padding-right: 15rem;
+.card .image img {
+    border-radius: 5px;
+    box-shadow: 15px 15px 40px rgba(0, 0, 0, 50%);
+    margin-top: 23px;
+    width: 56%;
+    height: 180px;
+    object-fit: cover;
 }
 
-.form-outline {
-    margin-left: auto;
+.card .image .dots {
+    text-align: center;
+}
+
+.dots div {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.dots div:nth-child(1) {
+    background-color: var(--current-color1);
+}
+
+.dots div:nth-child(2) {
+    background-color: #5B85F9;
+}
+
+.dots div:nth-child(3) {
+    background-color: #000;
+}
+
+.card .infos {
+    display: block;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.infos span {
+    display: block;
+}
+
+// STARTUO PROPERTIES
+// Startup NAME
+.infos .name {
+    font-size: 30px;
+    color: var(--current-color1);
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+    //padding-left: 25%;
+    transition: all .6s ease;
+}
+
+// Startup State
+.infos .state {
+    font-size: 20px;
+    color: var(--current-color1);
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+    //padding-left: 25%;
+    transition: all .6s ease;
+}
+
+// Email
+.infos .email {
+    font-size: 10px;
+    color: var(--current-color1);
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+    // padding-left: 25%;
+    transition: all .6s ease;
+}
+
+//Anual Invoicing
+.infos .invoicing {
+    font-size: 20px;
+    color: var(--current-color1);
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+    // padding-left: 25%;
+    transition: all .6s ease;
+}
+
+//Fundation year
+.infos .year {
+    font-size: 20px;
+    color: var(--current-color1);
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+    // padding-left: 25%;
+    transition: all .6s ease;
+}
+
+// Description
+.infos .description {
+    font-size: 15px;
+    color: #ECEAED;
+    letter-spacing: 3px;
+}
+
+.card .btn-contact {
+    width: 80%;
+    height: 45px;
+    margin: 20px auto;
+    border-radius: 30px;
+    background-color: var(--current-color1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 8px;
+    font-weight: 400;
+    transition: all .7s ease;
+}
+
+.card .socials {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.bi-linkedin {
+    font-size: 25px;
+    transition: all .7s ease;
+    color: var(--current-color2);
+}
+
+#s1:checked~.cards #slide4,
+#s2:checked~.cards #slide5,
+#s3:checked~.cards #slide1,
+#s4:checked~.cards #slide2,
+#s5:checked~.cards #slide3 {
+    box-shadow: 0 15px 35px 0 rgba(0, 0, 0, 45%);
+    transform: translate3d(-70%, 0, -220px);
+    --current-color1: #ECEAED;
+    --current-color2: #404457;
+}
+
+#s1:checked~.cards #slide5,
+#s2:checked~.cards #slide1,
+#s3:checked~.cards #slide2,
+#s4:checked~.cards #slide3,
+#s5:checked~.cards #slide4 {
+    box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 45%);
+    transform: translate3d(-35%, 0, -120px);
+    --current-color1: #ECEAED;
+    --current-color2: #404457;
+}
+
+#s1:checked~.cards #slide1,
+#s2:checked~.cards #slide2,
+#s3:checked~.cards #slide3,
+#s4:checked~.cards #slide4,
+#s5:checked~.cards #slide5 {
+    box-shadow: 0 25px 50px 0 rgba(0, 0, 0, 50%);
+    transform: translate3d(0, 0, 0);
+    --current-color1: rgb(255, 87, 51);
+    --current-color2: #ECEAED;
+}
+
+#s1:checked~.cards #slide2,
+#s2:checked~.cards #slide3,
+#s3:checked~.cards #slide4,
+#s4:checked~.cards #slide5,
+#s5:checked~.cards #slide1 {
+    box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 45%);
+    transform: translate3d(35%, 0, -120px);
+    --current-color1: #ECEAED;
+    --current-color2: #404457;
+}
+
+#s1:checked~.cards #slide3,
+#s2:checked~.cards #slide4,
+#s3:checked~.cards #slide5,
+#s4:checked~.cards #slide1,
+#s5:checked~.cards #slide2 {
+    box-shadow: 0 15px 35px 0 rgba(0, 0, 0, 45%);
+    transform: translate3d(70%, 0, -220px);
+    --current-color1: #ECEAED;
+    --current-color2: #404457;
 }
