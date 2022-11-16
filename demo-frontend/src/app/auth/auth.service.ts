@@ -97,4 +97,23 @@ export class AuthService {
       window.location.reload();
     }, 100);
   }
+
+  //Así es como nos lleva a la vista del inversor
+  redirectToInvestor(){
+    if(this.getRoles().includes("INVESTORS")){
+      this.redirectUrl= "/register"
+    }
+  }
+
+  redirectToStartup(){
+    if(this.getRoles().includes("STARTUPS")){
+      this.redirectUrl= "/register"
+    }
+  }
+
+  redirectToContacts(){
+    if(this.getRoles().includes("CONTACTS")){
+      this.redirectUrl= "/main"
+    }
+  }
 }

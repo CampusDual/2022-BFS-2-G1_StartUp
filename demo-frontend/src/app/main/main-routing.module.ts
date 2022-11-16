@@ -34,7 +34,7 @@ const routes: Routes = [
     component: InvestersComponent,
     canActivate: [AuthGuard],
     data: {
-      allowedRoles: ['CONTACTS'],
+      allowedRoles: ['INVESTORS'],
     },
   },
   {
@@ -74,7 +74,7 @@ const routes: Routes = [
     component: InvesoresComponent,
     canActivate: [AuthGuard],
     data: {
-      allowedRoles: ['CONTACTS'],
+      allowedRoles: ['INVESTORS'],
     },
   },
   {
@@ -82,7 +82,7 @@ const routes: Routes = [
     component: StartupComponent,
     canActivate: [AuthGuard],
     data: {
-      allowedRoles: ['CONTACTS'],
+      allowedRoles: ['STARTUPS'],
     },
   },
 ];
