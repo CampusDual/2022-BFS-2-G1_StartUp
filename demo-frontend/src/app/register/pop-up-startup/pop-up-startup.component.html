@@ -1,109 +1,148 @@
-<form>
-    <!-- name -->
-    <div class=" is-grouped ">
-        <div class="field ">
-            <label class="label">{{ 'table.contacts.name' | translate }}</label>
-            <div class="control has-icons-left has-icons-right">
-                <input type="text" class="input" placeholder="{{ 'table.startup.name' | translate }}" formControlName="name" name="startup-name" required>
-                <span class="icon is-small is-left">
-        <mat-icon>person</mat-icon>
-      </span>
+<h1>LISTADO STARTUPS QUE VERÁN LOS INVERSORES</h1>
+<div class="motherfucking">
+    <div class="container">
+        <input type="radio" name="slider" class="d-none" id="s1" checked>
+        <!-- <input type="radio" name="slider" class="d-none" id="s2">
+        <input type="radio" name="slider" class="d-none" id="s3">
+        <input type="radio" name="slider" class="d-none" id="s4">
+        <input type="radio" name="slider" class="d-none" id="s5"> -->
+
+
+
+        <div class="cards">
+            <label for="s1" id="slide1">
+      <div *ngFor="let startup of startups"  class="card">
+
+        <div class="image">
+          <!-- <img src="../../../assets/images/startup-home.jpg" alt="startup-img"> -->
+          <div class="dots">
+            <div></div>
+            <div class="socials">
+
+              <i class="fas fa-rocket"></i>
             </div>
+
+          </div>
+        </div>
+        <div  class="infos" >
+          <span class="name">{{startup.name}}</span>
+          <span class="state"> {{startup.idStartUpState}}</span>
+          <span class="email"> {{startup.email}}</span>
+          <span class="description">{{startup.description}}</span>
+          <span class="invoicing">{{ startup.anualInvoicing}}</span>
+          <span class="year">{{ startup.fundationYear}}</span>
+        </div>
+        <a href="" class="btn-contact">Match!!!!!</a>
+        <div class="socials">
+          <i class="bi bi-linkedin"></i>
+
         </div>
 
-        <!-- email -->
-        <div class="field">
-            <label class="label">{{ 'table.contacts.email' | translate }}</label>
-            <div class="control has-icons-left has-icons-right">
-                <input formControlName="email" type="email" placeholder="{{ 'table.startup.email' | translate }}" class="input">
-                <span class="icon is-small is-left">
-        <mat-icon>email</mat-icon>
-      </span>
-            </div>
+      </div>
+    </label>
+
+            <!-- <label for="s2" id="slide2">
+      <div class="card">
+        <div class="image">
+          <img src="img/Free run flyknit.jpg" alt="">
+          <div class="dots">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
+            <div class="dot3"></div>
+          </div>
         </div>
+        <div class="infos">
+          <span class="name">Free Run Flyknit</span>
+          <span class="lorem">Lorem ipsum dolor sit, adipiscing elit. Aenean vel sit ansd . Nullam
+            lorem. Nulla eu
+            sodales karma stellus</span>
+        </div>
+        <a href="/contact" class="btn-contact">details</a>
+        <div class="socials">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <i class="fa-regular fa-heart"></i>
+          <i class="fa-regular fa-bookmark"></i>
+          <i class="fa-solid fa-share-nodes"></i>
+        </div>
+      </div>
+    </label>
+
+            <label for="s3" id="slide3">
+      <div class="card">
+        <div class="image">
+          <img src="img/Black Toe Union.jpg" alt="">
+          <div class="dots">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
+            <div class="dot3"></div>
+          </div>
+        </div>
+        <div class="infos">
+          <span class="name">Black Toe Union</span>
+          <span class="lorem">Lorem ipsum dolor, sit amet let kar adipiscing. Aenean vel velit sit ansd . Nullam
+            lorem. Nulla karma stellus</span>
+        </div>
+        <a href="/contact" class="btn-contact">details</a>
+        <div class="socials">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <i class="fa-regular fa-heart"></i>
+          <i class="fa-regular fa-bookmark"></i>
+          <i class="fa-solid fa-share-nodes"></i>
+        </div>
+      </div>
+    </label>
+
+            <label for="s4" id="slide4">
+      <div class="card">
+        <div class="image">
+          <img src="img/Retro High Og.jpg" alt="">
+          <div class="dots">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
+            <div class="dot3"></div>
+          </div>
+        </div>
+        <div class="infos">
+          <span class="name">Retro High Og</span>
+          <span class="lorem">Lorem ipsum dolor sit, sit amet elit. Aenean sit amet sit amet vel velit sit ansd. Nulla eu
+            sodales stellus</span>
+        </div>
+        <a href="/contact" class="btn-contact">details</a>
+        <div class="socials">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <i class="fa-regular fa-heart"></i>
+          <i class="fa-regular fa-bookmark"></i>
+          <i class="fa-solid fa-share-nodes"></i>
+        </div>
+      </div>
+    </label>
+
+            <label for="s5" id="slide5">
+      <div class="card">
+        <div class="image">
+          <img src="img/Off-White x Air Jordan.jpg" alt="">
+          <div class="dots">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
+            <div class="dot3"></div>
+          </div>
+        </div>
+        <div class="infos">
+          <span class="name">Off-White Air Jordan</span>
+          <span class="lorem">Lorem ipsum sit amet, sit amet elit. Aenean vel velit ansd . Nullam
+            lorem. Nulla eu
+            sodales stellus</span>
+        </div>
+        <a href="/contact" class="btn-contact">details</a>
+        <div class="socials">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <i class="fa-regular fa-heart"></i>
+          <i class="fa-regular fa-bookmark"></i>
+          <i class="fa-solid fa-share-nodes"></i>
+        </div>
+      </div>
+    </label> -->
+        </div>
+
     </div>
-
-    <!-- decripcion -->
-    <div class="field">
-        <label class="label">{{ 'table.startup.description' | translate }}</label>
-        <div class="control has-icons-left has-icons-right">
-            <textarea formControlName="description" type="text" placeholder="{{ 'table.startup.description' | translate }}" class="textarea"></textarea>
-            <span class="icon is-small is-right">
-        <mat-icon>notes</mat-icon>
-      </span>
-        </div>
-    </div>
-
-    <div class="field is-grouped has-icons-left">
-
-        <!-- INGRESOS ANUAIS -->
-        <div class="control  has-icons-left">
-            <div class="field">
-                <label class="label">{{ 'table.startup.anualInvoicing' | translate }}</label>
-                <div class="control has-icons-left has-icons-right">
-                    <input formControlName="anualInvoicing" type="number" placeholder="{{ 'table.startup.anualInvoicing' | translate }}" class="input">
-                    <span class="icon is-small is-left">
-            <mat-icon>attach_money</mat-icon>
-          </span>
-                </div>
-            </div>
-        </div>
-
-        <!-- fundationYear-->
-        <div class="control  has-icons-left">
-            <div class="field">
-                <label class="label">{{ 'table.startup.fundationYear' | translate }}</label>
-                <div class="control has-icons-left has-icons-right">
-                    <input formControlName="fundationYear" type="date" placeholder="{{ 'table.startup.fundationYear' | translate }}" class="input">
-                    <span class="icon is-small is-left">
-            <mat-icon>date_range</mat-icon>
-          </span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- grupo drop -->
-    <div class="field is-grouped  has-icons-left">
-
-        <div class="control  has-icons-left">
-            <div class="field">
-                <label class="label">{{"table.startup.idBusinessSector" | translate}}</label>
-                <div class="control">
-                    <div class="select">
-                        <select formControlName="idBusinessSector">
-              <option >{{businessSector.type}}</option>
-            </select>
-                        <span class="icon is-small is-left">
-              <mat-icon>list</mat-icon>
-            </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="control  has-icons-left">
-            <div class="field">
-                <label class="label">{{"table.startup.idStartUpState" | translate}}</label>
-                <div class="control">
-                    <div class="select">
-                        <select formControlName="idStartupState">
-              <option>{{startupState.type}}</option>
-            </select>
-                        <span class="icon is-small is-left">
-              <mat-icon>list</mat-icon>
-            </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="d-flex justify-content-center">
-        <button mat-raised-button type="button" id="button" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
-    </div>
-
-    <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!" class="fw-bold text-body"><u>Login here</u></a></p>
-
-</form>
+</div>
