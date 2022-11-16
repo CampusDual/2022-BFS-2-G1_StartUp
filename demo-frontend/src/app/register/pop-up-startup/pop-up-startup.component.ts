@@ -33,16 +33,24 @@ export class PopUpStartupComponent implements OnInit {
       0,
       5,
       'name'
+      
     );
     this.dataSource.getStartups(pageFilter);
-
+    this.getConsola(pageFilter);
 
     // Chamada o back pra traer de 5 en 5 as Startup
     // NOn sei como acceder a cada 1
-    console.log('>>>>>>>>Data Startup',this.dataSource.startupsSubject.value);
+   
 
   }
 
+  getConsola(pageFilter : AnyPageFilter){
+
+    this.startupService.getStartups(pageFilter).subscribe((response) =>{
+      console.log(response);})
+    }
+
+ //console.log('>>>>>>>>Data Startup',this.dataSource.getStartups(pageFilter));
+  }
 
 
-}
