@@ -17,18 +17,18 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  
+
 
   public getUsers(pageFilter: AnyPageFilter): Observable<DataSourceRESTResponse<User[]>> {
     const url = API_CONFIG.getUsersPage;
     const headers = new HttpHeaders({
       'Content-type': 'application/json; charset=utf-8',
       // Authorization: 'Basic ' + btoa(`${environment.clientName}:${environment.clientSecret}`),
-      Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),
+    //  Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),
     });
-    
+
     console.log("ESTOY EN GET USERS",this.http.post<DataSourceRESTResponse<User[]>>(url, pageFilter, { headers }));
-    
+
     return this.http.post<DataSourceRESTResponse<User[]>>(url, pageFilter, { headers });
   }
 
@@ -36,7 +36,7 @@ export class UserService {
     const url = API_CONFIG.getUser;
     const headers = new HttpHeaders({
       'Content-type': 'charset=utf-8',
-      Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),
+    //  Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),
     });
     const params = new HttpParams().set('id', id.toString());
     return this.http.get<User>(url, { params, headers });
@@ -47,7 +47,7 @@ export class UserService {
     const body: CreateUserRequest = new CreateUserRequest(user);
     const headers = new HttpHeaders({
       'Content-type': 'application/json; charset=utf-8',
-      Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),
+ //     Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),
     });
     return this.http.post<User>(url, body, { headers }).pipe(
       catchError(e =>{
@@ -61,7 +61,7 @@ export class UserService {
     const body: EditUserRequest = new EditUserRequest(user);
     const headers = new HttpHeaders({
       'Content-type': 'application/json; charset=utf-8',
-      Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),
+//Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),
     });
     return this.http.post<any>(url, body, { headers }).pipe(
       catchError((e:HttpErrorResponse) =>{

@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
-import { EntrepreneurDetailComponent } from './main/entrepreneurs/entrepreneur-detail/entrepreneur-detail.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import {StadisticslineComponent} from './main/stadisticsline/stadisticsline.component';
-import {StadisticsbarComponent} from './main/stadisticsbar/stadisticsbar.component';
-import { InvestersComponent } from './main/investers/investers.component';
+import { EntrepreneurDetailComponent } from './main/entrepreneurs/entrepreneur-detail/entrepreneur-detail.component';
 import { DeleteModalComponent } from './main/investers/delete-modal/delete-modal.component';
-import { InvesoresComponent } from './main/inversores/invesores/invesores.component';
-import { RegisterComponent } from './register/register.component';
+import { InvestersComponent } from './main/investers/investers.component';
+import { StadisticsbarComponent } from './main/stadisticsbar/stadisticsbar.component';
+import { StadisticslineComponent } from './main/stadisticsline/stadisticsline.component';
 import { UserComponent } from './register/user/user.component';
 
 const routes: Routes = [
@@ -21,7 +19,7 @@ const routes: Routes = [
   { path: 'entrepreurs', loadChildren: () => import('./main/entrepreneurs/entrepreneurs.module').then(x => x.EntrepreneursModule) },
   { path: 'entrepreneur-detail', component:EntrepreneurDetailComponent },
   { path: 'landing-page', component:LandingPageComponent },
-  { path: 'register', component: RegisterComponent },
+  { path: 'registration',  loadChildren: () => import('./main/registration/registration.module').then(x => x.RegistrationModule) },
   { path: 'user', component: UserComponent },
   { path: 'stadisticsline', component:StadisticslineComponent },
   { path: 'stadisticsbar', component:StadisticsbarComponent },

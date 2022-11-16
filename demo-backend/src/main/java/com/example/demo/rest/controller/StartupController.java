@@ -50,7 +50,6 @@ public class StartupController {
 
 	//Crear
 	@PostMapping(path = "/createStartup")
-	@PreAuthorize("hasAnyAuthority('STARTUPS')")
 	public ResponseEntity<?> createStartup(@Valid @RequestBody StartupDTO createStartupRequest,
 			BindingResult result) {
 		LOGGER.info("createStartup in progress...");

@@ -38,9 +38,13 @@ import { AppComponent } from '../app.component';
 import { CoreModule } from '../core/core.module';
 import { FilterItemDirective } from './directives/filter-item.directive';
 import { DeleteModalComponent } from './investers/delete-modal/delete-modal.component';
+import { InvestorRegistrationComponent } from './registration/investor-registration/investor-registration.component';
+import { RegistrationFormComponent } from './registration/registration-form/registration-form.component';
+import { StartupRegistrationComponent } from './registration/startup-registration/startup-registration.component';
 import { StadisticsComponent } from './stadistics/stadistics.component';
 import { StadisticsbarComponent } from './stadisticsbar/stadisticsbar.component';
 import { StadisticslineComponent } from './stadisticsline/stadisticsline.component';
+import { RegistrationModule } from './registration/registration.module';
 
 
 @NgModule({
@@ -52,10 +56,9 @@ import { StadisticslineComponent } from './stadisticsline/stadisticsline.compone
     StadisticsbarComponent,
     DeleteModalComponent,
 
-
-
   ],
   imports: [
+    RegistrationModule,
     TranslateModule,
     CommonModule,
     MainRoutingModule,

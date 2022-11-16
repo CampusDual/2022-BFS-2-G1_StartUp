@@ -38,6 +38,7 @@ import { PopUpUserComponent } from './register/user/pop-up-user/pop-up-user.comp
 import { MatIconModule } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDividerModule } from '@angular/material/divider';
+import { RegistrationFormComponent } from './main/registration/registration-form/registration-form.component';
 
 
 
@@ -92,7 +93,8 @@ import { MatDividerModule } from '@angular/material/divider';
     EditInversorComponent,
     CreateInversorComponent,
     CreateStartupComponent,
-    PopUpUserComponent
+    PopUpUserComponent,
+    RegistrationFormComponent
   ],
   exports: [
     TranslateModule
