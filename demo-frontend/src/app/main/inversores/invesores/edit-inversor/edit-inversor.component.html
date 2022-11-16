@@ -26,7 +26,7 @@
         <div class="control">
           <div class="select">
             <select formControlName="idInvesterRange">
-              <option *ngFor="let rangeInvester of rangeInvesters" [value]="rangeInvester">{{rangeInvester.value}}
+              <option *ngFor="let rangeInvester of rangeInvesters" [ngValue]="rangeInvester">{{rangeInvester.value}}
               </option>
             </select>
             <span class="icon is-small is-left">
@@ -43,7 +43,7 @@
         <div class="control">
           <div class="select">
             <select formControlName="idBusinessSector">
-              <option *ngFor="let businessSector of businessSectors" [value]="businessSector">{{businessSector.type}}
+              <option *ngFor="let businessSector of businessSectors" [ngValue]="businessSector">{{businessSector.type}}
               </option>
             </select>
             <span class="icon is-small is-left">
@@ -60,7 +60,7 @@
         <div class="control">
           <div class="select">
             <select formControlName="idStartUpState">
-              <option *ngFor="let startupState of startupStates" [value]="startupState">{{startupState.type}}</option>
+              <option *ngFor="let startupState of startupStates" [ngValue]="startupState">{{startupState.type}}</option>
             </select>
             <span class="icon is-small is-left">
               <mat-icon>list</mat-icon>
