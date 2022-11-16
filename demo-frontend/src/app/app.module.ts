@@ -36,6 +36,9 @@ import { PopUpEntrepreneurComponent } from './register/pop-up-entrepreneur/pop-u
 import { UserComponent } from './register/user/user.component';
 import { PopUpUserComponent } from './register/user/pop-up-user/pop-up-user.component';
 import { MatIconModule } from '@angular/material/icon';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDividerModule } from '@angular/material/divider';
+import { RegistrationFormComponent } from './main/registration/registration-form/registration-form.component';
 
 
 
@@ -64,6 +67,8 @@ import { MatIconModule } from '@angular/material/icon';
         deps: [HttpClient]
       }
     }),
+    MatDividerModule,
+    MatRadioModule,
     ReactiveFormsModule,
     BrowserModule,
     BrowserAnimationsModule,
@@ -88,7 +93,8 @@ import { MatIconModule } from '@angular/material/icon';
     EditInversorComponent,
     CreateInversorComponent,
     CreateStartupComponent,
-    PopUpUserComponent
+    PopUpUserComponent,
+    RegistrationFormComponent
   ],
   exports: [
     TranslateModule

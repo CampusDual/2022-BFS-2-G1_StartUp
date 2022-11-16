@@ -29,8 +29,7 @@ public class EntrepreneurController {
 
 	//Devuelve los entrepreneurs
 	@GetMapping(path = "/getEntrepreneurs")
-	@PreAuthorize("hasAnyAuthority('CONTACTS')")
-	public @ResponseBody List<EntrepreneurDTO> findAll() {
+		public @ResponseBody List<EntrepreneurDTO> findAll() {
 		LOGGER.info("findAll in progress...");
 		return entrepreneurService.findAll();
 	}

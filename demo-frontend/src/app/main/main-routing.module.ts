@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { MainHomeComponent } from './main-home/main-home.component';
+import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '../auth/auth.guard';
 import { ContactsComponent } from './contacts/contacts.component';
-import { EntrepreneurListComponent } from './entrepreneurs/entrepreneurList/entrepreneurList.component';
 import { EntrepreneurDetailComponent } from './entrepreneurs/entrepreneur-detail/entrepreneur-detail.component';
-import { StadisticsComponent } from './stadistics/stadistics.component';
-import { InvestersComponent } from './investers/investers.component';
-import { StadisticslineComponent } from './stadisticsline/stadisticsline.component';
+import { EntrepreneurListComponent } from './entrepreneurs/entrepreneurList/entrepreneurList.component';
 import { InvesoresComponent } from './inversores/invesores/invesores.component';
+import { InvestersComponent } from './investers/investers.component';
+import { MainHomeComponent } from './main-home/main-home.component';
+import { RegistrationFormComponent } from './registration/registration-form/registration-form.component';
+import { StadisticsComponent } from './stadistics/stadistics.component';
+import { StadisticslineComponent } from './stadisticsline/stadisticsline.component';
 import { StartupComponent } from './startup/startup.component';
 
 const routes: Routes = [

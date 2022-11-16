@@ -29,7 +29,6 @@ public class BusinessSectorController {
 
 	//Devuelve los businesSectors
 	@GetMapping(path = "/getBusinessSectors")
-	@PreAuthorize("hasAnyAuthority('CONTACTS')")
 	public @ResponseBody List<BusinessSectorDTO> findAll() {
 		LOGGER.info("findAll in progress...");
 		return businessSectorService.findAll();
