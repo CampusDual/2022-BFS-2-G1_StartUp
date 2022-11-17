@@ -20,7 +20,7 @@ export const API_CONFIG = {
   //invester API
   getInvestorsPage: environment.investorBaseUrl + '/getInvestors/',
   getInvestor: environment.investorBaseUrl +'/getInvestor/',
-  createInvestor:environment.investorBaseUrl +'/createInvestor/',
+  createInvestor:environment.investorBaseUrl +'/createInvestor',
   editInvestor:environment.investorBaseUrl +'/editInvestor/',
   deleteInvestor:environment.investorBaseUrl +'/deleteInvestor/',
 
@@ -34,7 +34,7 @@ export const API_CONFIG = {
   //Startup API
   getStartupsPage: environment.startupBaseUrl + '/getStartups/',
   getStartup: environment.startupBaseUrl +'/getStartup/',
-  createStartup:environment.startupBaseUrl +'/createStartup/',
+  createStartup:environment.startupBaseUrl +'/createStartup',
   editStartup:environment.startupBaseUrl +'/editStartup/',
   deleteStartup:environment.startupBaseUrl +'/deleteStartup/',
 

@@ -4,7 +4,7 @@ import {
   OnDestroy,
   OnInit,
   Output,
-  ViewChild,
+  ViewChild
 } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
@@ -14,8 +14,6 @@ import { AuthGuard } from 'src/app/auth/auth.guard';
 import { AuthService } from 'src/app/auth/auth.service';
 import { LoggerService } from 'src/app/services/logger.service';
 import { SidenavService } from 'src/app/services/sidenav.service';
-
-
 
 interface ROUTE {
   icon?: string;
@@ -32,8 +30,6 @@ interface ROUTE {
 export class NavComponent implements OnInit, OnDestroy {
   @ViewChild('commandbarSidenav') public sidenav: MatSidenav;
   @Output() toggleSidenav = new EventEmitter<void>();
-
-
 
   sidenavRoutes: ROUTE[] = [
     {
@@ -89,7 +85,10 @@ export class NavComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.userName = this.authService.getUserName();
+    if (this.isAuthenticated()) {
+      this.userName = this.authService.getUserName();
+    }
+
     this.logger.info('NavComponent: ngOnInit()');
     this.commandBarSidenavService.setSidenav(this.sidenav);
   }
@@ -101,7 +100,7 @@ export class NavComponent implements OnInit, OnDestroy {
       !(
         this.router.url === '/login' ||
         this.router.url === '/' ||
-        this.router.url === '/landing-page'||
+        this.router.url === '/landing-page' ||
         this.router.url === '/register' ||
         this.router.url === '/user'
       )
@@ -118,7 +117,7 @@ export class NavComponent implements OnInit, OnDestroy {
   get allowedRoutes() {
     const allowedRoutes: Array<ROUTE> = [];
     if (this.isAuthenticated()) {
-      if (this.router.url === "/") {
+      if (this.router.url === '/') {
         this.commandBarSidenavService.toggle();
       }
       this.sidenavRoutes.forEach((route) => {
