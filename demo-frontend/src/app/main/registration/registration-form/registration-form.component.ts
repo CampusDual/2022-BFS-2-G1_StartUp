@@ -31,7 +31,6 @@ export class RegistrationFormComponent implements OnInit {
   secondFormGroup: FormGroup;
 
   options = [
-    { name: 'Escolle unha opción', value: 0 },
     { name: 'startup', value: 1 },
     { name: 'inversor', value: 2 },
   ];

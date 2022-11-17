@@ -4,88 +4,100 @@
     <mat-step [stepControl]="firstFormGroup">
         <form (ngSubmit)="save()" [formGroup]="firstFormGroup">
             <ng-template matStepLabel>Datos do usuario</ng-template>
-                <div class="field is-grouped ">
-                    <div class="control">
-                        <div class="field">
-                            <label class="label">Username</label>
-                            <div class="control has-icons-left has-icons-right">
-                                <input formControlName="login" class="input" type="login">
-                                <span class="icon is-small is-left">
-                    <mat-icon>people</mat-icon>
-                  </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="control">
-                        <div class="field">
-                            <label class="label">Name</label>
-                            <div class="control has-icons-left has-icons-right">
-                                <input formControlName="name" class="input" type="name">
-                                <span class="icon is-small is-left">
-                    <mat-icon>people</mat-icon>
-                  </span>
-                            </div>
+            <div class="field is-grouped ">
+                <div class="control">
+                    <div class="field">
+                        <label class="label">Username</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input formControlName="login" class="input is-rounded" type="login">
+                            <span class="icon is-small is-left">
+                                <mat-icon>people</mat-icon>
+                            </span>
                         </div>
                     </div>
                 </div>
 
-                <div class="field is-grouped ">
-                    <div class="control">
-                        <div class="field">
-                            <label class="label">First Surname</label>
-                            <div class="control has-icons-left has-icons-right">
-                                <input formControlName="surname1" class="input" type="surname1">
-                                <span class="icon is-small is-left">
-                  <mat-icon>people</mat-icon>
-                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="control">
-                        <div class="field">
-                            <label class="label">Second Surname</label>
-                            <div class="control has-icons-left has-icons-right">
-                                <input formControlName="surname2" class="input" type="surname2">
-                                <span class="icon is-small is-left">
-                <mat-icon>people</mat-icon>
-              </span>
-                            </div>
+                <div class="control">
+                    <div class="field">
+                        <label class="label">Name</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input formControlName="name" class="input is-rounded" type="name">
+                            <span class="icon is-small is-left">
+                                <mat-icon>people</mat-icon>
+                            </span>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="field is-grouped ">
-                    <div class="control">
-                        <div class="field">
-                            <label class="label">Password</label>
-                            <div class="control has-icons-left has-icons-right">
-                                <input formControlName="password" class="input" type="password">
-                                <span class="icon is-small is-left">
-                <mat-icon>people</mat-icon>
-              </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="control">
-                        <div class="field">
-                            <label class="label">Repeat Password</label>
-                            <div class="control has-icons-left has-icons-right">
-                                <input class="input" type="password">
-                                <span class="icon is-small is-left">
-              <mat-icon>people</mat-icon>
-            </span>
-                            </div>
+            <div class="field is-grouped ">
+                <div class="control">
+                    <div class="field">
+                        <label class="label">First Surname</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input formControlName="surname1" class="input is-rounded" type="surname1">
+                            <span class="icon is-small is-left">
+                                <mat-icon>people</mat-icon>
+                            </span>
                         </div>
                     </div>
                 </div>
+                <div class="control">
+                    <div class="field">
+                        <label class="label">Second Surname</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input formControlName="surname2" class="input is-rounded" type="surname2">
+                            <span class="icon is-small is-left">
+                                <mat-icon>people</mat-icon>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                <button class="button is-link" type="submit" mat-button matStepperNext>Next</button>
-            </form>
+            <div class="field is-grouped ">
+                <div class="control">
+                    <div class="field">
+                        <label class="label">Password</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input formControlName="password" class="input is-rounded" type="password">
+                            <span class="icon is-small is-left">
+                                <mat-icon>people</mat-icon>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="control">
+                    <div class="field">
+                        <label class="label">Repeat Password</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded" type="password">
+                            <span class="icon is-small is-left">
+                                <mat-icon>people</mat-icon>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <button class="button is-link is-rounded" type="submit" mat-button matStepperNext>Next</button>
+        </form>
     </mat-step>
     <mat-step [stepControl]="secondFormGroup">
         <ng-template matStepLabel>Datos de Startup/inversor</ng-template>
-       <app-investor-registration></app-investor-registration>
+
+        <div class="select is-rounded">
+            <select [(ngModel)]="selectedOption">
+                <option *ngFor="let o of options" [value]="o.value">
+                    {{o.name}}
+                </option>
+            </select>
+        </div>
+
+
+        <app-startup-registration *ngIf="selectedOption === '1'"></app-startup-registration>
+        <app-investor-registration *ngIf="selectedOption === '2'"></app-investor-registration>
     </mat-step>
     <mat-step>
         <ng-template matStepLabel>Done</ng-template>
