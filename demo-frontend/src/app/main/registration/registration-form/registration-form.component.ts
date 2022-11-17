@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
@@ -20,7 +25,10 @@ export class RegistrationFormComponent implements OnInit {
   errores: string[];
   selectedOption: string;
   printedOption: string;
-
+  title = 'newMat';
+  isLinear = true;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
 
   options = [
     { name: 'Escolle unha opción', value: 0 },
@@ -37,7 +45,8 @@ export class RegistrationFormComponent implements OnInit {
     private fb: FormBuilder,
     private userService: UserService,
     private route: ActivatedRoute,
-    private logger: LoggerService
+    private logger: LoggerService,
+    private _formBuilder: FormBuilder
   ) {
     this.user = new User();
   }
@@ -55,6 +64,17 @@ export class RegistrationFormComponent implements OnInit {
         this.logger.info(this.user);
       });
     }
+
+    this.firstFormGroup = this.userForm;
+    this.secondFormGroup = this.fb.group({
+      amount: ['', Validators.required],
+      stock: ['', Validators.required],
+    });
+  }
+
+  submit() {
+    console.log(this.firstFormGroup.value);
+    console.log(this.secondFormGroup.value);
   }
 
   createFormGroup() {
@@ -68,32 +88,32 @@ export class RegistrationFormComponent implements OnInit {
     });
   }
 
-  // save() {
-  //   const newUser: User = Object.assign({}, this.userForm.value);
-  //   //para saber se os IDs se pasanse como int
-  //   console.log(this.userForm.value);
-  //   if (newUser.id) {
-  //     this.userService.editUser(newUser).subscribe((response) => {
-  //       this.redirectList(response);
-  //     });
-  //   } else {
-  //     this.userService.createUser(newUser).subscribe((response) => {
-  //       this.redirectList(response);
-  //     });
-  //   }
-  // }
-  // redirectList(response: any) {
-  //   if (response.responseCode === 'OK') {
-  //     this.router.navigate(['/users']);
-  //   } else {
-  //     console.log(response);
-  //   }
-  // }
-  // compareObjects(o1: any, o2: any): boolean {
-  //   if (o1 && o2) {
-  //     return o1.id === o2.id;
-  //   } else {
-  //     return false;
-  //   }
-  // }
+  save() {
+    const newUser: User = Object.assign({}, this.userForm.value);
+    //para saber se os IDs se pasanse como int
+    console.log(this.userForm.value);
+    if (newUser.id) {
+      this.userService.editUser(newUser).subscribe((response) => {
+        this.redirectList(response);
+      });
+    } else {
+      this.userService.createUser(newUser).subscribe((response) => {
+        this.redirectList(response);
+      });
+    }
+  }
+  redirectList(response: any) {
+    if (response.responseCode === 'OK') {
+      this.router.navigate(['/users']);
+    } else {
+      console.log(response);
+    }
+  }
+  compareObjects(o1: any, o2: any): boolean {
+    if (o1 && o2) {
+      return o1.id === o2.id;
+    } else {
+      return false;
+    }
+  }
 }

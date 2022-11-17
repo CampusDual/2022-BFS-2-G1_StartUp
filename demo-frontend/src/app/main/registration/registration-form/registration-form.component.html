@@ -1,75 +1,105 @@
-<div class="container">
-    <div class="columns is-multiline">
-        <div class="column is-8 is-offset-2 register">
-            <div class="columns">
-                <div class="column left">
-                    <h1 class="title is-1">Rexistrate en StartUp!</h1>
-                    <h2 class="subtitle colored is-4">Startup ou inversor ?</h2>
-                    <div class="select is-rounded">
-                        <select [(ngModel)]="selectedOption">
-                            <option [selected]="o.value === ngSelect" *ngFor="let o of options" [value]="o.value">
-                                {{o.name}}
-                            </option>
-                        </select>
+<h1>Rexistro</h1>
+<h3>Crear novo</h3>
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+        <form (ngSubmit)="save()" [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Datos do usuario</ng-template>
+                <div class="field is-grouped ">
+                    <div class="control">
+                        <div class="field">
+                            <label class="label">Username</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input formControlName="login" class="input" type="login">
+                                <span class="icon is-small is-left">
+                    <mat-icon>people</mat-icon>
+                  </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control">
+                        <div class="field">
+                            <label class="label">Name</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input formControlName="name" class="input" type="name">
+                                <span class="icon is-small is-left">
+                    <mat-icon>people</mat-icon>
+                  </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Formulario de StartUp -->
-                <div class="column right has-text-centered" *ngIf="selectedOption === '1'">
-                    <h1 class="title is-4">Startup</h1>
-                    <p class="description">Complete o rexistro de Startup</p>
-                    <app-startup-registration></app-startup-registration>
-                </div>
-
-                <!-- Formulario de Inversor -->
-                <div class="column right has-text-centered" *ngIf="selectedOption === '2'">
-                    <h1 class="title is-4">Inversor</h1>
-                    <p class="description">Complete o rexistro de inversor</p>
-                    <app-investor-registration></app-investor-registration>
-                </div>
-            </div>
-        </div>
-        <div class="column is-8 is-offset-2">
-            <br>
-            <nav class="level">
-                <div class="level-left">
-                    <div class="level-item">
-                        <span class="icon">
-                            <i class="fab fa-twitter"></i>
-                        </span> &emsp;
-                        <span class="icon">
-                            <i class="fab fa-facebook"></i>
-                        </span> &emsp;
-                        <span class="icon">
-                            <i class="fab fa-instagram"></i>
-                        </span> &emsp;
-                        <span class="icon">
-                            <i class="fab fa-github"></i>
-                        </span> &emsp;
-                        <span class="icon">
-                            <i class="fas fa-envelope"></i>
-                        </span>
+                <div class="field is-grouped ">
+                    <div class="control">
+                        <div class="field">
+                            <label class="label">First Surname</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input formControlName="surname1" class="input" type="surname1">
+                                <span class="icon is-small is-left">
+                  <mat-icon>people</mat-icon>
+                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control">
+                        <div class="field">
+                            <label class="label">Second Surname</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input formControlName="surname2" class="input" type="surname2">
+                                <span class="icon is-small is-left">
+                <mat-icon>people</mat-icon>
+              </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="level-right">
-                    <small class="level-item" style="color: var(--textLight)">
-                        &copy; StartUp! Website. All Rights Reserved.
-                    </small>
+
+                <div class="field is-grouped ">
+                    <div class="control">
+                        <div class="field">
+                            <label class="label">Password</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input formControlName="password" class="input" type="password">
+                                <span class="icon is-small is-left">
+                <mat-icon>people</mat-icon>
+              </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control">
+                        <div class="field">
+                            <label class="label">Repeat Password</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input class="input" type="password">
+                                <span class="icon is-small is-left">
+              <mat-icon>people</mat-icon>
+            </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </nav>
+
+                <button class="button is-link" type="submit" mat-button matStepperNext>Next</button>
+            </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+        <ng-template matStepLabel>Datos de Startup/inversor</ng-template>
+       <app-investor-registration></app-investor-registration>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <p>You are now done.</p>
+        <mat-list>
+            <mat-list-item> <strong>Name:</strong> {{ this.firstFormGroup.value.name }}</mat-list-item>
+            <mat-list-item> <strong>Description:</strong> {{ this.firstFormGroup.value.description }}</mat-list-item>
+            <mat-list-item> <strong>Amount:</strong> {{ this.secondFormGroup.value.amount }}</mat-list-item>
+            <mat-list-item> <strong>Stock:</strong> {{ this.secondFormGroup.value.stock }}</mat-list-item>
+        </mat-list>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+            <button mat-button (click)="submit()">Submit</button>
         </div>
-    </div>
-</div>
-
-<script type="text/javascript">
-    function ShowSelected() {
-        /* Para obtener el valor */
-        var cod = document.getElementById("type").value;
-        alert(cod);
-
-        /* Para obtener el texto */
-        var combo = document.getElementById("type");
-        var selected = combo.options[combo.selectedIndex].text;
-        alert(selected);
-    }
-</script>
+    </mat-step>
+</mat-horizontal-stepper>
