@@ -1,9 +1,11 @@
-<h1>Rexistro</h1>
-<h3>Crear novo</h3>
-<mat-horizontal-stepper [linear]="isLinear" #stepper>
+<mat-horizontal-stepper animationDuration="2000ms" [linear]="isLinear" #stepper>
     <mat-step [stepControl]="firstFormGroup">
         <form (ngSubmit)="save()" [formGroup]="firstFormGroup">
             <ng-template matStepLabel>Datos do usuario</ng-template>
+
+            <h1 class="title is-1">Rexistra un usuario</h1>
+            <h2 class="subtitle colored is-4">Cubra os datos do usuario</h2>
+
             <div class="field is-grouped ">
                 <div class="control">
                     <div class="field">
@@ -79,39 +81,44 @@
                     </div>
                 </div>
             </div>
-
-
-            <button class="button is-link is-rounded" type="submit" mat-button matStepperNext>Next</button>
+            <button class="button medium mgb-medium is-rounded is-medium" type="submit" matStepperNext>Next</button>
         </form>
     </mat-step>
+
+
     <mat-step [stepControl]="secondFormGroup">
         <ng-template matStepLabel>Datos de Startup/inversor</ng-template>
 
+        <h1 class="title is-1">Rexistrate como startup ou inversor</h1>
+        <h2 class="subtitle colored is-4">Escolla unha opción</h2>
         <div class="select is-rounded">
             <select [(ngModel)]="selectedOption">
-                <option *ngFor="let o of options" [value]="o.value">
+                <option [selected]="o.value === ngSelect" *ngFor="let o of options" [value]="o.value">
                     {{o.name}}
                 </option>
             </select>
         </div>
 
 
-        <app-startup-registration *ngIf="selectedOption === '1'"></app-startup-registration>
-        <app-investor-registration *ngIf="selectedOption === '2'"></app-investor-registration>
+        <app-startup-registration class="py-4" *ngIf="selectedOption === '1'"></app-startup-registration>
+        <app-investor-registration class="py-4" *ngIf="selectedOption === '2'"></app-investor-registration>
+
+        <div class="field is-grouped py-4">
+            <div class="control">
+                <button class="button is-rounded is-medium" mat-button matStepperPrevious>Back</button>
+            </div>
+            <div class="control">
+                <button type="submit" class="button is-rounded is-medium" mat-button matStepperNext>Next</button>
+            </div>
+        </div>
+
     </mat-step>
     <mat-step>
         <ng-template matStepLabel>Done</ng-template>
         <p>You are now done.</p>
-        <mat-list>
-            <mat-list-item> <strong>Name:</strong> {{ this.firstFormGroup.value.name }}</mat-list-item>
-            <mat-list-item> <strong>Description:</strong> {{ this.firstFormGroup.value.description }}</mat-list-item>
-            <mat-list-item> <strong>Amount:</strong> {{ this.secondFormGroup.value.amount }}</mat-list-item>
-            <mat-list-item> <strong>Stock:</strong> {{ this.secondFormGroup.value.stock }}</mat-list-item>
-        </mat-list>
         <div>
             <button mat-button matStepperPrevious>Back</button>
             <button mat-button (click)="stepper.reset()">Reset</button>
-            <button mat-button (click)="submit()">Submit</button>
         </div>
     </mat-step>
 </mat-horizontal-stepper>

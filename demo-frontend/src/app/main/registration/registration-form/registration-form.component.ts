@@ -26,7 +26,7 @@ export class RegistrationFormComponent implements OnInit {
   selectedOption: string;
   printedOption: string;
   title = 'newMat';
-  isLinear = true;
+  isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
 
@@ -115,4 +115,5 @@ export class RegistrationFormComponent implements OnInit {
       return false;
     }
   }
+
 }

@@ -7,3 +7,16 @@ mat-horizontal-stepper {
   font-family: "Nunito", sans-serif;
 }
 
+.mat-stepper-horizontal {
+  margin-top: 8px;
+}
+
+.mat-mdc-form-field {
+  margin-top: 16px;
+}
+
+button{
+  margin-top: 1rem;
+  background-color: $brandColor;
+  color: white
+}
