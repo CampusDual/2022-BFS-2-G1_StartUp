@@ -7,17 +7,21 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
 import { MatSortModule } from '@angular/material/sort';
+import { MatStepperModule } from '@angular/material/stepper';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { HttpLoaderFactory } from 'src/app/app.module';
 import { InvestorRegistrationComponent } from './investor-registration/investor-registration.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { StartupRegistrationComponent } from './startup-registration/startup-registration.component';
-
+import { UserRegistrationComponent } from './user-registration/user-registration.component';
 @NgModule({
-  declarations: [RegistrationFormComponent, InvestorRegistrationComponent, StartupRegistrationComponent],
+  declarations: [RegistrationFormComponent, InvestorRegistrationComponent, StartupRegistrationComponent, UserRegistrationComponent],
   imports: [
+    MatStepperModule,
+    MatListModule,
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
