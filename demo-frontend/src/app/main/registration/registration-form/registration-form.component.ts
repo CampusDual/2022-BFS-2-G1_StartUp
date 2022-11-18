@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
-  FormGroup,
-  Validators,
+  FormGroup
 } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -65,10 +64,6 @@ export class RegistrationFormComponent implements OnInit {
     }
 
     this.firstFormGroup = this.userForm;
-    this.secondFormGroup = this.fb.group({
-      amount: ['', Validators.required],
-      stock: ['', Validators.required],
-    });
   }
 
   submit() {

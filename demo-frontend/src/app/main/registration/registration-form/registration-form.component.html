@@ -103,12 +103,15 @@
         <app-startup-registration class="py-4" *ngIf="selectedOption === '1'"></app-startup-registration>
         <app-investor-registration class="py-4" *ngIf="selectedOption === '2'"></app-investor-registration>
 
+        <mat-divider></mat-divider>
+
+
         <div class="field is-grouped py-4">
             <div class="control">
-                <button class="button is-rounded is-medium" mat-button matStepperPrevious>Back</button>
+                <button class="button is-rounded is-medium" matStepperPrevious>Back</button>
             </div>
             <div class="control">
-                <button type="submit" class="button is-rounded is-medium" mat-button matStepperNext>Next</button>
+                <button type="submit" class="button is-rounded is-medium" matStepperNext>Next</button>
             </div>
         </div>
 
