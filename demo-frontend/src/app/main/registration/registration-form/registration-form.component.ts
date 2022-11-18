@@ -8,9 +8,16 @@ import {
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { id } from '@swimlane/ngx-charts';
+import { Profile } from 'src/app/model/profile';
 import { User } from 'src/app/model/user';
 import { LoggerService } from 'src/app/services/logger.service';
 import { UserService } from 'src/app/services/user.service';
+
+interface Tipo{
+  name: string,
+  value:number
+}
 
 @Component({
   selector: 'app-registration-form',
@@ -29,12 +36,18 @@ export class RegistrationFormComponent implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-
+  profiles:Profile[];
+ 
+  
   options = [
     { name: 'startup', value: 1 },
     { name: 'inversor', value: 2 },
   ];
-
+  
+  profilesOption:Tipo[] = [
+    { name: 'inversor', value: 2 },
+    { name: 'startup', value: 3 },
+  ];
   ngSelect = 0;
 
   constructor(
@@ -48,9 +61,12 @@ export class RegistrationFormComponent implements OnInit {
     private _formBuilder: FormBuilder
   ) {
     this.user = new User();
+   
   }
 
   ngOnInit(): void {
+  
+    
     this.createFormGroup();
     this.idUser = this.route.snapshot.params['id'];
     if (this.idUser) {
@@ -84,6 +100,7 @@ export class RegistrationFormComponent implements OnInit {
       surname2: [this.user.name],
       login: [this.user.name],
       password: [this.user.password],
+      profiles: [this.user.profiles],
     });
   }
 

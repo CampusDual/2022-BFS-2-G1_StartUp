@@ -81,6 +81,21 @@
                     </div>
                 </div>
             </div>
+            <div class="field is-grouped ">
+                <div class="field">
+                    <label class="label">Selection profile</label>
+                    <div class="control has-icons-left has-icons-right">
+                        <div class="select is-rounded">
+                            <select formControlName="profiles">
+                                <option *ngFor="let o of profilesOption" [ngValue]="[{id:o.value}]">
+                                    {{o.name}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <button class="button medium mgb-medium is-rounded is-medium" type="submit" matStepperNext>Next</button>
         </form>
     </mat-step>

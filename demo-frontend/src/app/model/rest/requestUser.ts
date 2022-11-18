@@ -1,4 +1,5 @@
 
+import { Profile } from '../profile';
 import { User } from '../user';
 
 export class QuerySortPaginationRequest {
@@ -25,6 +26,7 @@ export class CreateUserRequest {
   surname2: string;
   login: string;
   password: any;
+  profiles:Profile[];
 
   constructor(user: User) {
     this.id = user.id;
@@ -33,6 +35,7 @@ export class CreateUserRequest {
     this.surname2 = user.surname2;
     this.login = user.login;
     this.password = user.password;
+    this.profiles=user.profiles;
   }
 }
 

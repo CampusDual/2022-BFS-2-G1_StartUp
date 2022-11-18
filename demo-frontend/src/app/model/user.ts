@@ -1,3 +1,5 @@
+import { Profile } from "./profile";
+
 export class User{
     
     id: number;
@@ -7,5 +9,6 @@ export class User{
     surname2: string;
     login: string;
     password: any;
+    profiles: Profile[];
 
 }
