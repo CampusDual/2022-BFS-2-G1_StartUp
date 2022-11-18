@@ -1,75 +1,139 @@
-<div class="container">
-    <div class="columns is-multiline">
-        <div class="column is-8 is-offset-2 register">
-            <div class="columns">
-                <div class="column left">
-                    <h1 class="title is-1">Rexistrate en StartUp!</h1>
-                    <h2 class="subtitle colored is-4">Startup ou inversor ?</h2>
-                    <div class="select is-rounded">
-                        <select [(ngModel)]="selectedOption">
-                            <option [selected]="o.value === ngSelect" *ngFor="let o of options" [value]="o.value">
-                                {{o.name}}
-                            </option>
-                        </select>
+<mat-horizontal-stepper animationDuration="2000ms" [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+        <form (ngSubmit)="save()" [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Datos do usuario</ng-template>
+
+            <h1 class="title is-1">Rexistra un usuario</h1>
+            <h2 class="subtitle colored is-4">Cubra os datos do usuario</h2>
+
+            <div class="field is-grouped ">
+                <div class="control">
+                    <div class="field">
+                        <label class="label">Username</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input formControlName="login" class="input is-rounded" type="login">
+                            <span class="icon is-small is-left">
+                                <mat-icon>people</mat-icon>
+                            </span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Formulario de StartUp -->
-                <div class="column right has-text-centered" *ngIf="selectedOption === '1'">
-                    <h1 class="title is-4">Startup</h1>
-                    <p class="description">Complete o rexistro de Startup</p>
-                    <app-startup-registration></app-startup-registration>
-                </div>
-
-                <!-- Formulario de Inversor -->
-                <div class="column right has-text-centered" *ngIf="selectedOption === '2'">
-                    <h1 class="title is-4">Inversor</h1>
-                    <p class="description">Complete o rexistro de inversor</p>
-                    <app-investor-registration></app-investor-registration>
+                <div class="control">
+                    <div class="field">
+                        <label class="label">Name</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input formControlName="name" class="input is-rounded" type="name">
+                            <span class="icon is-small is-left">
+                                <mat-icon>people</mat-icon>
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="column is-8 is-offset-2">
-            <br>
-            <nav class="level">
-                <div class="level-left">
-                    <div class="level-item">
-                        <span class="icon">
-                            <i class="fab fa-twitter"></i>
-                        </span> &emsp;
-                        <span class="icon">
-                            <i class="fab fa-facebook"></i>
-                        </span> &emsp;
-                        <span class="icon">
-                            <i class="fab fa-instagram"></i>
-                        </span> &emsp;
-                        <span class="icon">
-                            <i class="fab fa-github"></i>
-                        </span> &emsp;
-                        <span class="icon">
-                            <i class="fas fa-envelope"></i>
-                        </span>
+
+            <div class="field is-grouped ">
+                <div class="control">
+                    <div class="field">
+                        <label class="label">First Surname</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input formControlName="surname1" class="input is-rounded" type="surname1">
+                            <span class="icon is-small is-left">
+                                <mat-icon>people</mat-icon>
+                            </span>
+                        </div>
                     </div>
                 </div>
-                <div class="level-right">
-                    <small class="level-item" style="color: var(--textLight)">
-                        &copy; StartUp! Website. All Rights Reserved.
-                    </small>
+                <div class="control">
+                    <div class="field">
+                        <label class="label">Second Surname</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input formControlName="surname2" class="input is-rounded" type="surname2">
+                            <span class="icon is-small is-left">
+                                <mat-icon>people</mat-icon>
+                            </span>
+                        </div>
+                    </div>
                 </div>
-            </nav>
+            </div>
+
+            <div class="field is-grouped ">
+                <div class="control">
+                    <div class="field">
+                        <label class="label">Password</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input formControlName="password" class="input is-rounded" type="password">
+                            <span class="icon is-small is-left">
+                                <mat-icon>people</mat-icon>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="control">
+                    <div class="field">
+                        <label class="label">Repeat Password</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded" type="password">
+                            <span class="icon is-small is-left">
+                                <mat-icon>people</mat-icon>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="field is-grouped ">
+                <div class="field">
+                    <label class="label">Selection profile</label>
+                    <div class="control has-icons-left has-icons-right">
+                        <div class="select is-rounded">
+                            <select formControlName="profiles">
+                                <option *ngFor="let o of profilesOption" [ngValue]="[{id:o.value}]">
+                                    {{o.name}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="button medium mgb-medium is-rounded is-medium" type="submit" matStepperNext>Next</button>
+        </form>
+    </mat-step>
+
+
+    <mat-step [stepControl]="secondFormGroup">
+        <ng-template matStepLabel>Datos de Startup/inversor</ng-template>
+
+        <h1 class="title is-1">Rexistrate como startup ou inversor</h1>
+        <h2 class="subtitle colored is-4">Escolla unha opción</h2>
+        <div class="select is-rounded">
+            <select [(ngModel)]="selectedOption">
+                <option [selected]="o.value === ngSelect" *ngFor="let o of options" [value]="o.value">
+                    {{o.name}}
+                </option>
+            </select>
         </div>
-    </div>
-</div>
 
-<script type="text/javascript">
-    function ShowSelected() {
-        /* Para obtener el valor */
-        var cod = document.getElementById("type").value;
-        alert(cod);
 
-        /* Para obtener el texto */
-        var combo = document.getElementById("type");
-        var selected = combo.options[combo.selectedIndex].text;
-        alert(selected);
-    }
-</script>
+        <app-startup-registration class="py-4" *ngIf="selectedOption === '1'"></app-startup-registration>
+        <app-investor-registration class="py-4" *ngIf="selectedOption === '2'"></app-investor-registration>
+
+        <div class="field is-grouped py-4">
+            <div class="control">
+                <button class="button is-rounded is-medium" mat-button matStepperPrevious>Back</button>
+            </div>
+            <div class="control">
+                <button type="submit" class="button is-rounded is-medium" mat-button matStepperNext>Next</button>
+            </div>
+        </div>
+
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <p>You are now done.</p>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+    </mat-step>
+</mat-horizontal-stepper>

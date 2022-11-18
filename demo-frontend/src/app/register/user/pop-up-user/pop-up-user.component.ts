@@ -27,7 +27,7 @@ export class PopUpUserComponent implements OnInit {
     { name: "inversor", value: 2 }
   ]
 
-  ngSelect = 0;;
+  ngSelect = 0;
 
 
   constructor(
