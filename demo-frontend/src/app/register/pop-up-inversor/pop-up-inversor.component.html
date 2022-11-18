@@ -1,81 +1,14 @@
-<form>
-    <div class="field">
-        <label class="label">{{ 'table.contacts.name' | translate }}</label>
-        <div class="control has-icons-left has-icons-right">
-            <input formControlName="name" class="input" type="text" placeholder="{{ 'table.contacts.name' | translate }}">
-            <span class="icon is-small is-left">
-            <mat-icon>people</mat-icon>
-          </span>
-        </div>
-    </div>
+<div class="wrapper">
 
-    <div class="field">
-        <label class="label">{{ 'table.contacts.email' | translate }}</label>
-        <div class="control has-icons-left has-icons-right">
-            <input formControlName="email" class="input" type="email" placeholder="{{ 'table.contacts.email' | translate }}">
-            <span class="icon is-small is-left">
-            <mat-icon>email</mat-icon>
-          </span>
-        </div>
-    </div>
-
-    <div class="field is-grouped  has-icons-left">
-        <div class="control has-icons-left">
-            <div class="field">
-                <label class="label">{{"table.inversores.idInvesterRange" | translate}}</label>
-                <div class="control">
-                    <div class="select">
-                        <select formControlName="idInvesterRange">
-                  <option >Invester Range</option>
-                </select>
-                        <span class="icon is-small is-left">
-                  <mat-icon>list</mat-icon>
-                </span>
-                    </div>
-                </div>
+    <ul class="card transition row" *ngFor="let inversor of inversores">
+        <li class="col-12 col-md-6 col-lg-3" style="height:100%;">
+            <div>
+                <h2 class="transition">{{inversor.name}}</h2>
+                <p>Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                <div class="cta-container transition"><a href="#" class="cta">Call to action</a></div>
+                <div class="card_circle transition"></div>
             </div>
-        </div>
+        </li>
+    </ul>
 
-        <div class="control  has-icons-left">
-            <div class="field">
-                <label class="label">{{"table.inversores.idBusinessSector" | translate}}</label>
-                <div class="control">
-                    <div class="select">
-                        <select formControlName="idBusinessSector">
-                  <option
-                    >Business Sector</option>
-                </select>
-                        <span class="icon is-small is-left">
-                  <mat-icon>list</mat-icon>
-                </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="control  has-icons-left">
-            <div class="field">
-                <label class="label">{{"table.inversores.idStartUpState" | translate}}</label>
-                <div class="control">
-                    <div class="select">
-                        <select formControlName="idStartUpState">
-                  <option >Startup State</option>
-                </select>
-                        <span class="icon is-small is-left">
-                  <mat-icon>list</mat-icon>
-                </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-    <div class="d-flex justify-content-center">
-        <button mat-raised-button type="button" id="button" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
-    </div>
-
-    <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!" class="fw-bold text-body"><u>Login here</u></a></p>
-
-</form>
+</div>

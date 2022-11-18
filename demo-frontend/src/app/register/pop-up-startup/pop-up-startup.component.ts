@@ -37,7 +37,7 @@ export class PopUpStartupComponent implements OnInit {
       '',
       this.fields.map((field) => new AnyField(field)),
       0,
-      5,
+      10,
       'name'
 
     );
