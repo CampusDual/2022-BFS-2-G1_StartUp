@@ -1,81 +1,45 @@
-<form>
-    <div class="field">
-        <label class="label">{{ 'table.contacts.name' | translate }}</label>
-        <div class="control has-icons-left has-icons-right">
-            <input formControlName="name" class="input" type="text" placeholder="{{ 'table.contacts.name' | translate }}">
-            <span class="icon is-small is-left">
-            <mat-icon>people</mat-icon>
-          </span>
-        </div>
-    </div>
+<div class="wrapper">
 
-    <div class="field">
-        <label class="label">{{ 'table.contacts.email' | translate }}</label>
-        <div class="control has-icons-left has-icons-right">
-            <input formControlName="email" class="input" type="email" placeholder="{{ 'table.contacts.email' | translate }}">
-            <span class="icon is-small is-left">
-            <mat-icon>email</mat-icon>
-          </span>
-        </div>
-    </div>
+    <div class="testimotionals" *ngFor="let inversor of inversores">
+        <div class="card ">
 
-    <div class="field is-grouped  has-icons-left">
-        <div class="control has-icons-left">
-            <div class="field">
-                <label class="label">{{"table.inversores.idInvesterRange" | translate}}</label>
-                <div class="control">
-                    <div class="select">
-                        <select formControlName="idInvesterRange">
-                  <option >Invester Range</option>
-                </select>
-                        <span class="icon is-small is-left">
-                  <mat-icon>list</mat-icon>
-                </span>
-                    </div>
-                </div>
+            <div class="layer">
+
             </div>
-        </div>
 
-        <div class="control  has-icons-left">
-            <div class="field">
-                <label class="label">{{"table.inversores.idBusinessSector" | translate}}</label>
-                <div class="control">
-                    <div class="select">
-                        <select formControlName="idBusinessSector">
-                  <option
-                    >Business Sector</option>
-                </select>
-                        <span class="icon is-small is-left">
-                  <mat-icon>list</mat-icon>
-                </span>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <div class="content">
+                <h2 class="transition name">{{inversor.name}}</h2>
+                <div class="linea"></div>
 
-        <div class="control  has-icons-left">
-            <div class="field">
-                <label class="label">{{"table.inversores.idStartUpState" | translate}}</label>
-                <div class="control">
-                    <div class="select">
-                        <select formControlName="idStartUpState">
-                  <option >Startup State</option>
-                </select>
-                        <span class="icon is-small is-left">
-                  <mat-icon>list</mat-icon>
-                </span>
-                    </div>
+
+
+                <div class="details">
+
+                    <p id="sector">{{inversor.idBusinessSector.type}}</p>
+                    <p class="range">&#36;&nbsp; {{inversor.idInvesterRange.value }}</p>
+                    <p>
+                        <progress [ngClass]="{
+                        'is-success':  inversor.idStartUpState.type === 'Scaleup',
+                        'is-warning': inversor.idStartUpState.type === 'Seed',
+                        'is-danger': inversor.idStartUpState.type === 'Pre-Seed',
+                        'is-link':  inversor.idStartUpState.type === 'Early Stage',
+                        'is-primary':  inversor.idStartUpState.type === 'Exit',
+                        'is-info':  inversor.idStartUpState.type === 'Growth Stage'
+                      }" class="progress is-small" [value]="changeProgresValue( inversor.idStartUpState.type)" max="100"></progress> {{inversor.idStartUpState.type}}
+                    </p>
+
+                    <div class="linea2"></div>
+                    <p class="email">{{inversor.email}}</p>
+                    <button (click)="onclick()" (click)="onSelected(inversor)" type="button" class="button">{{MatchBtn ? 'Match!!' : 'Just Match!!'}}</button>
+
+
+
+
+
                 </div>
+
             </div>
         </div>
     </div>
 
-
-
-    <div class="d-flex justify-content-center">
-        <button mat-raised-button type="button" id="button" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
-    </div>
-
-    <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!" class="fw-bold text-body"><u>Login here</u></a></p>
-
-</form>
+</div>
