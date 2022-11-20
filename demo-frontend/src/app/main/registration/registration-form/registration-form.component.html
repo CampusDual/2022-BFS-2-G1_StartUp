@@ -117,8 +117,8 @@
         </form>
     </mat-step>
 
-
-    <mat-step [stepControl]="secondFormGroup">
+    <!-- SEGUNDO PASO -->
+    <mat-step >
         <ng-template matStepLabel>{{"registration.matStepLabel2" | translate}}</ng-template>
 
         <h1 class="title is-1">{{"registration.h1-step2" | translate}}</h1>
@@ -148,7 +148,7 @@
                 </button>
             </div>
             <div class="control">
-                <button type="submit" class="button is-rounded is-medium" matStepperNext>
+                <button type="submit" class="button is-rounded is-medium" [disabled]="!selectedOption" matStepperNext>
                     <span>{{"registration.button-next" | translate}}</span>
                     <span class="icon is-small">
                         <i class="fas fa-arrow-right"></i>
