@@ -71,6 +71,7 @@ import { RegistrationFormComponent } from './main/registration/registration-form
     MatRadioModule,
     ReactiveFormsModule,
     BrowserModule,
+
     BrowserAnimationsModule,
     MdbModalModule,
     AppRoutingModule,
