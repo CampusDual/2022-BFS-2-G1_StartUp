@@ -2,11 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { EntrepreneurDetailComponent } from './main/entrepreneurs/entrepreneur-detail/entrepreneur-detail.component';
-import { DeleteModalComponent } from './main/investers/delete-modal/delete-modal.component';
-import { InvestersComponent } from './main/investers/investers.component';
-import { StadisticsbarComponent } from './main/stadisticsbar/stadisticsbar.component';
-import { StadisticslineComponent } from './main/stadisticsline/stadisticsline.component';
 import { UserComponent } from './register/user/user.component';
 
 const routes: Routes = [
@@ -15,21 +10,11 @@ const routes: Routes = [
 
   { path: '', redirectTo: 'landing-page', pathMatch: 'full' },
   { path: 'contacts', loadChildren: () => import('./main/contacts/contacts.module').then(x => x.ContactsModule) },
-  { path: 'investers', component:InvestersComponent},
-  { path: 'entrepreurs', loadChildren: () => import('./main/entrepreneurs/entrepreneurs.module').then(x => x.EntrepreneursModule) },
-  { path: 'entrepreneur-detail', component:EntrepreneurDetailComponent },
   { path: 'landing-page', component:LandingPageComponent },
   { path: 'registration',  loadChildren: () => import('./main/registration/registration.module').then(x => x.RegistrationModule) },
   { path: 'user', component: UserComponent },
-  { path: 'stadisticsline', component:StadisticslineComponent },
-  { path: 'stadisticsbar', component:StadisticsbarComponent },
-  { path: 'app-delete-modal',component:DeleteModalComponent},
   { path: 'inversores', loadChildren: () => import('./main/inversores/invesores/inversores.module').then(x => x.InversoresModule) },
   { path: 'startup', loadChildren: () => import('./main/startup/startup.module').then(x => x.StartupModule) }
-
-
-
-
 ];
 
 @NgModule({

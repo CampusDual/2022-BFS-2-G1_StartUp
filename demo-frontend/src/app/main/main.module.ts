@@ -25,11 +25,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MainHomeComponent } from './main-home/main-home.component';
 import { MainRoutingModule } from './main-routing.module';
-
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
-
 import { MatStepperModule } from '@angular/material/stepper';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -38,21 +36,13 @@ import { LightboxModule } from 'ngx-lightbox';
 import { AppComponent } from '../app.component';
 import { CoreModule } from '../core/core.module';
 import { FilterItemDirective } from './directives/filter-item.directive';
-import { DeleteModalComponent } from './investers/delete-modal/delete-modal.component';
 import { RegistrationModule } from './registration/registration.module';
-import { StadisticsComponent } from './stadistics/stadistics.component';
-import { StadisticsbarComponent } from './stadisticsbar/stadisticsbar.component';
-import { StadisticslineComponent } from './stadisticsline/stadisticsline.component';
+
 
 @NgModule({
   declarations: [
     MainHomeComponent,
     FilterItemDirective,
-    StadisticsComponent,
-    StadisticslineComponent,
-    StadisticsbarComponent,
-    DeleteModalComponent,
-
   ],
   imports: [
     MatStepperModule,
