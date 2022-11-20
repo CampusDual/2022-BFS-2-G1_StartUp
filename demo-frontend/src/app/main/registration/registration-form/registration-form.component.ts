@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
@@ -84,9 +84,9 @@ export class RegistrationFormComponent implements OnInit {
       name: [this.user.name],
       surname1: [this.user.surname1],
       surname2: [this.user.surname2],
-      login: [this.user.login],
-      password: [this.user.password],
-      profiles: [this.user.profiles],
+      login: [this.user.login, Validators.required],
+      password: [this.user.password, Validators.required],
+      profiles: [this.user.profiles, Validators.required],
     });
   }
 

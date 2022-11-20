@@ -7,24 +7,27 @@
             <h1 class="title is-1">{{"registration.h1-step1" | translate}}</h1>
             <h2 class="subtitle colored is-4">{{"registration.subtitle-step1" | translate}}</h2>
 
+            <!-- username -->
             <div class="field is-grouped ">
                 <div class="control">
                     <div class="field">
                         <label class="label">{{"formUser.username" | translate}}</label>
                         <div class="control has-icons-left has-icons-right">
-                            <input formControlName="login" class="input is-rounded" type="login">
+                            <input required formControlName="login" class="input is-rounded" type="text">
                             <span class="icon is-small is-left">
                                 <i class="fas fa-user-circle"></i>
+                                <mat-error *ngIf="firstFormGroup.invalid">{{'OBLIGATORY_FIELD'| translate}}</mat-error>
                             </span>
                         </div>
                     </div>
                 </div>
 
+                <!-- name -->
                 <div class="control">
                     <div class="field">
                         <label class="label">{{"formUser.name" | translate}}</label>
                         <div class="control has-icons-left has-icons-right">
-                            <input formControlName="name" class="input is-rounded" type="name">
+                            <input formControlName="name" class="input is-rounded" type="text">
                             <span class="icon is-small is-left">
                                 <i class="fas fa-user"></i>
                             </span>
@@ -38,7 +41,7 @@
                     <div class="field">
                         <label class="label">{{"formUser.firstSurname" | translate}}</label>
                         <div class="control has-icons-left has-icons-right">
-                            <input formControlName="surname1" class="input is-rounded" type="surname1">
+                            <input formControlName="surname1" class="input is-rounded" type="text">
                             <span class="icon is-small is-left">
                                 <i class="fas fa-user-edit"></i>
                             </span>
@@ -49,7 +52,7 @@
                     <div class="field">
                         <label class="label">{{"formUser.secondSurname" | translate}}</label>
                         <div class="control has-icons-left has-icons-right">
-                            <input formControlName="surname2" class="input is-rounded" type="surname2">
+                            <input formControlName="surname2" class="input is-rounded" type="text">
                             <span class="icon is-small is-left">
                                 <i class="fas fa-user-edit"></i>
                             </span>
@@ -63,9 +66,10 @@
                     <div class="field">
                         <label class="label">{{"formUser.password" | translate}}</label>
                         <div class="control has-icons-left has-icons-right">
-                            <input formControlName="password" class="input is-rounded" type="password">
+                            <input required formControlName="password" class="input is-rounded" type="password">
                             <span class="icon is-small is-left">
                                 <mat-icon>lock</mat-icon>
+                                <mat-error *ngIf="firstFormGroup.invalid">{{'OBLIGATORY_FIELD'| translate}}</mat-error>
                             </span>
                         </div>
                     </div>
@@ -74,9 +78,11 @@
                     <div class="field">
                         <label class="label">{{"formUser.repeatPassword" | translate}}</label>
                         <div class="control has-icons-left has-icons-right">
-                            <input class="input is-rounded" type="password">
+                            <input required class="input is-rounded" type="password">
+
                             <span class="icon is-small is-left">
                                 <mat-icon>lock</mat-icon>
+                                <mat-error *ngIf="firstFormGroup.invalid">{{'OBLIGATORY_FIELD'| translate}}</mat-error>
                             </span>
                         </div>
                     </div>
@@ -97,11 +103,13 @@
                     </div>
                     <div class="icon is-small is-left">
                         <i class="fas fa-list"></i>
+                        <mat-error *ngIf="firstFormGroup.invalid">{{'OBLIGATORY_FIELD'| translate}}</mat-error>
                     </div>
                 </div>
             </div>
             <mat-divider></mat-divider>
-            <button class="button medium mgb-medium is-rounded is-medium" type="submit" matStepperNext>
+            <button [disabled]="!firstFormGroup.valid" class="button medium mgb-medium is-rounded is-medium"
+                type="submit" matStepperNext>
                 <span>{{"registration.button-next" | translate}}</span>
                 <span class="icon is-small">
                     <i class="fas fa-arrow-right"></i>
@@ -166,7 +174,7 @@
         <div class="field is-grouped py-4">
 
             <div class="control">
-                <button class="button is-rounded is-medium" matStepperPrevious>
+                <button mat-dialog-close class="button is-rounded is-medium" matStepperPrevious>
                     <span class="icon is-small">
                         <i class="fas fa-check"></i>
                     </span>

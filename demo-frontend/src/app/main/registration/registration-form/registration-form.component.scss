@@ -21,6 +21,10 @@ button {
   color: white;
 }
 
+button:disabled{
+  color: black;
+}
+
 mat-divider {
   margin-top: 2.5em;
   margin-bottom: 1em;

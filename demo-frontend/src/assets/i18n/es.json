@@ -228,7 +228,7 @@
     "button-reset": "Limpiar",
     "button-finish": "Acabar",
 
-    "h1-step2": "Registrese como StartUp o Inversor",
+    "h1-step2": "Regístrese como StartUp o Inversor",
     "subtitle-step2": "Escoja un tipo de usuario y complete el formulario",
 
     "done-messafge": "Ya ha terminado. Estes son los datos de registro:",
@@ -236,5 +236,6 @@
     "done-username": "Nombre de usuario: ",
     "done-name": "Nombre: ",
     "done-surname": "Apellido/s: "
-  }
+  },
+  "OBLIGATORY_FIELD": "*"
 }
