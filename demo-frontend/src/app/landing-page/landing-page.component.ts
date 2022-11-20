@@ -1,5 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatStepper } from '@angular/material/stepper';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { RegistrationFormComponent } from '../main/registration/registration-form/registration-form.component';
@@ -10,6 +11,9 @@ import { RegistrationFormComponent } from '../main/registration/registration-for
   styleUrls: ['./landing-page.component.scss'],
 })
 export class LandingPageComponent implements OnInit {
+
+  @ViewChild('stepper') stepper: MatStepper;
+
   @Output() toggleSidenav = new EventEmitter<void>();
 
   selectedLanguage = this.translateService.currentLang;
@@ -21,11 +25,9 @@ export class LandingPageComponent implements OnInit {
   ) {}
 
   openDialogUser() {
-    this.dialog.open(RegistrationFormComponent);
     const dialogConfig = new MatDialogConfig();
     //dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    //dialogConfig.width = '60%';
     this.dialog.open(RegistrationFormComponent, dialogConfig);
   }
 

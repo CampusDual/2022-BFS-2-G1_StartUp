@@ -59,8 +59,6 @@ export class InvestorRegistrationComponent implements OnInit {
   getRangeInvesters() {
     this.rangeInvesterService.getRangeInvesters().subscribe((response) => {
       this.rangeInvesters = response;
-      console.log("Inversor range!!!" + response);
-      console.log("Inversor range!!!" + this.rangeInvesters);
     });
   }
   getBusinesSectors() {

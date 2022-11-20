@@ -17,6 +17,7 @@ import { InvestorRegistrationComponent } from './investor-registration/investor-
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { StartupRegistrationComponent } from './startup-registration/startup-registration.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
+
 @NgModule({
   declarations: [RegistrationFormComponent, InvestorRegistrationComponent, StartupRegistrationComponent, UserRegistrationComponent],
   imports: [
