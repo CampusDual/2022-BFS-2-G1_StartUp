@@ -126,7 +126,8 @@
         "firstSurname": "Primeiro Apelido",
         "secondSurname": "Segundo Apelido",
         "password": "Contrasinal",
-        "repeatPassword": "Repetir Contrasinal"
+        "repeatPassword": "Repetir Contrasinal",
+        "selectProfile": "Selecciona un perfil"
     },
     "button": {
         "cancel": "Cancelar",
@@ -219,5 +220,27 @@
         "octuber": "Outubro",
         "november": "Novembro",
         "december": "Decembro"
-    }
+    },
+    "registration": {
+        "matStepLabel1": "Datos do usuario",
+        "matStepLabel2": "Datos de StartUp/Inversor",
+        "matStepLabel3": "Rematar",
+
+        "h1-step1": "Rexistrarse como usuario",
+        "subtitle-step1": "Cubra os datos do usuario e selecciona un perfil",
+
+        "button-next": "Seguinte",
+        "button-back": "Atrás",
+        "button-reset": "Limpar",
+        "button-finish": "Rematar",
+
+        "h1-step2": "Rexistrarse como StartUp ou Inversor",
+        "subtitle-step2": "Escolla un tipo de usuario e complete o formulario",
+
+        "done-messafge": "Ya ha terminado. Estes son los datos de registro:",
+
+        "done-username": "Nome de usuario: ",
+        "done-name": "Nome: ",
+        "done-surname": "Apelido/s: "
+      }
 }

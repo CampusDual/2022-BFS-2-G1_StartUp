@@ -1,21 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup
-} from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { id } from '@swimlane/ngx-charts';
 import { Profile } from 'src/app/model/profile';
 import { User } from 'src/app/model/user';
 import { LoggerService } from 'src/app/services/logger.service';
 import { UserService } from 'src/app/services/user.service';
 
-interface Tipo{
-  name: string,
-  value:number
+interface Tipo {
+  name: string;
+  value: number;
 }
 
 @Component({
@@ -35,15 +30,14 @@ export class RegistrationFormComponent implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-  profiles:Profile[];
- 
-  
+  profiles: Profile[];
+
   options = [
     { name: 'startup', value: 1 },
     { name: 'inversor', value: 2 },
   ];
-  
-  profilesOption:Tipo[] = [
+
+  profilesOption: Tipo[] = [
     { name: 'inversor', value: 2 },
     { name: 'startup', value: 3 },
   ];
@@ -60,12 +54,9 @@ export class RegistrationFormComponent implements OnInit {
     private _formBuilder: FormBuilder
   ) {
     this.user = new User();
-   
   }
 
   ngOnInit(): void {
-  
-    
     this.createFormGroup();
     this.idUser = this.route.snapshot.params['id'];
     if (this.idUser) {
@@ -91,9 +82,9 @@ export class RegistrationFormComponent implements OnInit {
     this.userForm = this.fb.group({
       id: [this.user.id],
       name: [this.user.name],
-      surname1: [this.user.name],
-      surname2: [this.user.name],
-      login: [this.user.name],
+      surname1: [this.user.surname1],
+      surname2: [this.user.surname2],
+      login: [this.user.login],
       password: [this.user.password],
       profiles: [this.user.profiles],
     });
@@ -127,5 +118,4 @@ export class RegistrationFormComponent implements OnInit {
       return false;
     }
   }
-
 }

@@ -122,7 +122,8 @@
         "firstSurname": "First Surname",
         "secondSurname": "Second Surname",
         "password": "Password",
-        "repeatPassword": "Repeat Password"
+        "repeatPassword": "Repeat Password",
+        "selectProfile": "Select a profile"
     },
 
 
@@ -218,5 +219,27 @@
         "octuber": "Octuber",
         "november": "November",
         "december": "December"
-    }
+    },
+    "registration": {
+        "matStepLabel1": "User data",
+        "matStepLabel2": "StartUp/Inversor data",
+        "matStepLabel3": "Finish",
+
+        "h1-step1": "Register as a user",
+        "subtitle-step1": "Cover the user data and select a profile",
+
+        "button-next": "Next",
+        "button-back": "Back",
+        "button-reset": "Reset",
+        "button-finish": "Finish",
+
+        "h1-step2": "Registry as startup or inverter",
+        "subtitle-step2": "Choose a type of user and complete the form",
+
+        "done-messafge": "These are the registration data:",
+
+        "done-username": "Username: ",
+        "done-name": "Name: ",
+        "done-surname": "Surname: "
+      }
 }

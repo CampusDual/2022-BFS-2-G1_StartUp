@@ -15,13 +15,16 @@ mat-horizontal-stepper {
   margin-top: 16px;
 }
 
-button{
+button {
   margin-top: 1rem;
   background-color: $brandColor;
-  color: white
+  color: white;
 }
 
-mat-divider{
+mat-divider {
   margin-top: 2.5em;
   margin-bottom: 1em;
+}
+mat-list-item {
+  font-weight: 300;
 }
