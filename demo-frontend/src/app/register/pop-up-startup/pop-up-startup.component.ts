@@ -15,8 +15,16 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class PopUpStartupComponent implements OnInit {
 
+   //variable MatchBtn
+   MatchBtn: boolean = true;
+   BubblyButton: boolean =false;
+
+   // INtento de match
+  selectedStartup?: Startup
+
+
   dataSource: StartupsDataSource;
-  //startups: Startup[];
+
   list;
   public startups = [];
   fields = ['name', 'email', 'description', 'idBusinessSector', 'idStartUpState','anualInvoicing','fundationYear','idEntrepreneur'];
@@ -37,7 +45,7 @@ export class PopUpStartupComponent implements OnInit {
       '',
       this.fields.map((field) => new AnyField(field)),
       0,
-      10,
+      6,
       'name'
 
     );
@@ -50,11 +58,37 @@ export class PopUpStartupComponent implements OnInit {
 
     this.startupService.getStartups(pageFilter).subscribe((response) =>{
       this.startups = response.data;
-      console.log('>>>Startups>>>', this.startups[0].name);
+      console.log('>>>Startups>>>', this.startups[0].idStartupState.type);
 
       console.log('>>>>>>>>Data Startup',response.data)})
     }
 
+
+    onclick() {
+      this.MatchBtn = !this.MatchBtn;
+    }
+
+    onSelected(startup: Startup): void {
+      this.selectedStartup = startup;
+     console.log('>>>>>Sselec:', startup);
+
+    }
+
+    changeProgresValue(row: string) {
+      if (row == 'Pre-Seed') {
+        return 20;
+      } else if (row == 'Seed') {
+        return 40;
+      } else if (row == 'Early Stage') {
+        return 60;
+      } else if (row == 'Growth Stage') {
+        return 80;
+      } else if (row == 'Scaleup') {
+        return 90;
+      } else {
+        return 100;
+      }
+    }
 
   }
 

@@ -1,88 +1,53 @@
-<h1>LISTADO STARTUPS QUE VERÁN LOS INVERSORES</h1>
-<!-- <div class="motherfucking">
-    <div class="container">
-        <input type="radio" name="slider" class="d-none" id="s1" checked>
+<div class="wrapper">
+    <div class="testimotionals" *ngFor="let startup of startups">
+        <div class="card ">
+            <div class="layer">
+            </div>
+
+            <div class="content">
+                <h2 class="transition name">{{startup.name}}</h2>
+                <div class="linea"></div>
+
+                <div class="details">
 
 
 
-        <div class="cards">
+                    <p id="sector">{{startup.idBusinessSector.type}}</p>
 
-            <div *ngFor="let startup of startups" class="card">
+                    <p>
+                        <progress [ngClass]="{
+                    'is-success':  startup.idStartupState.type === 'Scaleup',
+                    'is-warning': startup.idStartupState.type === 'Seed',
+                    'is-danger': startup.idStartupState.type === 'Pre-Seed',
+                    'is-link':  startup.idStartupState.type === 'Early Stage',
+                    'is-primary':  startup.idStartupState.type === 'Exit',
+                    'is-info':  startup.idStartupState.type === 'Growth Stage'
+                  }" class="progress is-small" [value]="changeProgresValue( startup.idStartupState.type)" max="100"></progress> {{startup.idStartupState.type}}
+                    </p>
 
-                <div class="image">
+                    <div class="anual-year">
+                        <p>{{ startup.anualInvoicing | currency:'USD'}}</p>
 
-                    <div class="dots">
-                        <div></div>
-                        <div class="socials">
-
-                            <i class="fas fa-rocket"></i>
-                        </div>
+                        <p>{{ startup.fundationYear | date:"dd/MM/yy"}}</p>
 
                     </div>
-                </div>
-                <div class="infos">
-                    <span class="name">{{startup.name}}</span>
-                    <span class="state"> {{startup.idStartUpState}}</span>
-                    <span class="email"> {{startup.email}}</span>
-                    <span class="description">{{startup.description}}</span>
-                    <span class="invoicing">{{ startup.anualInvoicing}}</span>
-                    <span class="year">{{ startup.fundationYear}}</span>
-                </div>
-                <a href="" class="btn-contact">Match!!!!!</a>
-                <div class="socials">
-                    <i class="bi bi-linkedin"></i>
+
+                    <hr/>
+
+                    <p class="description">{{startup.description}}</p>
+                    <div class="linea2"></div>
+
+
+                    <p>{{startup.idEntrepreneur.firstName}}</p>
+                    <p>{{startup.email}}</p>
+                    <button (click)="onSelected(startup)" type="button" class="button">{{MatchBtn ? 'Match!!' : 'Just Match!!'}}</button>
+                    <!-- <div *ngIf="selectedStartup" [class.selected]=" startup === selectedStartup"> selected</div> -->
+
 
                 </div>
 
             </div>
 
-
-
         </div>
 
     </div>
-</div> -->
-
-<section class="our-webcoderskull padding-lg">
-    <div class="container">
-        <div class="row heading heading-icon">
-            <h2>{{ "menu.entrepreneur" | translate }}</h2>
-        </div>
-
-        <ul class="row">
-            <li class="col-12 col-md-6 col-lg-3" *ngFor="let startup of startups">
-
-
-
-                <div class="cnt-block equal-hight" style="height: 349px;">
-
-                    <button type="button" class="icon-button">
-
-                <img src="../../../assets/images/startup-home.jpg" alt="startup" >
-                <span ngClass="{correcto}" class="material-icons icon-button__badge">task_alt</span>
-
-              </button>
-
-                    <h1 class=" first-name-last-name ">{{startup.name}}</h1>
-
-                    <h3>{{startup.idStartUpState}}</h3>
-
-                    <h4>{{startup.email}}</h4>
-
-                    <h5>{{ startup.anualInvoicing}}</h5>
-
-                    <h6>{{ startup.fundationYear}}</h6>
-
-                    <p>{{startup.description}}</p>
-
-                    <ul class="follow-us clearfix ">
-
-                        <li><i class="bi bi-linkedin " aria-hidden="true "></i></li>
-
-                    </ul>
-                </div>
-            </li>
-        </ul>
-
-    </div>
-</section>
