@@ -30,6 +30,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 
+import { MatStepperModule } from '@angular/material/stepper';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
@@ -38,14 +39,10 @@ import { AppComponent } from '../app.component';
 import { CoreModule } from '../core/core.module';
 import { FilterItemDirective } from './directives/filter-item.directive';
 import { DeleteModalComponent } from './investers/delete-modal/delete-modal.component';
-import { InvestorRegistrationComponent } from './registration/investor-registration/investor-registration.component';
-import { RegistrationFormComponent } from './registration/registration-form/registration-form.component';
-import { StartupRegistrationComponent } from './registration/startup-registration/startup-registration.component';
+import { RegistrationModule } from './registration/registration.module';
 import { StadisticsComponent } from './stadistics/stadistics.component';
 import { StadisticsbarComponent } from './stadisticsbar/stadisticsbar.component';
 import { StadisticslineComponent } from './stadisticsline/stadisticsline.component';
-import { RegistrationModule } from './registration/registration.module';
-
 
 @NgModule({
   declarations: [
@@ -58,6 +55,7 @@ import { RegistrationModule } from './registration/registration.module';
 
   ],
   imports: [
+    MatStepperModule,
     RegistrationModule,
     TranslateModule,
     CommonModule,

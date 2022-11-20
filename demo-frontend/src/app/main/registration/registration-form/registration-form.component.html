@@ -1,4 +1,4 @@
-<mat-horizontal-stepper animationDuration="2000ms" [linear]="isLinear" #stepper class="is-fluid">
+<mat-horizontal-stepper animationDuration="1000ms" [linear]="isLinear" #stepper>
     <mat-step [stepControl]="firstFormGroup">
         <form (ngSubmit)="save()" [formGroup]="firstFormGroup">
 
@@ -118,7 +118,7 @@
     </mat-step>
 
     <!-- SEGUNDO PASO -->
-    <mat-step >
+    <mat-step [stepControl]="secondFormGroup">
         <ng-template matStepLabel>{{"registration.matStepLabel2" | translate}}</ng-template>
 
         <h1 class="title is-1">{{"registration.h1-step2" | translate}}</h1>
@@ -132,8 +132,10 @@
         </div>
 
 
-        <app-startup-registration class="py-4" *ngIf="selectedOption === '1'"></app-startup-registration>
-        <app-investor-registration class="py-4" *ngIf="selectedOption === '2'"></app-investor-registration>
+        <app-startup-registration [formGroup]="secondFormGroup" class="py-4" *ngIf="selectedOption === '1'">
+        </app-startup-registration>
+        <app-investor-registration [formGroup]="secondFormGroup" class="py-4" *ngIf="selectedOption === '2'">
+        </app-investor-registration>
 
         <mat-divider></mat-divider>
 

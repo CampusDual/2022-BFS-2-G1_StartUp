@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { MatStepper } from '@angular/material/stepper';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Profile } from 'src/app/model/profile';
@@ -18,7 +19,9 @@ interface Tipo {
   templateUrl: './registration-form.component.html',
   styleUrls: ['./registration-form.component.scss'],
 })
+
 export class RegistrationFormComponent implements OnInit {
+@ViewChild('stepper') stepper: MatStepper;
   idUser: number;
   userForm: FormGroup;
   typesForm: FormControl;
