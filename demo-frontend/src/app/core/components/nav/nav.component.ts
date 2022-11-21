@@ -48,7 +48,7 @@ export class NavComponent implements OnInit, OnDestroy {
       icon: 'monetization_on',
       route: 'inversores',
       title: 'menu.investers',
-      allowedRoles: ['INVESTORS'],
+      allowedRoles: ['CONTACTS'],
     },
     // {
     //   icon: 'engineering',
@@ -66,7 +66,7 @@ export class NavComponent implements OnInit, OnDestroy {
       icon: 'rocket_launch',
       route: 'startup',
       title: 'menu.startup',
-      allowedRoles: ['STARTUPS'],
+      allowedRoles: ['CONTACTS'],
     },
   ];
 

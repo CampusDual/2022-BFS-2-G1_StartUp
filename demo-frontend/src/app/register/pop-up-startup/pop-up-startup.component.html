@@ -3,6 +3,7 @@
     <p>{{'landing.service.startup.p' | translate}}</p>
 </header>
 
+
 <div class="wrapper">
 
 
@@ -59,3 +60,4 @@
         </div>
 
     </div>
+    <mat-paginator #input [length]="dataSource.totalElements" [pageSize]="6" [pageSizeOptions]="[6, 10, 20, 50]" showFirstLastButtons></mat-paginator>
