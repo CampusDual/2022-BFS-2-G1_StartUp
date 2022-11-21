@@ -13,6 +13,9 @@ const routes: Routes = [
   { path: 'list-startups', component:PopUpStartupComponent},
   { path: 'list-inversores', component:PopUpInversorComponent },
 
+  { path: 'startup-user', component:PopUpStartupComponent},
+  { path: 'inversor-user', component:PopUpInversorComponent },
+
   { path: '', redirectTo: 'landing-page', pathMatch: 'full' },
   { path: 'contacts', loadChildren: () => import('./main/contacts/contacts.module').then(x => x.ContactsModule) },
   { path: 'landing-page', component:LandingPageComponent },

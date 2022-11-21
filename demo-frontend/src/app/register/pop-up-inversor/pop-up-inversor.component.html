@@ -4,31 +4,26 @@
 
 <div class="wrapper">
 
-    <div class="card-landing">
-        <i class="fas fa-rocket"></i>
-        <h5>{{'landing.service.startup.h5' | translate}}</h5>
-        <div class="pra-landing">
-            <p>{{'landing.service.startup.p' | translate}}</p>
 
-            <div class="testimotionals" *ngFor="let inversor of inversores">
-                <div class="card ">
+    <div class="testimotionals" *ngFor="let inversor of inversores">
+        <div class="card ">
 
-                    <div class="layer">
+            <div class="layer">
 
-                    </div>
+            </div>
 
-                    <div class="content">
-                        <h2 class="transition name">{{inversor.name}}</h2>
-                        <div class="linea"></div>
+            <div class="content">
+                <h2 class="transition name">{{inversor.name}}</h2>
+                <div class="linea"></div>
 
 
 
-                        <div class="details">
+                <div class="details">
 
-                            <p id="sector">{{inversor.idBusinessSector.type}}</p>
-                            <p class="range">&#36;&nbsp; {{inversor.idInvesterRange.value }}</p>
-                            <p>
-                                <progress [ngClass]="{
+                    <p id="sector">{{inversor.idBusinessSector.type}}</p>
+                    <p class="range">&#36;&nbsp; {{inversor.idInvesterRange.value }}</p>
+                    <p>
+                        <progress [ngClass]="{
                         'is-success':  inversor.idStartUpState.type === 'Scaleup',
                         'is-warning': inversor.idStartUpState.type === 'Seed',
                         'is-danger': inversor.idStartUpState.type === 'Pre-Seed',
@@ -36,20 +31,20 @@
                         'is-primary':  inversor.idStartUpState.type === 'Exit',
                         'is-info':  inversor.idStartUpState.type === 'Growth Stage'
                       }" class="progress is-small" [value]="changeProgresValue( inversor.idStartUpState.type)" max="100"></progress> {{inversor.idStartUpState.type}}
-                            </p>
+                    </p>
 
-                            <div class="linea2"></div>
-                            <p class="email">{{inversor.email}}</p>
-                            <button (click)="onclick()" (click)="onSelected(inversor)" type="button" class="button">{{MatchBtn ? 'Match!!' : 'Just Match!!'}}</button>
-
-
+                    <div class="linea2"></div>
+                    <p class="email">{{inversor.email}}</p>
+                    <button (click)="onclick()" (click)="onSelected(inversor)" type="button" class="button">{{MatchBtn ? 'Match!!' : 'Just Match!!'}}</button>
 
 
 
-                        </div>
 
-                    </div>
+
                 </div>
-            </div>
 
+            </div>
         </div>
+    </div>
+
+</div>
