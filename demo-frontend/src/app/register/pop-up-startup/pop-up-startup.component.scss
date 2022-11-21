@@ -16,6 +16,21 @@
     height: 100%;
 }
 
+.headers {
+    margin-top: 6rem;
+    margin-bottom: auto;
+    text-align: center;
+    font-family: Arial black;
+    font-weight: bold;
+    font-size: 30px;
+    background: black;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    padding: 0 20rem;
+}
+
 .testimotionals {
     width: 350px;
     display: inline-block;
