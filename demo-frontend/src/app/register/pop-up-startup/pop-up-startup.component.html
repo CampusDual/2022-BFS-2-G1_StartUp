@@ -8,7 +8,7 @@
 
 
 
-    <div class="testimotionals" *ngFor="let startup of startups">
+    <div class="testimotionals" *ngFor="let startup of startups | paginate: { itemsPerPage: 6, currentPage: page }">
         <div class="card ">
             <div class="layer">
             </div>
@@ -50,7 +50,7 @@
                     <p>{{startup.idEntrepreneur.firstName}}</p>
                     <p>{{startup.email}}</p>
                     <button (click)="onSelected(startup)" type="button" class="button">{{MatchBtn ? 'Match!!' : 'Just Match!!'}}</button>
-                    <!-- <div *ngIf="selectedStartup" [class.selected]=" startup === selectedStartup"> selected</div> -->
+
 
 
                 </div>
@@ -60,4 +60,5 @@
         </div>
 
     </div>
-    <mat-paginator #input [length]="dataSource.totalElements" [pageSize]="6" [pageSizeOptions]="[6, 10, 20, 50]" showFirstLastButtons></mat-paginator>
+
+    <pagination-controls class="paginator" (pageChange)="page = $event" previousLabel="& # 8592;" nextLabel="& # 8594;"></pagination-controls>

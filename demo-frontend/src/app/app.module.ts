@@ -39,6 +39,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDividerModule } from '@angular/material/divider';
 import { RegistrationFormComponent } from './main/registration/registration-form/registration-form.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -88,6 +89,7 @@ import { RegistrationFormComponent } from './main/registration/registration-form
     NgxSpinnerModule,
     MatFormFieldModule,
     MatIconModule,
+    NgxPaginationModule,
     NgIdleKeepaliveModule.forRoot()
   ],
   entryComponents: [
