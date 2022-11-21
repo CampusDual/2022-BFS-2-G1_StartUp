@@ -21,7 +21,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { ConfirmationDialogComponent } from './shared/confirmation-dialog/confirmation-dialog.component';
 import { InterceptService } from './services/intercept.service';
 import { TokenInterceptorService } from './services/token-interceptor.service';
-import { MatPaginatorIntl } from '@angular/material/paginator';
+import { MatPaginatorIntl, MatPaginatorModule } from '@angular/material/paginator';
 import { CustomMatPaginatorIntl } from './model/custom-mat-paginator';
 import { CoreModule } from './core/core.module';
 import { LandingPageComponent } from './landing-page/landing-page.component';
@@ -49,6 +49,7 @@ import { RegistrationFormComponent } from './main/registration/registration-form
     AppComponent,
     ConfirmationDialogComponent,
     MatSnackBarComponent,
+
     LandingPageComponent,
     RegisterComponent,
     PopUpStartupComponent,
@@ -71,7 +72,7 @@ import { RegistrationFormComponent } from './main/registration/registration-form
     MatRadioModule,
     ReactiveFormsModule,
     BrowserModule,
-
+    MatPaginatorModule,
     BrowserAnimationsModule,
     MdbModalModule,
     AppRoutingModule,
