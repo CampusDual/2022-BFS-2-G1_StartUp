@@ -46,18 +46,25 @@ export class NavigationBarComponent {
         } else if (this.returnUrl == '/startup') {
           this.pageIcon = 'trending_up';
           this.pageTitle = 'menu.startup';
-      } }
+        } else if (this.returnUrl == '/startup-user') {
+          this.pageIcon = 'trending_up';
+          this.pageTitle = 'menu.startup-user';
+        } else if (this.returnUrl == '/inversor-user') {
+          this.pageIcon = 'trending_up';
+          this.pageTitle = 'menu.investers-user';
+        }
+      }
     });
   }
 
-/**
- * Se encarga de no mostrar navBar cuando estamos logueados en la landing-page
- *@return devuelve la navbar no visible 
- */
-  get navBarView(){
-    let navVisible:boolean=true;
-    if(this.router.url=== '/landing-page'){
-      navVisible=false;
+  /**
+   * Se encarga de no mostrar navBar cuando estamos logueados en la landing-page
+   *@return devuelve la navbar no visible
+   */
+  get navBarView() {
+    let navVisible: boolean = true;
+    if (this.router.url === '/landing-page') {
+      navVisible = false;
     }
     return navVisible;
   }
