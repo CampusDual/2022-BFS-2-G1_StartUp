@@ -26,15 +26,12 @@ export class StartupComponent implements OnInit, AfterViewInit {
   dataSource: StartupsDataSource;
   displayedColumns = [
     'select',
-    //'id',
     'name',
     'email',
-    //'description',
     'idBusinessSector',
     'idStartUpState',
     'anualInvoicing',
     'fundationYear',
-    //'idEntrepreneur'
   ];
   fields = ['name', 'email', 'description', 'idBusinessSector', 'idStartUpState','anualInvoicing','fundationYear','idEntrepreneur'];
 

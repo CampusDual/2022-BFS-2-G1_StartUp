@@ -38,30 +38,12 @@ export class NavComponent implements OnInit, OnDestroy {
       title: 'menu.home',
       allowedRoles: ['CONTACTS'],
     },
-    // {
-    //   icon: 'people',
-    //   route: 'contacts',
-    //   title: 'menu.contacts',
-    //   allowedRoles: ['CONTACTS']
-    // },
     {
       icon: 'build',
       route: 'inversores',
       title: 'menu.investers',
       allowedRoles: ['CONTACTS'],
     },
-    // {
-    //   icon: 'engineering',
-    //   route: 'entrepreneur',
-    //   title: 'menu.entrepreneur',
-    //   allowedRoles: ['CONTACTS']
-    // },
-    // {
-    //   icon: 'trending_up',
-    //   route: 'stadistics',
-    //   title: 'menu.stadistics',
-    //   allowedRoles: ['CONTACTS'],
-    // },
     {
       icon: 'build',
       route: 'startup',
@@ -94,7 +76,7 @@ export class NavComponent implements OnInit, OnDestroy {
     private authGuard: AuthGuard,
     private router: Router,
     private translateService: TranslateService
-  ) {}
+  ) { }
 
   ngOnInit() {
     if (this.isAuthenticated()) {
@@ -156,7 +138,5 @@ export class NavComponent implements OnInit, OnDestroy {
     this.selectedLanguage = lang;
     this.translateService.use(lang);
   }
-
-
 
 }

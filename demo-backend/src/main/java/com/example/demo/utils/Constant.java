@@ -57,8 +57,8 @@ public class Constant {
 	public static final String RESPONSE_CODE = "responseCode";
 	public static final String ERROR = "errors";
 	public static final String PHONE_ERROR = "contacts_phone_key";
-	
-	// pagination error
+
+	// pagination error invester
 	public static final String INVESTER_ID_ERROR = "INVESTER_ID_ERROR";
 	public static final String INVESTER_EMAIL_ERROR = "INVESTER_EMAIL_ERROR";
 
@@ -72,7 +72,7 @@ public class Constant {
 	public static final String INVESTER_NOT_EXISTS = "INVESTER_NOT_EXISTS";
 	public static final String INVESTER_ALREADY_EXISTS = "INVESTER_ALREADY_EXISTS";
 	public static final String INVESTER_EMAIL_INVALID = "EMAIL_INVALID";
-	
+
 	// Invester message
 	public static final String INVESTER_CREATE_SUCCESS = "INVESTER_CREATE_SUCCESS";
 	public static final String INVESTER_NOT_CREATED = "INVESTER_NOT_CREATED";
@@ -80,7 +80,7 @@ public class Constant {
 	public static final String INVESTER_NOT_EDIT = "INVESTER_NOT_EDIT";
 	public static final String INVESTER_DELETE_SUCCESS = "INVESTER_DELETE_SUCCESS";
 	public static final String INVESTER_NOT_DELETE = "INVESTER_NOT_DELETE";
-	
+
 	// Startup error
 	public static final String STARTUP_ID_REQUIRED = "STARTUP_ID_REQUIRED";
 	public static final String STARTUP_NAME_REQUIRED = "STARTUP_NAME_REQUIRED";
@@ -90,11 +90,11 @@ public class Constant {
 	public static final String STARTUP_STATE_REQUIRED = "STARTUP_STATE_REQUIRED";
 	public static final String STARTUP_ENTREPRENEUR_REQUIRED = "STARTUP_ENTREPRENEUR_REQUIRED";
 	public static final String STARTUP_ANUAL_INVOICING_REQUIRED = "STARTUP_ANUAL_INVOICING_REQUIRED";
-	public static final String STARTUP_FUNDATION_YEAR_REQUIRED= "STARTUP_FUNDATION_YEAR_REQUIRED";
+	public static final String STARTUP_FUNDATION_YEAR_REQUIRED = "STARTUP_FUNDATION_YEAR_REQUIRED";
 	public static final String STARTUP_NOT_EXISTS = "STARTUP_NOT_EXISTS";
 	public static final String STARTUP_ALREADY_EXISTS = "STARTUP_ALREADY_EXISTS";
 	public static final String STARTUP_EMAIL_INVALID = "STARTUP_EMAIL_INVALID";
-	
+
 	// Startup message
 	public static final String STARTUP_CREATE_SUCCESS = "STARTUP_CREATE_SUCCESS";
 	public static final String STARTUP_NOT_CREATED = "STARTUP_NOT_CREATED";
@@ -102,14 +102,15 @@ public class Constant {
 	public static final String STARTUP_NOT_EDIT = "STARTUP_NOT_EDIT";
 	public static final String STARTUP_DELETE_SUCCESS = "STARTUP_DELETE_SUCCESS";
 	public static final String STARTUP_NOT_DELETE = "STARTUP_NOT_DELETE";
-	
+
+	// Startup pagination error entrepreneur
 	public static final String STARTUP_ID_ERROR = "STARTUP_ID_ERROR";
 	public static final String STARTUP_EMAIL_ERROR = "STARTUP_EMAIL_ERROR";
 
 	// Entrepreneur pagination error entrepreneur
 	public static final String ENTREPRENEUR_ID_ERROR = "ENTREPRENEUR_ID_ERROR";
 	public static final String ENTREPRENEUR_EMAIL_ERROR = "ENTREPRENEUR_EMAIL_ERROR";
-	
+
 	// Entrepreneur error
 	public static final String ENTREPRENEUR_ID_REQUIRED = "ENTREPRENEUR_ID_REQUIRED";
 	public static final String ENTREPRENEUR_FIRST_NAME_REQUIRED = "ENTREPRENEUR_FIRST_NAME_REQUIRED";
@@ -120,7 +121,7 @@ public class Constant {
 	public static final String ENTREPRENEUR_NOT_EXISTS = "ENTREPRENEUR_NOT_EXISTS";
 	public static final String ENTREPRENEUR_ALREADY_EXISTS = "ENTREPRENEUR_ALREADY_EXISTS";
 	public static final String ENTREPRENEUR_EMAIL_INVALID = "ENTREPRENEUR_EMAIL_INVALID";
-	
+
 	// Entrepreneur message
 	public static final String ENTREPRENEUR_CREATE_SUCCESS = "ENTREPRENEUR_CREATE_SUCCESS";
 	public static final String ENTREPRENEUR_NOT_CREATED = "ENTREPRENEUR_NOT_CREATED";
@@ -128,5 +129,5 @@ public class Constant {
 	public static final String ENTREPRENEUR_NOT_EDIT = "ENTREPRENEUR_NOT_EDIT";
 	public static final String ENTREPRENEUR_DELETE_SUCCESS = "ENTREPRENEUR_DELETE_SUCCESS";
 	public static final String ENTREPRENEUR_NOT_DELETE = "ENTREPRENEUR_NOT_DELETE";
-	
+
 }
