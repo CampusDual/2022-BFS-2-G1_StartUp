@@ -4,9 +4,12 @@ import { StartupsDataSource } from 'src/app/model/datasource/startup.datasource'
 import { AnyField, AnyPageFilter } from 'src/app/model/rest/filter';
 import { Startup } from 'src/app/model/startup';
 import { StartupService } from 'src/app/services/startup.service';
-
+import { MatPaginator } from '@angular/material/paginator';
 import { TranslateService } from '@ngx-translate/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSort } from '@angular/material/sort';
+import { debounceTime, distinctUntilChanged, fromEvent, tap, merge } from 'rxjs';
+import { SortFilter } from '../../model/rest/filter';
 
 @Component({
   selector: 'app-pop-up-startup',
@@ -21,7 +24,7 @@ export class PopUpStartupComponent implements OnInit {
 
    // INtento de match
   selectedStartup?: Startup
-
+  public page : number;
 
   dataSource: StartupsDataSource;
 
@@ -31,8 +34,8 @@ export class PopUpStartupComponent implements OnInit {
   selection = new SelectionModel<Startup>(true, []);
 
   @ViewChild('input') input: ElementRef;
-
-
+  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private startupService: StartupService,   private translate: TranslateService, private dialog: MatDialog) {
 
@@ -45,7 +48,7 @@ export class PopUpStartupComponent implements OnInit {
       '',
       this.fields.map((field) => new AnyField(field)),
       0,
-      6,
+      24,
       'name'
 
     );
@@ -53,6 +56,11 @@ export class PopUpStartupComponent implements OnInit {
     this.getConsola(pageFilter);
 
   }
+
+
+
+
+
 
   getConsola(pageFilter : AnyPageFilter){
 

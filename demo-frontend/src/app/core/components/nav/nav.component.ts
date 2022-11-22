@@ -66,12 +66,6 @@ export class NavComponent implements OnInit, OnDestroy {
       icon: 'rocket_launch',
       route: 'startup',
       title: 'menu.startup',
-      allowedRoles: ['CONTACTS'],
-    },
-    {
-      icon: 'rocket_launch',
-      route: 'startup-user',
-      title: 'menu.startup',
       allowedRoles: ['STARTUPS'],
     },
     {

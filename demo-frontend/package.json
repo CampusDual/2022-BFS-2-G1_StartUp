@@ -37,6 +37,7 @@
     "mdb-angular-ui-kit": "^3.0.0",
     "moment": "^2.24.0",
     "ngx-lightbox": "^2.6.1",
+    "ngx-pagination": "^6.0.2",
     "ngx-spinner": "^14.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

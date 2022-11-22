@@ -1,61 +1,55 @@
 <header class="headers">
-
-    <p>{{'landing.service.startup.p' | translate}}</p>
+    <p>{{ "landing.service.startup.p" | translate }}</p>
 </header>
 
 <div class="wrapper">
-
-
-
-    <div class="testimotionals" *ngFor="let startup of startups">
-        <div class="card ">
-            <div class="layer">
-            </div>
+    <div class="testimotionals" *ngFor="
+      let startup of startups | paginate: { itemsPerPage: 6, currentPage: page }
+    ">
+        <div class="card">
+            <div class="layer"></div>
 
             <div class="content">
-                <h2 class="transition name">{{startup.name}}</h2>
+                <h2 class="transition name">{{ startup.name }}</h2>
                 <div class="linea"></div>
 
                 <div class="details">
-
-
-
-                    <p id="sector">{{startup.idBusinessSector.type}}</p>
+                    <p id="sector">{{ startup.idBusinessSector.type }}</p>
 
                     <p>
                         <progress [ngClass]="{
-                    'is-success':  startup.idStartupState.type === 'Scaleup',
-                    'is-warning': startup.idStartupState.type === 'Seed',
-                    'is-danger': startup.idStartupState.type === 'Pre-Seed',
-                    'is-link':  startup.idStartupState.type === 'Early Stage',
-                    'is-primary':  startup.idStartupState.type === 'Exit',
-                    'is-info':  startup.idStartupState.type === 'Growth Stage'
-                  }" class="progress is-small" [value]="changeProgresValue( startup.idStartupState.type)" max="100"></progress> {{startup.idStartupState.type}}
+                'is-success': startup.idStartupState.type === 'Scaleup',
+                'is-warning': startup.idStartupState.type === 'Seed',
+                'is-danger': startup.idStartupState.type === 'Pre-Seed',
+                'is-link': startup.idStartupState.type === 'Early Stage',
+                'is-primary': startup.idStartupState.type === 'Exit',
+                'is-info': startup.idStartupState.type === 'Growth Stage'
+              }" class="progress is-small" [value]="changeProgresValue(startup.idStartupState.type)" max="100"></progress> {{ startup.idStartupState.type }}
                     </p>
 
                     <div class="anual-year">
-                        <p>{{ startup.anualInvoicing | currency:'USD'}}</p>
+                        <p>{{ startup.anualInvoicing | currency: "USD" }}</p>
 
-                        <p>{{ startup.fundationYear | date:"dd/MM/yy"}}</p>
-
+                        <p>{{ startup.fundationYear | date: "dd/MM/yy" }}</p>
                     </div>
 
-                    <hr/>
+                    <hr />
 
-                    <p class="description">{{startup.description}}</p>
+                    <p class="description">{{ startup.description }}</p>
                     <div class="linea2"></div>
 
-
-                    <p>{{startup.idEntrepreneur.firstName}}</p>
-                    <p>{{startup.email}}</p>
-                    <button (click)="onSelected(startup)" type="button" class="button">{{MatchBtn ? 'Match!!' : 'Just Match!!'}}</button>
-                    <!-- <div *ngIf="selectedStartup" [class.selected]=" startup === selectedStartup"> selected</div> -->
-
-
+                    <p>{{ startup.idEntrepreneur.firstName }}</p>
+                    <p>{{ startup.email }}</p>
+                    <button (click)="onSelected(startup)" type="button" class="button">
+                      {{'landing.service.startup.a' |translate}}
+                    </button>
                 </div>
-
             </div>
-
         </div>
-
     </div>
+</div>
+
+<nav class="pagination" role="navigation" aria-label="pagination">
+    <pagination-controls (pageChange)="page = $event" class="pagination" previousLabel=&#xab; nextLabel=&#xbb;>
+    </pagination-controls>
+</nav>
