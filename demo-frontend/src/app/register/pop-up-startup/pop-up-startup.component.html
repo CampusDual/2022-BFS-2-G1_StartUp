@@ -24,9 +24,7 @@
                 'is-link': startup.idStartupState.type === 'Early Stage',
                 'is-primary': startup.idStartupState.type === 'Exit',
                 'is-info': startup.idStartupState.type === 'Growth Stage'
-              }" class="progress is-small" [value]="changeProgresValue(startup.idStartupState.type)"
-                            max="100"></progress>
-                        {{ startup.idStartupState.type }}
+              }" class="progress is-small" [value]="changeProgresValue(startup.idStartupState.type)" max="100"></progress> {{ startup.idStartupState.type }}
                     </p>
 
                     <div class="anual-year">
@@ -43,7 +41,7 @@
                     <p>{{ startup.idEntrepreneur.firstName }}</p>
                     <p>{{ startup.email }}</p>
                     <button (click)="onSelected(startup)" type="button" class="button">
-                        {{ MatchBtn ? "Match!!" : "Just Match!!" }}
+                      {{'landing.service.startup.a' |translate}}
                     </button>
                 </div>
             </div>
