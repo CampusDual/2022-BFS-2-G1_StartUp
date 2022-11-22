@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '../auth/auth.guard';
+import { PopUpInversorComponent } from '../register/pop-up-inversor/pop-up-inversor.component';
+import { PopUpStartupComponent } from '../register/pop-up-startup/pop-up-startup.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { InvesoresComponent } from './inversores/invesores/invesores.component';
 import { MainHomeComponent } from './main-home/main-home.component';
-import { RegistrationFormComponent } from './registration/registration-form/registration-form.component';
 import { StartupComponent } from './startup/startup.component';
 
 const routes: Routes = [
@@ -29,7 +30,7 @@ const routes: Routes = [
     component: InvesoresComponent,
     canActivate: [AuthGuard],
     data: {
-      allowedRoles: ['INVESTORS'],
+      allowedRoles: ['CONTACTS'],
     },
   },
   {
@@ -37,7 +38,23 @@ const routes: Routes = [
     component: StartupComponent,
     canActivate: [AuthGuard],
     data: {
+      allowedRoles: ['CONTACTS'],
+    },
+  },
+  {
+    path: 'startup-user',
+    component: PopUpStartupComponent,
+    canActivate: [AuthGuard],
+    data: {
       allowedRoles: ['STARTUPS'],
+    },
+  },
+  {
+    path: 'inversor-user',
+    component: PopUpInversorComponent,
+    canActivate: [AuthGuard],
+    data: {
+      allowedRoles: ['INVESTORS'],
     },
   },
 ];

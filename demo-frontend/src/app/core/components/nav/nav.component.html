@@ -3,7 +3,8 @@
     <mat-sidenav class="mat-elevation-z8" #navigationSidenav mode="over" role="navigation">
         <img class="avatar mat-elevation-z8" src="https://avatars.dicebear.com/api/initials/{{ userName }}.svg" />
         <h4 class="name">{{userName}}</h4>
-        <p class="designation">Software Engineer</p>
+        <p *ngIf="isAdmin()" class="designation">Software Engineer</p>
+        <p *ngIf="!isAdmin()"  class="designation"></p>
         <mat-divider></mat-divider>
 
         <mat-nav-list>
@@ -14,6 +15,7 @@
                 </mat-icon>
                 {{ item.title | translate }}
             </button>
+
         </mat-nav-list>
         <mat-divider></mat-divider>
         <ul fxLayout fxLayoutGap="20px" class="navigation-items">

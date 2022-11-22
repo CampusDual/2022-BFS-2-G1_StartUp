@@ -45,7 +45,7 @@ export class NavComponent implements OnInit, OnDestroy {
     //   allowedRoles: ['CONTACTS']
     // },
     {
-      icon: 'monetization_on',
+      icon: 'build',
       route: 'inversores',
       title: 'menu.investers',
       allowedRoles: ['CONTACTS'],
@@ -63,15 +63,21 @@ export class NavComponent implements OnInit, OnDestroy {
     //   allowedRoles: ['CONTACTS'],
     // },
     {
-      icon: 'rocket_launch',
+      icon: 'build',
       route: 'startup',
       title: 'menu.startup',
+      allowedRoles: ['CONTACTS'],
+    },
+    {
+      icon: 'rocket_launch',
+      route: 'startup-user',
+      title: 'menu.startup-user',
       allowedRoles: ['STARTUPS'],
     },
     {
       icon: 'monetization_on',
       route: 'inversor-user',
-      title: 'menu.investers',
+      title: 'menu.investers-user',
       allowedRoles: ['INVESTORS'],
     },
   ];
@@ -149,5 +155,9 @@ export class NavComponent implements OnInit, OnDestroy {
   toogleLanguage(lang: string) {
     this.selectedLanguage = lang;
     this.translateService.use(lang);
+  }
+
+  public isAdmin(): boolean {
+    return this.authService.getRoles().includes('CONTACTS');
   }
 }

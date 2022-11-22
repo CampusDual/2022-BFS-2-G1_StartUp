@@ -64,11 +64,15 @@
   "menu": {
     "home": "Home",
     "contacts": "Contacts",
-    "investers": "Investors",
+    "investers": " Admin Investors",
     "entrepreneur": "Entrepreneurs",
     "stadistics": "Stadistics",
     "logout": "Logout",
-    "startup": "Startup"
+    "startup": "Admin Startup",
+    "startup-user": "Startup",
+    "investers-user": "Investors"
+
+
   },
   "language": {
     "spanish": "Spanish",

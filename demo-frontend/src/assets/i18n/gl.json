@@ -62,11 +62,13 @@
   "menu": {
     "home": "Home",
     "contacts": "Contactos",
-    "investers": "Inversores",
+    "investers": "Admin Inversores",
     "entrepreneur": "Emprendedores",
     "stadistics": "Estadísticas",
     "logout": "Pechar sesión",
-    "startup": "Startup"
+    "startup": "Admin Startup",
+    "startup-user": "Startup",
+    "investers-user": "Inversores"
   },
   "language": {
     "spanish": "Castelán",
