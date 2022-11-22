@@ -26,6 +26,8 @@ export class PopUpInversorComponent implements OnInit {
 
   public inversores = [];
 
+  public page : number;
+
   fields = [
     'id',
     'name',
@@ -43,7 +45,7 @@ export class PopUpInversorComponent implements OnInit {
     const pageFilter = new AnyPageFilter(
       '', this.fields.map((field) => new AnyField(field)),
       0,
-      6,
+      24,
       'name'
     );
 

@@ -49,4 +49,16 @@ export class NavigationBarComponent {
       } }
     });
   }
+
+/**
+ * Se encarga de no mostrar navBar cuando estamos logueados en la landing-page
+ *@return devuelve la navbar no visible 
+ */
+  get navBarView(){
+    let navVisible:boolean=true;
+    if(this.router.url=== '/landing-page'){
+      navVisible=false;
+    }
+    return navVisible;
+  }
 }

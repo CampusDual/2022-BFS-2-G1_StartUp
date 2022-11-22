@@ -3,10 +3,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { UserComponent } from './register/user/user.component';
+import { PopUpStartupComponent } from './register/pop-up-startup/pop-up-startup.component';
+import { PopUpInversorComponent } from './register/pop-up-inversor/pop-up-inversor.component';
 
 const routes: Routes = [
 
   { path: 'login', component: LoginComponent,  pathMatch: 'full'},
+
+  { path: 'list-startups', component:PopUpStartupComponent},
+  { path: 'list-inversores', component:PopUpInversorComponent },
+
+  { path: 'startup-user', component:PopUpStartupComponent},
+  { path: 'inversor-user', component:PopUpInversorComponent },
 
   { path: '', redirectTo: 'landing-page', pathMatch: 'full' },
   { path: 'contacts', loadChildren: () => import('./main/contacts/contacts.module').then(x => x.ContactsModule) },

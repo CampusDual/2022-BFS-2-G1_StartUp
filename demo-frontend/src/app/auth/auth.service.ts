@@ -101,13 +101,13 @@ export class AuthService {
   //Así es como nos lleva a la vista del inversor
   redirectToInvestor(){
     if(this.getRoles().includes("INVESTORS")){
-      this.redirectUrl= "/register"
+      this.redirectUrl= "/list-inversores"
     }
   }
 
   redirectToStartup(){
     if(this.getRoles().includes("STARTUPS")){
-      this.redirectUrl= "/register"
+      this.redirectUrl= "/list-startups"
     }
   }
 

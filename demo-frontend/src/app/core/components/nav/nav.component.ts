@@ -48,7 +48,7 @@ export class NavComponent implements OnInit, OnDestroy {
       icon: 'monetization_on',
       route: 'inversores',
       title: 'menu.investers',
-      allowedRoles: ['INVESTORS'],
+      allowedRoles: ['CONTACTS'],
     },
     // {
     //   icon: 'engineering',
@@ -67,6 +67,12 @@ export class NavComponent implements OnInit, OnDestroy {
       route: 'startup',
       title: 'menu.startup',
       allowedRoles: ['STARTUPS'],
+    },
+    {
+      icon: 'monetization_on',
+      route: 'inversor-user',
+      title: 'menu.investers',
+      allowedRoles: ['INVESTORS'],
     },
   ];
 
@@ -117,9 +123,6 @@ export class NavComponent implements OnInit, OnDestroy {
   get allowedRoutes() {
     const allowedRoutes: Array<ROUTE> = [];
     if (this.isAuthenticated()) {
-      if (this.router.url === '/') {
-        this.commandBarSidenavService.toggle();
-      }
       this.sidenavRoutes.forEach((route) => {
         if (this.authGuard.isAllowed(route.allowedRoles)) {
           allowedRoutes.push(route);

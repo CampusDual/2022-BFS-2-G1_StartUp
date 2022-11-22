@@ -21,7 +21,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { ConfirmationDialogComponent } from './shared/confirmation-dialog/confirmation-dialog.component';
 import { InterceptService } from './services/intercept.service';
 import { TokenInterceptorService } from './services/token-interceptor.service';
-import { MatPaginatorIntl } from '@angular/material/paginator';
+import { MatPaginatorIntl, MatPaginatorModule } from '@angular/material/paginator';
 import { CustomMatPaginatorIntl } from './model/custom-mat-paginator';
 import { CoreModule } from './core/core.module';
 import { LandingPageComponent } from './landing-page/landing-page.component';
@@ -39,6 +39,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDividerModule } from '@angular/material/divider';
 import { RegistrationFormComponent } from './main/registration/registration-form/registration-form.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -49,6 +50,7 @@ import { RegistrationFormComponent } from './main/registration/registration-form
     AppComponent,
     ConfirmationDialogComponent,
     MatSnackBarComponent,
+
     LandingPageComponent,
     RegisterComponent,
     PopUpStartupComponent,
@@ -71,7 +73,7 @@ import { RegistrationFormComponent } from './main/registration/registration-form
     MatRadioModule,
     ReactiveFormsModule,
     BrowserModule,
-
+    MatPaginatorModule,
     BrowserAnimationsModule,
     MdbModalModule,
     AppRoutingModule,
@@ -87,6 +89,7 @@ import { RegistrationFormComponent } from './main/registration/registration-form
     NgxSpinnerModule,
     MatFormFieldModule,
     MatIconModule,
+    NgxPaginationModule,
     NgIdleKeepaliveModule.forRoot()
   ],
   entryComponents: [

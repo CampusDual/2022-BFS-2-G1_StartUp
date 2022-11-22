@@ -1,6 +1,11 @@
+<header class="headers">
+    <p>{{'landing.service.investor.p' | translate}}</p>
+</header>
+
 <div class="wrapper">
 
-    <div class="testimotionals" *ngFor="let inversor of inversores">
+
+    <div class="testimotionals" *ngFor="let inversor of inversores | paginate: { itemsPerPage: 6, currentPage: page }">
         <div class="card ">
 
             <div class="layer">
@@ -30,7 +35,7 @@
 
                     <div class="linea2"></div>
                     <p class="email">{{inversor.email}}</p>
-                    <button (click)="onclick()" (click)="onSelected(inversor)" type="button" class="button">{{MatchBtn ? 'Match!!' : 'Just Match!!'}}</button>
+                    <button (click)="onclick()" (click)="onSelected(inversor)" type="button" class="button">{{'landing.service.investor.a' |translate}}</button>
 
 
 
@@ -43,3 +48,6 @@
     </div>
 
 </div>
+<nav class="pagination" role="navigation" aria-label="pagination">
+    <pagination-controls class="paginator" (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+</nav>

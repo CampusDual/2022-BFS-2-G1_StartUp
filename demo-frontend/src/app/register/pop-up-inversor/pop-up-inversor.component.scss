@@ -14,6 +14,21 @@ $baby-blue: #f8faff;
     margin-bottom: 5rem;
 }
 
+.headers {
+    margin-top: 6rem;
+    margin-bottom: auto;
+    text-align: center;
+    font-family: Arial black;
+    font-weight: bold;
+    font-size: 30px;
+    background: black;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    padding: 0 20rem;
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -175,7 +190,7 @@ progress {
     position: relative;
     color: #f0f0f0;
     cursor: pointer;
-    z-index: 1;
+    z-index: 0;
     padding: 10px 40px;
     display: flex;
     align-items: center;
@@ -233,6 +248,12 @@ progress {
     transform: translate(0, 5%);
 }
 
+.paginator {
+    //margin: 0 auto;
+    //margin-left: 39rem;
+    align-items: center;
+}
+
 
 /* TABLET VERSION*/
 
@@ -253,5 +274,8 @@ progress {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(25%);
+    }
+    .testimotionals .card {
+        align-items: center;
     }
 }
