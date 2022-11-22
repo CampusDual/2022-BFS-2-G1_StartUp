@@ -24,8 +24,7 @@
                 'is-link': startup.idStartupState.type === 'Early Stage',
                 'is-primary': startup.idStartupState.type === 'Exit',
                 'is-info': startup.idStartupState.type === 'Growth Stage'
-              }" class="progress is-small" [value]="changeProgresValue(startup.idStartupState.type)"
-                            max="100"></progress> {{ startup.idStartupState.type }}
+              }" class="progress is-small" [value]="changeProgresValue(startup.idStartupState.type)" max="100"></progress> {{ startup.idStartupState.type }}
                     </p>
 
                     <div class="anual-year">
@@ -50,7 +49,6 @@
     </div>
 </div>
 
-<nav role="navigation" aria-label="pagination">
-    <pagination-controls nextLabel="" previousLabel="" (pageChange)="page = $event" class="pagination">
-    </pagination-controls>
-</nav>
+
+<pagination-controls nextLabel="" previousLabel="" (pageChange)="page = $event" class="pagination">
+</pagination-controls>

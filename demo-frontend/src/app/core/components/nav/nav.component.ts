@@ -157,7 +157,6 @@ export class NavComponent implements OnInit, OnDestroy {
     this.translateService.use(lang);
   }
 
-  public isAdmin(): boolean {
-    return this.authService.getRoles().includes('CONTACTS');
-  }
+
+
 }
