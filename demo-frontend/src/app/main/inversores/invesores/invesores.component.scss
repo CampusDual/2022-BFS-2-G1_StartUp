@@ -11,6 +11,7 @@ table {
     max-height: 100%;
     place-content: space-between;
     align-items: center;
+    margin-bottom: 1em;
 }
 
 #invesores-filter {
@@ -59,4 +60,9 @@ span.is-image-cell .image {
     width: 1.5rem;
     height: 1.5rem;
     margin-right: .5rem;
+}
+mat-form-field{
+
+    display: none;
+
 }
